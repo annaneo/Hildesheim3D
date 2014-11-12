@@ -1,0 +1,15 @@
+# Rendering:
+
+### 3 Optionen: Canvas, CSS 3d and WebGL
+
+* Canvas:
+Perfomance schlecht, dafür in jedem Browser seit einigen Versionen verfügbar
+
+
+* CSS 3d
+Gute Performance allerdings ist es bis jetzt nur möglich rechteckige Faces zu erstellen
+
+* WebGL
+Verfügbar in allen modernen Browsern (Interet Explorer ab Version 11), wobei nicht immer die komplette Spezifikation verfügbar ist [http://caniuse.com/#search=webgl]
+
+
