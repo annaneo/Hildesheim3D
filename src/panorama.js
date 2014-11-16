@@ -40,7 +40,12 @@ function init(panoImg) {
 	var place = new Place(panoImg);
 	scene.add(place);
 
-	renderer = new THREE.WebGLRenderer();
+	if ( Detector.webgl ) {
+		renderer = new THREE.WebGLRenderer( {antialias:true} );
+	} else {
+		renderer = new THREE.CanvasRenderer();
+	}
+
 	renderer.setSize(window.innerWidth, window.innerHeight);
 	container.appendChild(renderer.domElement);
 
