@@ -1,10 +1,8 @@
 /**
  * Created by annaneovesky on 15.11.14.
- */
+*/
 
-
-
-function Place(panoimg) {
+Place = function(panoimg) {
 
 	var geometry = new THREE.SphereGeometry(500, 60, 40);
 	geometry.applyMatrix(new THREE.Matrix4().makeScale(-1, 1, 1));
@@ -13,6 +11,11 @@ function Place(panoimg) {
 		map: THREE.ImageUtils.loadTexture(panoimg)
 	});
 
-	mesh = new THREE.Mesh(geometry, material);
-	return mesh;
-}
+	THREE.Mesh.call(this, geometry, material);
+};
+
+Place.prototype = Object.create(THREE.Mesh.prototype);
+
+
+// add functions to Place Object with Place.prototype.<functionName> = function (..) {...}
+
