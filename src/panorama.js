@@ -145,6 +145,12 @@ function onDocumentMouseWheel(event) {
 
 	}
 
+	if (camera.fov > 100) {
+		camera.fov = 100;
+	} else if (camera.fov < 1) {
+		camera.fov = 1;
+	}
+
 	camera.updateProjectionMatrix();
 
 }
