@@ -12,21 +12,32 @@ var onMouseDownLat = 0;
 var phi = 0;
 var theta = 0;
 
-init();
-animate();
+function startPanorama(panoImg) {
+	init(panoImg);
+	animate();
+}
 
-function init() {
 
-	var container, mesh;
+function removePanorama() {
+	var container = document.getElementById('container');
+	if (container.childNodes.length > 0) {
+		container.removeChild(container.childNodes[0]);
+	}
+}
 
-	container = document.getElementById('container');
+
+function init(panoImg) {
+
+	removePanorama();
+
+	var container = document.getElementById('container');
 
 	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1100);
 	camera.target = new THREE.Vector3(0, 0, 0);
 
 	scene = new THREE.Scene();
 
-	var place = new Place('resources/panos/kirche025.jpg');
+	var place = new Place(panoImg);
 	scene.add(place);
 
 	renderer = new THREE.WebGLRenderer();

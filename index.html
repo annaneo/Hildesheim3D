@@ -10,6 +10,36 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 	<link rel="stylesheet" href="style.css">
+	<script src="lib/three.js"></script>
+	<script src="src/place.js"></script>
+	<script src="src/panorama.js"></script>
+
+
+	<script type="text/javascript">
+		//TODO: quick and dirty, should be changed soon!
+		window.onload = function () {
+
+			startPanorama('resources/panos/kirche025.jpg');
+
+			var kirche25 = document.getElementById("Kirche025");
+			var kirche27 = document.getElementById("Kirche027");
+			var kirche29 = document.getElementById("Kirche029");
+			kirche25.onclick = function () {
+
+				startPanorama('resources/panos/kirche025.jpg');
+				return false;
+			};
+			kirche27.onclick = function () {
+				startPanorama('resources/panos/kirche027.jpg');
+				return false;
+			};
+			kirche29.onclick = function () {
+				startPanorama('resources/panos/kirche029.jpg');
+				return false;
+			};
+		}
+	</script>
+
 
 </head>
 <body>
@@ -18,9 +48,9 @@
 		<ul id="navigation">
 			<li><a href="#">Standort &raquo;</a>
 				<ul>
-					<li><a href="#">Kirche025 Altar</a></li>
-					<li><a href="#">Kirche027 Kirchenraum</a></li>
-					<li><a href="#">Kirche029 Westchor</a></li>
+					<li><a id="Kirche025" href="#">Kirche025 Altar</a></li>
+					<li><a id="Kirche027" href="#">Kirche027 Kirchenraum</a></li>
+					<li><a id="Kirche029" href="#">Kirche029 Westchor</a></li>
 				</ul>
 		</ul>
 	</nav>
@@ -32,8 +62,5 @@
 			<option value="029">Kirche029</option>
 		</select> -->
 	<div id="container"></div>
-	<script src="lib/three.js"></script>
-	<script src="src/place.js"></script>
-	<script src="src/panorama.js"></script>
 </body>
 </html>
