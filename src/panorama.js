@@ -26,7 +26,7 @@ function init() {
 
 	scene = new THREE.Scene();
 
-	var place = new Place('resources/panos/kirche025_altar.jpg');
+	var place = new Place('resources/panos/kirche025.jpg');
 	scene.add(place);
 
 	renderer = new THREE.WebGLRenderer();
