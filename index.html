@@ -9,30 +9,28 @@
 	<title>three.js webgl - equirectangular panorama demo</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-	<style>
-		body {
-			background-color: #000000;
-			margin: 0px;
-			overflow: hidden;
-		}
+	<link rel="stylesheet" href="style.css">
 
-		#info {
-			position: absolute;
-			top: 0px; width: 100%;
-			color: #ffffff;
-			padding: 5px;
-			font-family:Monospace;
-			font-size:13px;
-			font-weight: bold;
-			text-align:center;
-		}
-
-		a {
-			color: #ffffff;
-		}
-	</style>
 </head>
 <body>
+	<!-- temporary navigation for choosing place -->
+	<nav id="nav">
+		<ul id="navigation">
+			<li><a href="#">Standort &raquo;</a>
+				<ul>
+					<li><a href="#">Kirche025 Altar</a></li>
+					<li><a href="#">Kirche027 Kirchenraum</a></li>
+					<li><a href="#">Kirche029 Westchor</a></li>
+				</ul>
+		</ul>
+	</nav>
+
+<!-- wieso funktioniertd er kack nicht?
+		<select>
+			<option value="025">Kirche025</option>
+			<option value="027">Kirche027</option>
+			<option value="029">Kirche029</option>
+		</select> -->
 	<div id="container"></div>
 	<script src="lib/three.js"></script>
 	<script src="src/place.js"></script>
