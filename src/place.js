@@ -24,4 +24,5 @@ Place.prototype.addInfoLabel = function (message, xCoord, yCoord, zCoord) {
 	var label = new InfoLabel(message);
 	label.position.set(xCoord, yCoord, zCoord);
 	this.add(label);
+	return label;
 }

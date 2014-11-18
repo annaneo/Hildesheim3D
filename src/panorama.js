@@ -11,6 +11,9 @@ var lat = 0;
 var onMouseDownLat = 0;
 var phi = 0;
 var theta = 0;
+var projector;
+var mouse = { x: 0, y: 0 };
+var targetList = [];
 
 function startPanorama(panoImg) {
 	init(panoImg);
@@ -35,15 +38,16 @@ function init(panoImg) {
 	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1100);
 	camera.target = new THREE.Vector3(0, 0, 0);
 
+	// initialize object to perform world/screen calculations
+	projector = new THREE.Projector();
+
 	scene = new THREE.Scene();
 
 	var place = new Place(panoImg);
-	var infoLabel = new InfoLabel('Hello!!!!!');
-	infoLabel.position.set(200,0,0);
-
+	targetList.push(place.addInfoLabel("Hello!!!!", 300, 1, 1));
 
 	scene.add(place);
-	scene.add(infoLabel);
+
 
 	if ( Detector.webgl ) {
 		renderer = new THREE.WebGLRenderer( {antialias:true} );
@@ -117,13 +121,38 @@ function onDocumentMouseDown(event) {
 
 	event.preventDefault();
 
-	isUserInteracting = true;
+
 
 	onPointerDownPointerX = event.clientX;
 	onPointerDownPointerY = event.clientY;
 
 	onPointerDownLon = lon;
 	onPointerDownLat = lat;
+
+
+
+	// update the mouse variable
+	mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+
+	// find intersections
+
+	// create a Ray with origin at the mouse position
+	//   and direction into the scene (camera direction)
+	var vector = new THREE.Vector3( mouse.x, mouse.y, 1 );
+	projector.unprojectVector( vector, camera );
+	var ray = new THREE.Raycaster( camera.position, vector.sub( camera.position ).normalize(), 150, 1100 );
+
+	// create an array containing all objects in the scene with which the ray intersects
+	var intersects = ray.intersectObjects(targetList);
+
+	// if there is one (or more) intersections
+	if ( intersects.length > 0 ) {
+		console.log("Hit @ " + vectorToString( intersects[0].point ));
+		alert("Hallo Anni!");
+	} else {
+		isUserInteracting = true;
+	}
 
 }
 
@@ -198,3 +227,6 @@ function update() {
 	renderer.render(scene, camera);
 
 }
+
+
+function vectorToString(v) { return "[ " + v.x + ", " + v.y + ", " + v.z + " ]"; }

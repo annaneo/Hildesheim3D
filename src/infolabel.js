@@ -25,16 +25,19 @@ InfoLabel = function (message, parameters) {
     var textWidth = metrics.width;
     // background color
     context.fillStyle = "rgba(" + backgroundColor.r + "," + backgroundColor.g + ","
-    + backgroundColor.b + "," + backgroundColor.a + ")";
+                        + backgroundColor.b + "," + backgroundColor.a + ")";
     // border color
     context.strokeStyle = "rgba(" + borderColor.r + "," + borderColor.g + ","
-    + borderColor.b + "," + borderColor.a + ")";
+                        + borderColor.b + "," + borderColor.a + ")";
     context.lineWidth = borderThickness;
+    context.rect(borderThickness/2, borderThickness/2, textWidth + borderThickness, fontsize * 1.4 + borderThickness);
+    context.fill();
+    context.stroke();
     // text color
     context.fillStyle = "rgba(0, 0, 0, 1.0)";
     context.fillText( message, borderThickness, fontsize + borderThickness);
 
-    var texture = new THREE.Texture(canvas)
+    var texture = new THREE.Texture(canvas);
     texture.needsUpdate = true;
 
     var material = new THREE.SpriteMaterial({
@@ -43,7 +46,7 @@ InfoLabel = function (message, parameters) {
     });
 
     THREE.Sprite.call(this, material);
-    this.scale.set(100, 50, 1.0);
+    this.scale.set(200, 100, 0);
 };
 
 
