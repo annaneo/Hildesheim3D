@@ -38,7 +38,12 @@ function init(panoImg) {
 	scene = new THREE.Scene();
 
 	var place = new Place(panoImg);
+	var infoLabel = new InfoLabel('Hello!!!!!');
+	infoLabel.position.set(200,0,0);
+
+
 	scene.add(place);
+	scene.add(infoLabel);
 
 	if ( Detector.webgl ) {
 		renderer = new THREE.WebGLRenderer( {antialias:true} );
@@ -163,8 +168,8 @@ function onDocumentMouseWheel(event) {
 
 	if (camera.fov > 100) {
 		camera.fov = 100;
-	} else if (camera.fov < 1) {
-		camera.fov = 1;
+	} else if (camera.fov < 10) {
+		camera.fov = 10;
 	}
 
 	camera.updateProjectionMatrix();

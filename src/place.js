@@ -19,3 +19,9 @@ Place.prototype = Object.create(THREE.Mesh.prototype);
 
 // add functions to Place Object with Place.prototype.<functionName> = function (..) {...}
 
+
+Place.prototype.addInfoLabel = function (message, xCoord, yCoord, zCoord) {
+	var label = new InfoLabel(message);
+	label.position.set(xCoord, yCoord, zCoord);
+	this.add(label);
+}
