@@ -2,7 +2,7 @@
 
 
 InfoLabel = function (message, parameters) {
-
+/*
     if (parameters === undefined) parameters = {};
     var fontface = parameters.hasOwnProperty("fontface") ?
         parameters["fontface"] : "Arial";
@@ -46,8 +46,13 @@ InfoLabel = function (message, parameters) {
     });
 
     THREE.Sprite.call(this, material);
-    this.scale.set(200, 100, 0);
+    this.scale.set(200, 100, 1.0);
+    */
+
+    var cubeGeometry = new THREE.CubeGeometry( 50, 50, 50 );
+    var cubeMaterial = new THREE.MeshBasicMaterial( { color: 0x000088 } );
+    THREE.Mesh.call(this, cubeGeometry, cubeMaterial );
 };
 
 
-InfoLabel.prototype = Object.create(THREE.Sprite.prototype);
+InfoLabel.prototype = Object.create(THREE.Mesh.prototype);

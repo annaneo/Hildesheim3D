@@ -33,15 +33,15 @@ function init(panoImg) {
 
 	removePanorama();
 
+	scene = new THREE.Scene();
+
 	var container = document.getElementById('container');
 
-	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1100);
+	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
 	camera.target = new THREE.Vector3(0, 0, 0);
 
 	// initialize object to perform world/screen calculations
 	projector = new THREE.Projector();
-
-	scene = new THREE.Scene();
 
 	var place = new Place(panoImg);
 	targetList.push(place.addInfoLabel("Hello!!!!", 300, 1, 1));
@@ -49,7 +49,7 @@ function init(panoImg) {
 	scene.add(place);
 
 
-	if ( Detector.webgl ) {
+	if (Detector.webgl) {
 		renderer = new THREE.WebGLRenderer( {antialias:true} );
 	} else {
 		renderer = new THREE.CanvasRenderer();
@@ -119,10 +119,6 @@ function onWindowResize() {
 
 function onDocumentMouseDown(event) {
 
-	event.preventDefault();
-
-
-
 	onPointerDownPointerX = event.clientX;
 	onPointerDownPointerY = event.clientY;
 
@@ -130,18 +126,20 @@ function onDocumentMouseDown(event) {
 	onPointerDownLat = lat;
 
 
+	event.preventDefault();
 
 	// update the mouse variable
 	mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
 	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 
+
 	// find intersections
 
 	// create a Ray with origin at the mouse position
 	//   and direction into the scene (camera direction)
-	var vector = new THREE.Vector3( mouse.x, mouse.y, 1 );
+	var vector = new THREE.Vector3(mouse.x, mouse.y, 0);
 	projector.unprojectVector( vector, camera );
-	var ray = new THREE.Raycaster( camera.position, vector.sub( camera.position ).normalize(), 150, 1100 );
+	var ray = new THREE.Raycaster(camera.position, vector.sub(camera.position).normalize());
 
 	// create an array containing all objects in the scene with which the ray intersects
 	var intersects = ray.intersectObjects(targetList);
@@ -149,7 +147,7 @@ function onDocumentMouseDown(event) {
 	// if there is one (or more) intersections
 	if ( intersects.length > 0 ) {
 		console.log("Hit @ " + vectorToString( intersects[0].point ));
-		alert("Hallo Anni!");
+		alert('intersects.length: ' + intersects.length + '\nmouse.x: ' + mouse.x + '\nmouse.y: ' + mouse.y);
 	} else {
 		isUserInteracting = true;
 	}
