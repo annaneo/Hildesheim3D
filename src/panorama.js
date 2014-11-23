@@ -26,6 +26,8 @@ function removePanorama() {
 	if (container.childNodes.length > 0) {
 		container.removeChild(container.childNodes[0]);
 	}
+	targetList = [];
+	mouse = { x: 0, y: 0 };
 }
 
 
@@ -43,8 +45,19 @@ function init(panoImg) {
 	// initialize object to perform world/screen calculations
 	projector = new THREE.Projector();
 
+
+	var nextPanoImg;										//TODO: clean up!
+	if (panoImg === 'resources/panos/kirche025.jpg') {
+		nextPanoImg = 'resources/panos/kirche027.jpg';
+	} else if (panoImg === 'resources/panos/kirche027.jpg') {
+		nextPanoImg = 'resources/panos/kirche029.jpg';
+	} else {
+		nextPanoImg = 'resources/panos/kirche025.jpg';
+	}
+
+
 	var place = new Place(panoImg);
-	targetList.push(place.addInfoLabel("Hello!!!!", 300, 1, 1));
+	targetList.push(place.addInfoLabel(300, 1, 1, {panoImg: nextPanoImg}));
 
 	scene.add(place);
 
@@ -147,7 +160,8 @@ function onDocumentMouseDown(event) {
 	// if there is one (or more) intersections
 	if ( intersects.length > 0 ) {
 		console.log("Hit @ " + vectorToString( intersects[0].point ));
-		alert('intersects.length: ' + intersects.length + '\nmouse.x: ' + mouse.x + '\nmouse.y: ' + mouse.y);
+		intersects[0].object.onClick();
+
 	} else {
 		isUserInteracting = true;
 	}

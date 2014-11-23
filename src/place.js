@@ -12,6 +12,7 @@ Place = function(panoimg) {
 	});
 
 	THREE.Mesh.call(this, geometry, material);
+
 };
 
 Place.prototype = Object.create(THREE.Mesh.prototype);
@@ -20,9 +21,9 @@ Place.prototype = Object.create(THREE.Mesh.prototype);
 // add functions to Place Object with Place.prototype.<functionName> = function (..) {...}
 
 
-Place.prototype.addInfoLabel = function (message, xCoord, yCoord, zCoord) {
-	var label = new InfoLabel(message);
+Place.prototype.addInfoLabel = function (xCoord, yCoord, zCoord, parameters) {
+	var label = new InfoLabel(parameters);
 	label.position.set(xCoord, yCoord, zCoord);
 	this.add(label);
 	return label;
-}
+};
