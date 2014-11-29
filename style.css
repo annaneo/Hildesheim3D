@@ -1,11 +1,12 @@
 /* reset */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header , menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline; }
+	vertical-align: baseline;
+}
 
 
 body {
@@ -15,9 +16,10 @@ body {
 	line-height: 1;
 	font:12px/20px Arial;
 }
-	}
+
 ol, ul {
-	list-style: none; }
+	list-style: none;
+}
 
 
 #nav {
@@ -39,7 +41,6 @@ ul#navigation li {
 	padding:0;
 	float:left;
 	position:relative;
-
 }
 
 ul#navigation li a {
@@ -68,7 +69,6 @@ ul#navigation li:hover > ul
 }
 
 ul#navigation ul, ul#navigation ul li ul {
-
 	visibility:hidden;
     position: absolute;
     z-index: 99999;
@@ -111,3 +111,26 @@ ul#navigation ul li a {
 	clear:both;
 	width:150px;
 }
+
+#container {
+	position: relative;
+	z-index: 1;
+}
+
+
+#mapOverlay { /* positioning/sizing should be done in js */
+	position: absolute;
+	z-index: 2;
+	top: 0px;
+	right: 0px;
+	width: 250px;
+	height: 200px;
+}
+
+.mapOverlayBG {
+	background-color: #114A4D;
+	-ms-filter: "Alpha(Opacity=75)"; /* IE 8 */
+	-moz-opacity: 0.75; /* Mozilla */
+	opacity: 0.75;
+}
+
