@@ -57,7 +57,8 @@ function init(panoImg) {
 
 
 	var place = new Place(panoImg);
-	targetList.push(place.addInfoLabel(300, 1, 1, {panoImg: nextPanoImg}));
+	//TODO: commented line for demo
+	//targetList.push(place.addInfoLabel(300, 1, 1, {panoImg: nextPanoImg}));
 
 	scene.add(place);
 
