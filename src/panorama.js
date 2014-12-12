@@ -22,7 +22,7 @@ function startPanorama(panoImg) {
 
 
 function removePanorama() {
-	var container = document.getElementById('container');
+	var container = document.getElementById('panorama');
 	if (container.childNodes.length > 0) {
 		container.removeChild(container.childNodes[0]);
 	}
@@ -37,9 +37,9 @@ function init(panoImg) {
 
 	scene = new THREE.Scene();
 
-	var container = document.getElementById('container');
+	var container = document.getElementById('panorama');
 
-	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
+	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight-30, 1, 1000);
 	camera.target = new THREE.Vector3(0, 0, 0);
 
 	// initialize object to perform world/screen calculations

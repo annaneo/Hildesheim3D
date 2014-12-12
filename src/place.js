@@ -4,7 +4,7 @@
 
 Place = function(panoimg) {
 
-	var geometry = new THREE.SphereGeometry(500, 60, 40);
+	var geometry = new THREE.SphereGeometry(200, 50, 30);
 	geometry.applyMatrix(new THREE.Matrix4().makeScale(-1, 1, 1));
 
 	var material = new THREE.MeshBasicMaterial({

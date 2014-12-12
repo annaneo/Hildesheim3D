@@ -77,10 +77,6 @@
 				startPanorama('resources/panos/kirche001.jpg');
 				return false;
 			};
-			kirche2.onclick = function () {
-				startPanorama('resources/panos/kirche002.jpg');
-				return false;
-			};
 			kirche3.onclick = function () {
 				startPanorama('resources/panos/kirche003.jpg');
 				return false;
@@ -216,7 +212,6 @@
 </head>
 <body>
 	<!-- temporary navigation for choosing place -->
-
 	<nav id="nav">
 		<ul id="navigation">
 			<li><a href="#">Kirche &raquo;</a>
@@ -236,6 +231,7 @@
 					<li><a id="Kirche026" href="#">Kirche026</a></li>
 					<li><a id="Kirche029" href="#">Kirche029</a></li>
 				</ul>
+			</li>
 		</ul>
 	</nav>
 	<nav id="nav">
@@ -248,8 +244,10 @@
 					<li><a id="Krypta013" href="#">Krypta013</a></li>
 					<li><a id="Krypta018" href="#">Krypta018</a></li>
 				</ul>
+			</li>
 		</ul>
 	</nav>
-	<div id="container"></div>
+
+	<div id="panorama"></div>
 </body>
 </html>
