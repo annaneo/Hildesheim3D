@@ -1,0 +1,57 @@
+============
+Navigation zwischen Standpunkten
+============
+
+	über Icons im Panorama
+	Karte
+
+============
+Übergänge von einem Standort zum anderen:
+============
+
+	Animation: blurr, zoom in Standartdeinstellung,
+		ev. drehen der Kamera zum ausgewählten Stadort (wenn über Icons innerhalb des Panoramas
+	Unterschiedliche Kameraeinstellung nach Herkunftsort
+
+============
+Steuerung
+============
+
+	Maus
+	Tastatur
+	Buttons
+	Zoom
+
+============
+Aktive Elemente im Panorama: Standort-Übergänge und Info-Popups
+============
+
+	Positionieren
+	Anmination (größer bei mouseOver)
+
+============
+Informationsview
+============
+	Design: Fenster & Hintergund (blurr, ausgegraut)
+	Aufbau des
+	Bilder - Slideshow
+	Text scrollbar
+	generisches Laden von Inhalten (über json; zuerst können wir den Text aus im Code abgelegten files nehmen,d aach aus dem TYPO3 BE)
+	HTML & CSS für das Fenster
+	Materialien sammeln (Bilder) und Testtexte erstellen
+	Verlinkung mit DIO
+	Abspielen von Sound
+
+============
+Vollbild-Modus
+============
+	Vollbild-Modus
+	Unterscheidung Infopunkte Vollbild/Normal
+	wie Informationsview in Fullscreen?
+
+============
+Finish it!
+============
+
+	Crossbrowser/-device Tests
+	Abfangen inkompatibler Browser
