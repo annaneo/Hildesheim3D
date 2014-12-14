@@ -17,4 +17,14 @@ Verfügbar in allen modernen Browsern (Interet Explorer ab Version 11), wobei ni
 
 # Links
 
-http://buildnewgames.com/js-game-code-org/
+### Loading Screen
+http://stackoverflow.com/questions/4580426/creating-a-loading-screen-in-html5
+
+
+### Audio
+http://www.catswhocode.com/blog/mastering-the-html5-audio-property
+http://html5doctor.com/html5-audio-the-state-of-play/
+
+
+### WebGL up and running (overlay)
+https://github.com/tparisi/WebGLBook/tree/master/Chapter%206
