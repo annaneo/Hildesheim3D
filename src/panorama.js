@@ -32,9 +32,7 @@ function removePanorama() {
 
 
 function init(panoImg) {
-
 	removePanorama();
-
 	scene = new THREE.Scene();
 
 	var container = document.getElementById('panorama');
@@ -46,19 +44,9 @@ function init(panoImg) {
 	projector = new THREE.Projector();
 
 
-	var nextPanoImg;										//TODO: clean up!
-	if (panoImg === 'resources/panos/kirche025.jpg') {
-		nextPanoImg = 'resources/panos/kirche027.jpg';
-	} else if (panoImg === 'resources/panos/kirche027.jpg') {
-		nextPanoImg = 'resources/panos/kirche029.jpg';
-	} else {
-		nextPanoImg = 'resources/panos/kirche025.jpg';
-	}
-
-
 	var place = new Place(panoImg);
 	//TODO: commented line for demo
-	//targetList.push(place.addInfoLabel(300, 1, 1, {panoImg: nextPanoImg}));
+	targetList.push(place.addInfoLabel(150, 1, 1));
 
 	scene.add(place);
 
@@ -72,67 +60,61 @@ function init(panoImg) {
 	renderer.setSize(window.innerWidth, window.innerHeight);
 	container.appendChild(renderer.domElement);
 
+	initEventListener();
+
+}
+
+
+function initEventListener() {
+
 	document.addEventListener('mousedown', onDocumentMouseDown, false);
 	document.addEventListener('mousemove', onDocumentMouseMove, false);
 	document.addEventListener('mouseup', onDocumentMouseUp, false);
 	document.addEventListener('mousewheel', onDocumentMouseWheel, false);
 	document.addEventListener('DOMMouseScroll', onDocumentMouseWheel, false);
 
-	//
-
 	document.addEventListener('dragover', function (event) {
-
 		event.preventDefault();
 		event.dataTransfer.dropEffect = 'copy';
 
 	}, false);
 
 	document.addEventListener('dragenter', function (event) {
-
 		document.body.style.opacity = 0.5;
-
 	}, false);
 
 	document.addEventListener('dragleave', function (event) {
-
 		document.body.style.opacity = 1;
-
 	}, false);
 
 	document.addEventListener('drop', function (event) {
-
 		event.preventDefault();
-
 		var reader = new FileReader();
 		reader.addEventListener('load', function (event) {
-
 			material.map.image.src = event.target.result;
 			material.map.needsUpdate = true;
 
 		}, false);
 		reader.readAsDataURL(event.dataTransfer.files[0]);
-
 		document.body.style.opacity = 1;
-
 	}, false);
-
-	//
 
 	window.addEventListener('resize', onWindowResize, false);
 
+	document.getElementById('infoCloseButton').addEventListener('click', function (event) {
+		var div = document.getElementById("infoView");
+		div.style.display = "none";
+	}, false);
 }
 
-function onWindowResize() {
 
+function onWindowResize() {
 	camera.aspect = window.innerWidth / window.innerHeight;
 	camera.updateProjectionMatrix();
-
 	renderer.setSize(window.innerWidth, window.innerHeight);
-
 }
 
 function onDocumentMouseDown(event) {
-
 	onPointerDownPointerX = event.clientX;
 	onPointerDownPointerY = event.clientY;
 
@@ -166,46 +148,31 @@ function onDocumentMouseDown(event) {
 	} else {
 		isUserInteracting = true;
 	}
-
 }
 
 function onDocumentMouseMove(event) {
-
 	if (isUserInteracting === true) {
-
 		lon = ( onPointerDownPointerX - event.clientX ) * 0.1 + onPointerDownLon;
 		lat = ( event.clientY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
-
 	}
-
 }
 
 function onDocumentMouseUp(event) {
-
 	isUserInteracting = false;
-
 }
 
 function onDocumentMouseWheel(event) {
-
 	// WebKit
-
 	if (event.wheelDeltaY) {
-
 		camera.fov -= event.wheelDeltaY * 0.05;
 
-		// Opera / Explorer 9
-
+	// Opera / Explorer 9
 	} else if (event.wheelDelta) {
-
 		camera.fov -= event.wheelDelta * 0.05;
 
-		// Firefox
-
+	// Firefox
 	} else if (event.detail) {
-
 		camera.fov += event.detail * 1.0;
-
 	}
 
 	if (camera.fov > 100) {
@@ -213,32 +180,23 @@ function onDocumentMouseWheel(event) {
 	} else if (camera.fov < 10) {
 		camera.fov = 10;
 	}
-
 	camera.updateProjectionMatrix();
-
 }
 
 function animate() {
-
 	requestAnimationFrame(animate);
 	update();
-
 }
 
 function update() {
-
 	lat = Math.max(-85, Math.min(85, lat));
 	phi = THREE.Math.degToRad(90 - lat);
 	theta = THREE.Math.degToRad(lon);
-
 	camera.target.x = 500 * Math.sin(phi) * Math.cos(theta);
 	camera.target.y = 500 * Math.cos(phi);
 	camera.target.z = 500 * Math.sin(phi) * Math.sin(theta);
-
 	camera.lookAt(camera.target);
-
 	renderer.render(scene, camera);
-
 }
 
 

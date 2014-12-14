@@ -1,89 +1,87 @@
 /* reset */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline; }
-
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
 
 body {
-	background-color: #000000;
-	margin: 0px;
-	overflow: hidden;
-	line-height: 1;
-	font:12px/20px Arial;
+    background-color: #000000;
+    margin: 0px;
+    overflow: hidden;
+    line-height: 1;
+    font: 12px/20px Arial;
 }
 
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
 
 div#navigationcontainer {
-	height: 42px;
+    height: 42px;
 }
 
 #nav {
-	position:relative;
-	margin:0;
+    position: relative;
+    margin: 0;
 }
 
 ul#navigation {
-	margin:0px;
-	position:relative;
-	float:left;
+    margin: 0px;
+    position: relative;
+    float: left;
 
 }
 
 ul#navigation li {
-	display:inline;
-	font-size:12px;
-	margin:0;
-	padding:0;
-	float:left;
-	position:relative;
+    display: inline;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    float: left;
+    position: relative;
 
 }
 
 ul#navigation li a {
-	padding:10px 25px;
-	color:#616161;
-	text-shadow:1px 1px 0px #fff;
-	text-decoration:none;
-	display:inline-block;
-	border:1px solid #fff;
-	background: #f5f5f5;
-	-webkit-transition:color 0.2s linear, background 0.2s linear;
-	-moz-transition:color 0.2s linear, background 0.2s linear;
-	-o-transition:color 0.2s linear, background 0.2s linear;
-	transition:color 0.2s linear, background 0.2s linear;
+    padding: 10px 25px;
+    color: #616161;
+    text-shadow: 1px 1px 0px #fff;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid #fff;
+    background: #f5f5f5;
+    -webkit-transition: color 0.2s linear, background 0.2s linear;
+    -moz-transition: color 0.2s linear, background 0.2s linear;
+    -o-transition: color 0.2s linear, background 0.2s linear;
+    transition: color 0.2s linear, background 0.2s linear;
 }
-
 
 ul#navigation li:hover > a {
-	background:#fff;
+    background: #fff;
 }
 
-ul#navigation li:hover > ul
-{
-	visibility:visible;
-	opacity:1;
+ul#navigation li:hover > ul {
+    visibility: visible;
+    opacity: 1;
 }
 
 ul#navigation ul, ul#navigation ul li ul {
 
-	visibility:hidden;
+    visibility: hidden;
     position: absolute;
     z-index: 99999;
-	width:180px;
-	background:#f8f8f8;
-	box-shadow:1px 1px 3px #ccc;
-	opacity:0;
-	-webkit-transition:opacity 0.2s linear, visibility 0.2s linear;
-	-moz-transition:opacity 0.2s linear, visibility 0.2s linear;
-	-o-transition:opacity 0.2s linear, visibility 0.2s linear;
-	transition:opacity 0.2s linear, visibility 0.2s linear;
+    width: 180px;
+    background: #f8f8f8;
+    box-shadow: 1px 1px 3px #ccc;
+    opacity: 0;
+    -webkit-transition: opacity 0.2s linear, visibility 0.2s linear;
+    -moz-transition: opacity 0.2s linear, visibility 0.2s linear;
+    -o-transition: opacity 0.2s linear, visibility 0.2s linear;
+    transition: opacity 0.2s linear, visibility 0.2s linear;
 }
 
 ul#navigation ul {
@@ -97,22 +95,69 @@ ul#navigation ul li ul {
 }
 
 ul#navigation ul li {
-	clear:both;
-	width:100%;
-	border:0 none;
-	border-bottom:1px solid #c9c9c9;
-	height:30px;
+    clear: both;
+    width: 100%;
+    border: 0 none;
+    border-bottom: 1px solid #c9c9c9;
+    height: 30px;
 }
 
 ul#navigation ul li a {
-	background:none;
-	padding:7px 15px;
-	color:#616161;
-	text-shadow:1px 1px 0px #fff;
-	text-decoration:none;
-	display:inline-block;
-	border:0 none;
-	float:left;
-	clear:both;
-	width:150px;
+    background: none;
+    padding: 7px 15px;
+    color: #616161;
+    text-shadow: 1px 1px 0px #fff;
+    text-decoration: none;
+    display: inline-block;
+    border: 0 none;
+    float: left;
+    clear: both;
+    width: 150px;
+}
+
+#infoView {
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    display: none;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    width: 240px;
+    height: 180px;
+    background-color: rgba(200, 200, 200, .9);
+    z-index: 0;
+    position: absolute;
+    border: 3px solid #cccccc;
+    color: #999999;
+}
+
+#infoTitle {
+    font-style: normal;
+    font-size: larger;
+    color: #222222;
+    text-align: left;
+    margin-top: 4px;
+    padding: 4px;
+    height: 20px;
+    postion: absolute;
+}
+
+#infoContent {
+    font-style: italic;
+    color: #444444;
+    text-align: left;
+    margin-top: 4px;
+    padding: 4px;
+    height: 110px;
+    postion: absolute;
+}
+
+#infoCloseButton {
+    text-align: center;
+    float: right;
+    width: 16px;
+    height: 16px;
+    top: 4px;
+    position: absolute;
 }
