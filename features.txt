@@ -50,6 +50,13 @@ Vollbild-Modus
 	wie Informationsview in Fullscreen?
 
 ============
+Startbildschirm
+============
+	Ladebalken
+	Anfangdview festlegen
+	Startsecreen mit Infos zu Rundgang und Bedienung
+
+============
 Finish it!
 ============
 
