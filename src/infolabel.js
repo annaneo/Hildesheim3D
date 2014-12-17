@@ -4,7 +4,7 @@
 InfoLabel = function (parameters) {
 
     if (parameters === undefined) parameters = {};
-    this.panoImg = parameters.hasOwnProperty('panoImg') ? parameters['panoImg'] : "";
+    this.infoContent = parameters.hasOwnProperty('content') ? parameters['content'] : "some <a href=\"#\">content</a>";
 
     var cubeGeometry = new THREE.BoxGeometry(30, 30, 30);
     var cubeMaterial = new THREE.MeshBasicMaterial( { color: 0x000088 } );
@@ -15,11 +15,12 @@ InfoLabel = function (parameters) {
 InfoLabel.prototype = Object.create(THREE.Mesh.prototype);
 
 InfoLabel.prototype.onClick = function () {
+    var infoContent = document.getElementById('infoContent');
+    infoContent.innerHTML = this.infoContent;
     var infoView = document.getElementById('infoView');
     infoView.style.display = "block";
     infoView.style.left = 100 + "px";
     infoView.style.top = 100 + "px";
-
 };
 
 
