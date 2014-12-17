@@ -15,6 +15,7 @@ var projector;
 var mouse = { x: 0, y: 0 };
 var targetList = [];
 
+
 function startPanorama(panoImg) {
 	init(panoImg);
 	animate();
