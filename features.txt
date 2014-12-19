@@ -17,10 +17,10 @@ Navigation zwischen Standpunkten
 Steuerung
 ============
 
-	Maus
-	Tastatur
+	Maus        #done
+	Tastatur    #done
 	Buttons
-	Zoom
+	Zoom        #nur maus
 
 ============
 Aktive Elemente im Panorama: Standort-Übergänge und Info-Popups

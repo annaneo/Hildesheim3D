@@ -3,12 +3,10 @@
 var camera, scene, renderer;
 
 var isUserInteracting = false;
-var onMouseDownMouseX = 0;
-var onMouseDownMouseY = 0;
 var lon = 0;
-var onMouseDownLon = 0;
 var lat = 0;
-var onMouseDownLat = 0;
+var lonFactor = 0;
+var latFactor = 0;
 var phi = 0;
 var theta = 0;
 var projector;
@@ -100,6 +98,9 @@ function initEventListener() {
 		document.body.style.opacity = 1;
 	}, false);
 
+	document.addEventListener('keydown', onKeyDown, false);
+	document.addEventListener('keyup', onKeyUp, false);
+
 	window.addEventListener('resize', onWindowResize, false);
 
 	document.getElementById('infoCloseButton').addEventListener('click', function (event) {
@@ -116,12 +117,6 @@ function onWindowResize() {
 }
 
 function onDocumentMouseDown(event) {
-	onPointerDownPointerX = event.clientX;
-	onPointerDownPointerY = event.clientY;
-
-	onPointerDownLon = lon;
-	onPointerDownLat = lat;
-
 
 	event.preventDefault();
 
@@ -129,7 +124,6 @@ function onDocumentMouseDown(event) {
 	// canvas position has to be 'static'
 	mouse.x = ( ( event.clientX - renderer.domElement.offsetLeft ) / renderer.domElement.width ) * 2 - 1;
 	mouse.y = - ( ( event.clientY - renderer.domElement.offsetTop ) / renderer.domElement.height ) * 2 + 1;
-
 	// find intersections
 
 	// create a Ray with origin at the mouse position
@@ -143,22 +137,26 @@ function onDocumentMouseDown(event) {
 
 	// if there is one (or more) intersections
 	if ( intersects.length > 0 ) {
-		console.log("Hit @ " + vectorToString( intersects[0].point ));
 		intersects[0].object.onClick();
-
 	} else {
+		lonFactor = mouse.x;
+		latFactor = mouse.y;
 		isUserInteracting = true;
 	}
 }
 
 function onDocumentMouseMove(event) {
 	if (isUserInteracting === true) {
-		lon = ( onPointerDownPointerX - event.clientX ) * 0.1 + onPointerDownLon;
-		lat = ( event.clientY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
+		mouse.x = ( ( event.clientX - renderer.domElement.offsetLeft ) / renderer.domElement.width ) * 2 - 1;
+		mouse.y = - ( ( event.clientY - renderer.domElement.offsetTop ) / renderer.domElement.height ) * 2 + 1;
+		lonFactor = mouse.x;
+		latFactor = mouse.y;
 	}
 }
 
 function onDocumentMouseUp(event) {
+	lonFactor = 0;
+	latFactor = 0;
 	isUserInteracting = false;
 }
 
@@ -184,21 +182,49 @@ function onDocumentMouseWheel(event) {
 	camera.updateProjectionMatrix();
 }
 
+
+function onKeyDown(event) {
+	if (event.keyCode === 37) {
+		// left arrow
+		lonFactor = -0.5;
+	} else if (event.keyCode === 38) {
+		// up arrow
+		latFactor = 0.5;
+	} else if (event.keyCode === 39) {
+		// right arrow
+		lonFactor = 0.5
+	} else if (event.keyCode === 40) {
+		// down arrow
+		latFactor = -0.5;
+	}
+}
+
+
+function onKeyUp(event) {
+	lonFactor = 0;
+	latFactor = 0;
+	isUserInteracting = false;
+}
+
+
 function animate() {
 	requestAnimationFrame(animate);
 	update();
 }
 
 function update() {
+	lon = lon + lonFactor;
+	lat = lat + latFactor;
 	lat = Math.max(-85, Math.min(85, lat));
 	phi = THREE.Math.degToRad(90 - lat);
 	theta = THREE.Math.degToRad(lon);
-	camera.target.x = 500 * Math.sin(phi) * Math.cos(theta);
-	camera.target.y = 500 * Math.cos(phi);
-	camera.target.z = 500 * Math.sin(phi) * Math.sin(theta);
+	camera.target.x = 200 * Math.sin(phi) * Math.cos(theta);
+	camera.target.y = 200 * Math.cos(phi);
+	camera.target.z = 200 * Math.sin(phi) * Math.sin(theta);
 	camera.lookAt(camera.target);
+
 	renderer.render(scene, camera);
 }
 
-
+// helper function for logging
 function vectorToString(v) { return "[ " + v.x + ", " + v.y + ", " + v.z + " ]"; }
