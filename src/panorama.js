@@ -13,6 +13,7 @@ var projector;
 var mouse = { x: 0, y: 0 };
 var targetList = [];
 var hoverIntersected;
+var shaderActive = "none";
 
 
 function startPanorama(panoImg) {
@@ -254,8 +255,30 @@ function update() {
 	camera.target.z = 200 * Math.sin(phi) * Math.sin(theta);
 	camera.lookAt(camera.target);
 
-	renderer.render(scene, camera);
+	if ( shaderActive == "none" ) {
+		renderer.render( scene, camera );
+	} else {
+		composer.render();
+	}
 }
 
-// helper function for logging
+//------------------- helper functions------------------------------
+
+// logging
 function vectorToString(v) { return "[ " + v.x + ", " + v.y + ", " + v.z + " ]"; }
+
+
+// shaders
+
+
+function setupNoShader() {
+	shaderActive = "none";
+}
+
+function setupBlurShader() {
+	shaderActive = "blur";
+}
+
+function setupGlowShader() {
+
+}
