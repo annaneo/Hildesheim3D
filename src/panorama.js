@@ -12,6 +12,7 @@ var theta = 0;
 var projector;
 var mouse = { x: 0, y: 0 };
 var targetList = [];
+var hoverIntersected;
 
 
 function startPanorama(panoImg) {
@@ -148,11 +149,39 @@ function onDocumentMouseDown(event) {
 }
 
 function onDocumentMouseMove(event) {
+	mouse.x = ( ( event.clientX - renderer.domElement.offsetLeft ) / renderer.domElement.width ) * 2 - 1;
+	mouse.y = - ( ( event.clientY - renderer.domElement.offsetTop ) / renderer.domElement.height ) * 2 + 1;
+
 	if (isUserInteracting === true) {
-		mouse.x = ( ( event.clientX - renderer.domElement.offsetLeft ) / renderer.domElement.width ) * 2 - 1;
-		mouse.y = - ( ( event.clientY - renderer.domElement.offsetTop ) / renderer.domElement.height ) * 2 + 1;
 		lonFactor = mouse.x;
 		latFactor = mouse.y;
+	} else {
+		// check if mouse intersects something (to let it glow)
+		var vector = new THREE.Vector3(mouse.x, mouse.y, 0);
+		projector.unprojectVector( vector, camera );
+		var ray = new THREE.Raycaster(camera.position, vector.sub(camera.position).normalize());
+
+		// create an array containing all objects in the scene with which the ray intersects
+		var intersects = ray.intersectObjects(targetList);
+
+		// if there is one (or more) intersections
+		if ( intersects.length > 0 ) {
+			if (intersects[0].object != hoverIntersected) {
+				if (hoverIntersected) {
+					hoverIntersected.material.color.setHex(hoverIntersected.currentHex);
+				}
+				hoverIntersected = intersects[0].object;
+				// store color of closest object (for later restoration)
+				hoverIntersected.currentHex = hoverIntersected.material.color.getHex();
+				// set a new color for closest object
+				hoverIntersected.material.color.setHex(0xffff00);
+			}
+		} else {
+			if (hoverIntersected) {
+				hoverIntersected.material.color.setHex(hoverIntersected.currentHex);
+			}
+			hoverIntersected = null;
+		}
 	}
 }
 
