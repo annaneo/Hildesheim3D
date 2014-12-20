@@ -45,7 +45,7 @@ Informationsview
 ============
 Vollbild-Modus
 ============
-	Vollbild-Modus
+	Vollbild-Modus  #done for keyboard
 	Unterscheidung Infopunkte Vollbild/Normal
 	wie Informationsview in Fullscreen?
 
