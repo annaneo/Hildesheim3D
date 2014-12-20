@@ -66,6 +66,8 @@ function init(panoImg) {
 
 function initEventListener() {
 
+	THREEx.FullScreen.bindKey({charCode : 'f'.charCodeAt(0)});
+
 	document.addEventListener('mousedown', onDocumentMouseDown, false);
 	document.addEventListener('mousemove', onDocumentMouseMove, false);
 	document.addEventListener('mouseup', onDocumentMouseUp, false);
@@ -124,8 +126,8 @@ function onDocumentMouseDown(event) {
 	// canvas position has to be 'static'
 	mouse.x = ( ( event.clientX - renderer.domElement.offsetLeft ) / renderer.domElement.width ) * 2 - 1;
 	mouse.y = - ( ( event.clientY - renderer.domElement.offsetTop ) / renderer.domElement.height ) * 2 + 1;
-	// find intersections
 
+	// find intersections
 	// create a Ray with origin at the mouse position
 	//   and direction into the scene (camera direction)
 	var vector = new THREE.Vector3(mouse.x, mouse.y, 0);
