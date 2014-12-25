@@ -126,6 +126,10 @@ function onWindowResize() {
 
 function onDocumentMouseDown(event) {
 
+	if (isPopupOpen) {
+		return;
+	}
+
 	event.preventDefault();
 
 	// update the mouse variable
@@ -156,6 +160,9 @@ function onDocumentMouseDown(event) {
 }
 
 function onDocumentMouseMove(event) {
+	if (isPopupOpen) {
+		return;
+	}
 	mouse.x = ( ( event.clientX - renderer.domElement.offsetLeft ) / renderer.domElement.width ) * 2 - 1;
 	mouse.y = - ( ( event.clientY - renderer.domElement.offsetTop ) / renderer.domElement.height ) * 2 + 1;
 
