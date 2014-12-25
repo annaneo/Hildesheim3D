@@ -3,6 +3,7 @@
 var camera, scene, renderer;
 
 var isUserInteracting = false;
+var isPopupOpen = false;
 var lon = 0;
 var lat = 0;
 var lonFactor = 0;
@@ -13,7 +14,7 @@ var projector;
 var mouse = { x: 0, y: 0 };
 var targetList = [];
 var hoverIntersected;
-var shaderActive = "none";
+var composer;
 
 
 function startPanorama(panoImg) {
@@ -38,7 +39,7 @@ function init(panoImg) {
 
 	var container = document.getElementById('panorama');
 
-	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight ,1, 1000);
+	camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight ,1, 1000);
 	camera.target = new THREE.Vector3(0, 0, 0);
 
 	// initialize object to perform world/screen calculations
@@ -47,7 +48,8 @@ function init(panoImg) {
 
 	var place = new Place(panoImg);
 	//TODO: commented line for demo
-	targetList.push(place.addInfoLabel(150, 1, 1));
+	var infoLabelParam = {position: new THREE.Vector3(150, 1, 1)};
+	targetList.push(place.addInfoLabel(infoLabelParam));
 
 	scene.add(place);
 
@@ -62,6 +64,7 @@ function init(panoImg) {
 	container.appendChild(renderer.domElement);
 
 	initEventListener();
+	setupBlurShader();
 
 }
 
@@ -110,6 +113,7 @@ function initEventListener() {
 	document.getElementById('infoCloseButton').addEventListener('click', function (event) {
 		var div = document.getElementById("infoView");
 		div.style.display = "none";
+		isPopupOpen = false;
 	}, false);
 }
 
@@ -142,6 +146,8 @@ function onDocumentMouseDown(event) {
 	// if there is one (or more) intersections
 	if ( intersects.length > 0 ) {
 		intersects[0].object.onClick();
+		isPopupOpen = true;
+
 	} else {
 		lonFactor = mouse.x;
 		latFactor = mouse.y;
@@ -245,17 +251,19 @@ function animate() {
 }
 
 function update() {
-	lon = lon + lonFactor;
-	lat = lat + latFactor;
-	lat = Math.max(-85, Math.min(85, lat));
-	phi = THREE.Math.degToRad(90 - lat);
-	theta = THREE.Math.degToRad(lon);
-	camera.target.x = 200 * Math.sin(phi) * Math.cos(theta);
-	camera.target.y = 200 * Math.cos(phi);
-	camera.target.z = 200 * Math.sin(phi) * Math.sin(theta);
-	camera.lookAt(camera.target);
 
-	if ( shaderActive == "none" ) {
+	//console.log("camera position: " + vectorToString(camera.position));
+
+	if (!isPopupOpen) {
+		lon = lon + lonFactor;
+		lat = lat + latFactor;
+		lat = Math.max(-85, Math.min(85, lat));
+		phi = THREE.Math.degToRad(90 - lat);
+		theta = THREE.Math.degToRad(lon);
+		camera.target.x = 200 * Math.sin(phi) * Math.cos(theta);
+		camera.target.y = 200 * Math.cos(phi);
+		camera.target.z = 200 * Math.sin(phi) * Math.sin(theta);
+		camera.lookAt(camera.target);
 		renderer.render( scene, camera );
 	} else {
 		composer.render();
@@ -270,15 +278,15 @@ function vectorToString(v) { return "[ " + v.x + ", " + v.y + ", " + v.z + " ]";
 
 // shaders
 
-
-function setupNoShader() {
-	shaderActive = "none";
-}
-
 function setupBlurShader() {
-	shaderActive = "blur";
+	composer = new THREE.EffectComposer(renderer);
+	composer.addPass(new THREE.RenderPass(scene, camera));
+
+	var blurShader = new THREE.ShaderPass( THREE.BlurShader );
+	blurShader.uniforms[ "h" ].value = 1.0 / window.innerWidth;
+	blurShader.uniforms[ "v" ].value = 1.0 / window.innerHeight;
+	blurShader.renderToScreen = true;
+
+	composer.addPass(blurShader);
 }
 
-function setupGlowShader() {
-
-}
