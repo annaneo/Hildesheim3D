@@ -9,6 +9,8 @@ InfoLabel = function (parameters) {
     var cubeGeometry = new THREE.BoxGeometry(30, 30, 30);
     var cubeMaterial = new THREE.MeshBasicMaterial( { color: 0x000088 } );
     THREE.Mesh.call(this, cubeGeometry, cubeMaterial );
+    this.position.set(parameters.position.x, parameters.position.y, parameters.position.z);
+
 };
 
 

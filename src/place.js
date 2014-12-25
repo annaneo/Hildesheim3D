@@ -21,9 +21,19 @@ Place.prototype = Object.create(THREE.Mesh.prototype);
 // add functions to Place Object with Place.prototype.<functionName> = function (..) {...}
 
 
-Place.prototype.addInfoLabel = function (xCoord, yCoord, zCoord, parameters) {
+Place.prototype.addInfoLabel = function (parameters) {
 	var label = new InfoLabel(parameters);
-	label.position.set(xCoord, yCoord, zCoord);
 	this.add(label);
+
+	//var cubeGeometry = new THREE.BoxGeometry(20, 20, 20);
+	//var glowMaterial = new THREE.ShaderMaterial(THREE.GlowShader);
+	//var glow = new THREE.Mesh(cubeGeometry.clone(), glowMaterial.clone());
+	//glow.position.set(parameters.position.x, parameters.position.y, parameters.position.z);
+	//glow.scale.multiplyScalar(1.1);
+	//this.add(glow);
+	//glow.material.uniforms.viewVector.value = new THREE.Vector3().subVectors(new THREE.Vector3(0, 0, 0), glow.position);
+	//glow.visible = true;
+
+
 	return label;
 };
