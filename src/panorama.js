@@ -16,13 +16,18 @@ var targetList = [];
 var hoverIntersected;
 var composer;
 
-
+/**
+ *
+ * @param panoImg the panoramic image of one Standpunkt
+ */
 function startPanorama(panoImg) {
 	init(panoImg);
 	animate();
 }
 
-
+/**
+ *
+ */
 function removePanorama() {
 	var container = document.getElementById('panorama');
 	if (container.childNodes.length > 0) {
@@ -32,7 +37,11 @@ function removePanorama() {
 	mouse = { x: 0, y: 0 };
 }
 
-
+/**
+ * Initializes
+ *
+ * @param panoImg the panoramic image of one Standpunkt
+ */
 function init(panoImg) {
 	removePanorama();
 	scene = new THREE.Scene();
@@ -68,7 +77,9 @@ function init(panoImg) {
 
 }
 
-
+/**
+ *
+ */
 function initEventListener() {
 
 	THREEx.FullScreen.bindKey({charCode : 'f'.charCodeAt(0)});
@@ -117,7 +128,9 @@ function initEventListener() {
 	}, false);
 }
 
-
+/**
+ *
+ */
 function onWindowResize() {
 	camera.aspect = window.innerWidth / window.innerHeight;
 	camera.updateProjectionMatrix();
@@ -199,6 +212,10 @@ function onDocumentMouseMove(event) {
 	}
 }
 
+/**
+ *
+ * @param event mouseevent
+ */
 function onDocumentMouseUp(event) {
 	lonFactor = 0;
 	latFactor = 0;
