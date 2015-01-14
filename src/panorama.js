@@ -17,7 +17,7 @@ var hoverIntersected;
 var composer;
 
 /**
- *
+ * ..
  * @param panoImg the panoramic image of one Standpunkt
  */
 function startPanorama(panoImg) {
