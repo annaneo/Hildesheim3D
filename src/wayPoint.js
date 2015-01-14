@@ -1,3 +1,8 @@
+/**
+ * A way point marker that allows to change the place via onClick event.
+ * @param parameters Dictionary of Parameters needed to create a way point.
+ * @constructor
+ */
 WayPoint = function (parameters) {
 
     if (parameters === undefined) parameters = {};
@@ -11,6 +16,10 @@ WayPoint = function (parameters) {
 
 WayPoint.prototype = Object.create(THREE.Mesh.prototype);
 
+
+/**
+ * onClick event initializes a new place.
+ */
 WayPoint.prototype.onClick = function () {
     if (this.panoImg !== "") {
         init(this.panoImg);

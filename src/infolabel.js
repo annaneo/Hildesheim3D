@@ -1,6 +1,8 @@
-
-
-
+/**
+ * One clickable element in a place. Opens the info view with a provided content.
+ * @param parameters Dictionary which should have field 'content'
+ * @constructor
+ */
 InfoLabel = function (parameters) {
 
     if (parameters === undefined) parameters = {};
@@ -16,6 +18,9 @@ InfoLabel = function (parameters) {
 
 InfoLabel.prototype = Object.create(THREE.Mesh.prototype);
 
+/**
+ * Opens the infoView element with the HTML content provided in the constructor.
+ */
 InfoLabel.prototype.onClick = function () {
     var infoContent = document.getElementById('infoContent');
     infoContent.innerHTML = this.infoContent;

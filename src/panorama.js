@@ -38,7 +38,7 @@ function removePanorama() {
 }
 
 /**
- * Initializes
+ * Initializes the Panorama. At first it removes the old scene if existing, then it loads a new place.
  *
  * @param panoImg the panoramic image of one Standpunkt
  */
@@ -268,12 +268,18 @@ function onKeyUp(event) {
 	isUserInteracting = false;
 }
 
-
+/**
+ * asks browser for a new frame
+ */
 function animate() {
 	requestAnimationFrame(animate);
 	update();
 }
 
+
+/**
+ * updates the target of the camera and triggers a rendering operation.
+ */
 function update() {
 
 	//console.log("camera position: " + vectorToString(camera.position));
