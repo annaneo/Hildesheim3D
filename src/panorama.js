@@ -16,118 +16,122 @@ var targetList = [];
 var hoverIntersected;
 var composer;
 var panoramaData;
-
+var isLoading = false;
 
 function startPanorama(panoImg) {
-	/*
-	if (progress_hack === 0) {
-		var opts = {
-			lines: 15, // The number of lines to draw
-			length: 0, // The length of each line
-			width: 24, // The line thickness
-			radius: 10, // The radius of the inner circle
-			corners: 1, // Corner roundness (0..1)
-			rotate: 0, // The rotation offset
-			direction: 1, // 1: clockwise, -1: counterclockwise
-			color: '#fff', // #rgb or #rrggbb or array of colors
-			speed: 0.7, // Rounds per second
-			trail: 27, // Afterglow percentage
-			shadow: false, // Whether to render a shadow
-			hwaccel: false, // Whether to use hardware acceleration
-			className: 'spinner', // The CSS class to assign to the spinner
-			zIndex: 2e9, // The z-index (defaults to 2000000000)
-			top: '50%', // Top position relative to parent
-			left: '50%' // Left position relative to parent
-		};
-		var target = $('loadingScreen');
-		var spinner = new Spinner(opts).spin(target);
-	}
-	if (progress_hack < 100) {
-		progress_hack = progress_hack + 2;
-		setTimeout(function() { startPanorama(panoImg);  }, 20);
-		return;
-	}
-	var loadingScreen = $('loadingScreen');
-	loadingScreen.removeChild(loadingScreen.childNodes[0]);
-*/
-	
 	init(panoImg);
 	animate();
 }
 
-//TODO: use this instead of function above
-/*
-function startPanorama(dataURL) {
 
-	removePanorama();
+
+//TODO: use this instead of function above
+
+/**
+ * start panorama, creates a loading scene and triggers the loading of the start location. Starts animating.
+ * @param dataURL URL to the config JSON
+ */
+function _startPanorama(dataURL) {
 
 	var loadingScene = new THREE.Scene();
-	var container = $('panorama');
 
-	camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight ,1, 1000);
-	camera.target = new THREE.Vector3(0, 0, 0);
+	//------------- creat loading scene -------------------------
+	var geometry = new THREE.Geometry();
+	for (var i = 0; i < 20000; i ++ ) {
 
-	// initialize object to perform world/screen calculations
-	projector = new THREE.Projector();
+		var vertex = new THREE.Vector3();
+		vertex.x = Math.random() * 2000 - 1000;
+		vertex.y = Math.random() * 2000 - 1000;
+		vertex.z = Math.random() * 2000 - 1000;
 
+		geometry.vertices.push( vertex );
 
-	var place = new Location(panoImg);
-
-	loadingScene.add(place);
-
-
-	if (Detector.webgl) {
-		renderer = new THREE.WebGLRenderer( {antialias:true} );
-	} else {
-		renderer = new THREE.CanvasRenderer();
 	}
+	var parameters = [
+		[ [1, 1, 0.5], 5 ],
+		[ [0.95, 1, 0.5], 4 ],
+		[ [0.90, 1, 0.5], 3 ],
+		[ [0.85, 1, 0.5], 2 ],
+		[ [0.80, 1, 0.5], 1 ]
+	];
+	var color, size, particles, materials = [];
+	for ( i = 0; i < parameters.length; i ++ ) {
 
-	renderer.setSize(window.innerWidth, window.innerHeight);
-	container.appendChild(renderer.domElement);
+		color = parameters[i][0];
+		size  = parameters[i][1];
 
-	initEventListener();
-	setupBlurShader();
+		materials[i] = new THREE.PointCloudMaterial( { size: size } );
+
+		particles = new THREE.PointCloud( geometry, materials[i] );
+
+		particles.rotation.x = Math.random() * 6;
+		particles.rotation.y = Math.random() * 6;
+		particles.rotation.z = Math.random() * 6;
+
+		loadingScene.add(particles);
+
+	}
+	//----------------- end loading scene --------------------------------
 
 	scene = loadingScene;
+	_init();
 
 
-	panoramaData = JSON.parse(dataURL);
-	var loader = LocationLoader();
-	loader.load(panoramaData.initialPanorama, init);
+	var request = new XMLHttpRequest();
+	request.open("GET", dataURL, true);
+	request.onreadystatechange = function() {
+		if (request.readyState === 4 && request.status === 200) {
+			panoramaData = JSON.parse(request.responseText);
+			var loader = new LocationLoader();
+			loader.loadLocation(panoramaData.startLocation, _loadComplete);
+		}
+	}
+	request.send(null);
+
+	isLoading = true;
+	animate();
 }
 
-function newinit() {
-	removePanorama();
-
-	var loadingScene = new THREE.Scene();
-	var container = $('panorama');
-
+/**
+ * Initializes renderer, camera, projector
+ * (also event listeners, shader ?, shader needs a scene)
+ */
+function _init() {
 	camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight ,1, 1000);
 	camera.target = new THREE.Vector3(0, 0, 0);
-
 	// initialize object to perform world/screen calculations
 	projector = new THREE.Projector();
-
-
-	var place = new Location(panoImg);
-
-	loadingScene.add(place);
-
-
 	if (Detector.webgl) {
 		renderer = new THREE.WebGLRenderer( {antialias:true} );
 	} else {
 		renderer = new THREE.CanvasRenderer();
 	}
-
 	renderer.setSize(window.innerWidth, window.innerHeight);
+	var container = $('panorama');
 	container.appendChild(renderer.domElement);
-
-	initEventListener();
-	setupBlurShader();
 }
 
-*/
+function _loadComplete(location) {
+	var panoScene = new THREE.Scene();
+	panoScene.add(location);
+	scene = panoScene;
+	updateTargetList();
+	initEventListener();
+	setupBlurShader();
+	isLoading = false;
+}
+
+function updateTargetList() {
+	targetList = [];
+	scene.traverse(function (object) {
+		if (object instanceof Hotspot || object instanceof Transition) {
+			targetList.push(object);
+			//TODO: setting object rotation should NOT be here!
+			object.lookAt( camera.position );
+		}
+	});
+}
+
 
 function removePanorama() {
 	var container = $('panorama');
@@ -140,7 +144,6 @@ function removePanorama() {
 
 
 function init(panoImg) {
-
 	removePanorama();
 	var panoScene = new THREE.Scene();
 
@@ -152,56 +155,47 @@ function init(panoImg) {
 	// initialize object to perform world/screen calculations
 	projector = new THREE.Projector();
 
-
 	var location = new Location(panoImg);
 	var hotspotParam = {position: new THREE.Vector3(150, 1, 1)};
-	targetList.push(location.addInfoLabel(hotspotParam));
+	targetList.push(location.addHotspot(hotspotParam));
 
 	panoScene.add(location);
-
 
 	if (Detector.webgl) {
 		renderer = new THREE.WebGLRenderer( {antialias:true} );
 	} else {
 		renderer = new THREE.CanvasRenderer();
 	}
-
 	renderer.setSize(window.innerWidth, window.innerHeight);
 	container.appendChild(renderer.domElement);
 
 	scene = panoScene;
 	initEventListener();
 	setupBlurShader();
-
-
 }
 
 
 function initEventListener() {
+	var container = $('panorama');
 
-	THREEx.FullScreen.bindKey({charCode : 'f'.charCodeAt(0)});
+	THREEx.FullScreen.bindKey({charCode : 'f'.charCodeAt(0) /*, element : $('panorama')*/});
 
-	document.addEventListener('mousedown', onDocumentMouseDown, false);
-	document.addEventListener('mousemove', onDocumentMouseMove, false);
-	document.addEventListener('mouseup', onDocumentMouseUp, false);
-	document.addEventListener('mousewheel', onDocumentMouseWheel, false);
-	document.addEventListener('DOMMouseScroll', onDocumentMouseWheel, false);
-
-	document.addEventListener('dragover', function (event) {
+	container.addEventListener('mousedown', onDocumentMouseDown, false);
+	container.addEventListener('mousemove', onDocumentMouseMove, false);
+	container.addEventListener('mouseup', onDocumentMouseUp, false);
+	container.addEventListener('mousewheel', onDocumentMouseWheel, false);
+	container.addEventListener('DOMMouseScroll', onDocumentMouseWheel, false);
+	container.addEventListener('dragover', function (event) {
 		event.preventDefault();
 		event.dataTransfer.dropEffect = 'copy';
-
 	}, false);
-
-	document.addEventListener('dragenter', function (event) {
+	container.addEventListener('dragenter', function (event) {
 		document.body.style.opacity = 0.5;
 	}, false);
-
-	document.addEventListener('dragleave', function (event) {
+	container.addEventListener('dragleave', function (event) {
 		document.body.style.opacity = 1;
 	}, false);
-
-	document.addEventListener('drop', function (event) {
+	container.addEventListener('drop', function (event) {
 		event.preventDefault();
 		var reader = new FileReader();
 		reader.addEventListener('load', function (event) {
@@ -212,9 +206,8 @@ function initEventListener() {
 		reader.readAsDataURL(event.dataTransfer.files[0]);
 		document.body.style.opacity = 1;
 	}, false);
-
-	document.addEventListener('keydown', onKeyDown, false);
-	document.addEventListener('keyup', onKeyUp, false);
+	container.addEventListener('keydown', onKeyDown, false);
+	container.addEventListener('keyup', onKeyUp, false);
 
 	window.addEventListener('resize', onWindowResize, false);
 
@@ -258,8 +251,9 @@ function onDocumentMouseDown(event) {
 	// if there is one (or more) intersections
 	if ( intersects.length > 0 ) {
 		intersects[0].object.onClick();
-		isPopupOpen = true;
-
+		if (intersects[0].object instanceof Hotspot) {
+			isPopupOpen = true;
+		}
 	} else {
 		lonFactor = mouse.x;
 		latFactor = mouse.y;
@@ -368,6 +362,17 @@ function animate() {
 function update() {
 
 	//console.log("camera position: " + vectorToString(camera.position));
+	if (isLoading) {
+		var time = Date.now() * 0.00005;
+		for (var i = 0; i < scene.children.length; i ++) {
+			var object = scene.children[i];
+			if (object instanceof THREE.PointCloud) {
+				object.rotation.y = time * ( i < 4 ? i + 1 : - ( i + 1 ) );
+			}
+		}
+		renderer.render(scene, camera);
+		return;
+	}
 
 	if (!isPopupOpen) {
 		lon = lon + lonFactor;
@@ -379,7 +384,7 @@ function update() {
 		camera.target.y = 200 * Math.cos(phi);
 		camera.target.z = 200 * Math.sin(phi) * Math.sin(theta);
 		camera.lookAt(camera.target);
-		renderer.render( scene, camera );
+		renderer.render(scene, camera);
 	} else {
 		composer.render();
 	}
@@ -387,16 +392,26 @@ function update() {
 
 //------------------- helper functions------------------------------
 
+/**
+ * Helper for getting dom element via id
+ * @param id id of dom element
+ * @returns {HTMLElement} dom element
+ */
 function $(id) {
 	return document.getElementById(id);
 }
 
-// logging
+/**
+ * Helper for pretty print vectors
+ * @param v 3d vector to print
+ * @returns {string} vector as string in form [x, y, z]
+ */
 function vectorToString(v) { return "[ " + v.x + ", " + v.y + ", " + v.z + " ]"; }
 
 
-// shaders
-
+/**
+ * Sets up blur shader.
+ */
 function setupBlurShader() {
 	composer = new THREE.EffectComposer(renderer);
 	var renderPass = new THREE.RenderPass(scene, camera);

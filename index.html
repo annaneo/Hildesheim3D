@@ -14,7 +14,9 @@
 	<script src="lib/threex_fullscreen.js"></script>
 	<script src="lib/detector.js"></script>
 	<script src="src/hotspot.js"></script>
+	<script src="src/transition.js"></script>
 	<script src="src/location.js"></script>
+	<script src="lib/location_loader.js"></script>
 	<script src="lib/copy_shader.js"></script>
 	<script src="lib/effect_composer.js"></script>
 	<script src="lib/render_pass.js"></script>
@@ -29,7 +31,8 @@
 		//TODO: quick and dirty, should be changed soon! -> even dirtier now YOLO!
 		window.onload = function () {
 
-			startPanorama('resources/panos/kirche012.jpg');
+			_startPanorama('resources/panoTest.json');
+			//startPanorama('resources/panos/kirche012.jpg');
 
 			var kirche1 = document.getElementById("Kirche001");
 			var kirche3 = document.getElementById("Kirche003");
