@@ -1,3 +1,8 @@
+/**
+ * Describes a clickable object in a location that allows users to navigate between locations.
+ * @param parameters Object with should have fields: ...
+ * @constructor
+ */
 Transition = function (parameters) {
 
     if (parameters === undefined) parameters = {};
