@@ -2,7 +2,7 @@
  * Created by annaneovesky on 15.11.14.
 */
 
-Place = function(panoimg) {
+Location = function(panoimg) {
 
 	var geometry = new THREE.SphereGeometry(200, 50, 30);
 	geometry.applyMatrix(new THREE.Matrix4().makeScale(-1, 1, 1));
@@ -15,14 +15,14 @@ Place = function(panoimg) {
 
 };
 
-Place.prototype = Object.create(THREE.Mesh.prototype);
+Location.prototype = Object.create(THREE.Mesh.prototype);
 
 
-// add functions to Place Object with Place.prototype.<functionName> = function (..) {...}
+// add functions to Location Object with Location.prototype.<functionName> = function (..) {...}
 
 
-Place.prototype.addInfoLabel = function (parameters) {
-	var label = new InfoLabel(parameters);
+Location.prototype.addInfoLabel = function (parameters) {
+	var label = new Hotspot(parameters);
 	this.add(label);
 
 	//var cubeGeometry = new THREE.BoxGeometry(20, 20, 20);

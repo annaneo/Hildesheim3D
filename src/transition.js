@@ -1,4 +1,4 @@
-WayPoint = function (parameters) {
+Transition = function (parameters) {
 
     if (parameters === undefined) parameters = {};
     this.panoImg = parameters.hasOwnProperty('panoImg') ? parameters['panoImg'] : "";
@@ -9,9 +9,9 @@ WayPoint = function (parameters) {
 };
 
 
-WayPoint.prototype = Object.create(THREE.Mesh.prototype);
+Transition.prototype = Object.create(THREE.Mesh.prototype);
 
-WayPoint.prototype.onClick = function () {
+Transition.prototype.onClick = function () {
     if (this.panoImg !== "") {
         init(this.panoImg);
     }
