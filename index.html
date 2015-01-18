@@ -13,22 +13,26 @@
 	<script src="lib/three.js"></script>
 	<script src="lib/threex_fullscreen.js"></script>
 	<script src="lib/detector.js"></script>
-	<script src="src/infolabel.js"></script>
-	<script src="src/place.js"></script>
-	<script src="lib/CopyShader.js"></script>
-	<script src="lib/EffectComposer.js"></script>
-	<script src="lib/RenderPass.js"></script>
-	<script src="lib/ShaderPass.js"></script>
-	<script src="lib/MaskPass.js"></script>
+	<script src="src/hotspot.js"></script>
+	<script src="src/transition.js"></script>
+	<script src="src/location.js"></script>
+	<script src="lib/location_loader.js"></script>
+	<script src="lib/copy_shader.js"></script>
+	<script src="lib/effect_composer.js"></script>
+	<script src="lib/render_pass.js"></script>
+	<script src="lib/shader_pass.js"></script>
+	<script src="lib/mask_pass.js"></script>
 	<script src="lib/blur_shader.js"></script>
 	<script src="src/panorama.js"></script>
+	<script src="lib/spin.js"></script>
 
 
 	<script type="text/javascript">
 		//TODO: quick and dirty, should be changed soon! -> even dirtier now YOLO!
 		window.onload = function () {
 
-			startPanorama('resources/panos/kirche012.jpg');
+			_startPanorama('resources/panoTest.json');
+			//startPanorama('resources/panos/kirche012.jpg');
 
 			var kirche1 = document.getElementById("Kirche001");
 			var kirche3 = document.getElementById("Kirche003");
@@ -175,6 +179,8 @@
 
 
 	<div id="panorama"></div>
+	<div id="loadingScreen">
+	</div>
 	<div id="infoView">
 		<div id="infoTitle">
 			blablabal

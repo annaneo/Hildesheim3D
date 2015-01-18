@@ -15,21 +15,145 @@ var mouse = { x: 0, y: 0 };
 var targetList = [];
 var hoverIntersected;
 var composer;
+var panoramaData;
+var isLoading = false;
 
-/**
- * ..
- * @param panoImg the panoramic image of one Standpunkt
- */
 function startPanorama(panoImg) {
 	init(panoImg);
 	animate();
 }
 
+
+//TODO: use this instead of function above
+
 /**
- *
+ * start panorama, creates a loading scene and triggers the loading of the start location. Starts animating.
+ * @param dataURL URL to the config JSON
  */
+function _startPanorama(dataURL) {
+	_init();
+	var loadingScene = new THREE.Scene();
+
+	//------------- creat loading scene -------------------------
+	var geometry = new THREE.Geometry();
+	for (var i = 0; i < 20000; i ++ ) {
+
+		var vertex = new THREE.Vector3();
+		vertex.x = Math.random() * 2000 - 1000;
+		vertex.y = Math.random() * 2000 - 1000;
+		vertex.z = Math.random() * 2000 - 1000;
+
+		geometry.vertices.push( vertex );
+
+	}
+	var parameters = [
+		[ [1, 1, 0.5], 5 ],
+		[ [0.95, 1, 0.5], 4 ],
+		[ [0.90, 1, 0.5], 3 ],
+		[ [0.85, 1, 0.5], 2 ],
+		[ [0.80, 1, 0.5], 1 ]
+	];
+	var color, size, particles, materials = [];
+	for ( i = 0; i < parameters.length; i ++ ) {
+
+		color = parameters[i][0];
+		size  = parameters[i][1];
+
+		materials[i] = new THREE.PointCloudMaterial( { size: size } );
+
+		particles = new THREE.PointCloud( geometry, materials[i] );
+
+		particles.rotation.x = Math.random() * 6;
+		particles.rotation.y = Math.random() * 6;
+		particles.rotation.z = Math.random() * 6;
+
+		loadingScene.add(particles);
+
+	}
+	//----------------- end loading scene --------------------------------
+
+	scene = loadingScene;
+	parseConfigJSON(dataURL, function (data) {
+		var loader = new LocationLoader();
+		loader.loadLocation(data.startLocation, _startComplete);
+	});
+	isLoading = true;
+	animate();
+}
+
+/**
+ * Loads and parses the config JSON file at given URL, when finished parsing it calls given callback.
+ * @param dataURL URL to config JSON.
+ * @param callback function that gets called after parsing is finished.
+ */
+function parseConfigJSON(dataURL, callback) {
+	var request = new XMLHttpRequest();
+	request.open("GET", dataURL, true);
+	request.onreadystatechange = function() {
+		if (request.readyState === 4 && request.status === 200) {
+			panoramaData = JSON.parse(request.responseText);
+			callback(panoramaData);
+		}
+	};
+	request.send(null);
+}
+
+
+/**
+ * Initializes renderer, camera, projector
+ * (also event listeners, shader ?, shader needs a scene)
+ */
+function _init() {
+	camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight ,1, 1000);
+	camera.target = new THREE.Vector3(0, 0, 0);
+	// initialize object to perform world/screen calculations
+	projector = new THREE.Projector();
+	if (Detector.webgl) {
+		renderer = new THREE.WebGLRenderer( {antialias:true} );
+	} else {
+		renderer = new THREE.CanvasRenderer();
+	}
+	renderer.setSize(window.innerWidth, window.innerHeight);
+	var container = $('panorama');
+	container.appendChild(renderer.domElement);
+}
+
+function _startComplete(location) {
+	var panoScene = new THREE.Scene();
+	panoScene.add(location);
+	scene = panoScene;
+	updateTargetList();
+	initEventListener();
+	setupBlurShader();
+	isLoading = false;
+}
+
+function updateTargetList() {
+	targetList = [];
+	scene.traverse(function (object) {
+		if (object instanceof Hotspot || object instanceof Transition) {
+			targetList.push(object);
+			//TODO: setting object rotation should NOT be here!
+			object.lookAt( camera.position );
+		}
+	});
+}
+
+
+function transitToLocation(locationIndex) {
+	var loader = new LocationLoader();
+	loader.loadLocation(locationIndex, function (location) {
+		var panoScene = new THREE.Scene();
+		panoScene.add(location);
+		scene = panoScene;
+		updateTargetList();
+	});
+}
+
+
+
 function removePanorama() {
-	var container = document.getElementById('panorama');
+	var container = $('panorama');
 	if (container.childNodes.length > 0) {
 		container.removeChild(container.childNodes[0]);
 	}
@@ -37,16 +161,12 @@ function removePanorama() {
 	mouse = { x: 0, y: 0 };
 }
 
-/**
- * Initializes the Panorama. At first it removes the old scene if existing, then it loads a new place.
- *
- * @param panoImg the panoramic image of one Standpunkt
- */
+
 function init(panoImg) {
 	removePanorama();
-	scene = new THREE.Scene();
+	var panoScene = new THREE.Scene();
 
-	var container = document.getElementById('panorama');
+	var container = $('panorama');
 
 	camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight ,1, 1000);
 	camera.target = new THREE.Vector3(0, 0, 0);
@@ -54,57 +174,47 @@ function init(panoImg) {
 	// initialize object to perform world/screen calculations
 	projector = new THREE.Projector();
 
+	var location = new Location(panoImg);
+	var hotspotParam = {position: new THREE.Vector3(150, 1, 1)};
+	targetList.push(location.addHotspot(hotspotParam));
 
-	var place = new Place(panoImg);
-	//TODO: commented line for demo
-	var infoLabelParam = {position: new THREE.Vector3(150, 1, 1)};
-	targetList.push(place.addInfoLabel(infoLabelParam));
-
-	scene.add(place);
-
+	panoScene.add(location);
 
 	if (Detector.webgl) {
 		renderer = new THREE.WebGLRenderer( {antialias:true} );
 	} else {
 		renderer = new THREE.CanvasRenderer();
 	}
-
 	renderer.setSize(window.innerWidth, window.innerHeight);
 	container.appendChild(renderer.domElement);
 
+	scene = panoScene;
 	initEventListener();
 	setupBlurShader();
-
 }
 
-/**
- *
- */
+
 function initEventListener() {
+	var container = $('panorama');
 
-	THREEx.FullScreen.bindKey({charCode : 'f'.charCodeAt(0)});
+	THREEx.FullScreen.bindKey({charCode : 'f'.charCodeAt(0) /*, element : $('panorama')*/});
 
-	document.addEventListener('mousedown', onDocumentMouseDown, false);
-	document.addEventListener('mousemove', onDocumentMouseMove, false);
-	document.addEventListener('mouseup', onDocumentMouseUp, false);
-	document.addEventListener('mousewheel', onDocumentMouseWheel, false);
-	document.addEventListener('DOMMouseScroll', onDocumentMouseWheel, false);
-
-	document.addEventListener('dragover', function (event) {
+	container.addEventListener('mousedown', onDocumentMouseDown, false);
+	container.addEventListener('mousemove', onDocumentMouseMove, false);
+	container.addEventListener('mouseup', onDocumentMouseUp, false);
+	container.addEventListener('mousewheel', onDocumentMouseWheel, false);
+	container.addEventListener('DOMMouseScroll', onDocumentMouseWheel, false);
+	container.addEventListener('dragover', function (event) {
 		event.preventDefault();
 		event.dataTransfer.dropEffect = 'copy';
-
 	}, false);
-
-	document.addEventListener('dragenter', function (event) {
+	container.addEventListener('dragenter', function (event) {
 		document.body.style.opacity = 0.5;
 	}, false);
-
-	document.addEventListener('dragleave', function (event) {
+	container.addEventListener('dragleave', function (event) {
 		document.body.style.opacity = 1;
 	}, false);
-
-	document.addEventListener('drop', function (event) {
+	container.addEventListener('drop', function (event) {
 		event.preventDefault();
 		var reader = new FileReader();
 		reader.addEventListener('load', function (event) {
@@ -115,22 +225,19 @@ function initEventListener() {
 		reader.readAsDataURL(event.dataTransfer.files[0]);
 		document.body.style.opacity = 1;
 	}, false);
-
-	document.addEventListener('keydown', onKeyDown, false);
-	document.addEventListener('keyup', onKeyUp, false);
+	container.addEventListener('keydown', onKeyDown, false);
+	container.addEventListener('keyup', onKeyUp, false);
 
 	window.addEventListener('resize', onWindowResize, false);
 
-	document.getElementById('infoCloseButton').addEventListener('click', function (event) {
-		var div = document.getElementById("infoView");
+	$('infoCloseButton').addEventListener('click', function (event) {
+		var div = $("infoView");
 		div.style.display = "none";
 		isPopupOpen = false;
 	}, false);
 }
 
-/**
- *
- */
+
 function onWindowResize() {
 	camera.aspect = window.innerWidth / window.innerHeight;
 	camera.updateProjectionMatrix();
@@ -163,8 +270,9 @@ function onDocumentMouseDown(event) {
 	// if there is one (or more) intersections
 	if ( intersects.length > 0 ) {
 		intersects[0].object.onClick();
-		isPopupOpen = true;
-
+		if (intersects[0].object instanceof Hotspot) {
+			isPopupOpen = true;
+		}
 	} else {
 		lonFactor = mouse.x;
 		latFactor = mouse.y;
@@ -212,10 +320,6 @@ function onDocumentMouseMove(event) {
 	}
 }
 
-/**
- *
- * @param event mouseevent
- */
 function onDocumentMouseUp(event) {
 	lonFactor = 0;
 	latFactor = 0;
@@ -268,21 +372,26 @@ function onKeyUp(event) {
 	isUserInteracting = false;
 }
 
-/**
- * asks browser for a new frame
- */
+
 function animate() {
 	requestAnimationFrame(animate);
 	update();
 }
 
-
-/**
- * updates the target of the camera and triggers a rendering operation.
- */
 function update() {
 
 	//console.log("camera position: " + vectorToString(camera.position));
+	if (isLoading) {
+		var time = Date.now() * 0.00005;
+		for (var i = 0; i < scene.children.length; i ++) {
+			var object = scene.children[i];
+			if (object instanceof THREE.PointCloud) {
+				object.rotation.y = time * ( i < 4 ? i + 1 : - ( i + 1 ) );
+			}
+		}
+		renderer.render(scene, camera);
+		return;
+	}
 
 	if (!isPopupOpen) {
 		lon = lon + lonFactor;
@@ -294,7 +403,7 @@ function update() {
 		camera.target.y = 200 * Math.cos(phi);
 		camera.target.z = 200 * Math.sin(phi) * Math.sin(theta);
 		camera.lookAt(camera.target);
-		renderer.render( scene, camera );
+		renderer.render(scene, camera);
 	} else {
 		composer.render();
 	}
@@ -302,15 +411,30 @@ function update() {
 
 //------------------- helper functions------------------------------
 
-// logging
+/**
+ * Helper for getting dom element via id
+ * @param id id of dom element
+ * @returns {HTMLElement} dom element
+ */
+function $(id) {
+	return document.getElementById(id);
+}
+
+/**
+ * Helper for pretty print vectors
+ * @param v 3d vector to print
+ * @returns {string} vector as string in form [x, y, z]
+ */
 function vectorToString(v) { return "[ " + v.x + ", " + v.y + ", " + v.z + " ]"; }
 
 
-// shaders
-
+/**
+ * Sets up blur shader.
+ */
 function setupBlurShader() {
 	composer = new THREE.EffectComposer(renderer);
-	composer.addPass(new THREE.RenderPass(scene, camera));
+	var renderPass = new THREE.RenderPass(scene, camera);
+	composer.addPass(renderPass);
 
 	var blurShader = new THREE.ShaderPass( THREE.BlurShader );
 	blurShader.uniforms[ "h" ].value = 1.0 / window.innerWidth;
