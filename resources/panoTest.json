@@ -28,7 +28,7 @@
                     "posX": 80,
                     "posY": 150,
                     "posZ": 1,
-                    "target_location": 2
+                    "target_location": 3
                 }
             ],
             "uid": 1
@@ -45,7 +45,7 @@
                 }
             ],
             "image": [
-                "resources/panos/kirche002.jpg"
+                "resources/panos/kirche003.jpg"
             ],
             "mapUid": 1,
             "startingView": [
@@ -63,7 +63,7 @@
                     "target_location": 1
                 }
             ],
-            "uid": 2
+            "uid": 3
         }
     ]
 }

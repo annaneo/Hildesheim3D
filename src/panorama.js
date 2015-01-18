@@ -24,7 +24,6 @@ function startPanorama(panoImg) {
 }
 
 
-
 //TODO: use this instead of function above
 
 /**
@@ -32,7 +31,7 @@ function startPanorama(panoImg) {
  * @param dataURL URL to the config JSON
  */
 function _startPanorama(dataURL) {
-
+	_init();
 	var loadingScene = new THREE.Scene();
 
 	//------------- creat loading scene -------------------------
@@ -74,23 +73,31 @@ function _startPanorama(dataURL) {
 	//----------------- end loading scene --------------------------------
 
 	scene = loadingScene;
-	_init();
+	parseConfigJSON(dataURL, function (data) {
+		var loader = new LocationLoader();
+		loader.loadLocation(data.startLocation, _startComplete);
+	});
+	isLoading = true;
+	animate();
+}
 
-
+/**
+ * Loads and parses the config JSON file at given URL, when finished parsing it calls given callback.
+ * @param dataURL URL to config JSON.
+ * @param callback function that gets called after parsing is finished.
+ */
+function parseConfigJSON(dataURL, callback) {
 	var request = new XMLHttpRequest();
 	request.open("GET", dataURL, true);
 	request.onreadystatechange = function() {
 		if (request.readyState === 4 && request.status === 200) {
 			panoramaData = JSON.parse(request.responseText);
-			var loader = new LocationLoader();
-			loader.loadLocation(panoramaData.startLocation, _loadComplete);
+			callback(panoramaData);
 		}
-	}
+	};
 	request.send(null);
-
-	isLoading = true;
-	animate();
 }
+
 
 /**
  * Initializes renderer, camera, projector
@@ -111,7 +118,7 @@ function _init() {
 	container.appendChild(renderer.domElement);
 }
 
-function _loadComplete(location) {
+function _startComplete(location) {
 	var panoScene = new THREE.Scene();
 	panoScene.add(location);
 	scene = panoScene;
@@ -131,6 +138,18 @@ function updateTargetList() {
 		}
 	});
 }
+
+
+function transitToLocation(locationIndex) {
+	var loader = new LocationLoader();
+	loader.loadLocation(locationIndex, function (location) {
+		var panoScene = new THREE.Scene();
+		panoScene.add(location);
+		scene = panoScene;
+		updateTargetList();
+	});
+}
+
 
 
 function removePanorama() {
