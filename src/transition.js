@@ -11,7 +11,13 @@ Transition = function (parameters) {
 
 
     var geometry = new THREE.PlaneGeometry(30, 30);
-    var material = new THREE.MeshBasicMaterial( { color: 0x008800 } );
+    var material = new THREE.MeshBasicMaterial({
+        map: THREE.ImageUtils.loadTexture("resources/icons/transfer.png"),
+        transparent: true,
+        opacity: 0.9,
+        color: 0xFF0000
+    });
+    //var material = new THREE.MeshBasicMaterial( { color: 0x008800 } );
     THREE.Mesh.call(this, geometry, material );
     this.position.set(parameters.position.x, parameters.position.y, parameters.position.z);
 };

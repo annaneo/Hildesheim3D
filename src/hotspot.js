@@ -6,11 +6,23 @@
 Hotspot = function (parameters) {
 
     if (parameters === undefined) parameters = {};
+
     this.infoContent = parameters.hasOwnProperty('content') ? parameters['content'] : "some <a href=\"#\">content</a>";
 
+    /*
+    load content via
+     this.infoContent.load(parameters['content'], function (response, status, xhr) {
+        content.html(response);
+     });
+     */
+
     var geometry = new THREE.PlaneGeometry(30, 30);
-    var material = new THREE.MeshBasicMaterial( { color: 0x000088 } );
-    THREE.Mesh.call(this, geometry, material);
+    var material = new THREE.MeshBasicMaterial({
+        map: THREE.ImageUtils.loadTexture("resources/icons/infopoint.png"),
+        transparent: true,
+        opacity: 0.9,
+        color: 0xFF0000
+    });    THREE.Mesh.call(this, geometry, material);
     this.position.set(parameters.position.x, parameters.position.y, parameters.position.z);
 
 };
