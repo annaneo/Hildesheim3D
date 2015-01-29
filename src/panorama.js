@@ -235,6 +235,7 @@ function initEventListener() {
 		div.style.display = "none";
 		isPopupOpen = false;
 	}, false);
+    $('map').addEventListener('dragstart', function(event) { event.preventDefault(); });
 }
 
 

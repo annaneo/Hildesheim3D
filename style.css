@@ -161,3 +161,36 @@ ul#navigation ul li a {
     top: 4px;
     position: absolute;
 }
+
+#map {
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    display: none;
+    text-align: left;
+    margin: auto;
+    width: 240px;
+    height: 180px;
+    background-color: rgba(100, 100, 100, .5);
+    z-index: 0;
+    position: absolute;
+    border: 1px solid #aaaaaa;
+    color: #ffffff;
+    float: right;
+}
+
+#mapSpot {
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    display: block;
+    text-align: center;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 1.0);
+    z-index: 0;
+    position: absolute;
+    border: 1px solid #aaaaaa;
+    color: #ffffff;
+}

@@ -37,3 +37,44 @@ Location.prototype.addTransition = function (parameters) {
 	this.add(transition);
 	return transition;
 };
+
+/**
+ * Configures the map for the location
+ * @param parameters dictionary that should have field image with the url to the map image.
+ */
+Location.prototype.configureMap = function (parameters) {
+    var map = document.getElementById('map');
+
+    for (var i = map.childNodes.length-1; i > 0; i--) {
+        if (map.childNodes[i].id === "mapSpot") {
+            map.removeChild(map.childNodes[i]);
+        }
+    }
+
+    if (parameters.hasOwnProperty('image')) {
+        var image = document.getElementById('mapImage');
+        image.src = parameters['image'];
+
+    } else {
+        console.log("error: no map image provided!");
+    }
+
+    if (parameters.hasOwnProperty('mapSpots')) {
+        var spots = parameters['mapSpots'];
+        spots.forEach(function (spot) {
+            var spotButton = document.createElement("button");
+            spotButton.id = "mapSpot";
+            spotButton.value = "o"; //TODO: should be image
+            spotButton.style.left = spot.mapPosX + "px";
+            spotButton.style.top = spot.mapPosY + "px";
+            spotButton.addEventListener('click', function (event) {
+                event.preventDefault();
+                transitToLocation(spot.uid);
+            });
+            map.appendChild(spotButton);
+        });
+    }
+    map.style.display = "block";
+    map.style.right = 10 + "px";
+    map.style.top = 10 + "px";
+};

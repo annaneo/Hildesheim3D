@@ -1,5 +1,39 @@
 {
     "startLocation": 1,
+    "maps": [
+        {
+            "uid": 1,
+            "image": "resources/maps/Kirchenraum.jpg",
+          "mapSpots": [
+            {
+              "mapPosX": 30,
+              "mapPosY": 15,
+              "uid": 1
+            },
+            {
+              "mapPosX": 75,
+              "mapPosY": 110,
+              "uid": 3
+            }
+          ]
+        },
+        {
+          "uid": 2,
+          "image": "resources/maps/Krypta.jpg",
+          "mapSpots": [
+            {
+              "mapPosX": 20,
+              "mapPosY": 15,
+              "uid": 1
+            },
+            {
+              "mapPosX": 50,
+              "mapPosY": 70,
+              "uid": 3
+            }
+          ]
+        }
+    ],
     "locations": [
         {
             "hotspots": [
@@ -47,7 +81,7 @@
             "image": [
                 "resources/panos/kirche003.jpg"
             ],
-            "mapUid": 1,
+            "mapUid": 2,
             "startingView": [
                 {
                     "comingFrom": 11,
