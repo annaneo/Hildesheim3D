@@ -8,6 +8,11 @@ Hotspot = function (parameters) {
     if (parameters === undefined) parameters = {};
 
     this.infoContent = parameters.hasOwnProperty('content') ? parameters['content'] : "some <a href=\"#\">content</a>";
+    if (parameters.hasOwnProperty('audio')) {
+        var audioSource = document.getElementById('audioSource');
+        var s = parameters['audio'];
+        audioSource.src = s;
+    }
 
     /*
     load content via

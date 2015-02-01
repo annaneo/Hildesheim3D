@@ -194,3 +194,10 @@ ul#navigation ul li a {
     border: 1px solid #aaaaaa;
     color: #ffffff;
 }
+
+#audioPlayer {
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    z-index: 0;
+}

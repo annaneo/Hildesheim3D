@@ -43,6 +43,7 @@
                     "posY": 1,
                     "posZ": 1,
                     "text": "some <a href=\"#\">nice!!! content</a>",
+                    "audio": "resources/musi/highway.mp3",
                     "uid": 1
                 }
             ],
@@ -75,6 +76,7 @@
                     "posY": 50,
                     "posZ": 1,
                     "text": "some more <a href=\"#\">nice!!! content</a>",
+                    "audio": "resources/musi/highway.mp3",
                     "uid": 1
                 }
             ],

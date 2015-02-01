@@ -397,7 +397,7 @@ function update() {
 	if (!isPopupOpen) {
 		lon = lon + lonFactor;
 		lat = lat + latFactor;
-		lat = Math.max(-85, Math.min(85, lat));
+		lat = Math.max(-35, Math.min(45, lat));
 		phi = THREE.Math.degToRad(90 - lat);
 		theta = THREE.Math.degToRad(lon);
 		camera.target.x = 200 * Math.sin(phi) * Math.cos(theta);
