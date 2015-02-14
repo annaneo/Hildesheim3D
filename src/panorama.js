@@ -24,7 +24,7 @@ function startPanorama(panoImg) {
 }
 
 
-//TODO: use this instead of function above
+//TODO: use function below instead of function above
 
 /**
  * start panorama, creates a loading scene and triggers the loading of the start location. Starts animating.
@@ -32,54 +32,58 @@ function startPanorama(panoImg) {
  */
 function _startPanorama(dataURL) {
 	_init();
-	var loadingScene = new THREE.Scene();
-
-	//------------- creat loading scene -------------------------
-	var geometry = new THREE.Geometry();
-	for (var i = 0; i < 20000; i ++ ) {
-
-		var vertex = new THREE.Vector3();
-		vertex.x = Math.random() * 2000 - 1000;
-		vertex.y = Math.random() * 2000 - 1000;
-		vertex.z = Math.random() * 2000 - 1000;
-
-		geometry.vertices.push( vertex );
-
-	}
-	var parameters = [
-		[ [1, 1, 0.5], 5 ],
-		[ [0.95, 1, 0.5], 4 ],
-		[ [0.90, 1, 0.5], 3 ],
-		[ [0.85, 1, 0.5], 2 ],
-		[ [0.80, 1, 0.5], 1 ]
-	];
-	var color, size, particles, materials = [];
-	for ( i = 0; i < parameters.length; i ++ ) {
-
-		color = parameters[i][0];
-		size  = parameters[i][1];
-
-		materials[i] = new THREE.PointCloudMaterial( { size: size } );
-
-		particles = new THREE.PointCloud( geometry, materials[i] );
-
-		particles.rotation.x = Math.random() * 6;
-		particles.rotation.y = Math.random() * 6;
-		particles.rotation.z = Math.random() * 6;
-
-		loadingScene.add(particles);
-
-	}
-	//----------------- end loading scene --------------------------------
-
+	var loadingScene = createLoadingScene();
 	scene = loadingScene;
+    isLoading = true;
 	parseConfigJSON(dataURL, function (data) {
 		var loader = new LocationLoader();
 		loader.loadLocation(data.startLocation, _startComplete);
 	});
-	isLoading = true;
 	animate();
 }
+
+
+function createLoadingScene() {
+
+    var loadingScene = new THREE.Scene();
+    var geometry = new THREE.Geometry();
+    for (var i = 0; i < 20000; i ++ ) {
+
+        var vertex = new THREE.Vector3();
+        vertex.x = Math.random() * 2000 - 1000;
+        vertex.y = Math.random() * 2000 - 1000;
+        vertex.z = Math.random() * 2000 - 1000;
+
+        geometry.vertices.push( vertex );
+
+    }
+    var parameters = [
+        [ [1, 1, 0.5], 5 ],
+        [ [0.95, 1, 0.5], 4 ],
+        [ [0.90, 1, 0.5], 3 ],
+        [ [0.85, 1, 0.5], 2 ],
+        [ [0.80, 1, 0.5], 1 ]
+    ];
+    var color, size, particles, materials = [];
+    for ( i = 0; i < parameters.length; i ++ ) {
+
+        color = parameters[i][0];
+        size  = parameters[i][1];
+
+        materials[i] = new THREE.PointCloudMaterial( { size: size } );
+
+        particles = new THREE.PointCloud( geometry, materials[i] );
+
+        particles.rotation.x = Math.random() * 6;
+        particles.rotation.y = Math.random() * 6;
+        particles.rotation.z = Math.random() * 6;
+
+        loadingScene.add(particles);
+
+    }
+    return loadingScene;
+}
+
 
 /**
  * Loads and parses the config JSON file at given URL, when finished parsing it calls given callback.
@@ -128,6 +132,10 @@ function _startComplete(location) {
 	isLoading = false;
 }
 
+
+/**
+ * Updates the Array of clickable things in the scene.
+ */
 function updateTargetList() {
 	targetList = [];
 	scene.traverse(function (object) {
@@ -140,13 +148,22 @@ function updateTargetList() {
 }
 
 
+/**
+ * Transit to given location
+ * @param locationIndex index of location
+ */
 function transitToLocation(locationIndex) {
+    var loadingScene = createLoadingScene();
+    scene = loadingScene;
+    isLoading = true;
+
 	var loader = new LocationLoader();
 	loader.loadLocation(locationIndex, function (location) {
 		var panoScene = new THREE.Scene();
 		panoScene.add(location);
 		scene = panoScene;
 		updateTargetList();
+        isLoading = false;
 	});
 }
 
@@ -328,6 +345,11 @@ function onDocumentMouseUp(event) {
 }
 
 function onDocumentMouseWheel(event) {
+
+    if (isPopupOpen) {
+        return;
+    }
+
 	// WebKit
 	if (event.wheelDeltaY) {
 		camera.fov -= event.wheelDeltaY * 0.05;
