@@ -8,7 +8,7 @@ Transition = function (parameters) {
     if (parameters === undefined) parameters = {};
     this.panoImg = parameters.hasOwnProperty('panoImg') ? parameters['panoImg'] : "";
     this.targetLocation = parameters.hasOwnProperty('targetLocation') ? parameters['targetLocation'] : -1;
-
+    this.tooltip = parameters.hasOwnProperty('tooltip') ? parameters['tooltip'] : null;
 
     var geometry = new THREE.PlaneGeometry(30, 30);
     var material = new THREE.MeshBasicMaterial({

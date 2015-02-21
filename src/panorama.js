@@ -18,6 +18,8 @@ var composer;
 var panoramaData;
 var isLoading = false;
 
+var toolTip;
+
 function startPanorama(panoImg) {
 	init(panoImg);
 	animate();
@@ -86,6 +88,14 @@ function createLoadingScene() {
 
 
 /**
+ * initalize Tooltip for hotspots and transitions
+ */
+function initTooltip() {
+    toolTip = $('toolTip');
+}
+
+
+/**
  * Loads and parses the config JSON file at given URL, when finished parsing it calls given callback.
  * @param dataURL URL to config JSON.
  * @param callback function that gets called after parsing is finished.
@@ -120,6 +130,7 @@ function _init() {
 	renderer.setSize(window.innerWidth, window.innerHeight);
 	var container = $('panorama');
 	container.appendChild(renderer.domElement);
+    initTooltip()
 }
 
 function _startComplete(location) {
@@ -213,7 +224,6 @@ function init(panoImg) {
 
 function initEventListener() {
 	var container = $('panorama');
-
 	THREEx.FullScreen.bindKey({charCode : 'f'.charCodeAt(0) /*, element : $('panorama')*/});
 
 	container.addEventListener('mousedown', onDocumentMouseDown, false);
@@ -242,8 +252,8 @@ function initEventListener() {
 		reader.readAsDataURL(event.dataTransfer.files[0]);
 		document.body.style.opacity = 1;
 	}, false);
-	container.addEventListener('keydown', onKeyDown, false);
-	container.addEventListener('keyup', onKeyUp, false);
+	document.addEventListener('keydown', onKeyDown, false);
+	document.addEventListener('keyup', onKeyUp, false);
 
 	window.addEventListener('resize', onWindowResize, false);
 
@@ -299,9 +309,14 @@ function onDocumentMouseDown(event) {
 }
 
 function onDocumentMouseMove(event) {
-	if (isPopupOpen) {
+
+    toolTip.style.left = event.clientX + 20 + "px";
+    toolTip.style.top = event.clientY + 20 + "px";
+
+    if (isPopupOpen) {
 		return;
 	}
+
 	mouse.x = ( ( event.clientX - renderer.domElement.offsetLeft ) / renderer.domElement.width ) * 2 - 1;
 	mouse.y = - ( ( event.clientY - renderer.domElement.offsetTop ) / renderer.domElement.height ) * 2 + 1;
 
@@ -318,7 +333,7 @@ function onDocumentMouseMove(event) {
 		var intersects = ray.intersectObjects(targetList);
 
 		// if there is one (or more) intersections
-		if ( intersects.length > 0 ) {
+		if (intersects.length > 0) {
 			if (intersects[0].object != hoverIntersected) {
 				if (hoverIntersected) {
 					hoverIntersected.material.color.setHex(hoverIntersected.currentHex);
@@ -328,13 +343,24 @@ function onDocumentMouseMove(event) {
 				hoverIntersected.currentHex = hoverIntersected.material.color.getHex();
 				// set a new color for closest object
 				hoverIntersected.material.color.setHex(0xffff00);
+
+                // Tooltip
+                if (intersects[0].object.tooltip) {
+                    toolTip.innerHTML = intersects[0].object.tooltip;
+                    toolTip.style.display = "block";
+                } else {
+                    toolTip.innerHTML = "";
+                    toolTip.style.display = "none";
+                }
+
 			}
 		} else {
-			if (hoverIntersected) {
-				hoverIntersected.material.color.setHex(hoverIntersected.currentHex);
-			}
-			hoverIntersected = null;
-		}
+            if (hoverIntersected) {
+                hoverIntersected.material.color.setHex(hoverIntersected.currentHex);
+            }
+            hoverIntersected = null;
+            toolTip.style.display = "none";
+        }
 	}
 }
 
@@ -363,16 +389,17 @@ function onDocumentMouseWheel(event) {
 		camera.fov += event.detail * 1.0;
 	}
 
-	if (camera.fov > 100) {
-		camera.fov = 100;
-	} else if (camera.fov < 10) {
-		camera.fov = 10;
+	if (camera.fov > 80) {
+		camera.fov = 80;
+	} else if (camera.fov < 40) {
+		camera.fov = 40;
 	}
 	camera.updateProjectionMatrix();
 }
 
 
 function onKeyDown(event) {
+    console.log("onKeyDown");
 	if (event.keyCode === 37) {
 		// left arrow
 		lonFactor = -0.5;

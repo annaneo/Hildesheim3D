@@ -14,6 +14,8 @@ Hotspot = function (parameters) {
         audioSource.src = s;
     }
 
+    this.tooltip = parameters.hasOwnProperty('tooltip') ? parameters['tooltip'] : null;
+
     /*
     load content via
      this.infoContent.load(parameters['content'], function (response, status, xhr) {
@@ -27,7 +29,8 @@ Hotspot = function (parameters) {
         transparent: true,
         opacity: 0.9,
         color: 0xFF0000
-    });    THREE.Mesh.call(this, geometry, material);
+    });
+    THREE.Mesh.call(this, geometry, material);
     this.position.set(parameters.position.x, parameters.position.y, parameters.position.z);
 
 };
