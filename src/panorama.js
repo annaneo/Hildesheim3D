@@ -118,7 +118,7 @@ function parseConfigJSON(dataURL, callback) {
  * (also event listeners, shader ?, shader needs a scene)
  */
 function _init() {
-	camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight ,1, 1000);
+	camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight,1 , 200);
 	camera.target = new THREE.Vector3(0, 0, 0);
 	// initialize object to perform world/screen calculations
 	projector = new THREE.Projector();
@@ -430,7 +430,6 @@ function animate() {
 
 function update() {
 
-	//console.log("camera position: " + vectorToString(camera.position));
 	if (isLoading) {
 		var time = Date.now() * 0.00005;
 		for (var i = 0; i < scene.children.length; i ++) {
@@ -449,10 +448,12 @@ function update() {
 		lat = Math.max(-35, Math.min(45, lat));
 		phi = THREE.Math.degToRad(90 - lat);
 		theta = THREE.Math.degToRad(lon);
-		camera.target.x = 200 * Math.sin(phi) * Math.cos(theta);
-		camera.target.y = 200 * Math.cos(phi);
-		camera.target.z = 200 * Math.sin(phi) * Math.sin(theta);
-		camera.lookAt(camera.target);
+		camera.target.x = 195 * Math.sin(phi) * Math.cos(theta);
+		camera.target.y = 195 * Math.cos(phi);
+		camera.target.z = 195 * Math.sin(phi) * Math.sin(theta);
+        camera.lookAt(camera.target);
+        console.log("Camera Target: " + vectorToString(camera.target));
+        console.log("-----------------------------");
 		renderer.render(scene, camera);
 	} else {
 		composer.render();

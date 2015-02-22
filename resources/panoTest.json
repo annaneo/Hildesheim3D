@@ -39,13 +39,23 @@
             "hotspots": [
                 {
                     "images": [],
-                    "posX": 150,
-                    "posY": 1,
-                    "posZ": 1,
+                    "posX": 195,
+                    "posY": 0,
+                    "posZ": 0,
                     "text": "some <a href=\"#\">nice!!! content</a>",
                     "audio": "resources/musi/highway.mp3",
                     "uid": 1,
                     "tooltip": "some historical stuff"
+                },
+                {
+                    "images": [],
+                    "posX": -3,
+                    "posY": 29,
+                    "posZ": -192,
+                    "text": "some <a href=\"#\">super nice content</a>",
+                    "audio": "resources/musi/highway.mp3",
+                    "uid": 2,
+                    "tooltip": "some other historical stuff"
                 }
             ],
             "image": [
