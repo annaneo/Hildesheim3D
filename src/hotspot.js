@@ -27,7 +27,7 @@ Hotspot = function (parameters) {
     var material = new THREE.MeshBasicMaterial({
         map: THREE.ImageUtils.loadTexture("resources/icons/infopoint.png"),
         transparent: true,
-        opacity: 0.9,
+        opacity: 1,
         color: 0xFF0000
     });
     THREE.Mesh.call(this, geometry, material);
