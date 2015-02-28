@@ -231,7 +231,13 @@ function initEventListener() {
 	container.addEventListener('mouseup', onDocumentMouseUp, false);
 	container.addEventListener('mousewheel', onDocumentMouseWheel, false);
 	container.addEventListener('DOMMouseScroll', onDocumentMouseWheel, false);
-	container.addEventListener('dragover', function (event) {
+
+    container.addEventListener('touchstart', onDocumentTouchStart, false);
+    container.addEventListener('touchmove', onDocumentTouchMove, false);
+    container.addEventListener( 'touchend', onDocumentTouchEnd, false );
+
+
+    container.addEventListener('dragover', function (event) {
 		event.preventDefault();
 		event.dataTransfer.dropEffect = 'copy';
 	}, false);
@@ -309,40 +315,74 @@ function onDocumentMouseDown(event) {
 }
 
 function onDocumentMouseMove(event) {
+    moveEventHandler(event.clientX, event.clientY, event);
+}
 
-    toolTip.style.left = event.clientX + 20 + "px";
-    toolTip.style.top = event.clientY + 20 + "px";
+function onDocumentMouseUp(event) {
+    upEventHandler(event.clientX, event.clientY, event);
+}
+
+function onDocumentMouseWheel(event) {
+    wheelEventHandler(event.clientX, event.clientY, event);
+}
+
+
+function onDocumentTouchStart(event) {
+    if (event.touches.length === 1) {
+        downEventHandler(event.touches[0].pageX, event.touches[0].pageY, event);
+    } else if (event.touches.length === 2) {
+        //TODO: zoom in and out
+    }
+}
+
+function onDocumentTouchMove(event) {
+    if (event.touches.length == 1) {
+        moveEventHandler(event.touches[0].pageX, event.touches[0].pageY, event);
+    }
+}
+
+
+function onDocumentTouchEnd(event) {
+    if (event.touches.length == 1) {
+        upEventHandler(event.touches[0].pageX, event.touches[0].pageY, event);
+    }
+}
+
+
+function moveEventHandler(eventX, eventY, event) {
+    toolTip.style.left = eventX + 20 + "px";
+    toolTip.style.top = eventY + 20 + "px";
 
     if (isPopupOpen) {
-		return;
-	}
+        return;
+    }
 
-	mouse.x = ( ( event.clientX - renderer.domElement.offsetLeft ) / renderer.domElement.width ) * 2 - 1;
-	mouse.y = - ( ( event.clientY - renderer.domElement.offsetTop ) / renderer.domElement.height ) * 2 + 1;
+    mouse.x = ( ( eventX - renderer.domElement.offsetLeft ) / renderer.domElement.width ) * 2 - 1;
+    mouse.y = - ( ( eventY - renderer.domElement.offsetTop ) / renderer.domElement.height ) * 2 + 1;
 
-	if (isUserInteracting === true) {
-		lonFactor = mouse.x;
-		latFactor = mouse.y;
-	} else {
-		// check if mouse intersects something (to let it glow)
-		var vector = new THREE.Vector3(mouse.x, mouse.y, 0);
-		projector.unprojectVector( vector, camera );
-		var ray = new THREE.Raycaster(camera.position, vector.sub(camera.position).normalize());
+    if (isUserInteracting === true) {
+        lonFactor = mouse.x;
+        latFactor = mouse.y;
+    } else {
+        // check if mouse intersects something (to let it glow)
+        var vector = new THREE.Vector3(mouse.x, mouse.y, 0);
+        projector.unprojectVector( vector, camera );
+        var ray = new THREE.Raycaster(camera.position, vector.sub(camera.position).normalize());
 
-		// create an array containing all objects in the scene with which the ray intersects
-		var intersects = ray.intersectObjects(targetList);
+        // create an array containing all objects in the scene with which the ray intersects
+        var intersects = ray.intersectObjects(targetList);
 
-		// if there is one (or more) intersections
-		if (intersects.length > 0) {
-			if (intersects[0].object != hoverIntersected) {
-				if (hoverIntersected) {
-					hoverIntersected.material.color.setHex(hoverIntersected.currentHex);
-				}
-				hoverIntersected = intersects[0].object;
-				// store color of closest object (for later restoration)
-				hoverIntersected.currentHex = hoverIntersected.material.color.getHex();
-				// set a new color for closest object
-				hoverIntersected.material.color.setHex(0xffff00);
+        // if there is one (or more) intersections
+        if (intersects.length > 0) {
+            if (intersects[0].object != hoverIntersected) {
+                if (hoverIntersected) {
+                    hoverIntersected.material.color.setHex(hoverIntersected.currentHex);
+                }
+                hoverIntersected = intersects[0].object;
+                // store color of closest object (for later restoration)
+                hoverIntersected.currentHex = hoverIntersected.material.color.getHex();
+                // set a new color for closest object
+                hoverIntersected.material.color.setHex(0xffff00);
 
                 // Tooltip
                 if (intersects[0].object.tooltip) {
@@ -353,49 +393,87 @@ function onDocumentMouseMove(event) {
                     toolTip.style.display = "none";
                 }
 
-			}
-		} else {
+            }
+        } else {
             if (hoverIntersected) {
                 hoverIntersected.material.color.setHex(hoverIntersected.currentHex);
             }
             hoverIntersected = null;
             toolTip.style.display = "none";
         }
-	}
+    }
 }
 
-function onDocumentMouseUp(event) {
-	lonFactor = 0;
-	latFactor = 0;
-	isUserInteracting = false;
-}
-
-function onDocumentMouseWheel(event) {
-
+function downEventHandler(eventX, eventY, event) {
     if (isPopupOpen) {
         return;
     }
 
-	// WebKit
-	if (event.wheelDeltaY) {
-		camera.fov -= event.wheelDeltaY * 0.05;
+    event.preventDefault();
 
-	// Opera / Explorer 9
-	} else if (event.wheelDelta) {
-		camera.fov -= event.wheelDelta * 0.05;
+    // update the mouse variable
+    // canvas position has to be 'static'
+    mouse.x = ( ( eventX - renderer.domElement.offsetLeft ) / renderer.domElement.width ) * 2 - 1;
+    mouse.y = - ( ( eventY - renderer.domElement.offsetTop ) / renderer.domElement.height ) * 2 + 1;
 
-	// Firefox
-	} else if (event.detail) {
-		camera.fov += event.detail * 1.0;
-	}
+    // find intersections
+    // create a Ray with origin at the mouse position
+    //   and direction into the scene (camera direction)
+    var vector = new THREE.Vector3(mouse.x, mouse.y, 0);
+    projector.unprojectVector( vector, camera );
+    var ray = new THREE.Raycaster(camera.position, vector.sub(camera.position).normalize());
 
-	if (camera.fov > 80) {
-		camera.fov = 80;
-	} else if (camera.fov < 40) {
-		camera.fov = 40;
-	}
-	camera.updateProjectionMatrix();
+    // create an array containing all objects in the scene with which the ray intersects
+    var intersects = ray.intersectObjects(targetList);
+
+    // if there is one (or more) intersections
+    if ( intersects.length > 0 ) {
+        intersects[0].object.onClick();
+        if (intersects[0].object instanceof Hotspot) {
+            isPopupOpen = true;
+        }
+    } else {
+        lonFactor = mouse.x;
+        latFactor = mouse.y;
+        isUserInteracting = true;
+    }
 }
+
+function upEventHandler(eventX, eventY, event) {
+    lonFactor = 0;
+    latFactor = 0;
+    isUserInteracting = false;
+}
+
+
+//TODO: make ready for touch events
+function wheelEventHandler(eventX, eventY, event) {
+    if (isPopupOpen) {
+        return;
+    }
+
+    // WebKit
+    if (event.wheelDeltaY) {
+        camera.fov -= event.wheelDeltaY * 0.05;
+
+        // Opera / Explorer 9
+    } else if (event.wheelDelta) {
+        camera.fov -= event.wheelDelta * 0.05;
+
+        // Firefox
+    } else if (event.detail) {
+        camera.fov += event.detail * 1.0;
+    }
+
+    if (camera.fov > 80) {
+        camera.fov = 80;
+    } else if (camera.fov < 40) {
+        camera.fov = 40;
+    }
+    camera.updateProjectionMatrix();
+}
+
+
 
 
 function onKeyDown(event) {
