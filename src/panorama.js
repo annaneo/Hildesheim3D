@@ -20,6 +20,8 @@ var isLoading = false;
 
 var toolTip;
 
+var timerId;
+
 function startPanorama(panoImg) {
 	init(panoImg);
 	animate();
@@ -68,20 +70,14 @@ function createLoadingScene() {
     ];
     var color, size, particles, materials = [];
     for ( i = 0; i < parameters.length; i ++ ) {
-
         color = parameters[i][0];
         size  = parameters[i][1];
-
         materials[i] = new THREE.PointCloudMaterial( { size: size } );
-
         particles = new THREE.PointCloud( geometry, materials[i] );
-
         particles.rotation.x = Math.random() * 6;
         particles.rotation.y = Math.random() * 6;
         particles.rotation.z = Math.random() * 6;
-
         loadingScene.add(particles);
-
     }
     return loadingScene;
 }
@@ -226,12 +222,13 @@ function initEventListener() {
 	var container = $('panorama');
 	THREEx.FullScreen.bindKey({charCode : 'f'.charCodeAt(0) /*, element : $('panorama')*/});
 
-	container.addEventListener('mousedown', onDocumentMouseDown, false);
-	container.addEventListener('mousemove', onDocumentMouseMove, false);
-	container.addEventListener('mouseup', onDocumentMouseUp, false);
-	container.addEventListener('mousewheel', onDocumentMouseWheel, false);
-	container.addEventListener('DOMMouseScroll', onDocumentMouseWheel, false);
+	container.addEventListener('mousedown', onMouseDown, false);
+	container.addEventListener('mousemove', onMouseMove, false);
+	container.addEventListener('mouseup', onMouseUp, false);
+	container.addEventListener('mousewheel', onMouseWheel, false);
+	container.addEventListener('DOMMouseScroll', onMouseWheel, false);
 
+    //TODO: touch elements don't need offset calculation?
     container.addEventListener('touchstart', onDocumentTouchStart, false);
     container.addEventListener('touchmove', onDocumentTouchMove, false);
     container.addEventListener( 'touchend', onDocumentTouchEnd, false );
@@ -278,58 +275,26 @@ function onWindowResize() {
 	renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
-function onDocumentMouseDown(event) {
-
-	if (isPopupOpen) {
-		return;
-	}
-
-	event.preventDefault();
-
-	// update the mouse variable
-	// canvas position has to be 'static'
-	mouse.x = ( ( event.clientX - renderer.domElement.offsetLeft ) / renderer.domElement.width ) * 2 - 1;
-	mouse.y = - ( ( event.clientY - renderer.domElement.offsetTop ) / renderer.domElement.height ) * 2 + 1;
-
-	// find intersections
-	// create a Ray with origin at the mouse position
-	//   and direction into the scene (camera direction)
-	var vector = new THREE.Vector3(mouse.x, mouse.y, 0);
-	projector.unprojectVector( vector, camera );
-	var ray = new THREE.Raycaster(camera.position, vector.sub(camera.position).normalize());
-
-	// create an array containing all objects in the scene with which the ray intersects
-	var intersects = ray.intersectObjects(targetList);
-
-	// if there is one (or more) intersections
-	if ( intersects.length > 0 ) {
-		intersects[0].object.onClick();
-		if (intersects[0].object instanceof Hotspot) {
-			isPopupOpen = true;
-		}
-	} else {
-		lonFactor = mouse.x;
-		latFactor = mouse.y;
-		isUserInteracting = true;
-	}
+function onMouseDown(event) {
+    downEventHandler(event.clientX, event.clientY, event);
 }
 
-function onDocumentMouseMove(event) {
+function onMouseMove(event) {
     moveEventHandler(event.clientX, event.clientY, event);
 }
 
-function onDocumentMouseUp(event) {
-    upEventHandler(event.clientX, event.clientY, event);
+function onMouseUp(event) {
+    upEventHandler(event);
 }
 
-function onDocumentMouseWheel(event) {
+function onMouseWheel(event) {
     wheelEventHandler(event.clientX, event.clientY, event);
 }
 
 
 function onDocumentTouchStart(event) {
     if (event.touches.length === 1) {
-        downEventHandler(event.touches[0].pageX, event.touches[0].pageY, event);
+        downEventHandler(event.touches[0].pageX + renderer.domElement.offsetLeft, event.touches[0].pageY + renderer.domElement.offsetTop, event);
     } else if (event.touches.length === 2) {
         //TODO: zoom in and out
     }
@@ -337,15 +302,13 @@ function onDocumentTouchStart(event) {
 
 function onDocumentTouchMove(event) {
     if (event.touches.length == 1) {
-        moveEventHandler(event.touches[0].pageX, event.touches[0].pageY, event);
+        moveEventHandler(event.touches[0].pageX + renderer.domElement.offsetLeft, event.touches[0].pageY + renderer.domElement.offsetTop, event);
     }
 }
 
 
 function onDocumentTouchEnd(event) {
-    if (event.touches.length == 1) {
-        upEventHandler(event.touches[0].pageX, event.touches[0].pageY, event);
-    }
+    upEventHandler(event);
 }
 
 
@@ -439,7 +402,7 @@ function downEventHandler(eventX, eventY, event) {
     }
 }
 
-function upEventHandler(eventX, eventY, event) {
+function upEventHandler(event) {
     lonFactor = 0;
     latFactor = 0;
     isUserInteracting = false;
@@ -477,8 +440,8 @@ function wheelEventHandler(eventX, eventY, event) {
 
 
 function onKeyDown(event) {
-    console.log("onKeyDown");
-	if (event.keyCode === 37) {
+    isUserInteracting = true;
+    if (event.keyCode === 37) {
 		// left arrow
 		lonFactor = -0.5;
 	} else if (event.keyCode === 38) {
@@ -508,6 +471,13 @@ function animate() {
 
 function update() {
 
+    if (!isUserInteracting && !timerId) {
+        timerId = setTimeout(resetPanorama, 2 * 60 * 1000);
+    } else if (isUserInteracting && timerId) {
+        clearTimeout(timerId);
+        timerId = null;
+    }
+
 	if (isLoading) {
 		var time = Date.now() * 0.00005;
 		for (var i = 0; i < scene.children.length; i ++) {
@@ -530,12 +500,17 @@ function update() {
 		camera.target.y = 195 * Math.cos(phi);
 		camera.target.z = 195 * Math.sin(phi) * Math.sin(theta);
         camera.lookAt(camera.target);
-        console.log("Camera Target: " + vectorToString(camera.target));
-        console.log("-----------------------------");
+        //console.log("Camera Target: " + vectorToString(camera.target));
+        //console.log("-----------------------------");
 		renderer.render(scene, camera);
 	} else {
 		composer.render();
 	}
+}
+
+
+function resetPanorama() {
+    transitToLocation(panoramaData.startLocation);
 }
 
 //------------------- helper functions------------------------------
