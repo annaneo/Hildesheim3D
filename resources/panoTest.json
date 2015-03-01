@@ -62,13 +62,16 @@
                 "resources/panos/kirche001.jpg"
             ],
             "mapUid": 1,
-            "startingView": [
-                {
-                    "comingFrom": 11,
-                    "panAngle": 199,
-                    "tiltAngle": 2
+            "cameraTargets": {
+                "-1": {
+                    "lat": 1,
+                    "lon": 55
+                },
+                "3": {
+                    "lat": 5,
+                    "lon": 310
                 }
-            ],
+            },
             "transitions": [
                 {
                     "posX": 80,
@@ -97,13 +100,12 @@
                 "resources/panos/kirche003.jpg"
             ],
             "mapUid": 2,
-            "startingView": [
-                {
-                    "comingFrom": 11,
-                    "panAngle": 199,
-                    "tiltAngle": 2
+            "cameraTargets": {
+                "1": {
+                    "lat": 337,
+                    "lon": -10
                 }
-            ],
+            },
             "transitions": [
                 {
                     "posX": 0,

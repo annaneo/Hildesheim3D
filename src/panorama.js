@@ -17,6 +17,7 @@ var hoverIntersected;
 var composer;
 var panoramaData;
 var isLoading = false;
+var lastPanoramaUID = -1;
 
 var toolTip;
 
@@ -115,7 +116,7 @@ function parseConfigJSON(dataURL, callback) {
  */
 function _init() {
 	camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight,1 , 200);
-	camera.target = new THREE.Vector3(0, 0, 0);
+	camera.target = new THREE.Vector3(0, 0, 1);
 	// initialize object to perform world/screen calculations
 	projector = new THREE.Projector();
 	if (Detector.webgl) {
@@ -133,6 +134,9 @@ function _startComplete(location) {
 	var panoScene = new THREE.Scene();
 	panoScene.add(location);
 	scene = panoScene;
+    var cts = location.cameraTargets;
+    lat = cts[-1].lat;
+    lon = cts[-1].lon;
 	updateTargetList();
 	initEventListener();
 	setupBlurShader();
@@ -159,7 +163,7 @@ function updateTargetList() {
  * Transit to given location
  * @param locationIndex index of location
  */
-function transitToLocation(locationIndex) {
+function transitToLocation(locationIndex, lastPanoUID) {
     var loadingScene = createLoadingScene();
     scene = loadingScene;
     isLoading = true;
@@ -169,6 +173,15 @@ function transitToLocation(locationIndex) {
 		var panoScene = new THREE.Scene();
 		panoScene.add(location);
 		scene = panoScene;
+        if (lastPanoUID > -1) {
+            var cts = location.cameraTargets;
+            lat = cts[lastPanoUID].lat;
+            lon = cts[lastPanoUID].lon;
+        } else {
+            //TODO: should also be read from panoramaData
+            lat = 0;
+            lon = 0;
+        }
 		updateTargetList();
         isLoading = false;
 	});
@@ -491,8 +504,10 @@ function update() {
 	}
 
 	if (!isPopupOpen) {
-		lon = lon + lonFactor;
+		lon = (lon + lonFactor) % 360;
 		lat = lat + latFactor;
+        console.log("lon: " + lon + "     lat: " + lat);
+
 		lat = Math.max(-35, Math.min(45, lat));
 		phi = THREE.Math.degToRad(90 - lat);
 		theta = THREE.Math.degToRad(lon);
@@ -500,8 +515,8 @@ function update() {
 		camera.target.y = 195 * Math.cos(phi);
 		camera.target.z = 195 * Math.sin(phi) * Math.sin(theta);
         camera.lookAt(camera.target);
-        //console.log("Camera Target: " + vectorToString(camera.target));
-        //console.log("-----------------------------");
+        console.log("Camera Target: " + vectorToString(camera.target));
+        console.log("-----------------------------");
 		renderer.render(scene, camera);
 	} else {
 		composer.render();
@@ -510,6 +525,7 @@ function update() {
 
 
 function resetPanorama() {
+    lastPanoramaUID = -1;
     transitToLocation(panoramaData.startLocation);
 }
 
