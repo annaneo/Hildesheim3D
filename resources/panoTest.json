@@ -36,86 +36,881 @@
     ],
     "locations": [
         {
-            "hotspots": [
-                {
-                    "images": [],
-                    "posX": 195,
-                    "posY": 0,
-                    "posZ": 0,
-                    "text": "some <a href=\"#\">nice!!! content</a>",
-                    "audio": "resources/musi/highway.mp3",
-                    "uid": 1,
-                    "tooltip": "some historical stuff"
-                },
-                {
-                    "images": [],
-                    "posX": -3,
-                    "posY": 29,
-                    "posZ": -192,
-                    "text": "some <a href=\"#\">super nice content</a>",
-                    "audio": "resources/musi/highway.mp3",
-                    "uid": 2,
-                    "tooltip": "some other historical stuff"
-                }
-            ],
-            "image": [
-                "resources/panos/kirche001.jpg"
-            ],
+          "uid": 1,
+          "image": [
+            "resources/panos/kirche001.jpg"
+          ],
             "mapUid": 1,
+          "transitions": [
+            {
+              "target_location": 3,
+              "tooltip": "Balustrade",
+              "posX": 133,
+              "posY": 120,
+              "posZ": -77
+            },
+            {
+              "target_location": 7,
+              "tooltip": "Übergang zur Krypta",
+              "posX": 190,
+              "posY": -31,
+              "posZ": -34
+            },
+            {
+              "target_location": 29,
+              "tooltip": "Mittelschiff Westchor",
+              "posX": 37,
+              "posY": -74,
+              "posZ": -177
+            }
+          ],
             "cameraTargets": {
                 "-1": {
-                    "lat": 1,
-                    "lon": 55
+                    "lat": 2,
+                    "lon": -103
                 },
                 "3": {
                     "lat": 5,
                     "lon": 310
                 }
             },
-            "transitions": [
-                {
-                    "posX": 80,
-                    "posY": 150,
-                    "posZ": 1,
-                    "target_location": 3,
-                    "tooltip": "Location 3"
-                }
-            ],
-            "uid": 1
+          "hotspots": [
+            {
+              "uid": 48,
+              "tooltip": "Westchor-Schranke",
+              "posX": 117,
+              "posY": 34,
+              "posZ": -152,
+              "text": "some <a href=\"#\">nice!!! content</a>",
+              "images": [],
+              "audio": "resources/musi/highway.mp3"
+            }
+          ]
         },
-        {
-            "hotspots": [
-                {
-                    "images": [],
-                    "posX": 80,
-                    "posY": 50,
-                    "posZ": 1,
-                    "text": "some more <a href=\"#\">nice!!! content</a>",
-                    "audio": "resources/musi/highway.mp3",
-                    "uid": 1,
-                    "tooltip": "awesome inscription"
-                }
-            ],
-            "image": [
-                "resources/panos/kirche003.jpg"
-            ],
-            "mapUid": 2,
-            "cameraTargets": {
-                "1": {
-                    "lat": 337,
-                    "lon": -10
-                }
-            },
-            "transitions": [
-                {
-                    "posX": 0,
-                    "posY": 150,
-                    "posZ": 1,
-                    "target_location": 1,
-                    "tooltip": "Location 1"
-                }
-            ],
-            "uid": 3
-        }
+      {
+        "uid": 3,
+        "image": [
+          "resources/panos/kirche003.jpg"
+        ],
+        "mapUid": 1,
+        "transitions": [
+          {
+            "target_location": 29,
+            "tooltip": "Mittelschiff Westchor",
+            "posX": 114,
+            "posY": -78,
+            "posZ": -136
+          },
+          {
+            "target_location": 1,
+            "tooltip": "Nördliches Mittelschiff",
+            "posX": 60,
+            "posY": -98,
+            "posZ": -128
+          },
+          {
+            "target_location": 20,
+            "tooltip": "Westchor",
+            "posX": 184,
+            "posY": -62,
+            "posZ": -7
+          }
+        ],
+        "cameraTargets": {
+          "3": {
+            "lat": -40,
+            "lon": -13
+          }
+        },
+        "hotspots": [
+          {
+            "uid": 48,
+            "tooltip": "Westchor-Schranke",
+            "posX": 126,
+            "posY": -111,
+            "posZ": -98,
+            "text": "",
+            "images": [],
+            "audio": "resources/musi/highway.mp3"
+          }
+        ]
+      },
+      {
+        "uid": 29,
+        "image": [
+          "resources/panos/kirche029.jpg"
+        ],
+        "mapUid": 1,
+        "transitions": [
+          {
+            "target_location": 3,
+            "tooltip": "Balustrade",
+            "posX": 140,
+            "posY": 135,
+            "posZ": 20
+          },
+          {
+            "target_location": 26,
+            "tooltip": "Östliches Mittelschiff",
+            "posX": -44,
+            "posY": -10,
+            "posZ": 190
+          },
+          {
+            "target_location": 21,
+            "tooltip": "Südliches Seitenschiff",
+            "posX": -180,
+            "posY": -31,
+            "posZ": 67
+          },
+          {
+            "target_location": 12,
+            "tooltip": "Westchor",
+            "posX": 44,
+            "posY": -9,
+            "posZ": -189
+          }
+        ],
+        "cameraTargets": {
+          "-1": {
+            "lat": -3,
+            "lon": 106
+          },
+          "1": {
+            "lat": -245,
+            "lon": -5
+          },
+          "3": {
+            "lat": -10,
+            "lon": 145
+          },
+          "20": {
+            "lat": -5,
+            "lon": 104
+          }
+        },
+        "hotspots": [
+          {
+            "uid": 65,
+            "tooltip": "Deckengemälde",
+            "posX": -29,
+            "posY": 138,
+            "posZ": 135,
+            "text": "",
+            "images": [],
+            "audio": "resources/musi/highway.mp3"
+          }
+        ]
+      },
+      {
+        "uid": 20,
+        "image": [
+          "resources/panos/kirche020.jpg"
+        ],
+        "mapUid": 1,
+        "transitions": [
+          {
+            "target_location": 29,
+            "tooltip": "Mittelschiff",
+            "posX": -10,
+            "posY": -43,
+            "posZ": 190
+          },
+          {
+            "target_location": 12,
+            "tooltip": "Westchor",
+            "posX": 81,
+            "posY": -57,
+            "posZ": -168
+          }
+        ],
+        "cameraTargets": {
+          "12": {
+            "lat": -7,
+            "lon": 118
+          }
+        },
+        "hotspots": [
+        ]
+      },
+      {
+        "uid": 12,
+        "image": [
+          "resources/panos/kirche012.jpg"
+        ],
+        "mapUid": 1,
+        "transitions": [
+          {
+            "target_location": 20,
+            "tooltip": "Westchor Mittelschiff",
+            "posX": -113,
+            "posY": -31,
+            "posZ": 155
+          }
+        ],
+        "cameraTargets": {
+          "-1": {
+            "lat": -9,
+            "lon": 102
+          },
+          "20": {
+            "lat": 0,
+            "lon": -73
+          }
+        },
+        "hotspots": [
+          {
+            "uid": 2,
+            "tooltip": "Heiligsprechung Bernwards",
+            "posX": 17,
+            "posY": -48,
+            "posZ": 188,
+            "text": "",
+            "images": [],
+            "audio": "resources/musi/highway.mp3"
+          }
+        ]
+      },
+      {
+        "uid": 21,
+        "image": [
+          "resources/panos/kirche021.jpg"
+        ],
+        "mapUid": 1,
+        "transitions": [
+          {
+            "target_location": 29,
+            "tooltip": "Mittelschiff",
+            "posX": -21,
+            "posY": -63,
+            "posZ": -183
+          },
+          {
+            "target_location": 20,
+            "tooltip": "Westchor",
+            "posX": -190,
+            "posY": -40,
+            "posZ": -11
+          },
+          {
+            "target_location": 13,
+            "tooltip": "Südliches Seitenschiff",
+            "posX": -190,
+            "posY": -40,
+            "posZ": -11
+          },
+          {
+            "target_location": 4,
+            "tooltip": "Südliches Seitenschiff",
+            "posX": -190,
+            "posY": -40,
+            "posZ": -11
+          },
+          {
+            "target_location": 5,
+            "tooltip": "Grundstein",
+            "posX": -190,
+            "posY": -40,
+            "posZ": -11
+          }
+        ],
+        "cameraTargets": {
+          "-1": {
+            "lat": -1,
+            "lon": -73
+          }
+        },
+        "hotspots": [
+          {
+            "uid": 58,
+            "tooltip": "Grundstein",
+            "posX": -115,
+            "posY": -32,
+            "posZ": 154,
+            "text": "",
+            "images": [],
+            "audio": "resources/musi/highway.mp3"
+          }
+        ]
+      },
+      {
+        "uid": 5,
+        "image": [
+          "resources/panos/kirche005.jpg"
+        ],
+        "mapUid": 1,
+        "transitions": [
+          {
+            "target_location": 21,
+            "tooltip": "Zum Mittelschiff",
+            "posX": -21,
+            "posY": -63,
+            "posZ": -183
+          },
+          {
+            "target_location": 4,
+            "tooltip": "Zum ",
+            "posX": -190,
+            "posY": -40,
+            "posZ": -11
+          }
+        ],
+        "cameraTargets": {
+          "-1": {
+            "lat": -1,
+            "lon": -73
+          }
+        },
+        "hotspots": [
+          {
+            "uid": 58,
+            "tooltip": "Grundstein",
+            "posX": -115,
+            "posY": -32,
+            "posZ": 154,
+            "text": "",
+            "images": [],
+            "audio": "resources/musi/highway.mp3"
+          }
+        ]
+      },
+      {
+        "uid": 13,
+        "image": [
+          "resources/panos/kirche013.jpg"
+        ],
+        "mapUid": 1,
+        "transitions": [
+          {
+            "target_location": 14,
+            "tooltip": "Richtung Osten",
+            "posX": 145,
+            "posY": -41,
+            "posZ": -124
+          },
+          {
+            "target_location": 21,
+            "tooltip": "Richtung Westen",
+            "posX": -152,
+            "posY": -84,
+            "posZ": 88
+          },
+          {
+            "target_location": 29,
+            "tooltip": "Mittelschiff",
+            "posX": -187,
+            "posY": -17,
+            "posZ": -52
+          }
+        ],
+        "cameraTargets": {
+          "-1": {
+            "lat": -3,
+            "lon": -32
+          },
+          "21": {
+            "lat": -4,
+            "lon": -42
+          }
+        },
+        "hotspots": [
+          {
+            "uid": 2,
+            "tooltip": "Stuckfiguren",
+            "posX": -34,
+            "posY": 122,
+            "posZ": -148,
+            "text": "",
+            "images": [],
+            "audio": "resources/musi/highway.mp3"
+          },
+          {
+            "uid": 3,
+            "tooltip": "Bernwardstür",
+            "posX": 98,
+            "posY": 23,
+            "posZ": 167,
+            "text": "",
+            "images": [],
+            "audio": "resources/musi/highway.mp3"
+          }
+        ]
+      },
+      {
+        "uid": 14,
+        "image": [
+          "resources/panos/kirche014.jpg"
+        ],
+        "mapUid": 1,
+        "transitions": [
+          {
+            "target_location": 15,
+            "tooltip": "Richtung Osten",
+            "posX": -66,
+            "posY": -70,
+            "posZ": 169
+          },
+          {
+            "target_location": 13,
+            "tooltip": "Richtung Westen",
+            "posX": 74,
+            "posY": -63,
+            "posZ": -169
+          }
+        ],
+        "cameraTargets": {
+          "-1": {
+            "lat": 1,
+            "lon": -14
+          }
+        },
+        "hotspots": [
+          {
+            "uid": 1,
+            "tooltip": "Stuckfiguren",
+            "posX": 128,
+            "posY": 138,
+            "posZ": 52,
+            "text": "",
+            "images": [],
+            "audio": "resources/musi/highway.mp3"
+          }
+        ]
+      },
+      {
+        "uid": 15,
+        "image": [
+          "resources/panos/kirche015.jpg"
+        ],
+        "mapUid": 1,
+        "transitions": [
+          {
+            "target_location": 14,
+            "tooltip": "Nach Westen",
+            "posX": 147,
+            "posY": -51,
+            "posZ": -116
+          },
+          {
+            "target_location": 24,
+            "tooltip": "Bernwardsäule",
+            "posX": -113,
+            "posY": -46,
+            "posZ": 152
+          },
+          {
+            "target_location": 26,
+            "tooltip": "Mittelschiff",
+            "posX": 125,
+            "posY": -52,
+            "posZ": 141
+          }
+        ],
+        "cameraTargets": {
+          "-1": {
+            "lat": 0,
+            "lon": 0
+          }
+        },
+        "hotspots": [
+          {
+            "uid": 1,
+            "tooltip": "Stuckfiguren",
+            "posX": 134,
+            "posY": 138,
+            "posZ": 33,
+            "text": "",
+            "images": [],
+            "audio": "resources/musi/highway.mp3"
+          }
+        ]
+      },
+      {
+        "uid": 24,
+        "image": [
+          "resources/panos/kirche024.jpg"
+        ],
+        "mapUid": 1,
+        "transitions": [
+          {
+            "target_location": 26,
+            "tooltip": "Mittelschiff",
+            "posX": 117,
+            "posY": -28,
+            "posZ": -153
+          },
+          {
+            "target_location": 15,
+            "tooltip": "Südliches Seitenschiff",
+            "posX": -5,
+            "posY": -34,
+            "posZ": -192
+          },
+          {
+            "target_location": 6,
+            "tooltip": "Gedenkstein & Kohlenmann",
+            "posX": -186,
+            "posY": -57,
+            "posZ": -6
+          }
+        ],
+        "cameraTargets": {
+          "-1": {
+            "lat": 0,
+            "lon": 0
+          }
+        },
+        "hotspots": [
+          {
+            "uid": 1,
+            "tooltip": "Bernwardsäule",
+            "posX": -75,
+            "posY": -44,
+            "posZ": -174,
+            "text": "",
+            "images": [],
+            "audio": "resources/musi/highway.mp3"
+          }
+        ]
+      },
+      {
+        "uid": 6,
+        "image": [
+          "resources/panos/kirche006.jpg"
+        ],
+        "mapUid": 1,
+        "transitions": [
+          {
+            "target_location": 24,
+            "tooltip": "Bernwardsäule",
+            "posX": 151,
+            "posY": -55,
+            "posZ": -111
+          }
+        ],
+        "cameraTargets": {
+          "-1": {
+            "lat": 0,
+            "lon": 0
+          }
+        },
+        "hotspots": [
+          {
+            "uid": 16,
+            "tooltip": "Gedenkstein",
+            "posX": 0,
+            "posY": 0,
+            "posZ": 0,
+            "text": "",
+            "images": [],
+            "audio": "resources/musi/highway.mp3"
+          },
+          {
+            "uid": 15,
+            "tooltip": "Kohlenmann",
+            "posX": -20,
+            "posY": -6,
+            "posZ": 193,
+            "text": "",
+            "images": [],
+            "audio": "resources/musi/highway.mp3"
+          },
+          {
+            "uid": 16,
+            "tooltip": "Gedenkstein",
+            "posX": -172,
+            "posY": -40,
+            "posZ": 82,
+            "text": "",
+            "images": [],
+            "audio": "resources/musi/highway.mp3"
+          }
+        ]
+      },
+      {
+        "uid": 26,
+        "image": [
+          "resources/panos/kirche026.jpg"
+        ],
+        "mapUid": 1,
+        "transitions": [
+          {
+            "target_location": 29,
+            "tooltip": "Westchor",
+            "posX": 184,
+            "posY": -50,
+            "posZ": 41
+          },
+          {
+            "target_location": 24,
+            "tooltip": "Östliches Seitenschiff",
+            "posX": -144,
+            "posY": -70,
+            "posZ": -111
+          },
+          {
+            "target_location": 24,
+            "tooltip": " Mittleres Seitenschiff",
+            "posX": 40,
+            "posY": -76,
+            "posZ": -175
+          }
+        ],
+        "cameraTargets": {
+          "-1": {
+            "lat": 0,
+            "lon": 0
+          }
+        },
+        "hotspots": [
+          {
+            "uid": 65,
+            "tooltip": "Deckengemälde",
+            "posX": 147,
+            "posY": 96,
+            "posZ": 85,
+            "text": "",
+            "images": [],
+            "audio": "resources/musi/highway.mp3"
+          }
+        ]
+      },
+      {
+        "uid": 7,
+        "image": [
+          "resources/panos/krypta007.jpg"
+        ],
+        "mapUid": 2,
+        "transitions": [
+          {
+            "target_location": 1,
+            "tooltip": "Zum Kirchenraum",
+            "posX": 184,
+            "posY": -50,
+            "posZ": 41
+          },
+          {
+            "target_location": 18,
+            "tooltip": "",
+            "posX": -144,
+            "posY": -70,
+            "posZ": -111
+          },
+          {
+            "target_location": 6,
+            "tooltip": "",
+            "posX": 40,
+            "posY": -76,
+            "posZ": -175
+          },
+          {
+            "target_location": 8,
+            "tooltip": "",
+            "posX": 40,
+            "posY": -76,
+            "posZ": -175
+          }
+        ],
+        "cameraTargets": {
+          "-1": {
+            "lat": -15,
+            "lon": 219
+          },
+          "1": {
+            "lat": -15,
+            "lon": 219
+          }
+        },
+        "hotspots": [
+          {
+            "uid": 65,
+            "tooltip": "",
+            "posX": 147,
+            "posY": 96,
+            "posZ": 85,
+            "text": "",
+            "images": [],
+            "audio": "resources/musi/highway.mp3"
+          }
+        ]
+      },
+      {
+        "uid": 6,
+        "image": [
+          "resources/panos/krypta006.jpg"
+        ],
+        "mapUid": 2,
+        "transitions": [
+          {
+            "target_location": 18,
+            "tooltip": "",
+            "posX": -144,
+            "posY": -70,
+            "posZ": -111
+          },
+          {
+            "target_location": 7,
+            "tooltip": "",
+            "posX": 40,
+            "posY": -76,
+            "posZ": -175
+          },
+          {
+            "target_location": 8,
+            "tooltip": "",
+            "posX": 40,
+            "posY": -76,
+            "posZ": -175
+          }
+        ],
+        "cameraTargets": {
+          "-1": {
+            "lat": -15,
+            "lon": 219
+          }
+        },
+        "hotspots": [
+          {
+            "uid": 65,
+            "tooltip": "",
+            "posX": 147,
+            "posY": 96,
+            "posZ": 85,
+            "text": "",
+            "images": [],
+            "audio": "resources/musi/highway.mp3"
+          }
+        ]
+      },
+      {
+        "uid": 8,
+        "image": [
+          "resources/panos/krypta008.jpg"
+        ],
+        "mapUid": 2,
+        "transitions": [
+          {
+            "target_location": 18,
+            "tooltip": "",
+            "posX": -144,
+            "posY": -70,
+            "posZ": -111
+          },
+          {
+            "target_location": 6,
+            "tooltip": "",
+            "posX": 40,
+            "posY": -76,
+            "posZ": -175
+          },
+          {
+            "target_location": 7,
+            "tooltip": "",
+            "posX": 40,
+            "posY": -76,
+            "posZ": -175
+          }
+        ],
+        "cameraTargets": {
+          "-1": {
+            "lat": -15,
+            "lon": 219
+          }
+        },
+        "hotspots": [
+          {
+            "uid": 65,
+            "tooltip": "",
+            "posX": 147,
+            "posY": 96,
+            "posZ": 85,
+            "text": "",
+            "images": [],
+            "audio": "resources/musi/highway.mp3"
+          }
+        ]
+      },
+      {
+        "uid": 18,
+        "image": [
+          "resources/panos/krypta018.jpg"
+        ],
+        "mapUid": 2,
+        "transitions": [
+          {
+            "target_location": 13,
+            "tooltip": "",
+            "posX": -144,
+            "posY": -70,
+            "posZ": -111
+          },
+          {
+            "target_location": 6,
+            "tooltip": "",
+            "posX": 40,
+            "posY": -76,
+            "posZ": -175
+          },
+          {
+            "target_location": 8,
+            "tooltip": "",
+            "posX": 40,
+            "posY": -76,
+            "posZ": -175
+          }
+        ],
+        "cameraTargets": {
+          "-1": {
+            "lat": -15,
+            "lon": 219
+          }
+        },
+        "hotspots": [
+          {
+            "uid": 65,
+            "tooltip": "",
+            "posX": 147,
+            "posY": 96,
+            "posZ": 85,
+            "text": "",
+            "images": [],
+            "audio": "resources/musi/highway.mp3"
+          }
+        ]
+      },
+      {
+        "uid": 13,
+        "image": [
+          "resources/panos/krypta006.jpg"
+        ],
+        "mapUid": 2,
+        "transitions": [
+          {
+            "target_location": 18,
+            "tooltip": "",
+            "posX": -144,
+            "posY": -70,
+            "posZ": -111
+          }
+        ],
+        "cameraTargets": {
+          "-1": {
+            "lat": -15,
+            "lon": 219
+          }
+        },
+        "hotspots": [
+          {
+            "uid": 65,
+            "tooltip": "",
+            "posX": 147,
+            "posY": 96,
+            "posZ": 85,
+            "text": "",
+            "images": [],
+            "audio": "resources/musi/highway.mp3"
+          }
+        ]
+      }
     ]
 }
