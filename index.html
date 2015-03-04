@@ -31,7 +31,7 @@
 		//TODO: quick and dirty, should be changed soon! -> even dirtier now YOLO!
 		window.onload = function () {
 
-			_startPanorama('resources/panoTest.json');
+			startPanorama('resources/panoTest.json');
 			//startPanorama('resources/panos/kirche012.jpg');
 
 			var kirche1 = document.getElementById("Kirche001");
@@ -138,44 +138,6 @@
 
 </head>
 <body>
-	<!-- temporary navigation for choosing place -->
-	<div id="navigationcontainer">
-		<nav id="nav">
-			<ul id="navigation">
-				<li><a href="#">Kirche &raquo;</a>
-					<ul>
-						<li><a id="Kirche001" href="#">Kirche001</a></li>
-						<li><a id="Kirche003" href="#">Kirche003</a></li>
-						<li><a id="Kirche004" href="#">Kirche004</a></li>
-						<li><a id="Kirche005" href="#">Kirche005</a></li>
-						<li><a id="Kirche006" href="#">Kirche006</a></li>
-						<li><a id="Kirche012" href="#">Kirche012</a></li>
-						<li><a id="Kirche013" href="#">Kirche013</a></li>
-						<li><a id="Kirche014" href="#">Kirche014</a></li>
-						<li><a id="Kirche015" href="#">Kirche015</a></li>
-						<li><a id="Kirche020" href="#">Kirche020</a></li>
-						<li><a id="Kirche022" href="#">Kirche022</a></li>
-						<li><a id="Kirche024" href="#">Kirche024</a></li>
-						<li><a id="Kirche026" href="#">Kirche026</a></li>
-						<li><a id="Kirche029" href="#">Kirche029</a></li>
-					</ul>
-				</li>
-			</ul>
-		</nav>
-		<nav id="nav">
-			<ul id="navigation">
-				<li><a href="#">Krypta &raquo;</a>
-					<ul>
-						<li><a id="Krypta006" href="#">Krypta006</a></li>
-						<li><a id="Krypta007" href="#">Krypta007</a></li>
-						<li><a id="Krypta008" href="#">Krypta008</a></li>
-						<li><a id="Krypta013" href="#">Krypta013</a></li>
-						<li><a id="Krypta018" href="#">Krypta018</a></li>
-					</ul>
-				</li>
-			</ul>
-		</nav>
-	</div>
 
 
 	<div id="panorama"></div>
