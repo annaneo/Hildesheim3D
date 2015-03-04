@@ -131,6 +131,7 @@ function startComplete(location) {
     var cts = location.cameraTargets;
     lat = cts[-1].lat;
     lon = cts[-1].lon;
+    lastPanoramaUID = location.uid;
 	updateTargetList();
 	initEventListener();
 	setupBlurShader();
@@ -157,7 +158,10 @@ function updateTargetList() {
  * Transit to given location
  * @param locationIndex index of location
  */
-function transitToLocation(locationIndex, lastPanoUID) {
+function transitToLocation(locationIndex, reset) {
+    if (reset) {
+        lastPanoramaUID = -1; //update lastPanoramaUID to current location.uid for transition
+    }
     var loadingScene = createLoadingScene();
     scene = loadingScene;
     isLoading = true;
@@ -167,16 +171,16 @@ function transitToLocation(locationIndex, lastPanoUID) {
 		var panoScene = new THREE.Scene();
 		panoScene.add(location);
 		scene = panoScene;
-        if (lastPanoUID > -1) {
-            var cts = location.cameraTargets;
-            lat = cts[lastPanoUID].lat;
-            lon = cts[lastPanoUID].lon;
+        var cts = location.cameraTargets;
+        if (cts[lastPanoramaUID]) {
+            lat = cts[lastPanoramaUID].lat;
+            lon = cts[lastPanoramaUID].lon;
         } else {
-            //TODO: should also be read from panoramaData
-            lat = 0;
-            lon = 0;
+            lat = 2;
+            lon = -103;
         }
-		updateTargetList();
+        lastPanoramaUID = location.uid;
+        updateTargetList();
         isLoading = false;
 	});
 }
@@ -477,7 +481,7 @@ function update() {
 
 function resetPanorama() {
     lastPanoramaUID = -1;
-    transitToLocation(panoramaData.startLocation);
+    transitToLocation(panoramaData.startLocation, true);
 }
 
 //------------------- helper functions------------------------------
