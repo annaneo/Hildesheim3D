@@ -134,8 +134,8 @@ ul#navigation ul li a {
     text-align: center;
     margin: auto;
     padding: 10px;
-    width: 240px;
-    height: 180px;
+    width: 400px;
+    height: 220px;
     background-color: rgba(200, 200, 200, .9);
     z-index: 0;
     position: absolute;
@@ -165,12 +165,10 @@ ul#navigation ul li a {
 }
 
 #infoCloseButton {
-    text-align: center;
     float: right;
-    width: 16px;
-    height: 16px;
-    top: 4px;
-    position: absolute;
+    position:absolute;
+    left:350px;
+    top:10px;
 }
 
 #map {

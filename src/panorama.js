@@ -23,26 +23,20 @@ var toolTip;
 
 var timerId;
 
-function startPanorama(panoImg) {
-	init(panoImg);
-	animate();
-}
 
-
-//TODO: use function below instead of function above
 
 /**
  * start panorama, creates a loading scene and triggers the loading of the start location. Starts animating.
  * @param dataURL URL to the config JSON
  */
-function _startPanorama(dataURL) {
-	_init();
+function startPanorama(dataURL) {
+	init();
 	var loadingScene = createLoadingScene();
 	scene = loadingScene;
     isLoading = true;
 	parseConfigJSON(dataURL, function (data) {
 		var loader = new LocationLoader();
-		loader.loadLocation(data.startLocation, _startComplete);
+		loader.loadLocation(data.startLocation, startComplete);
 	});
 	animate();
 }
@@ -114,7 +108,7 @@ function parseConfigJSON(dataURL, callback) {
  * Initializes renderer, camera, projector
  * (also event listeners, shader ?, shader needs a scene)
  */
-function _init() {
+function init() {
 	camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight,1 , 200);
 	camera.target = new THREE.Vector3(0, 0, 1);
 	// initialize object to perform world/screen calculations
@@ -130,7 +124,7 @@ function _init() {
     initTooltip()
 }
 
-function _startComplete(location) {
+function startComplete(location) {
 	var panoScene = new THREE.Scene();
 	panoScene.add(location);
 	scene = panoScene;
@@ -189,49 +183,6 @@ function transitToLocation(locationIndex, reset) {
         updateTargetList();
         isLoading = false;
 	});
-}
-
-
-
-function removePanorama() {
-	var container = $('panorama');
-	if (container.childNodes.length > 0) {
-		container.removeChild(container.childNodes[0]);
-	}
-	targetList = [];
-	mouse = { x: 0, y: 0 };
-}
-
-
-function init(panoImg) {
-	removePanorama();
-	var panoScene = new THREE.Scene();
-
-	var container = $('panorama');
-
-	camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight ,1, 1000);
-	camera.target = new THREE.Vector3(0, 0, 0);
-
-	// initialize object to perform world/screen calculations
-	projector = new THREE.Projector();
-
-	var location = new Location(panoImg);
-	var hotspotParam = {position: new THREE.Vector3(150, 1, 1)};
-	targetList.push(location.addHotspot(hotspotParam));
-
-	panoScene.add(location);
-
-	if (Detector.webgl) {
-		renderer = new THREE.WebGLRenderer( {antialias:true} );
-	} else {
-		renderer = new THREE.CanvasRenderer();
-	}
-	renderer.setSize(window.innerWidth, window.innerHeight);
-	container.appendChild(renderer.domElement);
-
-	scene = panoScene;
-	initEventListener();
-	setupBlurShader();
 }
 
 
