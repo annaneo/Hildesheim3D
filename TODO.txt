@@ -1,0 +1,35 @@
+===========
+ENTWICKLUNG
+===========
+
+- Ladebildschirm beim Start
+- Ladeanimationen bei transitions
+- für Museum: Seite Impressum (über Button immer erreichbar)
+
+
+
+@anna:
+- proportionales setzen von maps und navigation
+-
+
+===========
+KONZEPTION
+===========
+
+- Camera-targets setzen
+- fehlendes Bild/ Standpunkt 21 rein
+
+======
+DESIGN
+======
+
+-
+
+
+
+=====
+TEXTE
+=====
+
+- Full paper EVA Deadline: 20.3.
+- Manual (Javadoc)

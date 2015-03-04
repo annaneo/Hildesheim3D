@@ -23,7 +23,7 @@ Hotspot = function (parameters) {
      });
      */
 
-    var geometry = new THREE.PlaneGeometry(30, 30);
+    var geometry = new THREE.PlaneGeometry(20, 20);
     var material = new THREE.MeshBasicMaterial({
         map: THREE.ImageUtils.loadTexture("resources/icons/infopoint.png"),
         transparent: true,
@@ -43,8 +43,8 @@ Hotspot.prototype.onClick = function () {
     infoContent.innerHTML = this.infoContent;
     var infoView = document.getElementById('infoView');
     infoView.style.display = "block";
-    infoView.style.left = 100 + "px";
-    infoView.style.top = 100 + "px";
+    infoView.style.left = 400 + "px";
+    infoView.style.top = 200 + "px";
 };
 
 

@@ -10,7 +10,7 @@ Transition = function (parameters) {
     this.targetLocation = parameters.hasOwnProperty('targetLocation') ? parameters['targetLocation'] : -1;
     this.tooltip = parameters.hasOwnProperty('tooltip') ? parameters['tooltip'] : null;
 
-    var geometry = new THREE.PlaneGeometry(30, 30);
+    var geometry = new THREE.PlaneGeometry(20, 20);
     var material = new THREE.MeshBasicMaterial({
         map: THREE.ImageUtils.loadTexture("resources/icons/transfer.png"),
         transparent: true,
