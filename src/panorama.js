@@ -43,7 +43,6 @@ function startPanorama(dataURL) {
 
 
 function createLoadingScene() {
-
     var loadingScene = new THREE.Scene();
     var geometry = new THREE.Geometry();
     for (var i = 0; i < 20000; i ++ ) {
