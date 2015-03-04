@@ -26,9 +26,6 @@ Transition = function (parameters) {
 Transition.prototype = Object.create(THREE.Mesh.prototype);
 
 Transition.prototype.onClick = function () {
-    //if (this.panoImg !== "") {
-    //    init(this.panoImg);
-    //}
     if (this.targetLocation > -1) {
         transitToLocation(this.targetLocation);
     } else {
