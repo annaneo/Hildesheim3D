@@ -176,6 +176,9 @@ function transitToLocation(locationIndex, reset) {
         if (cts[lastPanoramaUID]) {
             lat = cts[lastPanoramaUID].lat;
             lon = cts[lastPanoramaUID].lon;
+        } else if (cts[-1]) {
+            lat = cts[-1].lat;
+            lon = cts[-1].lon;
         } else {
             lat = 2;
             lon = -103;
