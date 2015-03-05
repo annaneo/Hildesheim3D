@@ -61,10 +61,11 @@ Location.prototype.configureMap = function (parameters) {
 
     if (parameters.hasOwnProperty('mapSpots')) {
         var spots = parameters['mapSpots'];
+        // position of map spots is declared in json
         spots.forEach(function (spot) {
             var spotButton = document.createElement("button");
             spotButton.id = "mapSpot";
-            spotButton.value = "o"; //TODO: should be image
+            //spotButton.value = "o"; //TODO: should be image
             spotButton.style.left = spot.mapPosX + "px";
             spotButton.style.top = spot.mapPosY + "px";
             spotButton.addEventListener('click', function (event) {

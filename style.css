@@ -20,6 +20,10 @@ ol, ul {
     list-style: none;
 }
 
+div#panorama {
+    position: static;
+}
+
 div#navigationcontainer {
     height: 42px;
 }
@@ -172,37 +176,36 @@ ul#navigation ul li a {
 }
 
 #map {
-    -webkit-border-radius: 1px;
-    -moz-border-radius: 1px;
-    border-radius: 1px;
     display: none;
     text-align: left;
     margin: auto;
-    width: 240px;
-    height: 180px;
-    background-color: rgba(100, 100, 100, .5);
+    width: 300px;
+    height: 166px;
     z-index: 0;
     position: absolute;
-    border: 1px solid #aaaaaa;
-    color: #ffffff;
     float: right;
 }
 
+
 #mapSpot {
-    -webkit-border-radius: 1px;
-    -moz-border-radius: 1px;
-    border-radius: 1px;
-    display: block;
-    text-align: center;
-    margin: auto;
-    width: 20px;
-    height: 20px;
-    background-color: rgba(0, 0, 0, 1.0);
+    width: 18px;
+    height: 18px;
+    background-color: #A30000;
     z-index: 0;
     position: absolute;
-    border: 1px solid #aaaaaa;
+    border: 2px solid #000;
     color: #ffffff;
 }
+
+/**
+code for ccs Button:
+ background: #A30000;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+
+    yet unsure how to position;
+**/
 
 #audioPlayer {
     width: 100px;
