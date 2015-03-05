@@ -5,7 +5,7 @@ ENTWICKLUNG
 - Ladebildschirm beim Start
 - Ladeanimationen bei transitions
 - für Museum: Seite Impressum (über Button immer erreichbar)
-
+- Mouseover bei aktiven Elementen: Mausanzeige ändern
 
 
 @anna:

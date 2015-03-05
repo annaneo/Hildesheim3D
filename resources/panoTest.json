@@ -43,13 +43,6 @@
       "mapUid": 1,
       "transitions": [
         {
-          "target_location": 3,
-          "tooltip": "Balustrade",
-          "posX": 133,
-          "posY": 120,
-          "posZ": -77
-        },
-        {
           "target_location": 7,
           "tooltip": "Übergang zur Krypta",
           "posX": 190,
@@ -57,8 +50,8 @@
           "posZ": -34
         },
         {
-          "target_location": 29,
-          "tooltip": "Mittelschiff Westchor",
+          "target_location": 22,
+          "tooltip": "Richtung Mittelschiff",
           "posX": 37,
           "posY": -74,
           "posZ": -177
@@ -81,6 +74,58 @@
           "posX": 117,
           "posY": 34,
           "posZ": -152,
+          "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.",
+          "images": [],
+          "audio": "resources/audio/inschrift_test.mp3"
+        }
+      ]
+    },
+    {
+      "uid": 22,
+      "image": [
+        "resources/panos/kirche022.jpg"
+      ],
+      "mapUid": 1,
+      "transitions": [
+        {
+          "target_location": 1,
+          "tooltip": "Richtung Krypta",
+          "posX": -34,
+          "posY": -28,
+          "posZ": 190
+        },
+        {
+          "target_location": 3,
+          "tooltip": "Ballustrade",
+          "posX": -79,
+          "posY": 138,
+          "posZ": 113
+        },
+        {
+          "target_location": 29,
+          "tooltip": "Mittelschiff Westchor",
+          "posX": -78,
+          "posY": -39,
+          "posZ": -175
+        }
+      ],
+      "cameraTargets": {
+        "3": {
+          "lat": 5,
+          "lon": 310
+        },
+        "-1": {
+          "lat": 2,
+          "lon": -103
+        }
+      },
+      "hotspots": [
+        {
+          "uid": 48,
+          "tooltip": "Westchor-Schranke",
+          "posX": 144,
+          "posY": 80,
+          "posZ": -104,
           "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.",
           "images": [],
           "audio": "resources/audio/inschrift_test.mp3"
@@ -151,10 +196,17 @@
         },
         {
           "target_location": 26,
-          "tooltip": "Östliches Mittelschiff",
+          "tooltip": "Mittelschiff Ostchor",
           "posX": -44,
           "posY": -10,
           "posZ": 190
+        },
+        {
+          "target_location": 22,
+          "tooltip": "Nördliches Seitenschiff",
+          "posX": 57,
+          "posY": -28,
+          "posZ": 184
         },
         {
           "target_location": 21,
@@ -733,7 +785,7 @@
         },
         {
           "uid": 65,
-          "tooltip": "Altar",
+          "tooltip": "Marienaltar",
           "posX": 184,
           "posY": -50,
           "posZ": 41,
@@ -874,7 +926,9 @@
           "lon": 219
         }
       },
-      "hotspots": []
+      "hotspots": [
+
+      ]
     },
     {
       "uid": 13,
@@ -886,9 +940,9 @@
         {
           "target_location": 18,
           "tooltip": "Zentrum Krypta",
-          "posX": -72,
-          "posY": -45,
-          "posZ": -175
+          "posX": -75,
+          "posY": -15,
+          "posZ": 180
         }
       ],
       "cameraTargets": {
@@ -898,7 +952,16 @@
         }
       },
       "hotspots": [
-
+        {
+          "uid": 10,
+          "tooltip": "Weiheinschrift",
+          "posX": -38,
+          "posY": 14,
+          "posZ": -191,
+          "text": "",
+          "images": [],
+          "audio": "resources/audio/inschrift_test.mp3"
+        }
       ]
     }
   ]

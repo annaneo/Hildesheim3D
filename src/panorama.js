@@ -280,6 +280,7 @@ function onDocumentTouchEnd(event) {
 
 
 function moveEventHandler(eventX, eventY, event) {
+    // Position of toolTips
     toolTip.style.left = eventX + 20 + "px";
     toolTip.style.top = eventY + 20 + "px";
 
