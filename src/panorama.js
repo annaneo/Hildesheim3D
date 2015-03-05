@@ -108,7 +108,7 @@ function parseConfigJSON(dataURL, callback) {
  * (also event listeners, shader ?, shader needs a scene)
  */
 function init() {
-	camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight,1 , 200);
+	camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 200);
 	camera.target = new THREE.Vector3(0, 0, 1);
 	// initialize object to perform world/screen calculations
 	projector = new THREE.Projector();
