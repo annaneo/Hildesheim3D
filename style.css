@@ -20,6 +20,10 @@ ol, ul {
     list-style: none;
 }
 
+div#panorama {
+    position: static;
+}
+
 div#navigationcontainer {
     height: 42px;
 }
