@@ -79,6 +79,8 @@ function createLoadingScene() {
 
 /**
  * initalize Tooltip for hotspots and transitions
+ * //TODO: ToolTip also for mapSpots
+ * //TODO: changing MOUSE at MOUSEOVER (click indication)
  */
 function initTooltip() {
     toolTip = $('toolTip');

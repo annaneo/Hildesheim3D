@@ -3,34 +3,135 @@
   "maps": [
     {
       "uid": 1,
-      "image": "resources/maps/Kirchenraum.jpg",
+      "image": "resources/maps/Kirchenraum.png",
       "mapSpots": [
         {
+          "uid": 12,
+          "tooltip": "Bernward",
           "mapPosX": 30,
-          "mapPosY": 15,
-          "uid": 1
+          "mapPosY": 85
         },
         {
-          "mapPosX": 75,
-          "mapPosY": 110,
-          "uid": 3
+          "uid": 20,
+          "tooltip": "Westchor",
+          "mapPosX": 50,
+          "mapPosY": 95
+        },
+        {
+          "uid": 29,
+          "tooltip": "Mittelschiff",
+          "mapPosX": 70,
+          "mapPosY": 85
+        },
+        {
+          "uid": 22,
+          "tooltip": "Nördliches Seitenschiff",
+          "mapPosX": 70,
+          "mapPosY": 40
+        },
+        {
+          "uid": 1,
+          "tooltip": "Übergang zur Krypta",
+          "mapPosX": 60,
+          "mapPosY": 20
+        },
+        {
+          "uid": 3,
+          "tooltip": "Balustrade",
+          "mapPosX": 80,
+          "mapPosY": 20
+        },
+        {
+          "uid": 26,
+          "tooltip": "Romanische Säulen",
+          "mapPosX": 155,
+          "mapPosY": 80
+        },
+        {
+          "uid": 21,
+          "tooltip": "Südliches Seitenschiff",
+          "mapPosX": 70,
+          "mapPosY": 110
+        },
+        {
+          "uid": 4,
+          "tooltip": "Seitenschiff",
+          "mapPosX": 60,
+          "mapPosY": 130
+        },
+        {
+          "uid": 5,
+          "tooltip": "Grundstein",
+          "mapPosX": 80,
+          "mapPosY": 140
+        },
+        {
+          "uid": 13,
+          "tooltip": "Bernwardstür",
+          "mapPosX": 100,
+          "mapPosY": 110
+        },
+        {
+          "uid": 13,
+          "tooltip": "Stuckfiguren",
+          "mapPosX": 130,
+          "mapPosY": 110
+        },
+        {
+          "uid": 13,
+          "tooltip": "Stuckfiguren",
+          "mapPosX": 160,
+          "mapPosY": 110
+        },
+        {
+          "uid": 24,
+          "tooltip": "Bernwardsäule",
+          "mapPosX": 190,
+          "mapPosY": 110
+        },
+        {
+          "uid": 2,
+          "tooltip": "Gedenkstein",
+          "mapPosX": 190,
+          "mapPosY": 140
         }
       ]
     },
     {
       "uid": 2,
-      "image": "resources/maps/Krypta.jpg",
+      "image": "resources/maps/Krypta.png",
       "mapSpots": [
         {
-          "mapPosX": 20,
-          "mapPosY": 15,
-          "uid": 1
+          "uid": 13,
+          "tooltip": "Weiheinschrift",
+          "mapPosX": 90,
+          "mapPosY": 80
         },
         {
-          "mapPosX": 50,
-          "mapPosY": 70,
-          "uid": 3
+          "uid": 18,
+          "tooltip": "Zentrum Krypta",
+          "mapPosX": 140,
+          "mapPosY": 80
+        },
+        {
+          "uid": 7,
+          "tooltip": "Marienaltar",
+          "mapPosX": 195,
+          "mapPosY": 80
+        },
+        {
+          "uid": 8,
+          "tooltip": "Grablege",
+          "mapPosX": 170,
+          "mapPosY": 65
+        },
+        {
+          "uid": 6,
+          "tooltip": "Grablege",
+          "mapPosX": 170,
+          "mapPosY": 105
         }
+
       ]
     }
   ],
@@ -400,7 +501,7 @@
         },
         {
           "target_location": 4,
-          "tooltip": "Zum ",
+          "tooltip": "Westen Seitenschiff",
           "posX": -190,
           "posY": -40,
           "posZ": -11
@@ -423,6 +524,37 @@
           "images": [],
           "audio": "resources/audio/inschrift_test.mp3"
         }
+      ]
+    },
+    {
+      "uid": 4,
+      "image": [
+        "resources/panos/kirche004.jpg"
+      ],
+      "mapUid": 1,
+      "transitions": [
+        {
+          "target_location": 21,
+          "tooltip": "Zum Mittelschiff",
+          "posX": 171,
+          "posY": -59,
+          "posZ": 72
+        },
+        {
+          "target_location": 5,
+          "tooltip": "Grundstein",
+          "posX": -17,
+          "posY": -39,
+          "posZ": 190
+        }
+      ],
+      "cameraTargets": {
+        "-1": {
+          "lat": -1,
+          "lon": -73
+        }
+      },
+      "hotspots": [
       ]
     },
     {
@@ -625,7 +757,7 @@
       ]
     },
     {
-      "uid": 6,
+      "uid": 2,
       "image": [
         "resources/panos/kirche006.jpg"
       ],
@@ -870,6 +1002,13 @@
           "posX": 187,
           "posY": -47,
           "posZ": -25
+        },
+        {
+          "target_location": 3,
+          "tooltip": "Übergang Kirche",
+          "posX": -105,
+          "posY": -75,
+          "posZ": 146
         }
       ],
       "cameraTargets": {
