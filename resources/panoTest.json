@@ -555,9 +555,9 @@
       "hotspots": [
         {
           "uid": 1,
-          "title" : "1010 legt Bischof Bernward den Grundstein für die Miachaeliskirche",
+          "title" : "1010 legt Bischof Bernward den Grundstein für die Michaeliskirche",
           "tooltip": "Grundstein",
-          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0006.html#content\" alt=\"Deutsche Inschriften Online Grundstein\" >DIO 58, Nr. 6</a>",
+          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0006.html#content\" alt=\"Deutsche Inschriften Online Grundstein\" >Grundstein, DIO 58, Nr. 6</a>",
           "images": [
             "resources/images/di58_6.png"
           ],
