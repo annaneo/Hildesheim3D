@@ -256,6 +256,23 @@ function initEventListener() {
         lonFactor = 0.5;
     }, false);
     _('navigationButtonsContainer').addEventListener('mouseup', onMouseUp, false);
+    _('upNavButton').addEventListener('touchstart', function(event) {
+        isUserInteracting = true;
+        latFactor = 0.5;
+    }, false);
+    _('downNavButton').addEventListener('touchstart', function(event) {
+        isUserInteracting = true;
+        latFactor = -0.5;
+    }, false);
+    _('leftNavButton').addEventListener('touchstart', function(event) {
+        isUserInteracting = true;
+        lonFactor = -0.5;
+    }, false);
+    _('rightNavButton').addEventListener('touchstart', function(event) {
+        isUserInteracting = true;
+        lonFactor = 0.5;
+    }, false);
+    _('navigationButtonsContainer').addEventListener('touchend', onMouseUp, false);
 }
 
 
