@@ -131,7 +131,6 @@
           "mapPosX": 170,
           "mapPosY": 105
         }
-
       ]
     }
   ],
@@ -231,7 +230,7 @@
           "audio": "resources/audio/inschrift_test.mp3",
           "posX": 144,
           "posY": 80,
-          "posZ": -104,
+          "posZ": -104
         }
       ]
     },
@@ -386,19 +385,19 @@
           "lat": -7,
           "lon": 118
         },
-        "-1": {
-          "lat": -1,
-          "lon": 106
-        },
         "29": {
           "lat": -9,
           "lon": 296
+        },
+        "-1": {
+          "lat": -1,
+          "lon": 106
         }
       },
       "hotspots": [
         {
           "uid": 1,
-          "title" : "Die Architektur der St. Michaelis-Kirche",
+          "title": "Die Architektur der St. Michaelis-Kirche",
           "tooltip": "Architektur von St. Michaelis",
           "text": "",
           "images": [],
@@ -488,33 +487,28 @@
         }
       ],
       "cameraTargets": {
-        "-1": {
-          "lat": -1,
-          "lon": -73
-        },
-        "4": {
-          "lat": -9,
-          "lon": -30
-        },
         "4": {
           "lat": -13,
           "lon": -127
-        },
-        "13": {
-          "lat": -8,
-          "lon": -189
         },
         "5": {
           "lat": -12,
           "lon": -104
         },
+        "13": {
+          "lat": -8,
+          "lon": -189
+        },
         "29": {
           "lat": -14,
           "lon": 101
+        },
+        "-1": {
+          "lat": -1,
+          "lon": -73
         }
       },
-      "hotspots": [
-      ]
+      "hotspots": []
     },
     {
       "uid": 5,
@@ -539,25 +533,25 @@
         }
       ],
       "cameraTargets": {
-        "-1": {
-          "lat": -1,
-          "lon": -73
+        "4": {
+          "lat": 3,
+          "lon": 82
         },
         "21": {
           "lat": 3,
           "lon": 100
         },
-        "4": {
-          "lat": 3,
-          "lon": 82
+        "-1": {
+          "lat": -1,
+          "lon": -73
         }
       },
       "hotspots": [
         {
           "uid": 1,
-          "title" : "1010 legt Bischof Bernward den Grundstein für die Miachaeliskirche",
+          "title": "1010 legt Bischof Bernward den Grundstein für die Michaeliskirche",
           "tooltip": "Grundstein",
-          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0006.html#content\" alt=\"Deutsche Inschriften Online Grundstein\" >DIO 58, Nr. 6</a>",
+          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0006.html#content\">Grundstein, DIO 58, Nr. 6</a>",
           "images": [
             "resources/images/di58_6.png"
           ],
@@ -591,23 +585,23 @@
         }
       ],
       "cameraTargets": {
-        "-1": {
-          "lat": -300,
-          "lon": -14
+        "5": {
+          "lat": -7,
+          "lon": -180
         },
         "21": {
           "lat": -9,
           "lon": -200
         },
-        "5": {
-          "lat": -7,
-          "lon": -180
+        "-1": {
+          "lat": -300,
+          "lon": -14
         }
       },
       "hotspots": [
         {
           "uid": 1,
-          "title" : "Bischof Bernward von Hildesheim gründet das Benediktinerkloster St. Michaelis",
+          "title": "Bischof Bernward von Hildesheim gründet das Benediktinerkloster St. Michaelis",
           "tooltip": "Kirche des Bischofs",
           "text": "",
           "images": [],
@@ -667,7 +661,7 @@
           "audio": "resources/audio/inschrift_test.mp3",
           "posX": -34,
           "posY": 122,
-          "posZ": -148,
+          "posZ": -148
         },
         {
           "uid": 3,
@@ -678,7 +672,7 @@
           "audio": "resources/audio/inschrift_test.mp3",
           "posX": 98,
           "posY": 23,
-          "posZ": 167,
+          "posZ": 167
         }
       ]
     },
@@ -720,7 +714,7 @@
           "audio": "resources/audio/inschrift_test.mp3",
           "posX": 128,
           "posY": 138,
-          "posZ": 52,
+          "posZ": 52
         }
       ]
     },
@@ -769,7 +763,7 @@
           "audio": "resources/audio/inschrift_test.mp3",
           "posX": 134,
           "posY": 138,
-          "posZ": 33,
+          "posZ": 33
         }
       ]
     },
@@ -854,7 +848,6 @@
           "posX": -20,
           "posY": -6,
           "posZ": 193
-
         },
         {
           "uid": 16,
@@ -864,7 +857,7 @@
           "audio": "resources/audio/inschrift_test.mp3",
           "posX": -172,
           "posY": -40,
-          "posZ": 82,
+          "posZ": 82
         }
       ]
     },
@@ -913,7 +906,7 @@
           "audio": "resources/audio/inschrift_test.mp3",
           "posX": 147,
           "posY": 96,
-          "posZ": 85,
+          "posZ": 85
         }
       ]
     },
@@ -973,7 +966,7 @@
           "audio": "resources/audio/inschrift_test.mp3",
           "posX": -144,
           "posY": -71,
-          "posZ": -111,
+          "posZ": -111
         },
         {
           "uid": 2,
@@ -1089,7 +1082,7 @@
           "audio": "resources/audio/inschrift_test.mp3",
           "posX": 94,
           "posY": -83,
-          "posZ": -149,
+          "posZ": -149
         }
       ]
     },
@@ -1128,9 +1121,7 @@
           "lon": 219
         }
       },
-      "hotspots": [
-
-      ]
+      "hotspots": []
     },
     {
       "uid": 913,
@@ -1163,7 +1154,7 @@
           "audio": "resources/audio/inschrift_test.mp3",
           "posX": -38,
           "posY": 14,
-          "posZ": -191,
+          "posZ": -191
         }
       ]
     }
