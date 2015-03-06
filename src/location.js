@@ -75,6 +75,6 @@ Location.prototype.configureMap = function (parameters) {
         });
     }
     map.style.display = "block";
-    map.style.right = 10 + "px";
+    map.style.right = 0 + "px";
     map.style.top = 10 + "px";
 };
