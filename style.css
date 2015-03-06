@@ -24,100 +24,21 @@ div#panorama {
     position: static;
 }
 
-div#navigationcontainer {
-    height: 42px;
-}
 
 #nav {
+    margin: auto;
+    width: 300px;
+    height: 150px;
+    z-index: 0;
+    display: block;
     position: relative;
-    margin: 0;
+    top: 250px;
+    right: 10px;
+    float: right;
 }
 
-ul#navigation {
-    margin: 0px;
-    position: relative;
-    float: left;
 
-}
 
-ul#navigation li {
-    display: inline;
-    font-size: 12px;
-    margin: 0;
-    padding: 0;
-    float: left;
-    position: relative;
-
-}
-
-ul#navigation li a {
-    padding: 10px 25px;
-    color: #616161;
-    text-shadow: 1px 1px 0px #fff;
-    text-decoration: none;
-    display: inline-block;
-    border: 1px solid #fff;
-    background: #f5f5f5;
-    -webkit-transition: color 0.2s linear, background 0.2s linear;
-    -moz-transition: color 0.2s linear, background 0.2s linear;
-    -o-transition: color 0.2s linear, background 0.2s linear;
-    transition: color 0.2s linear, background 0.2s linear;
-}
-
-ul#navigation li:hover > a {
-    background: #fff;
-}
-
-ul#navigation li:hover > ul {
-    visibility: visible;
-    opacity: 1;
-}
-
-ul#navigation ul, ul#navigation ul li ul {
-
-    visibility: hidden;
-    position: absolute;
-    z-index: 99999;
-    width: 180px;
-    background: #f8f8f8;
-    box-shadow: 1px 1px 3px #ccc;
-    opacity: 0;
-    -webkit-transition: opacity 0.2s linear, visibility 0.2s linear;
-    -moz-transition: opacity 0.2s linear, visibility 0.2s linear;
-    -o-transition: opacity 0.2s linear, visibility 0.2s linear;
-    transition: opacity 0.2s linear, visibility 0.2s linear;
-}
-
-ul#navigation ul {
-    top: 43px;
-    left: 1px;
-}
-
-ul#navigation ul li ul {
-    top: 0;
-    left: 181px;
-}
-
-ul#navigation ul li {
-    clear: both;
-    width: 100%;
-    border: 0 none;
-    border-bottom: 1px solid #c9c9c9;
-    height: 30px;
-}
-
-ul#navigation ul li a {
-    background: none;
-    padding: 7px 15px;
-    color: #616161;
-    text-shadow: 1px 1px 0px #fff;
-    text-decoration: none;
-    display: inline-block;
-    border: 0 none;
-    float: left;
-    clear: both;
-    width: 150px;
-}
 
 #toolTip {
     display: none;
