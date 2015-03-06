@@ -171,13 +171,14 @@
       "hotspots": [
         {
           "uid": 48,
+          "title": "",
           "tooltip": "Westchor-Schranke",
-          "posX": 117,
-          "posY": 34,
-          "posZ": -152,
           "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.",
           "images": [],
-          "audio": "resources/audio/inschrift_test.mp3"
+          "audio": "resources/audio/inschrift_test.mp3",
+          "posX": 117,
+          "posY": 34,
+          "posZ": -152
         }
       ]
     },
@@ -223,13 +224,14 @@
       "hotspots": [
         {
           "uid": 48,
+          "title": "",
           "tooltip": "Westchor-Schranke",
+          "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.",
+          "images": [],
+          "audio": "resources/audio/inschrift_test.mp3",
           "posX": 144,
           "posY": 80,
           "posZ": -104,
-          "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.",
-          "images": [],
-          "audio": "resources/audio/inschrift_test.mp3"
         }
       ]
     },
@@ -271,13 +273,14 @@
       "hotspots": [
         {
           "uid": 48,
+          "title": "",
           "tooltip": "Westchor-Schranke",
-          "posX": 126,
-          "posY": -111,
-          "posZ": -98,
           "text": "",
           "images": [],
-          "audio": "resources/audio/inschrift_test.mp3"
+          "audio": "resources/audio/inschrift_test.mp3",
+          "posX": 126,
+          "posY": -111,
+          "posZ": -98
         }
       ]
     },
@@ -345,13 +348,14 @@
       "hotspots": [
         {
           "uid": 65,
+          "title": "",
           "tooltip": "Deckengemälde",
-          "posX": -29,
-          "posY": 138,
-          "posZ": 135,
           "text": "",
           "images": [],
-          "audio": "resources/audio/inschrift_test.mp3"
+          "audio": "resources/audio/inschrift_test.mp3",
+          "posX": -29,
+          "posY": 138,
+          "posZ": 135
         }
       ]
     },
@@ -383,11 +387,27 @@
           "lon": 118
         },
         "-1": {
+          "lat": -1,
+          "lon": 106
+        },
+        "29": {
           "lat": -9,
-          "lon": 102
+          "lon": 296
         }
       },
-      "hotspots": []
+      "hotspots": [
+        {
+          "uid": 1,
+          "title" : "Die Architektur der St. Michaelis-Kirche",
+          "tooltip": "Architektur von St. Michaelis",
+          "text": "",
+          "images": [],
+          "audio": "resources/audio/inschrift_test.mp3",
+          "posX": 43,
+          "posY": -18,
+          "posZ": 189
+        }
+      ]
     },
     {
       "uid": 12,
@@ -413,13 +433,14 @@
       "hotspots": [
         {
           "uid": 2,
+          "title": "",
           "tooltip": "Heiligsprechung Bernwards",
-          "posX": 17,
-          "posY": -48,
-          "posZ": 188,
           "text": "",
           "images": [],
-          "audio": "resources/audio/inschrift_test.mp3"
+          "audio": "resources/audio/inschrift_test.mp3",
+          "posX": 17,
+          "posY": -48,
+          "posZ": 188
         }
       ]
     },
@@ -433,56 +454,66 @@
         {
           "target_location": 29,
           "tooltip": "Mittelschiff",
-          "posX": -21,
-          "posY": -63,
-          "posZ": -183
+          "posX": 136,
+          "posY": -6,
+          "posZ": -139
         },
         {
           "target_location": 20,
           "tooltip": "Westchor",
-          "posX": -190,
-          "posY": -40,
-          "posZ": -11
+          "posX": -72,
+          "posY": 50,
+          "posZ": -174
         },
         {
           "target_location": 13,
-          "tooltip": "Südliches Seitenschiff",
-          "posX": -190,
-          "posY": -40,
-          "posZ": -11
+          "tooltip": "Seitenschiff Langhaus",
+          "posX": 190,
+          "posY": -32,
+          "posZ": 33
         },
         {
           "target_location": 4,
-          "tooltip": "Südliches Seitenschiff",
-          "posX": -190,
-          "posY": -40,
-          "posZ": -11
+          "tooltip": "Seitenschiff",
+          "posX": -121,
+          "posY": -91,
+          "posZ": 121
         },
         {
           "target_location": 5,
           "tooltip": "Grundstein",
-          "posX": -190,
-          "posY": -40,
-          "posZ": -11
+          "posX": 63,
+          "posY": -84,
+          "posZ": 164
         }
       ],
       "cameraTargets": {
         "-1": {
           "lat": -1,
           "lon": -73
+        },
+        "4": {
+          "lat": -9,
+          "lon": -30
+        },
+        "4": {
+          "lat": -13,
+          "lon": -127
+        },
+        "13": {
+          "lat": -8,
+          "lon": -189
+        },
+        "5": {
+          "lat": -12,
+          "lon": -104
+        },
+        "29": {
+          "lat": -14,
+          "lon": 101
         }
       },
       "hotspots": [
-        {
-          "uid": 58,
-          "tooltip": "Grundstein",
-          "posX": -115,
-          "posY": -32,
-          "posZ": 154,
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/inschrift_test.mp3"
-        }
       ]
     },
     {
@@ -511,18 +542,29 @@
         "-1": {
           "lat": -1,
           "lon": -73
+        },
+        "21": {
+          "lat": 3,
+          "lon": 100
+        },
+        "4": {
+          "lat": 3,
+          "lon": 82
         }
       },
       "hotspots": [
         {
-          "uid": 58,
+          "uid": 1,
+          "title" : "1010 legt Bischof Bernward den Grundstein für die Miachaeliskirche",
           "tooltip": "Grundstein",
-          "posX": -115,
-          "posY": -32,
-          "posZ": 154,
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/inschrift_test.mp3"
+          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0006.html#content\" alt=\"Deutsche Inschriften Online Grundstein\" >DIO 58, Nr. 6</a>",
+          "images": [
+            "resources/images/di58_6.png"
+          ],
+          "audio": "resources/audio/inschrift_test.mp3",
+          "posX": 43,
+          "posY": -18,
+          "posZ": 189
         }
       ]
     },
@@ -550,11 +592,30 @@
       ],
       "cameraTargets": {
         "-1": {
-          "lat": -1,
-          "lon": -73
+          "lat": -300,
+          "lon": -14
+        },
+        "21": {
+          "lat": -9,
+          "lon": -200
+        },
+        "5": {
+          "lat": -7,
+          "lon": -180
         }
       },
       "hotspots": [
+        {
+          "uid": 1,
+          "title" : "Bischof Bernward von Hildesheim gründet das Benediktinerkloster St. Michaelis",
+          "tooltip": "Kirche des Bischofs",
+          "text": "",
+          "images": [],
+          "audio": "resources/audio/inschrift_test.mp3",
+          "posX": -188,
+          "posY": -34,
+          "posZ": 41
+        }
       ]
     },
     {
@@ -599,23 +660,25 @@
       "hotspots": [
         {
           "uid": 2,
+          "title": "",
           "tooltip": "Stuckfiguren",
+          "text": "",
+          "images": [],
+          "audio": "resources/audio/inschrift_test.mp3",
           "posX": -34,
           "posY": 122,
           "posZ": -148,
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/inschrift_test.mp3"
         },
         {
           "uid": 3,
+          "title": "",
           "tooltip": "Bernwardstür",
+          "text": "",
+          "images": [],
+          "audio": "resources/audio/inschrift_test.mp3",
           "posX": 98,
           "posY": 23,
           "posZ": 167,
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/inschrift_test.mp3"
         }
       ]
     },
@@ -650,13 +713,14 @@
       "hotspots": [
         {
           "uid": 1,
+          "title": "",
           "tooltip": "Stuckfiguren",
+          "text": "",
+          "images": [],
+          "audio": "resources/audio/inschrift_test.mp3",
           "posX": 128,
           "posY": 138,
           "posZ": 52,
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/inschrift_test.mp3"
         }
       ]
     },
@@ -698,13 +762,14 @@
       "hotspots": [
         {
           "uid": 1,
+          "title": "",
           "tooltip": "Stuckfiguren",
+          "text": "",
+          "images": [],
+          "audio": "resources/audio/inschrift_test.mp3",
           "posX": 134,
           "posY": 138,
           "posZ": 33,
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/inschrift_test.mp3"
         }
       ]
     },
@@ -746,13 +811,14 @@
       "hotspots": [
         {
           "uid": 1,
+          "title": "",
           "tooltip": "Bernwardsäule",
-          "posX": -75,
-          "posY": -44,
-          "posZ": -174,
           "text": "",
           "images": [],
-          "audio": "resources/audio/inschrift_test.mp3"
+          "audio": "resources/audio/inschrift_test.mp3",
+          "posX": -75,
+          "posY": -44,
+          "posZ": -174
         }
       ]
     },
@@ -779,34 +845,26 @@
       },
       "hotspots": [
         {
-          "uid": 16,
-          "tooltip": "Gedenkstein",
-          "posX": 0,
-          "posY": 0,
-          "posZ": 0,
+          "uid": 15,
+          "title": "",
+          "tooltip": "Kohlenmann",
           "text": "",
           "images": [],
-          "audio": "resources/audio/inschrift_test.mp3"
-        },
-        {
-          "uid": 15,
-          "tooltip": "Kohlenmann",
+          "audio": "resources/audio/inschrift_test.mp3",
           "posX": -20,
           "posY": -6,
-          "posZ": 193,
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/inschrift_test.mp3"
+          "posZ": 193
+
         },
         {
           "uid": 16,
           "tooltip": "Gedenkstein",
+          "text": "",
+          "images": [],
+          "audio": "resources/audio/inschrift_test.mp3",
           "posX": -172,
           "posY": -40,
           "posZ": 82,
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/inschrift_test.mp3"
         }
       ]
     },
@@ -848,18 +906,19 @@
       "hotspots": [
         {
           "uid": 65,
+          "title": "",
           "tooltip": "Deckengemälde",
+          "text": "",
+          "images": [],
+          "audio": "resources/audio/inschrift_test.mp3",
           "posX": 147,
           "posY": 96,
           "posZ": 85,
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/inschrift_test.mp3"
         }
       ]
     },
     {
-      "uid": 7,
+      "uid": 97,
       "image": [
         "resources/panos/krypta007.jpg"
       ],
@@ -873,21 +932,21 @@
           "posZ": 41
         },
         {
-          "target_location": 18,
+          "target_location": 918,
           "tooltip": "Zentrum Krypta",
           "posX": -172,
           "posY": 9,
           "posZ": -91
         },
         {
-          "target_location": 8,
+          "target_location": 98,
           "tooltip": "Nördliche Krypta",
           "posX": 40,
           "posY": -76,
           "posZ": -175
         },
         {
-          "target_location": 6,
+          "target_location": 96,
           "tooltip": "Südliche Krypta",
           "posX": -179,
           "posY": -76,
@@ -906,50 +965,52 @@
       },
       "hotspots": [
         {
-          "uid": 65,
+          "uid": 1,
+          "title": "",
           "tooltip": "Grab Bernwards",
+          "text": "",
+          "images": [],
+          "audio": "resources/audio/inschrift_test.mp3",
           "posX": -144,
           "posY": -71,
           "posZ": -111,
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/inschrift_test.mp3"
         },
         {
-          "uid": 65,
+          "uid": 2,
+          "title": "Die Ausstattung des Marienaltars in der Krypta",
           "tooltip": "Marienaltar",
-          "posX": 184,
-          "posY": -50,
-          "posZ": 41,
           "text": "",
           "images": [],
-          "audio": "resources/audio/inschrift_test.mp3"
+          "audio": "resources/audio/inschrift_test.mp3",
+          "posX": 184,
+          "posY": -50,
+          "posZ": 41
         }
       ]
     },
     {
-      "uid": 6,
+      "uid": 96,
       "image": [
         "resources/panos/krypta006.jpg"
       ],
       "mapUid": 2,
       "transitions": [
         {
-          "target_location": 18,
+          "target_location": 918,
           "tooltip": "Zentrum Krypta",
           "posX": -184,
           "posY": -37,
           "posZ": 50
         },
         {
-          "target_location": 7,
+          "target_location": 97,
           "tooltip": "Altar",
           "posX": 0,
           "posY": -40,
           "posZ": -191
         },
         {
-          "target_location": 8,
+          "target_location": 98,
           "tooltip": "Nördliche Krypta",
           "posX": -123,
           "posY": 10,
@@ -964,47 +1025,48 @@
       },
       "hotspots": [
         {
-          "uid": 65,
+          "uid": 1,
+          "title": "",
           "tooltip": "Grab Bernwards",
-          "posX": -144,
-          "posY": -70,
-          "posZ": -111,
           "text": "",
           "images": [],
-          "audio": "resources/audio/inschrift_test.mp3"
+          "audio": "resources/audio/inschrift_test.mp3",
+          "posX": -144,
+          "posY": -70,
+          "posZ": -111
         }
       ]
     },
     {
-      "uid": 8,
+      "uid": 98,
       "image": [
         "resources/panos/krypta008.jpg"
       ],
       "mapUid": 2,
       "transitions": [
         {
-          "target_location": 7,
+          "target_location": 97,
           "tooltip": "Altar",
           "posX": -144,
           "posY": -70,
           "posZ": -111
         },
         {
-          "target_location": 6,
+          "target_location": 96,
           "tooltip": "Südliche Krypta",
           "posX": 57,
           "posY": -47,
           "posZ": -180
         },
         {
-          "target_location": 18,
+          "target_location": 918,
           "tooltip": "Zentrum Krypta",
           "posX": 187,
           "posY": -47,
           "posZ": -25
         },
         {
-          "target_location": 3,
+          "target_location": 93,
           "tooltip": "Übergang Kirche",
           "posX": -105,
           "posY": -75,
@@ -1019,40 +1081,41 @@
       },
       "hotspots": [
         {
-          "uid": 65,
+          "uid": 1,
+          "title": "",
           "tooltip": "Grab Bernwards",
+          "text": "",
+          "images": [],
+          "audio": "resources/audio/inschrift_test.mp3",
           "posX": 94,
           "posY": -83,
           "posZ": -149,
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/inschrift_test.mp3"
         }
       ]
     },
     {
-      "uid": 18,
+      "uid": 918,
       "image": [
         "resources/panos/krypta018.jpg"
       ],
       "mapUid": 2,
       "transitions": [
         {
-          "target_location": 13,
+          "target_location": 913,
           "tooltip": "Westlicher Ausgang",
           "posX": -99,
           "posY": -50,
           "posZ": -161
         },
         {
-          "target_location": 6,
+          "target_location": 96,
           "tooltip": "Südliche Krypta",
           "posX": 32,
           "posY": -44,
           "posZ": 187
         },
         {
-          "target_location": 8,
+          "target_location": 98,
           "tooltip": "Nördliche Krypta",
           "posX": 158,
           "posY": -39,
@@ -1070,14 +1133,14 @@
       ]
     },
     {
-      "uid": 13,
+      "uid": 913,
       "image": [
         "resources/panos/krypta013.jpg"
       ],
       "mapUid": 2,
       "transitions": [
         {
-          "target_location": 18,
+          "target_location": 918,
           "tooltip": "Zentrum Krypta",
           "posX": -75,
           "posY": -15,
@@ -1093,13 +1156,14 @@
       "hotspots": [
         {
           "uid": 10,
+          "title": "",
           "tooltip": "Weiheinschrift",
+          "text": "",
+          "images": [],
+          "audio": "resources/audio/inschrift_test.mp3",
           "posX": -38,
           "posY": 14,
           "posZ": -191,
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/inschrift_test.mp3"
         }
       ]
     }
