@@ -143,7 +143,7 @@
       "mapUid": 1,
       "transitions": [
         {
-          "target_location": 7,
+          "target_location": 97,
           "tooltip": "Übergang zur Krypta",
           "posX": 190,
           "posY": -31,
