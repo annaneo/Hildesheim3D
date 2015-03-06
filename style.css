@@ -40,7 +40,6 @@ div#panorama {
 .panoNavButton {
     width: 30px;
     height: 30px;
-    background-color: #A30000;
     z-index: 0;
     position: absolute;
     border: 2px solid #000;
