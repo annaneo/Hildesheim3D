@@ -203,7 +203,7 @@ function initEventListener() {
     //TODO: touch elements don't need offset calculation?
     container.addEventListener('touchstart', onDocumentTouchStart, false);
     container.addEventListener('touchmove', onDocumentTouchMove, false);
-    container.addEventListener( 'touchend', onDocumentTouchEnd, false );
+    container.addEventListener('touchend', onDocumentTouchEnd, false );
 
 
     container.addEventListener('dragover', function (event) {
@@ -238,6 +238,24 @@ function initEventListener() {
 		isPopupOpen = false;
 	}, false);
     _('map').addEventListener('dragstart', function(event) { event.preventDefault(); });
+
+    _('upNavButton').addEventListener('mousedown', function(event) {
+        isUserInteracting = true;
+        latFactor = 0.5;
+    }, false);
+    _('downNavButton').addEventListener('mousedown', function(event) {
+        isUserInteracting = true;
+        latFactor = -0.5;
+    }, false);
+    _('leftNavButton').addEventListener('mousedown', function(event) {
+        isUserInteracting = true;
+        lonFactor = -0.5;
+    }, false);
+    _('rightNavButton').addEventListener('mousedown', function(event) {
+        isUserInteracting = true;
+        lonFactor = 0.5;
+    }, false);
+    _('navigationButtonsContainer').addEventListener('mouseup', onMouseUp, false);
 }
 
 
@@ -275,8 +293,8 @@ function onDocumentTouchStart(event) {
         var touchX = event.touches[0].pageX;
         var touchY = event.touches[0].pageY;
         console.log("touch x: " + touchX + "   touch y: " + touchY);
-        downEventHandler(touchX, touchY, event);    }
-    else if (event.touches.length === 2) {
+        downEventHandler(touchX, touchY, event);
+    } else if (event.touches.length === 2) {
         //TODO: zoom in and out
     }
 }
@@ -296,23 +314,6 @@ function onDocumentTouchEnd(event) {
 }
 
 
-function fixEvent(e) {
-    if (!e.hasOwnProperty('offsetX')) {
-        var curleft = curtop = 0;
-        if (e.offsetParent) {
-            var obj = e;
-            do {
-                curleft += obj.offsetLeft;
-                curtop += obj.offsetTop;
-            } while (obj = obj.offsetParent);
-        }
-        e.offsetX = e.layerX-curleft;
-        e.offsetY = e.layerY-curtop;
-    }
-    return e;
-}
-
-
 function moveEventHandler(eventX, eventY, event) {
     // Position of toolTips
     toolTip.style.left = eventX + 20 + "px";
@@ -326,7 +327,6 @@ function moveEventHandler(eventX, eventY, event) {
     //mouse.y = - ( ( eventY - renderer.domElement.offsetTop ) / renderer.domElement.height ) * 2 + 1;
     mouse.x = ( eventX / window.innerWidth ) * 2 - 1;
     mouse.y = - ( eventY / window.innerHeight ) * 2 + 1;
-
 
     if (isUserInteracting === true) {
         lonFactor = mouse.x;
@@ -376,7 +376,6 @@ function downEventHandler(eventX, eventY, event) {
     if (isPopupOpen) {
         return;
     }
-
     event.preventDefault();
 
     // update the mouse variable
@@ -409,6 +408,7 @@ function downEventHandler(eventX, eventY, event) {
     }
 }
 
+
 function upEventHandler(event) {
     lonFactor = 0;
     latFactor = 0;
@@ -418,9 +418,12 @@ function upEventHandler(event) {
 
 //TODO: make ready for touch events
 function wheelEventHandler(eventX, eventY, event) {
+    event.preventDefault();
     if (isPopupOpen) {
         return;
     }
+    //TODO: should we allow zoom?
+    return;
 
     // WebKit
     if (event.wheelDeltaY) {
