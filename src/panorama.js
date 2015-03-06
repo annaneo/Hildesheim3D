@@ -423,6 +423,7 @@ function downEventHandler(eventX, eventY, event) {
         latFactor = mouse.y;
         isUserInteracting = true;
     }
+    toolTip.style.display = "none";
 }
 
 
