@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Hildesheim3D</title>
+	<title>Panoramatour zu den Inschriften von St. Michaelis in Hildesheim</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 	<link rel="stylesheet" href="style.css">
@@ -37,17 +37,32 @@
 </head>
 <body>
 
+<!-- TODO: make all this shit nice & semantic HTML5-->
 
 	<div id="panorama"></div>
 	<div id="loadingScreen">
 	</div>
-    <div id="toolTip"></div>
+
+    <div id="map">
+        <img id="mapImage" src="" width="240 " height="180"/>
+    </div>
+
+    <div id="nav">
+        <img id="navImage" src="resources/icons/navigation.png" width="300" height="150"/>
+    </div>
+
+    <!-- Info Pop Up-->
     <div id="navigationButtonsContainer">
         <figure class="panoNavButton" id="upNavButton">up</figure>
         <figure class="panoNavButton" id="downNavButton">down</figure>
         <figure class="panoNavButton" id="leftNavButton">left</figure>
         <figure class="panoNavButton" id="rightNavButton">right</figure>
     </div>
+
+    <!-- Tool Tip -->
+    <div id="toolTip"></div>
+
+    <!-- Info Pop Up-->
 	<div id="infoView">
 		<div id="infoTitle">
             Information zu einer Inschrift
@@ -62,8 +77,7 @@
             <img src="resources/icons/close.png" alt="Close">
         </figure>
 	</div>
-    <div id="map">
-        <img id="mapImage" src="" width="240 " height="180"/>
-    </div>
+
+
 </body>
 </html>
