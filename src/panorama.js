@@ -83,7 +83,7 @@ function createLoadingScene() {
  * //TODO: changing MOUSE at MOUSEOVER (click indication)
  */
 function initTooltip() {
-    toolTip = $('toolTip');
+    toolTip = _('toolTip');
 }
 
 
@@ -110,7 +110,7 @@ function parseConfigJSON(dataURL, callback) {
  * (also event listeners, shader ?, shader needs a scene)
  */
 function init() {
-	camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight,1 , 200);
+	camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 200);
 	camera.target = new THREE.Vector3(0, 0, 1);
 	// initialize object to perform world/screen calculations
 	projector = new THREE.Projector();
@@ -120,7 +120,7 @@ function init() {
 		renderer = new THREE.CanvasRenderer();
 	}
 	renderer.setSize(window.innerWidth, window.innerHeight);
-	var container = $('panorama');
+	var container = _('panorama');
 	container.appendChild(renderer.domElement);
     initTooltip()
 }
@@ -176,6 +176,9 @@ function transitToLocation(locationIndex, reset) {
         if (cts[lastPanoramaUID]) {
             lat = cts[lastPanoramaUID].lat;
             lon = cts[lastPanoramaUID].lon;
+        } else if (cts[-1]) {
+            lat = cts[-1].lat;
+            lon = cts[-1].lon;
         } else {
             lat = 2;
             lon = -103;
@@ -188,8 +191,8 @@ function transitToLocation(locationIndex, reset) {
 
 
 function initEventListener() {
-	var container = $('panorama');
-	THREEx.FullScreen.bindKey({charCode : 'f'.charCodeAt(0) /*, element : $('panorama')*/});
+	var container = _('panorama');
+	THREEx.FullScreen.bindKey({charCode : 'f'.charCodeAt(0) /*, element : _('panorama')*/});
 
 	container.addEventListener('mousedown', onMouseDown, false);
 	container.addEventListener('mousemove', onMouseMove, false);
@@ -229,12 +232,12 @@ function initEventListener() {
 
 	window.addEventListener('resize', onWindowResize, false);
 
-	$('infoCloseButton').addEventListener('click', function (event) {
-		var div = $("infoView");
+	_('infoCloseButton').addEventListener('click', function (event) {
+		var div = _("infoView");
 		div.style.display = "none";
 		isPopupOpen = false;
 	}, false);
-    $('map').addEventListener('dragstart', function(event) { event.preventDefault(); });
+    _('map').addEventListener('dragstart', function(event) { event.preventDefault(); });
 }
 
 
@@ -245,11 +248,17 @@ function onWindowResize() {
 }
 
 function onMouseDown(event) {
-    downEventHandler(event.clientX, event.clientY, event);
+    var eventX = event.pageX;
+    var eventY = event.pageY;
+    console.log('eventX: ' + eventX + '    eventY: ' + eventY);
+    downEventHandler(eventX, eventY, event);
 }
 
 function onMouseMove(event) {
-    moveEventHandler(event.clientX, event.clientY, event);
+    var eventX = event.pageX;
+    var eventY = event.pageY;
+    console.log('eventX: ' + eventX + '    eventY: ' + eventY);
+    moveEventHandler(eventX, eventY, event);
 }
 
 function onMouseUp(event) {
@@ -257,27 +266,50 @@ function onMouseUp(event) {
 }
 
 function onMouseWheel(event) {
-    wheelEventHandler(event.clientX, event.clientY, event);
+    wheelEventHandler(event.pageX, event.pageY, event);
 }
 
 
 function onDocumentTouchStart(event) {
     if (event.touches.length === 1) {
-        downEventHandler(event.touches[0].pageX + renderer.domElement.offsetLeft, event.touches[0].pageY + renderer.domElement.offsetTop, event);
-    } else if (event.touches.length === 2) {
+        var touchX = event.touches[0].pageX;
+        var touchY = event.touches[0].pageY;
+        console.log("touch x: " + touchX + "   touch y: " + touchY);
+        downEventHandler(touchX, touchY, event);    }
+    else if (event.touches.length === 2) {
         //TODO: zoom in and out
     }
 }
 
 function onDocumentTouchMove(event) {
-    if (event.touches.length == 1) {
-        moveEventHandler(event.touches[0].pageX + renderer.domElement.offsetLeft, event.touches[0].pageY + renderer.domElement.offsetTop, event);
+    if (event.touches.length === 1) {
+        var touchX = event.touches[0].pageX;
+        var touchY = event.touches[0].pageY;
+        console.log("touch x: " + touchX + "   touch y: " + touchY);
+        moveEventHandler(touchX, touchY, event);
     }
 }
 
 
 function onDocumentTouchEnd(event) {
     upEventHandler(event);
+}
+
+
+function fixEvent(e) {
+    if (!e.hasOwnProperty('offsetX')) {
+        var curleft = curtop = 0;
+        if (e.offsetParent) {
+            var obj = e;
+            do {
+                curleft += obj.offsetLeft;
+                curtop += obj.offsetTop;
+            } while (obj = obj.offsetParent);
+        }
+        e.offsetX = e.layerX-curleft;
+        e.offsetY = e.layerY-curtop;
+    }
+    return e;
 }
 
 
@@ -290,8 +322,11 @@ function moveEventHandler(eventX, eventY, event) {
         return;
     }
 
-    mouse.x = ( ( eventX - renderer.domElement.offsetLeft ) / renderer.domElement.width ) * 2 - 1;
-    mouse.y = - ( ( eventY - renderer.domElement.offsetTop ) / renderer.domElement.height ) * 2 + 1;
+    //mouse.x = ( ( eventX - renderer.domElement.offsetLeft ) / renderer.domElement.width ) * 2 - 1;
+    //mouse.y = - ( ( eventY - renderer.domElement.offsetTop ) / renderer.domElement.height ) * 2 + 1;
+    mouse.x = ( eventX / window.innerWidth ) * 2 - 1;
+    mouse.y = - ( eventY / window.innerHeight ) * 2 + 1;
+
 
     if (isUserInteracting === true) {
         lonFactor = mouse.x;
@@ -346,8 +381,10 @@ function downEventHandler(eventX, eventY, event) {
 
     // update the mouse variable
     // canvas position has to be 'static'
-    mouse.x = ( ( eventX - renderer.domElement.offsetLeft ) / renderer.domElement.width ) * 2 - 1;
-    mouse.y = - ( ( eventY - renderer.domElement.offsetTop ) / renderer.domElement.height ) * 2 + 1;
+    //mouse.x = ( ( eventX - renderer.domElement.offsetLeft ) / renderer.domElement.width ) * 2 - 1;
+    //mouse.y = - ( ( eventY - renderer.domElement.offsetTop ) / renderer.domElement.height ) * 2 + 1;
+    mouse.x = ( eventX / window.innerWidth ) * 2 - 1;
+    mouse.y = - ( eventY / window.innerHeight ) * 2 + 1;
 
     // find intersections
     // create a Ray with origin at the mouse position
@@ -463,7 +500,7 @@ function update() {
 	if (!isPopupOpen) {
 		lon = (lon + lonFactor) % 360;
 		lat = lat + latFactor;
-        console.log("lon: " + lon + "     lat: " + lat);
+        //console.log("lon: " + lon + "     lat: " + lat);
 
 		lat = Math.max(-35, Math.min(45, lat));
 		phi = THREE.Math.degToRad(90 - lat);
@@ -472,8 +509,8 @@ function update() {
 		camera.target.y = 195 * Math.cos(phi);
 		camera.target.z = 195 * Math.sin(phi) * Math.sin(theta);
         camera.lookAt(camera.target);
-        console.log("Camera Target: " + vectorToString(camera.target));
-        console.log("-----------------------------");
+        //console.log("Camera Target: " + vectorToString(camera.target));
+        //console.log("-----------------------------");
 		renderer.render(scene, camera);
 	} else {
 		composer.render();
@@ -493,7 +530,7 @@ function resetPanorama() {
  * @param id id of dom element
  * @returns {HTMLElement} dom element
  */
-function $(id) {
+function _(id) {
 	return document.getElementById(id);
 }
 
