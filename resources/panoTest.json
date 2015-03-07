@@ -1,5 +1,5 @@
 {
-  "startLocation": 20,
+  "startLocation": 12,
   "maps": [
     {
       "uid": 1,
@@ -48,6 +48,18 @@
           "mapPosY": 80
         },
         {
+          "uid": 25,
+          "tooltip": "Östliches Querhaus",
+          "mapPosX": 190,
+          "mapPosY": 80
+        },
+        {
+          "uid": 17,
+          "tooltip": "Nördliches Seitenschiff",
+          "mapPosX": 130,
+          "mapPosY": 45
+        },
+        {
           "uid": 21,
           "tooltip": "Südliches Seitenschiff",
           "mapPosX": 70,
@@ -72,13 +84,13 @@
           "mapPosY": 110
         },
         {
-          "uid": 13,
+          "uid": 14,
           "tooltip": "Stuckfiguren",
           "mapPosX": 130,
           "mapPosY": 110
         },
         {
-          "uid": 13,
+          "uid": 15,
           "tooltip": "Stuckfiguren",
           "mapPosX": 160,
           "mapPosY": 110
@@ -102,31 +114,31 @@
       "image": "resources/maps/Krypta.png",
       "mapSpots": [
         {
-          "uid": 13,
+          "uid": 913,
           "tooltip": "Weiheinschrift",
           "mapPosX": 90,
           "mapPosY": 80
         },
         {
-          "uid": 18,
+          "uid": 918,
           "tooltip": "Zentrum Krypta",
           "mapPosX": 140,
           "mapPosY": 80
         },
         {
-          "uid": 7,
+          "uid": 97,
           "tooltip": "Marienaltar",
           "mapPosX": 195,
           "mapPosY": 80
         },
         {
-          "uid": 8,
+          "uid": 98,
           "tooltip": "Grablege",
           "mapPosX": 170,
           "mapPosY": 65
         },
         {
-          "uid": 6,
+          "uid": 96,
           "tooltip": "Grablege",
           "mapPosX": 170,
           "mapPosY": 105
@@ -165,20 +177,17 @@
         "-1": {
           "lat": 2,
           "lon": -103
+        },
+        "98": {
+          "lat": -6,
+          "lon": -110
+        },
+        "22": {
+          "lat": -8,
+          "lon": 10
         }
       },
       "hotspots": [
-        {
-          "uid": 48,
-          "title": "",
-          "tooltip": "Westchor-Schranke",
-          "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.",
-          "images": [],
-          "audio": "resources/audio/inschrift_test.mp3",
-          "posX": 117,
-          "posY": 34,
-          "posZ": -152
-        }
       ]
     },
     {
@@ -218,14 +227,22 @@
         "-1": {
           "lat": 2,
           "lon": -103
+        },
+        "1": {
+          "lat": 3,
+          "lon": -114
+        },
+        "29": {
+          "lat": -2,
+          "lon": -269
         }
       },
       "hotspots": [
         {
           "uid": 48,
-          "title": "",
-          "tooltip": "Westchor-Schranke",
-          "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.",
+          "title": "Die nördliche Chorschranke - Der neue Heilige im Bild (Ende 12. Jh.)",
+          "tooltip": "Chorschranke",
+          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0048.html#content\" >Nördliche Chorschranke, DIO 58, Nr. 48</a> ",
           "images": [],
           "audio": "resources/audio/inschrift_test.mp3",
           "posX": 144,
@@ -347,14 +364,14 @@
       "hotspots": [
         {
           "uid": 65,
-          "title": "",
+          "title": "Die Wurzel Jesse - ein Bild für den kommenden Christus",
           "tooltip": "Deckengemälde",
-          "text": "",
+          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0065.html#content\" >Deckengemälde, DIO 58, Nr. 65</a> ",
           "images": [],
           "audio": "resources/audio/inschrift_test.mp3",
-          "posX": -29,
-          "posY": 138,
-          "posZ": 135
+          "posX": -86,
+          "posY": 126,
+          "posZ": 122
         }
       ]
     },
@@ -382,8 +399,8 @@
       ],
       "cameraTargets": {
         "12": {
-          "lat": -7,
-          "lon": 118
+          "lat": -5,
+          "lon": 97
         },
         "29": {
           "lat": -9,
@@ -424,6 +441,10 @@
         }
       ],
       "cameraTargets": {
+        "-1": {
+          "lat": -1,
+          "lon": 105
+        },
         "20": {
           "lat": 0,
           "lon": -73
@@ -432,7 +453,7 @@
       "hotspots": [
         {
           "uid": 2,
-          "title": "",
+          "title": "1193 - Bernward wird heiliggesprochen",
           "tooltip": "Heiligsprechung Bernwards",
           "text": "",
           "images": [],
@@ -621,14 +642,14 @@
       "transitions": [
         {
           "target_location": 14,
-          "tooltip": "Richtung Osten",
+          "tooltip": "Seitenschiff",
           "posX": 145,
           "posY": -41,
           "posZ": -124
         },
         {
           "target_location": 21,
-          "tooltip": "Richtung Westen",
+          "tooltip": "Westliches Querhaus",
           "posX": -152,
           "posY": -84,
           "posZ": 88
@@ -642,21 +663,25 @@
         }
       ],
       "cameraTargets": {
+        "-1": {
+          "lat": -3,
+          "lon": -32
+        },
         "21": {
           "lat": -4,
           "lon": -42
         },
-        "-1": {
+        "13": {
           "lat": -3,
-          "lon": -32
+          "lon": -227
         }
       },
       "hotspots": [
         {
           "uid": 2,
-          "title": "",
+          "title": "Allegorische Figuren der Seligpreisungen als Schmuck der Kirche des Heiligen",
           "tooltip": "Stuckfiguren",
-          "text": "",
+          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0044.html#content\" >Seligpreisungen, DIO 58, Nr. 44</a> ",
           "images": [],
           "audio": "resources/audio/inschrift_test.mp3",
           "posX": -34,
@@ -665,10 +690,12 @@
         },
         {
           "uid": 3,
-          "title": "",
+          "title": "Im Jahr 1015 lässt Bischof Bernward zwei monumentale Türflügel gießen",
           "tooltip": "Bernwardstür",
-          "text": "",
-          "images": [],
+          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0009.html#content\" >Bernwardstür, DIO 58, Nr. 9</a> ",
+          "images": [
+            "resources/images/di-58-009_1.jpg"
+          ],
           "audio": "resources/audio/inschrift_test.mp3",
           "posX": 98,
           "posY": 23,
@@ -702,14 +729,23 @@
         "-1": {
           "lat": 1,
           "lon": -14
+        },
+        "13": {
+          "lat": -10,
+          "lon": 109
+        },
+        "15": {
+          "lat": -1,
+          "lon": -75
         }
       },
       "hotspots": [
         {
           "uid": 1,
-          "title": "",
+          "uid": 2,
+          "title": "Allegorische Figuren der Seligpreisungen als Schmuck der Kirche des Heiligen",
           "tooltip": "Stuckfiguren",
-          "text": "",
+          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0044.html#content\" >Seligpreisungen, DIO 58, Nr. 44</a> ",
           "images": [],
           "audio": "resources/audio/inschrift_test.mp3",
           "posX": 128,
@@ -734,7 +770,7 @@
         },
         {
           "target_location": 24,
-          "tooltip": "Bernwardsäule",
+          "tooltip": "Christussäule",
           "posX": -113,
           "posY": -46,
           "posZ": 152
@@ -751,14 +787,27 @@
         "-1": {
           "lat": 0,
           "lon": 0
+        },
+        "14": {
+          "lat": -2,
+          "lon": 136
+        },
+        "24": {
+          "lat": -1,
+          "lon": -49
+        },
+        "26": {
+          "lat": -11,
+          "lon": 253
         }
       },
       "hotspots": [
         {
           "uid": 1,
-          "title": "",
+          "uid": 2,
+          "title": "Allegorische Figuren der Seligpreisungen als Schmuck der Kirche des Heiligen",
           "tooltip": "Stuckfiguren",
-          "text": "",
+          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0044.html#content\" >Seligpreisungen, DIO 58, Nr. 44</a> ",
           "images": [],
           "audio": "resources/audio/inschrift_test.mp3",
           "posX": 134,
@@ -782,6 +831,13 @@
           "posZ": -153
         },
         {
+          "target_location": 25,
+          "tooltip": "Querhaus",
+          "posX": 190,
+          "posY": -40,
+          "posZ": -12
+        },
+        {
           "target_location": 15,
           "tooltip": "Südliches Seitenschiff",
           "posX": -5,
@@ -790,7 +846,7 @@
         },
         {
           "target_location": 6,
-          "tooltip": "Gedenkstein & Kohlenmann",
+          "tooltip": "Gedenkstein",
           "posX": -186,
           "posY": -57,
           "posZ": -6
@@ -800,13 +856,29 @@
         "-1": {
           "lat": 0,
           "lon": 0
+        },
+        "26": {
+          "lat": -4,
+          "lon": 144
+        },
+        "15": {
+          "lat": 1,
+          "lon": 79
+        },
+        "25": {
+          "lat": -4,
+          "lon": 144
+        },
+        "6": {
+          "lat": -3,
+          "lon": -8
         }
       },
       "hotspots": [
         {
           "uid": 1,
-          "title": "",
-          "tooltip": "Bernwardsäule",
+          "title": "Die Christussäule",
+          "tooltip": "Christussäule",
           "text": "",
           "images": [],
           "audio": "resources/audio/inschrift_test.mp3",
@@ -817,7 +889,7 @@
       ]
     },
     {
-      "uid": 2,
+      "uid": 6,
       "image": [
         "resources/panos/kirche006.jpg"
       ],
@@ -835,25 +907,21 @@
         "-1": {
           "lat": 0,
           "lon": 0
+        },
+        "24": {
+          "lat": -8,
+          "lon": 135
         }
       },
       "hotspots": [
         {
-          "uid": 15,
-          "title": "",
-          "tooltip": "Kohlenmann",
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/inschrift_test.mp3",
-          "posX": -20,
-          "posY": -6,
-          "posZ": 193
-        },
-        {
           "uid": 16,
+          "title": "Bischof Bernward bittet um Gebetsgedenken (vor 1022)",
           "tooltip": "Gedenkstein",
-          "text": "",
-          "images": [],
+          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0016.html#content\" >Gedenkstein, DIO 58, Nr. 16</a> ",
+          "images": [
+            "resources/images/di-58-016_1.jpg"
+          ],
           "audio": "resources/audio/inschrift_test.mp3",
           "posX": -172,
           "posY": -40,
@@ -876,37 +944,200 @@
           "posZ": 41
         },
         {
+          "target_location": 25,
+          "tooltip": "Ostchor",
+          "posX": -190,
+          "posY": -22,
+          "posZ": -33
+        },
+        {
           "target_location": 24,
-          "tooltip": "Östliches Seitenschiff",
+          "tooltip": "Querhaus",
           "posX": -144,
           "posY": -70,
           "posZ": -111
         },
         {
-          "target_location": 24,
-          "tooltip": " Mittleres Seitenschiff",
+          "target_location": 14,
+          "tooltip": "Seitenschiff",
           "posX": 40,
           "posY": -76,
           "posZ": -175
+        },
+        {
+          "target_location": 17,
+          "tooltip": "Seitenschiff",
+          "posX": 63,
+          "posY": -46,
+          "posZ": 179
         }
       ],
       "cameraTargets": {
         "-1": {
           "lat": 0,
           "lon": 0
+        },
+        "25": {
+          "lat": 0,
+          "lon": 0
+        },
+        "29": {
+          "lat": -3,
+          "lon": 192
+        },
+        "17": {
+          "lat": -7,
+          "lon": 243
+        },
+        "13": {
+          "lat": -2,
+          "lon": 75
         }
       },
       "hotspots": [
         {
-          "uid": 65,
-          "title": "",
-          "tooltip": "Deckengemälde",
+          "uid": 1,
+          "title": "Reliquien stabilisieren Bernwards Kirchenbau",
+          "tooltip": "Säulen",
+          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0013.html#content\" >Säulen, DIO 58, Nr. 13</a> ",
+          "images": [],
+          "audio": "resources/audio/inschrift_test.mp3",
+          "posX": -27,
+          "posY": 109,
+          "posZ": 160
+        }
+      ]
+    },
+    {
+      "uid": 25,
+      "image": [
+        "resources/panos/kirche025.jpg"
+      ],
+      "mapUid": 1,
+      "transitions": [
+        {
+          "target_location": 26,
+          "tooltip": "Mittelschiff",
+          "posX": -63,
+          "posY": -13,
+          "posZ": -183
+        },
+        {
+          "target_location": 24,
+          "tooltip": "Südliches Seitenschiff",
+          "posX": -182,
+          "posY": -68,
+          "posZ": 9
+        },
+        {
+          "target_location": 17,
+          "tooltip": "Nördliches Seitenschiff",
+          "posX": 112,
+          "posY": -36,
+          "posZ": -156
+        }
+      ],
+      "cameraTargets": {
+        "-1": {
+          "lat": 1,
+          "lon": 247
+        },
+        "24": {
+          "lat": 9,
+          "lon": -34
+        },
+        "26": {
+          "lat": 0,
+          "lon": 70
+        },
+        "17": {
+          "lat": -7,
+          "lon": 146
+        }
+      },
+      "hotspots": [
+        {
+          "uid": 1,
+          "title": "Die Querhäuser der Michaeliskirche",
+          "tooltip": "Querhäuser",
           "text": "",
           "images": [],
           "audio": "resources/audio/inschrift_test.mp3",
-          "posX": 147,
-          "posY": 96,
-          "posZ": 85
+          "posX": 46,
+          "posY": -6,
+          "posZ": -189
+        },
+        {
+          "uid": 1,
+          "title": "Die Wurzel Jesse - ein Bild für den kommenden Christus",
+          "tooltip": "Deckengemälde",
+          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0065.html#content\" >Deckengemälde, DIO 58, Nr. 65</a> ",
+          "images": [],
+          "audio": "resources/audio/inschrift_test.mp3",
+          "posX": 0,
+          "posY": 138,
+          "posZ": -137
+        }
+      ]
+    },
+    {
+      "uid": 17,
+      "image": [
+        "resources/panos/kirche017.jpg"
+      ],
+      "mapUid": 1,
+      "transitions": [
+        {
+          "target_location": 26,
+          "tooltip": "Mittelschiff",
+          "posX": -6,
+          "posY": -44,
+          "posZ": 189
+        },
+        {
+          "target_location": 25,
+          "tooltip": "Östliches Querhaus",
+          "posX": 106,
+          "posY": -48,
+          "posZ": 156
+        },
+        {
+          "target_location": 22,
+          "tooltip": "Westliches Querhaus",
+          "posX": -171,
+          "posY": -21,
+          "posZ": -90
+        }
+      ],
+      "cameraTargets": {
+        "-1": {
+          "lat": 1,
+          "lon": 143
+        },
+        "22": {
+          "lat": -1,
+          "lon": 26
+        },
+        "26": {
+          "lat": -1,
+          "lon": 238
+        },
+        "25": {
+          "lat": -1,
+          "lon": 238
+        }
+      },
+      "hotspots": [
+        {
+          "uid": 1,
+          "title": "Die Seitenschiffe der Michaeliskirche",
+          "tooltip": "Seitenschiffe",
+          "text": "",
+          "images": [],
+          "audio": "resources/audio/inschrift_test.mp3",
+          "posX": -191,
+          "posY": -16,
+          "posZ": 34
         }
       ]
     },
@@ -947,33 +1178,37 @@
         }
       ],
       "cameraTargets": {
+        "-1": {
+          "lat": -15,
+          "lon": 219
+        },
         "1": {
           "lat": -15,
           "lon": 219
         },
-        "-1": {
-          "lat": -15,
-          "lon": 219
+        "96": {
+          "lat": -6,
+          "lon": 354
+        },
+        "98": {
+          "lat": -2,
+          "lon": 70
+        },
+        "918": {
+          "lat": -2,
+          "lon": 28
         }
       },
       "hotspots": [
         {
           "uid": 1,
-          "title": "",
-          "tooltip": "Grab Bernwards",
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/inschrift_test.mp3",
-          "posX": -144,
-          "posY": -71,
-          "posZ": -111
-        },
-        {
-          "uid": 2,
           "title": "Die Ausstattung des Marienaltars in der Krypta",
           "tooltip": "Marienaltar",
-          "text": "",
-          "images": [],
+          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0004.html#content\" >Evangeliar, DIO 58, Nr. 4</a>; <a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0005.html#content\" >Leuchter, DIO 58, Nr. 5</a>; <a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0014.html#content\" >Kreuz, DIO 58, Nr. 14</a> ",
+          "images": [
+            "resources/images/di-58-005_1.jpg",
+            "resources/images/di-58-014_1.jpg"
+          ],
           "audio": "resources/audio/inschrift_test.mp3",
           "posX": 184,
           "posY": -50,
@@ -1014,14 +1249,30 @@
         "-1": {
           "lat": -15,
           "lon": 219
+        },
+        "918": {
+          "lat": -10,
+          "lon": 308
+        },
+        "918": {
+          "lat": -10,
+          "lon": 308
+        },
+        "908": {
+          "lat": -3,
+          "lon": 48
+        },
+        "907": {
+          "lat": -11,
+          "lon": -220
         }
       },
       "hotspots": [
         {
           "uid": 1,
-          "title": "",
-          "tooltip": "Grab Bernwards",
-          "text": "",
+          "title": "Bernward zwischen Engeln im Himmel",
+          "tooltip": "Sarkophag",
+          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0011.html#content\" >Sarkophag, DIO 58, Nr. 11</a> ",
           "images": [],
           "audio": "resources/audio/inschrift_test.mp3",
           "posX": -144,
@@ -1070,19 +1321,35 @@
         "-1": {
           "lat": -15,
           "lon": 219
+        },
+        "1": {
+          "lat": -15,
+          "lon": 219
+        },
+        "97": {
+          "lat": -9,
+          "lon": 27
+        },
+        "96": {
+          "lat": -1,
+          "lon": 105
+        },
+        "918": {
+          "lat": -18,
+          "lon": -159
         }
       },
       "hotspots": [
         {
           "uid": 1,
-          "title": "",
-          "tooltip": "Grab Bernwards",
-          "text": "",
+          "title": "Die Grabplatte Bischof Bernwards von 1022",
+          "tooltip": "Grabplatte Bernwards",
+          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0012.html#content\" >Grabdeckplatte, DIO 58, Nr. 12</a> ",
           "images": [],
           "audio": "resources/audio/inschrift_test.mp3",
-          "posX": 94,
-          "posY": -83,
-          "posZ": -149
+          "posX": 113,
+          "posY": -61,
+          "posZ": -146
         }
       ]
     },
@@ -1117,11 +1384,39 @@
       ],
       "cameraTargets": {
         "-1": {
-          "lat": -15,
-          "lon": 219
+          "lat": 4,
+          "lon": 60
+        },
+        "97": {
+          "lat": -8,
+          "lon": 244
+        },
+        "913": {
+          "lat": 4,
+          "lon": 60
+        },
+        "96": {
+          "lat": -8,
+          "lon": 244
+        },
+        "98": {
+          "lat": -8,
+          "lon": 244
         }
       },
-      "hotspots": []
+      "hotspots": [
+        {
+          "uid": 1,
+          "title": "Bernward stirbt 1022 und wird in der Krypta in einem Sarkophag beigesetzt",
+          "tooltip": "Bernwards Grablege",
+          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0011.html#content\" >Sarkophag, DIO 58, Nr. 11</a> ",
+          "images": [],
+          "audio": "resources/audio/inschrift_test.mp3",
+          "posX": 93,
+          "posY": -9,
+          "posZ": 171
+        }
+      ]
     },
     {
       "uid": 913,
@@ -1140,6 +1435,10 @@
       ],
       "cameraTargets": {
         "-1": {
+          "lat": -6,
+          "lon": 110
+        },
+        "918": {
           "lat": -15,
           "lon": 219
         }
@@ -1147,10 +1446,12 @@
       "hotspots": [
         {
           "uid": 10,
-          "title": "",
+          "title": "Bernward weiht die Krypta der Michaeliskirche",
           "tooltip": "Weiheinschrift",
-          "text": "",
-          "images": [],
+          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0010.html#content\" >Bernwardkrypta, DIO 58, Nr. 10</a>",
+          "images": [
+            "resources/images/di-58-010_1.jpg"
+          ],
           "audio": "resources/audio/inschrift_test.mp3",
           "posX": -38,
           "posY": 14,

@@ -316,7 +316,7 @@ function onDocumentTouchStart(event) {
     if (event.touches.length === 1) {
         var touchX = event.touches[0].pageX;
         var touchY = event.touches[0].pageY;
-        console.log("touch x: " + touchX + "   touch y: " + touchY);
+        //console.log("touch x: " + touchX + "   touch y: " + touchY);
         downEventHandler(touchX, touchY, event);
     } else if (event.touches.length === 2) {
         //TODO: zoom in and out
@@ -327,7 +327,7 @@ function onDocumentTouchMove(event) {
     if (event.touches.length === 1) {
         var touchX = event.touches[0].pageX;
         var touchY = event.touches[0].pageY;
-        console.log("touch x: " + touchX + "   touch y: " + touchY);
+        //console.log("touch x: " + touchX + "   touch y: " + touchY);
         moveEventHandler(touchX, touchY, event);
     }
 }
@@ -528,7 +528,7 @@ function update() {
 	if (!isPopupOpen) {
 		lon = (lon + lonFactor) % 360;
 		lat = lat + latFactor;
-        //console.log("lon: " + lon + "     lat: " + lat);
+        console.log("lon: " + lon + "     lat: " + lat);
 
 		lat = Math.max(-35, Math.min(45, lat));
 		phi = THREE.Math.degToRad(90 - lat);
@@ -537,8 +537,8 @@ function update() {
 		camera.target.y = 195 * Math.cos(phi);
 		camera.target.z = 195 * Math.sin(phi) * Math.sin(theta);
         camera.lookAt(camera.target);
-        //console.log("Camera Target: " + vectorToString(camera.target));
-        //console.log("-----------------------------");
+        console.log("Camera Target: " + vectorToString(camera.target));
+        console.log("-----------------------------");
 		renderer.render(scene, camera);
 	} else {
 		composer.render();
