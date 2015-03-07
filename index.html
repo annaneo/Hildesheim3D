@@ -22,7 +22,8 @@
 	<script src="lib/render_pass.js"></script>
 	<script src="lib/shader_pass.js"></script>
 	<script src="lib/mask_pass.js"></script>
-	<script src="lib/blur_shader.js"></script>
+	<script src="lib/dark_blur_shader.js"></script>
+    <script src="lib/bright_blur_shader.js"></script>
 	<script src="src/panorama.js"></script>
 	<script src="lib/spin.js"></script>
 
@@ -47,12 +48,13 @@
         <img id="mapImage" src="" width="240 " height="180"/>
     </div>
 
-    <div id="nav">
-        <img id="navImage" src="resources/icons/navigation.png" width="300" height="150"/>
-    </div>
 
-    <!-- Info Pop Up-->
+
+    <!-- Nav Buttons -->
     <div id="navigationButtonsContainer">
+        <div id="nav">
+            <img id="navImage" src="resources/icons/navigation.png" width="300" height="150"/>
+        </div>
         <figure class="panoNavButton" id="upNavButton"></figure>
         <figure class="panoNavButton" id="downNavButton"></figure>
         <figure class="panoNavButton" id="leftNavButton"></figure>

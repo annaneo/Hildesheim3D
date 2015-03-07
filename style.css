@@ -66,6 +66,10 @@ div#panorama {
     right: 120px;
 }
 
+#navigationButtonsContainer {
+    display: none;
+}
+
 
 #toolTip {
     display: none;

@@ -15,6 +15,7 @@ var mouse = { x: 0, y: 0 };
 var targetList = [];
 var hoverIntersected;
 var composer;
+var transitionComposer;
 var panoramaData;
 var isLoading = false;
 var lastPanoramaUID = -1;
@@ -31,9 +32,9 @@ var timerId;
  */
 function startPanorama(dataURL) {
 	init();
-	var loadingScene = createLoadingScene();
-	scene = loadingScene;
-    isLoading = true;
+	//var loadingScene = createLoadingScene();
+	//scene = loadingScene;
+    //isLoading = true;
 	parseConfigJSON(dataURL, function (data) {
 		var loader = new LocationLoader();
 		loader.loadLocation(data.startLocation, startComplete);
@@ -139,8 +140,11 @@ function startComplete(location) {
     lastPanoramaUID = location.uid;
 	updateTargetList();
 	initEventListener();
-	setupBlurShader();
+	setupDarkBlurShader();
+    setupBrightBlurShader();
 	isLoading = false;
+    var navButtons = _('navigationButtonsContainer');
+    navButtons.style.display = 'block';
 }
 
 
@@ -167,9 +171,15 @@ function transitToLocation(locationIndex, reset) {
     if (reset) {
         lastPanoramaUID = -1; //update lastPanoramaUID to current location.uid for transition
     }
-    var loadingScene = createLoadingScene();
-    scene = loadingScene;
+    //var loadingScene = createLoadingScene();
+    //scene = loadingScene;
     isLoading = true;
+
+    var map = _('map');
+    map.style.display = 'none';
+    var navButtons = _('navigationButtonsContainer');
+    navButtons.style.display = 'none';
+
     setTimeout(function () {    // Hack
         var loader = new LocationLoader();
         loader.loadLocation(locationIndex, function (location) {
@@ -189,10 +199,12 @@ function transitToLocation(locationIndex, reset) {
             }
             lastPanoramaUID = location.uid;
             updateTargetList();
-            setupBlurShader();
+            setupDarkBlurShader();
+            setupBrightBlurShader();
             isLoading = false;
+            navButtons.style.display = 'block';
         });
-    }, 1);
+    }, 1000);
 
 }
 
@@ -514,14 +526,7 @@ function update() {
     }
 
 	if (isLoading) {
-		var time = Date.now() * 0.00005;
-		for (var i = 0; i < scene.children.length; i ++) {
-			var object = scene.children[i];
-			if (object instanceof THREE.PointCloud) {
-				object.rotation.y = time * ( i < 4 ? i + 1 : - ( i + 1 ) );
-			}
-		}
-		renderer.render(scene, camera);
+        transitionComposer.render();
 		return;
 	}
 
@@ -571,18 +576,34 @@ function vectorToString(v) { return "[ " + v.x + ", " + v.y + ", " + v.z + " ]";
 
 
 /**
- * Sets up blur shader.
+ * Sets up dark blur shader for hotspots.
  */
-function setupBlurShader() {
+function setupDarkBlurShader() {
 	composer = new THREE.EffectComposer(renderer);
 	var renderPass = new THREE.RenderPass(scene, camera);
 	composer.addPass(renderPass);
 
-	var blurShader = new THREE.ShaderPass( THREE.BlurShader );
+	var blurShader = new THREE.ShaderPass( THREE.DarkBlurShader );
 	blurShader.uniforms[ "h" ].value = 1.0 / window.innerWidth;
 	blurShader.uniforms[ "v" ].value = 1.0 / window.innerHeight;
 	blurShader.renderToScreen = true;
 
 	composer.addPass(blurShader);
+}
+
+/**
+ * Sets up bright blur shader for transitions.
+ */
+function setupBrightBlurShader() {
+    transitionComposer = new THREE.EffectComposer(renderer);
+    var renderPass = new THREE.RenderPass(scene, camera);
+    transitionComposer.addPass(renderPass);
+
+    var blurShader = new THREE.ShaderPass( THREE.BrightBlurShader );
+    blurShader.uniforms[ "h" ].value = 1.0 / window.innerWidth;
+    blurShader.uniforms[ "v" ].value = 1.0 / window.innerHeight;
+    blurShader.renderToScreen = true;
+
+    transitionComposer.addPass(blurShader);
 }
 
