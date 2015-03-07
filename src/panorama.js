@@ -42,6 +42,10 @@ function startPanorama(dataURL) {
 }
 
 
+/**
+ * creates a Loading Scene between transitions
+ * @returns {THREE.Scene}
+ */
 function createLoadingScene() {
     var loadingScene = new THREE.Scene();
     var geometry = new THREE.Geometry();
@@ -166,27 +170,30 @@ function transitToLocation(locationIndex, reset) {
     var loadingScene = createLoadingScene();
     scene = loadingScene;
     isLoading = true;
+    setTimeout(function () {    // Hack
+        var loader = new LocationLoader();
+        loader.loadLocation(locationIndex, function (location) {
+            var panoScene = new THREE.Scene();
+            panoScene.add(location);
+            scene = panoScene;
+            var cts = location.cameraTargets;
+            if (cts[lastPanoramaUID]) {
+                lat = cts[lastPanoramaUID].lat;
+                lon = cts[lastPanoramaUID].lon;
+            } else if (cts[-1]) {
+                lat = cts[-1].lat;
+                lon = cts[-1].lon;
+            } else {
+                lat = 2;
+                lon = -103;
+            }
+            lastPanoramaUID = location.uid;
+            updateTargetList();
+            setupBlurShader();
+            isLoading = false;
+        });
+    }, 1);
 
-	var loader = new LocationLoader();
-	loader.loadLocation(locationIndex, function (location) {
-		var panoScene = new THREE.Scene();
-		panoScene.add(location);
-		scene = panoScene;
-        var cts = location.cameraTargets;
-        if (cts[lastPanoramaUID]) {
-            lat = cts[lastPanoramaUID].lat;
-            lon = cts[lastPanoramaUID].lon;
-        } else if (cts[-1]) {
-            lat = cts[-1].lat;
-            lon = cts[-1].lon;
-        } else {
-            lat = 2;
-            lon = -103;
-        }
-        lastPanoramaUID = location.uid;
-        updateTargetList();
-        isLoading = false;
-	});
 }
 
 
