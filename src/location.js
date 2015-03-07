@@ -7,17 +7,15 @@
  * @param panoimg Panoramic image.
  * @constructor constructs a Sphere with a specific image as texture.
  */
-Location = function (panoimg) {
+Location = function (texture) {
 
 	var geometry = new THREE.SphereGeometry(200, 50, 30);
 	geometry.applyMatrix(new THREE.Matrix4().makeScale(-1, 1, 1));
 
 	var material = new THREE.MeshBasicMaterial({
-		map: THREE.ImageUtils.loadTexture(panoimg)
+		map: texture
 	});
-
-	THREE.Mesh.call(this, geometry, material);
-
+    THREE.Mesh.call(this, geometry, material);
 };
 
 Location.prototype = Object.create(THREE.Mesh.prototype);
