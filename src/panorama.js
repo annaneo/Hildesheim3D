@@ -548,9 +548,10 @@ function setupDarkBlurShader() {
 	var renderPass = new THREE.RenderPass(scene, camera);
 	composer.addPass(renderPass);
 
-	var blurShader = new THREE.ShaderPass( THREE.DarkBlurShader );
+	var blurShader = new THREE.ShaderPass( THREE.BlurShader );
 	blurShader.uniforms[ "h" ].value = 1.0 / window.innerWidth;
 	blurShader.uniforms[ "v" ].value = 1.0 / window.innerHeight;
+    blurShader.uniforms[ "strength"].value = 0.2;
 	blurShader.renderToScreen = true;
 
 	composer.addPass(blurShader);
@@ -564,9 +565,10 @@ function setupBrightBlurShader() {
     var renderPass = new THREE.RenderPass(scene, camera);
     transitionComposer.addPass(renderPass);
 
-    var blurShader = new THREE.ShaderPass( THREE.BrightBlurShader );
+    var blurShader = new THREE.ShaderPass( THREE.BlurShader );
     blurShader.uniforms[ "h" ].value = 1.0 / window.innerWidth;
     blurShader.uniforms[ "v" ].value = 1.0 / window.innerHeight;
+    blurShader.uniforms[ "strength"].value = 0.5;
     blurShader.renderToScreen = true;
 
     transitionComposer.addPass(blurShader);
