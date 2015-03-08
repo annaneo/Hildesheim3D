@@ -32,9 +32,7 @@ var timerId;
  */
 function startPanorama(dataURL) {
 	init();
-	//var loadingScene = createLoadingScene();
-	//scene = loadingScene;
-    //isLoading = true;
+    isLoading = true;
 	parseConfigJSON(dataURL, function (data) {
 		var loader = new LocationLoader();
 		loader.loadLocation(data.startLocation, startComplete);
@@ -132,8 +130,6 @@ function transitToLocation(locationIndex, reset) {
     if (reset) {
         lastPanoramaUID = -1; //update lastPanoramaUID to current location.uid for transition
     }
-    //var loadingScene = createLoadingScene();
-    //scene = loadingScene;
     isLoading = true;
 
     var map = _('map');
@@ -180,7 +176,6 @@ function initEventListener() {
 	container.addEventListener('mousewheel', onMouseWheel, false);
 	container.addEventListener('DOMMouseScroll', onMouseWheel, false);
 
-    //TODO: touch elements don't need offset calculation?
     container.addEventListener('touchstart', onDocumentTouchStart, false);
     container.addEventListener('touchmove', onDocumentTouchMove, false);
     container.addEventListener('touchend', onDocumentTouchEnd, false );
