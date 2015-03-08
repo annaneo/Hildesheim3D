@@ -102,7 +102,7 @@
           "mapPosY": 110
         },
         {
-          "uid": 2,
+          "uid": 6,
           "tooltip": "Gedenkstein",
           "mapPosX": 190,
           "mapPosY": 140
@@ -366,7 +366,7 @@
           "uid": 65,
           "title": "Die Wurzel Jesse - ein Bild für den kommenden Christus",
           "tooltip": "Deckengemälde",
-          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0065.html#content\" >Deckengemälde, DIO 58, Nr. 65</a> ",
+          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0065.html#content\" target=\"_blank\">Deckengemälde, DIO 58, Nr. 65</a> ",
           "images": [],
           "audio": "resources/audio/inschrift_test.mp3",
           "posX": -86,
