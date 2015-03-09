@@ -3,8 +3,8 @@ ENTWICKLUNG
 ===========
 
 - Ladebildschirm beim Start
-- Ladeanimationen bei transitions
-- für Museum: Seite Impressum (über Button immer erreichbar)
+- für Museum: Seite Impressum (über Button immer erreichbar) @anna
+- Fullscreen: Button auf view; Funktionalität schon existent?
 - Mouseover bei aktiven Elementen: Mausanzeige ändern
 
 
@@ -16,20 +16,32 @@ ENTWICKLUNG
 KONZEPTION
 ===========
 
-- Camera-targets setzen
-- fehlendes Bild/ Standpunkt 21 rein
+- IDS für Rundgänge setzen
 
 ======
 DESIGN
 ======
 
--
+- icons ncohmal überarbeiten
+- runde Buttons auf Map => HTML Canvas oder Bild?
+- html/ css für infopopUp
+- map stylen
 
 
+======
+MOBILE
+======
+
+- Usability mobile konzipieren
+- Map raus?
+- öffnet immer in neuem Fenster?
+- im popUp werden keine Bilder angezeigt; nur Überschrift und Text
 
 =====
 TEXTE
 =====
 
+- name für die Software
 - Full paper EVA Deadline: 20.3.
 - Manual (Javadoc)
+- Impressum für Museum

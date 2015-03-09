@@ -2,32 +2,35 @@
 Navigation zwischen Standpunkten
 ============
 
-	über Icons im Panorama
-	Karte
+done	über Icons im Panorama
+done 	Karte
 
 ============
 Übergänge von einem Standort zum anderen:
 ============
 
-	Animation: blurr, zoom in Standartdeinstellung,
-		ev. drehen der Kamera zum ausgewählten Stadort (wenn über Icons innerhalb des Panoramas
-	Unterschiedliche Kameraeinstellung nach Herkunftsort
+done	Animation: blurr, zoom in Standartdeinstellung,
+nope		ev. drehen der Kamera zum ausgewählten Stadort (wenn über Icons innerhalb des Panoramas
+done	Unterschiedliche Kameraeinstellung nach Herkunftsort
 
 ============
 Steuerung
 ============
 
-	Maus        #done
-	Tastatur    #done
-	Buttons
-	Zoom        #nur maus
+done	Maus        #done
+done	Tastatur    #done
+done	Buttons
+	Zoom        #nur maus (TODO: wollen wir zoom mit Buttons machen? eigentlich ist zoom eh blöd)
 
 ============
 Aktive Elemente im Panorama: Standort-Übergänge und Info-Popups
 ============
 
-	Positionieren
-	Anmination (größer bei mouseOver)
+done	Positionieren
+?	Anmination (größer bei mouseOver)
+done	Textanzeige: Info über Aktion, die aufgerufen wird
+nope	vielleicht wäre es schön, dass die opacitiy der aktiven Elemente sowie der Nvigation voller wird bei mouseOver
+
 
 ============
 Informationsview
@@ -41,19 +44,19 @@ Informationsview
 	Materialien sammeln (Bilder) und Testtexte erstellen
 	Verlinkung mit DIO
 	Abspielen von Sound
+	auswahl /Deisgn unterschiedlciher Typen (Text, Text mit Bild, breiter, höher?)
 
 ============
 Vollbild-Modus
 ============
 	Vollbild-Modus  #done for keyboard
 	Unterscheidung Infopunkte Vollbild/Normal
-	wie Informationsview in Fullscreen?
 
 ============
 Startbildschirm
 ============
-	Ladebalken
-	Anfangdview festlegen
+?	Ladebalken
+done	Anfangsview festlegen
 	Startsecreen mit Infos zu Rundgang und Bedienung
 
 ============
@@ -62,3 +65,13 @@ Finish it!
 
 	Crossbrowser/-device Tests
 	Abfangen inkompatibler Browser
+
+
+
+============
+Spezifisch fürs Museum
+============
+
+	Höher auflösende Bilder
+	Startbildschirm (mit nem Text und so)
+	Impressum einbinden
