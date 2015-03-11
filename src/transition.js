@@ -1,4 +1,10 @@
 /**
+ * (C)  Julius Peinelt
+ *      Anna Neovesky
+ */
+
+
+/**
  * Describes a clickable object in a location that allows users to navigate between locations.
  * @param parameters Object with should have fields: ...
  * @constructor

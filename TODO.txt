@@ -6,6 +6,7 @@ ENTWICKLUNG
 - für Museum: Seite Impressum (über Button immer erreichbar) @anna
 - Fullscreen: Button auf view; Funktionalität schon existent?
 - Mouseover bei aktiven Elementen: Mausanzeige ändern
+- zoom in & out rein (nicht ganz so hohe Priorität)
 
 
 @anna:

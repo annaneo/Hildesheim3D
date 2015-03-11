@@ -1,4 +1,9 @@
 /**
+ * (C)  Julius Peinelt
+ *      Anna Neovesky
+ */
+
+/**
  * Describes a clickable object in a location that shows a popup with information.
  * @param parameters Object which should have fields: ...
  * @constructor

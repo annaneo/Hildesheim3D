@@ -1,4 +1,7 @@
-/** (c) */
+/**
+ * (C)  Julius Peinelt
+ *      Anna Neovesky
+ */
 
 var camera, scene, renderer;
 
@@ -89,6 +92,10 @@ function init() {
     initTooltip()
 }
 
+/**
+ *
+ * @param location uid of location that will be rendered
+ */
 function startComplete(location) {
 	var panoScene = new THREE.Scene();
 	panoScene.add(location);
@@ -108,7 +115,7 @@ function startComplete(location) {
 
 
 /**
- * Updates the Array of clickable things in the scene.
+ * Updates the Array of clickable objects in the scene.
  */
 function updateTargetList() {
 	targetList = [];
@@ -165,7 +172,9 @@ function transitToLocation(locationIndex, reset) {
 
 }
 
-
+/**
+ * adds EventListeners to scene
+ */
 function initEventListener() {
 	var container = _('panorama');
 	THREEx.FullScreen.bindKey({charCode : 'f'.charCodeAt(0) /*, element : _('panorama')*/});
@@ -250,13 +259,19 @@ function initEventListener() {
     _('navigationButtonsContainer').addEventListener('touchend', onMouseUp, false);
 }
 
-
+/**
+ * //TODO: muss das hier nicht auch ein event sein?
+ */
 function onWindowResize() {
 	camera.aspect = window.innerWidth / window.innerHeight;
 	camera.updateProjectionMatrix();
 	renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
+/**
+ * EvenListener if mouse is pressed
+ * @param event
+ */
 function onMouseDown(event) {
     var eventX = event.pageX;
     var eventY = event.pageY;
@@ -264,6 +279,10 @@ function onMouseDown(event) {
     downEventHandler(eventX, eventY, event);
 }
 
+/**
+ * EventListener if mouse is moving
+ * @param event
+ */
 function onMouseMove(event) {
     var eventX = event.pageX;
     var eventY = event.pageY;
@@ -271,15 +290,26 @@ function onMouseMove(event) {
     moveEventHandler(eventX, eventY, event);
 }
 
+/**
+ * EventListener if mouse is up
+ * @param event
+ */
 function onMouseUp(event) {
     upEventHandler(event);
 }
 
+/**
+ * EventListener if mouse wheel is used
+ * @param event
+ */
 function onMouseWheel(event) {
     wheelEventHandler(event.pageX, event.pageY, event);
 }
 
-
+/**
+ *
+ * @param event
+ */
 function onDocumentTouchStart(event) {
     if (event.touches.length === 1) {
         var touchX = event.touches[0].pageX;
@@ -291,6 +321,10 @@ function onDocumentTouchStart(event) {
     }
 }
 
+/**
+ *
+ * @param event
+ */
 function onDocumentTouchMove(event) {
     if (event.touches.length === 1) {
         var touchX = event.touches[0].pageX;
@@ -300,11 +334,19 @@ function onDocumentTouchMove(event) {
     }
 }
 
-
+/**
+ *
+ * @param event
+ */
 function onDocumentTouchEnd(event) {
     upEventHandler(event);
 }
-
+/**
+ *
+ * @param eventX
+ * @param eventY
+ * @param event
+ */
 
 function moveEventHandler(eventX, eventY, event) {
     // Position of toolTips
@@ -364,6 +406,12 @@ function moveEventHandler(eventX, eventY, event) {
     }
 }
 
+/**
+ *
+ * @param eventX
+ * @param eventY
+ * @param event
+ */
 function downEventHandler(eventX, eventY, event) {
     if (isPopupOpen) {
         return;
@@ -401,14 +449,22 @@ function downEventHandler(eventX, eventY, event) {
     toolTip.style.display = "none";
 }
 
-
+/**
+ *
+ * @param event
+ */
 function upEventHandler(event) {
     lonFactor = 0;
     latFactor = 0;
     isUserInteracting = false;
 }
 
-
+/**
+ *
+ * @param eventX
+ * @param eventY
+ * @param event
+ */
 //TODO: make ready for touch events
 function wheelEventHandler(eventX, eventY, event) {
     event.preventDefault();
@@ -439,9 +495,10 @@ function wheelEventHandler(eventX, eventY, event) {
     camera.updateProjectionMatrix();
 }
 
-
-
-
+/**
+ * EventListener if & which key is dpown => for Key Navigation
+ * @param event
+ */
 function onKeyDown(event) {
     isUserInteracting = true;
     if (event.keyCode === 37) {
@@ -459,19 +516,27 @@ function onKeyDown(event) {
 	}
 }
 
-
+/**
+ * Venetlistener if key is up => no navigation via keys
+ * @param event
+ */
 function onKeyUp(event) {
 	lonFactor = 0;
 	latFactor = 0;
 	isUserInteracting = false;
 }
 
-
+/**
+ *
+ */
 function animate() {
 	requestAnimationFrame(animate);
 	update();
 }
 
+/**
+ *
+ */
 function update() {
     if (!scene) {
         return;
@@ -489,7 +554,7 @@ function update() {
         }
 		return;
 	}
-
+// if popUp is open
 	if (!isPopupOpen) {
 		lon = (lon + lonFactor) % 360;
 		lat = lat + latFactor;
@@ -510,7 +575,9 @@ function update() {
 	}
 }
 
-
+/**
+ *
+ */
 function resetPanorama() {
     lastPanoramaUID = -1;
     transitToLocation(panoramaData.startLocation, true);

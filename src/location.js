@@ -1,5 +1,6 @@
 /**
- * Created by annaneovesky on 15.11.14.
+ * (C)  Julius Peinelt
+ *      Anna Neovesky
 */
 
 /**
@@ -23,13 +24,22 @@ Location.prototype = Object.create(THREE.Mesh.prototype);
 
 // add functions to Location Object with Location.prototype.<functionName> = function (..) {...}
 
-
+/**
+ * Adds Hotspots to current location
+ * @param parameters
+ * @returns {Hotspot} Hotspots specified in json
+ */
 Location.prototype.addHotspot = function (parameters) {
 	var hotspot = new Hotspot(parameters);
 	this.add(hotspot);
 	return hotspot;
 };
 
+/**
+ * Adds transitions to current location
+ * @param parameters
+ * @returns {Transition} Transitions specified in json
+ */
 Location.prototype.addTransition = function (parameters) {
 	var transition = new Transition(parameters);
 	this.add(transition);
