@@ -82,7 +82,8 @@ Location.prototype.configureMap = function (parameters) {
             map.appendChild(spotButton);
         });
     }
+	// Position of Map
     map.style.display = "block";
-    map.style.right = 0 + "px";
-    map.style.top = 10 + "px";
+    map.style.left = 10 + "px"; // TODO: proportionally: windowX * 0,02
+    map.style.top = 10 + "px"; // TODO: proportionally: windowY * 0,036
 };

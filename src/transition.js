@@ -16,12 +16,10 @@ Transition = function (parameters) {
     this.targetLocation = parameters.hasOwnProperty('targetLocation') ? parameters['targetLocation'] : -1;
     this.tooltip = parameters.hasOwnProperty('tooltip') ? parameters['tooltip'] : null;
 
-    var geometry = new THREE.PlaneGeometry(20, 20);
+    var geometry = new THREE.PlaneGeometry(15, 15);
     var material = new THREE.MeshBasicMaterial({
         map: THREE.ImageUtils.loadTexture("resources/icons/transfer.png"),
         transparent: true,
-        opacity: 0.9,
-        color: 0xFF0000
     });
     //var material = new THREE.MeshBasicMaterial( { color: 0x008800 } );
     THREE.Mesh.call(this, geometry, material );
@@ -31,6 +29,9 @@ Transition = function (parameters) {
 
 Transition.prototype = Object.create(THREE.Mesh.prototype);
 
+/**
+ * Transit to other Location
+ */
 Transition.prototype.onClick = function () {
     if (this.targetLocation > -1) {
         transitToLocation(this.targetLocation);

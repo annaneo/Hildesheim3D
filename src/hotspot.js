@@ -28,28 +28,31 @@ Hotspot = function (parameters) {
      });
      */
 
-    var geometry = new THREE.PlaneGeometry(20, 20);
+    var geometry = new THREE.PlaneGeometry(16, 16);
     var material = new THREE.MeshBasicMaterial({
-        map: THREE.ImageUtils.loadTexture("resources/icons/infopoint.png"),
+        map: THREE.ImageUtils.loadTexture("resources/icons/information.png"),
         transparent: true,
-        opacity: 1,
-        color: 0xFF0000
+
     });
     THREE.Mesh.call(this, geometry, material);
     this.position.set(parameters.position.x, parameters.position.y, parameters.position.z);
 
 };
 
-
 Hotspot.prototype = Object.create(THREE.Mesh.prototype);
 
+/**
+ * Renders Pop Up Window
+ */
 Hotspot.prototype.onClick = function () {
     var infoContent = document.getElementById('infoContent');
     infoContent.innerHTML = this.infoContent;
     var infoView = document.getElementById('infoView');
+	// position of hotspot
     infoView.style.display = "block";
-    infoView.style.left = 400 + "px";
-    infoView.style.top = 200 + "px";
+	// TODO: set proportionally
+    infoView.style.left = 400 + "px"; // (windowX - popUpY) / 2
+    infoView.style.top = 200 + "px"; // (windowY - popUpY) / 2
 };
 
 

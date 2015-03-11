@@ -5,97 +5,96 @@
 <!-- container for panorama viewer; loads Libraries & code -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>Panoramatour zu den Inschriften von St. Michaelis in Hildesheim</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-	<link rel="stylesheet" href="style.css">
-	<script src="lib/three.js"></script>
-	<script src="lib/threex_fullscreen.js"></script>
-	<script src="lib/detector.js"></script>
-	<script src="src/hotspot.js"></script>
-	<script src="src/transition.js"></script>
-	<script src="src/location.js"></script>
-	<script src="lib/location_loader.js"></script>
-	<script src="lib/copy_shader.js"></script>
-	<script src="lib/effect_composer.js"></script>
-	<script src="lib/render_pass.js"></script>
-	<script src="lib/shader_pass.js"></script>
-	<script src="lib/mask_pass.js"></script>
-    <script src="lib/blur_shader.js"></script>
-	<script src="src/panorama.js"></script>
-	<script src="lib/spin.js"></script>
 
+	<head>
 
-	<script type="text/javascript">
-		window.onload = function () {
-			// startPanorama('resources/Hildesheim_web.json');
-            startPanorama('resources/Hildesheim_web.json');
-        }
-	</script>
+		<title>Panoramatour zu den Inschriften von St. Michaelis in Hildesheim</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="style.css">
+		<script src="lib/three.js"></script>
+		<!-- application code-->
+		<script src="src/panorama.js"></script>
+		<script src="src/location.js"></script>
+		<script src="src/hotspot.js"></script>
+		<script src="src/transition.js"></script>
+		<!-- libraries -->
+		<script src="lib/threex_fullscreen.js"></script>
+		<script src="lib/detector.js"></script>
+		<script src="lib/location_loader.js"></script>
+		<script src="lib/copy_shader.js"></script>
+		<script src="lib/effect_composer.js"></script>
+		<script src="lib/render_pass.js"></script>
+		<script src="lib/shader_pass.js"></script>
+		<script src="lib/mask_pass.js"></script>
+	    <script src="lib/blur_shader.js"></script>
+		<script src="lib/spin.js"></script>
 
+		<!-- initializes panoramic viewer-->
+		<script type="text/javascript">
+			window.onload = function () {
+				// startPanorama('resources/Hildesheim_web.json');
+	            startPanorama('resources/json/Hildesheim_web.json');
+	        }
+		</script>
 
-</head>
-<body>
+	</head>
 
-<!-- Container for panorama-->
-	<div id="panorama"></div>
+	<body>
 
-    <figure id="map">
-        <img id="mapImage" src="" alt="Karte der Kirche St. Michaelis in Hildesheim" width="240 " height="180"/>
-    </figure>
+	<!-- Container for panorama-->
+		<div id="panorama"></div>
 
+		<!-- map image -->
+	    <figure id="map">
+	        <img id="mapImage" src="" alt="Karte der Kirche St. Michaelis in Hildesheim" />
+	    </figure>
 
+	    <!-- Navigation bar and buttons -->
+	    <div id="navigationButtonsContainer">
+	        <figure id="nav">
+	            <img id="navImage" src="resources/icons/navigation.png"/>
+	        </figure>
+		    <!-- TODO: wenn eines der Navigationselemente fehlt, z.B. diese figures kommt ein schwarzer screen-->
+	        <figure class="panoNavButton" id="upNavButton"></figure>
+	        <figure class="panoNavButton" id="downNavButton"></figure>
+	        <figure class="panoNavButton" id="leftNavButton"></figure>
+	        <figure class="panoNavButton" id="rightNavButton"></figure>
+	    </div>
 
-    <!-- Nav Buttons -->
-    <div id="navigationButtonsContainer">
-        <figure id="nav">
-            <img id="navImage" src="resources/icons/navigation.png" width="300" height="150"/>
-        </figure>
-        <figure class="panoNavButton" id="upNavButton"></figure>
-        <figure class="panoNavButton" id="downNavButton"></figure>
-        <figure class="panoNavButton" id="leftNavButton"></figure>
-        <figure class="panoNavButton" id="rightNavButton"></figure>
-    </div>
+	    <!-- Tool Tip -->
+	    <div id="toolTip"></div>
 
-    <!-- Tool Tip -->
-    <div id="toolTip"></div>
+	    <!-- Info Pop Up-->
+		<article id="infoView">
+			<h1 id="infoTitle">
+	            TODO: render title from JSON
+			</h1>
+			<p id="infoContent">
+	            TODO: render text from JSON
+	        </p>
+			<!-- check browser support; flash backup if not supported (IE 8); see http://html5doctor.com/html5-audio-the-state-of-play/#support -->
+	        <div id="audioPlayer">
+		        <!-- audioSource nedded?-->
+	            <audio controls preload="auto" id="audioSource" src="" type="">
+		            Um den Audioguide des Rundgangs nutzen zu können, benötigen Sie einen modernen Browser. Wir empfehlen Ihnen <a href="https://www.mozilla.org/de/firefox/new/">Firefox</a>
+	                <!-- oder hier fallback (oder einfach url?)-->
+		            <!-- TODO: add .ogg for opera -->
+	            </audio>
+			</div>
+			<!-- images TODO: deal with more than one image (slideshow? or just load next imag eon click) maybe not needed in first version;
+			also: book application for altar http://www.shakespearealbum.de/faksimile-ansicht.html#book/
+			Slider maybe: http://www.deluxeblogtips.com/2010/05/image-slider-pure-css3.html-->
+			<figure>
+				<img src="" alt="">
+				<figcaption>
+					TODO: load caption from JSON
+				</figcaption>
+			</figure>
+			<figure id="infoCloseButton">
+	            <img src="resources/icons/close.png" alt="Informations Pop Up verlassen">
+	        </figure>
+		</article>
 
-    <!-- Info Pop Up-->
-
-	<!-- References:
-	http://html5doctor.com/the-article-element/
-
-	-->
-	<article id="infoView">
-		<h1 id="infoTitle">
-            TODO: render title from JSON
-		</h1>
-		<p id="infoContent">
-            TODO: render text from JSON
-        </p>
-		<!-- check browser support; flash backup if not supported (IE 8); see http://html5doctor.com/html5-audio-the-state-of-play/#support -->
-        <div id="audioPlayer">
-	        <!-- audioSource nedded?-->
-            <audio controls preload="auto" id="audioSource" src="" type="">
-	            Um den Audioguide des Rundgangs nutzen zu können, benötigen Sie einen modernen Browser. Wir empfehlen Ihnen <a href="https://www.mozilla.org/de/firefox/new/">Firefox</a>
-                <!-- oder hier fallback (oder einfach url?)-->
-	            <!-- TODO: add .ogg for opera -->
-            </audio>
-		</div>
-		<!-- images TODO: deal with more than one image (slideshow? or just load next imag eon click) maybe not needed in first version;
-		also: book application for altar http://www.shakespearealbum.de/faksimile-ansicht.html#book/
-		Slider maybe: http://www.deluxeblogtips.com/2010/05/image-slider-pure-css3.html-->
-		<figure>
-			<img src="" alt="">
-			<figcaption>
-				TODO: load caption from JSON
-			</figcaption>
-		</figure>
-		<figure id="infoCloseButton">
-            <img src="resources/icons/close.png" alt="Close Button">
-        </figure>
-	</article>
-
-</body>
+	</body>
 </html>
