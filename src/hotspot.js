@@ -12,7 +12,11 @@ Hotspot = function (parameters) {
 
     if (parameters === undefined) parameters = {};
 
-    this.infoContent = parameters.hasOwnProperty('content') ? parameters['content'] : "some <a href=\"#\">content</a>";
+    this.infoContent = parameters.hasOwnProperty('content') ? parameters['content'] : "No content";
+    this.infoTitle = parameters.hasOwnProperty('title') ? parameters['title'] : "No title";
+
+
+    //sets audio
     if (parameters.hasOwnProperty('audio')) {
         var audioSource = document.getElementById('audioSource');
         var s = parameters['audio'];
@@ -28,6 +32,7 @@ Hotspot = function (parameters) {
      });
      */
 
+    //TODO: was amcht das hier?
     var geometry = new THREE.PlaneGeometry(16, 16);
     var material = new THREE.MeshBasicMaterial({
         map: THREE.ImageUtils.loadTexture("resources/icons/information.png"),
@@ -45,14 +50,22 @@ Hotspot.prototype = Object.create(THREE.Mesh.prototype);
  * Renders Pop Up Window
  */
 Hotspot.prototype.onClick = function () {
-    var infoContent = document.getElementById('infoContent');
-    infoContent.innerHTML = this.infoContent;
+    //init info view
     var infoView = document.getElementById('infoView');
-	// position of hotspot
+    // position of pop up
+
     infoView.style.display = "block";
-	// TODO: set proportionally
+    // TODO: set proportionally
     infoView.style.left = 400 + "px"; // (windowX - popUpY) / 2
     infoView.style.top = 200 + "px"; // (windowY - popUpY) / 2
+
+    //set title
+    var infoTitle = document.getElementById('infoTitle');
+    infoTitle.innerHTML = this.infoTitle;
+    //set text content
+    var infoContent = document.getElementById('infoContent');
+    infoContent.innerHTML = this.infoContent;
+
 };
 
 

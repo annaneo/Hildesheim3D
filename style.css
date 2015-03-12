@@ -8,6 +8,12 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     vertical-align: baseline;
 }
 
+div#panorama {
+    position: static;
+}
+
+/* soll wie das DIO Design sein, s. mockUps/rundgang_popup.pdf */
+
 body {
     background-color: #000000;
     margin: 0px;
@@ -18,14 +24,20 @@ body {
 
 /* basic figure configuration for map, nav, about, fullscreen */
 figure {
+ position: absolute;
+}
+
+h1{
 
 }
 
+h2{
 
-div#panorama {
-    position: static;
 }
 
+/*
+    NAVIGATION
+    */
 
 #nav {
     width: 300px;
@@ -39,38 +51,94 @@ div#panorama {
 }
 
 .panoNavButton {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     z-index: 0;
     position: absolute;
-    border: 2px solid #000;
-    color: #ffffff;
+    /* border: solid 1px #fff; */
 }
 
 #upNavButton {
     bottom: 110px;
-    right: 78px;
+    right: 80px;
 }
 
 #downNavButton {
     bottom: 30px;
-    right: 78px;
+    right: 80px;
 }
 
 #rightNavButton {
-    bottom: 68px;
+    bottom: 70px;
     right: 37px;
 }
 
 #leftNavButton {
-    bottom: 68px;
-    right: 120px;
+    bottom: 70px;
+    right: 124px;
+}
+
+#zoomInButton {
+    bottom: 70px;
+    right: 200px;
+}
+
+#zoomOutButton {
+    bottom: 70px;
+    right: 240px;
 }
 
 #navigationButtonsContainer {
     display: none;
 }
 
+/**
+    FURTHER "ON-SCREEN" BUTTONS
+    **/
+
+#kiosk {
+    z-index: 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#about {
+    z-index: 0;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+/*
+    MAP
+    */
+
+#map {
+    display: none;
+    text-align: left;
+    margin: auto;
+    width: 300px;
+    height: 166px;
+    z-index: 0;
+    position: absolute;
+    float: right;
+}
+
+#mapSpot {
+    width: 18px;
+    height: 18px;
+    background-color: #A30000;
+    z-index: 0;
+    position: absolute;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+}
+
+/*
+    INFORMATION POP UP
+    */
 
 #toolTip {
     display: none;
@@ -101,8 +169,7 @@ div#panorama {
 }
 
 #infoTitle {
-    font-style: normal;
-    font-size: larger;
+    font-size: 28px;
     color: #222222;
     text-align: left;
     margin-top: 4px;
@@ -112,7 +179,6 @@ div#panorama {
 }
 
 #infoContent {
-    font-style: italic;
     color: #444444;
     text-align: left;
     margin-top: 4px;
@@ -128,28 +194,12 @@ div#panorama {
     top:10px;
 }
 
-#map {
-    display: none;
-    text-align: left;
-    margin: auto;
-    width: 300px;
-    height: 166px;
-    z-index: 0;
-    position: absolute;
-    float: right;
-}
-
-#mapSpot {
-    width: 18px;
-    height: 18px;
-    background-color: #A30000;
-    z-index: 0;
-    position: absolute;
-	width: 18px;
-	height: 18px;
-	border-radius: 50%;
-}
-
 #audioPlayer {
     z-index: 0;
+}
+
+#popUpImage {
+    left: 40px;
+    width: 120px;
+    height: 80px;
 }

@@ -52,15 +52,41 @@
 
 	    <!-- Navigation bar and buttons -->
 	    <div id="navigationButtonsContainer">
-	        <figure id="nav">
-	            <img id="navImage" src="resources/icons/navigation.png"/>
-	        </figure>
+            <figure  id="nav">
+                <img src="resources/icons/navigation.png"/>
+            </figure>
 		    <!-- TODO: wenn eines der Navigationselemente fehlt, z.B. diese figures kommt ein schwarzer screen-->
-	        <figure class="panoNavButton" id="upNavButton"></figure>
-	        <figure class="panoNavButton" id="downNavButton"></figure>
-	        <figure class="panoNavButton" id="leftNavButton"></figure>
-	        <figure class="panoNavButton" id="rightNavButton"></figure>
+            <!-- TODO: das hier viell. als div,w eil ich die Navelemente mit der Navigationsbar in einem Bild integriere-->
+	        <figure class="panoNavButton" id="upNavButton" src="resources/icons/navigation.png" alt="Navigationselement">
+                <img src="resources/icons/gui_panup_icon.png" alt="Navigation nach oben" />
+            </figure>
+	        <figure class="panoNavButton" id="downNavButton">
+                <img src="resources/icons/gui_pandown_icon.png" alt="Navigation nach oben" />
+            </figure>
+	        <figure class="panoNavButton" id="leftNavButton">
+                <img src="resources/icons/gui_panleft_icon.png" alt="Navigation nach oben" />
+            </figure>
+	        <figure class="panoNavButton" id="rightNavButton">
+                <img src="resources/icons/gui_panright_icon.png" alt="Navigation nach oben" />
+            </figure>
+            <figure class="panoNavButton" id="zoomInButton">
+                <img src="resources/icons/gui_zoomin_icon.png" alt="Navigation nach oben" />
+            </figure>
+            <figure class="panoNavButton" id="zoomOutButton">
+                <img src="resources/icons/gui_zoomout_icon.png" alt="Navigation nach oben" />
+            </figure>
 	    </div>
+
+    <!-- full screen
+        <figure id="kiosk">
+            <img src="resources/icons/gui_fullscreen_icon.png" alt="Icon zum betreten und verlassen des Vollbild Modus"/>
+        </figure> -->
+
+    <!-- About-->
+        <figure id="about">
+            <img src="" alt="Informationen zum Projekt"/>
+        </figure>
+
 
 	    <!-- Tool Tip -->
 	    <div id="toolTip"></div>
@@ -75,18 +101,16 @@
 	        </p>
 			<!-- check browser support; flash backup if not supported (IE 8); see http://html5doctor.com/html5-audio-the-state-of-play/#support -->
 	        <div id="audioPlayer">
-		        <!-- audioSource nedded?-->
 	            <audio controls preload="auto" id="audioSource" src="" type="">
-		            Um den Audioguide des Rundgangs nutzen zu können, benötigen Sie einen modernen Browser. Wir empfehlen Ihnen <a href="https://www.mozilla.org/de/firefox/new/">Firefox</a>
-	                <!-- oder hier fallback (oder einfach url?)-->
-		            <!-- TODO: add .ogg for opera -->
+		            <!-- TODO: add .ogg for opera; oder welches Format, damit alle Browser unterstützen? -->
 	            </audio>
 			</div>
 			<!-- images TODO: deal with more than one image (slideshow? or just load next imag eon click) maybe not needed in first version;
 			also: book application for altar http://www.shakespearealbum.de/faksimile-ansicht.html#book/
 			Slider maybe: http://www.deluxeblogtips.com/2010/05/image-slider-pure-css3.html-->
-			<figure>
-				<img src="" alt="">
+            <!-- TODO: make this generic. Currently hardcoded-->
+			<figure id="popUpImage">
+				<img src="resources/images/di-58_005_1.jpg" alt="sample image" width="240px"/>
 				<figcaption>
 					TODO: load caption from JSON
 				</figcaption>

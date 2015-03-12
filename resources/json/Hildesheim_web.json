@@ -1,5 +1,5 @@
 {
-  "startLocation": 12,
+  "startLocation": 98,
   "maps": [
     {
       "uid": 1,
@@ -116,32 +116,32 @@
         {
           "uid": 913,
           "tooltip": "Weiheinschrift",
-          "mapPosX": 90,
-          "mapPosY": 80
+          "mapPosX": 20,
+          "mapPosY": 73
         },
         {
           "uid": 918,
           "tooltip": "Zentrum Krypta",
-          "mapPosX": 140,
-          "mapPosY": 80
+          "mapPosX": 78,
+          "mapPosY": 72
         },
         {
           "uid": 97,
           "tooltip": "Marienaltar",
-          "mapPosX": 195,
-          "mapPosY": 80
+          "mapPosX": 131,
+          "mapPosY": 71
         },
         {
           "uid": 98,
           "tooltip": "Grablege",
-          "mapPosX": 170,
-          "mapPosY": 65
+          "mapPosX": 110,
+          "mapPosY": 56
         },
         {
           "uid": 96,
           "tooltip": "Grablege",
-          "mapPosX": 170,
-          "mapPosY": 105
+          "mapPosX": 110,
+          "mapPosY": 92
         }
       ]
     }
