@@ -13,7 +13,7 @@ Hotspot = function (parameters) {
     if (parameters === undefined) parameters = {};
 
     this.infoContent = parameters.hasOwnProperty('content') ? parameters['content'] : "No content";
-    this.infoTitle = parameters.hasOwnProperty('title') ? parameters['title'] : "No title";
+    this.infoTitle = parameters.hasOwnProperty('title') ? parameters['title'] : "Bernward macht irgendwas in der Kirche im Jahr 1022";
 
 
     //sets audio
@@ -56,8 +56,8 @@ Hotspot.prototype.onClick = function () {
 
     infoView.style.display = "block";
     // TODO: set proportionally
-    infoView.style.left = 400 + "px"; // (windowX - popUpY) / 2
-    infoView.style.top = 200 + "px"; // (windowY - popUpY) / 2
+    // infoView.style.left = 400 + "px"; // (windowX - popUpY) / 2
+    // infoView.style.top = 200 + "px"; // (windowY - popUpY) / 2
 
     //set title
     var infoTitle = document.getElementById('infoTitle');

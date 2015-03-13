@@ -43,7 +43,7 @@
 	<body>
 
 	<!-- Container for panorama-->
-		<div id="panorama"></div>
+		<div id="panorama">
 
 		<!-- map image -->
 	    <figure id="map">
@@ -53,9 +53,10 @@
 	    <!-- Navigation bar and buttons -->
 	    <div id="navigationButtonsContainer">
             <figure  id="nav">
-                <img src="resources/icons/navigation.png"/>
+                <img src="resources/icons/navigation2.png"/>
             </figure>
 		    <!-- TODO: wenn eines der Navigationselemente fehlt, z.B. diese figures kommt ein schwarzer screen-->
+		    <!-- gernerisch laden-->
             <!-- TODO: das hier viell. als div,w eil ich die Navelemente mit der Navigationsbar in einem Bild integriere-->
 	        <figure class="panoNavButton" id="upNavButton" src="resources/icons/navigation.png" alt="Navigationselement">
                 <img src="resources/icons/gui_panup_icon.png" alt="Navigation nach oben" />
@@ -77,10 +78,10 @@
             </figure>
 	    </div>
 
-    <!-- full screen
-        <figure id="kiosk">
+    <!-- full screen -->
+        <figure id="fullscreen">
             <img src="resources/icons/gui_fullscreen_icon.png" alt="Icon zum betreten und verlassen des Vollbild Modus"/>
-        </figure> -->
+        </figure>
 
     <!-- About-->
         <figure id="about">
@@ -93,32 +94,66 @@
 
 	    <!-- Info Pop Up-->
 		<article id="infoView">
+			<figure id="infoCloseButton">
+				<img src="resources/icons/close2.png" alt="Informations Pop Up verlassen" title="Informations Pop Up verlassen">
+			</figure>
+
 			<h1 id="infoTitle">
 	            TODO: render title from JSON
 			</h1>
-			<p id="infoContent">
-	            TODO: render text from JSON
-	        </p>
-			<!-- check browser support; flash backup if not supported (IE 8); see http://html5doctor.com/html5-audio-the-state-of-play/#support -->
-	        <div id="audioPlayer">
-	            <audio controls preload="auto" id="audioSource" src="" type="">
-		            <!-- TODO: add .ogg for opera; oder welches Format, damit alle Browser unterstützen? -->
-	            </audio>
-			</div>
-			<!-- images TODO: deal with more than one image (slideshow? or just load next imag eon click) maybe not needed in first version;
-			also: book application for altar http://www.shakespearealbum.de/faksimile-ansicht.html#book/
-			Slider maybe: http://www.deluxeblogtips.com/2010/05/image-slider-pure-css3.html-->
-            <!-- TODO: make this generic. Currently hardcoded-->
+
 			<figure id="popUpImage">
-				<img src="resources/images/di-58_005_1.jpg" alt="sample image" width="240px"/>
+				<img src="resources/images/di-58_005_1.jpg" alt="sample image" />
 				<figcaption>
 					TODO: load caption from JSON
 				</figcaption>
 			</figure>
-			<figure id="infoCloseButton">
-	            <img src="resources/icons/close.png" alt="Informations Pop Up verlassen">
-	        </figure>
+
+			<div id="audioPlayer">
+				<audio controls preload="auto" id="audioSource" src="" type="">
+					<!-- TODO: add .ogg for opera; oder welches Format, damit alle Browser unterstützen? -->
+				</audio>
+			</div>
+
+			<p id="infoContent">
+				TODO: render text from JSON
+			</p>
+			<!-- check browser support; flash backup if not supported (IE 8); see http://html5doctor.com/html5-audio-the-state-of-play/#support -->
+			<!-- images TODO: deal with more than one image (slideshow? or just load next imag eon click) maybe not needed in first version;
+			also: book application for altar http://www.shakespearealbum.de/faksimile-ansicht.html#book/
+			Slider maybe: http://www.deluxeblogtips.com/2010/05/image-slider-pure-css3.html-->
+			<!-- TODO: make this generic. Currently hardcoded-->
 		</article>
+
+		<article id="Impressum">
+			<h1>Impressum</h1>
+
+			<h2>Umsetzung</h2>
+			<dl>
+				<dt>Konzeption</dt><dd>Christine Wulf, Anna Neovesky</dd>
+				<dt>Entwicklung</dt><dd>Julius Peinelt, Anna Neovesky</dd>
+				<dt>Design</dt><dd>Anna Neovesky, Aline Deicke, Torsten Schrade</dd>
+				<dt>Texte</dt><dd>Christine Wulf (Inschriften), Ulrich Knufinke (Architektur)</dd>
+				<dt>Ton</dt><dd>Steffen Schneider</dd>
+				<dt>Sprecherin</dt><dd>Christiane Dressler</dd>
+			</dl>
+
+			<h2>Ein Projekt der</h2>
+			<p>Akademie der Wissenschaften und der Literatur | Mainz</p>
+			<p>Akademie der Wissenschaften zu Göttingen</p>
+
+			<h2>Weitere Informationen</h2>
+			<dl>
+				<dt>Deutsche Inschiften Online</dt><dd></dd>
+				<dt>Digitale Akademie</dt><dd>Steffen Schneider</dd>
+			</dl>
+
+			<p>
+				<a href="#">Zurück zum Panoramarundgang</a>
+			</p>
+		</article>
+
+		</div>
 
 	</body>
 </html>

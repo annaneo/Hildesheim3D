@@ -1,5 +1,5 @@
 {
-  "startLocation": 98,
+  "startLocation": 26,
   "maps": [
     {
       "uid": 1,
@@ -999,7 +999,7 @@
           "uid": 1,
           "title": "Reliquien stabilisieren Bernwards Kirchenbau",
           "tooltip": "Säulen",
-          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0013.html#content\"  target=\"_blank\">Säulen, DIO 58, Nr. 13</a> ",
+          "text": "Information zu den romanischen Säulen und der Inschrift. <a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0013.html#content\"  target=\"_blank\">Säulen, DIO 58, Nr. 13</a> ",
           "images": [],
           "audio": "resources/audio/Text17.mp3",
           "posX": -27,

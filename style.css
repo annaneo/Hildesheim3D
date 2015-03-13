@@ -1,205 +1,191 @@
 /* reset */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 
 div#panorama {
-    position: static;
+	position: static;
 }
 
 /* soll wie das DIO Design sein, s. mockUps/rundgang_popup.pdf */
 
 body {
-    background-color: #000000;
-    margin: 0px;
-    overflow: hidden;
-    line-height: 1;
-    font: 12px/20px Arial;
+	background-color: #000000;
+	margin: 0px;
+	overflow: hidden;
+	font-family: "Palatino Linotype",Baskerville,"Times New Roman",Times,serif;
+	font-size: 62.5%;
+	color: #333;
 }
 
 /* basic figure configuration for map, nav, about, fullscreen */
 figure {
- position: absolute;
+	position: absolute;
 }
 
-h1{
-
-}
-
-h2{
-
+p {
+	font-size: 1.6em;
+	line-height: 1.5em;
 }
 
 /*
-    NAVIGATION
-    */
+	NAVIGATION
+	*/
 
 #nav {
-    width: 300px;
-    height: 150px;
-    z-index: 0;
-    display: block;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    float: right;
+	width: 204px;
+	height: 102px;
+	z-index: 0;
+	display: block;
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
 }
 
 .panoNavButton {
-    width: 32px;
-    height: 32px;
-    z-index: 0;
-    position: absolute;
-    /* border: solid 1px #fff; */
+	width: 30px;
+	height: 30px;
+	z-index: 0;
+	position: absolute;
 }
 
 #upNavButton {
-    bottom: 110px;
-    right: 80px;
+	bottom: 90px;
+	right: 56px;
 }
 
 #downNavButton {
-    bottom: 30px;
-    right: 80px;
+	bottom: 22px;
+	right: 56px;
 }
 
 #rightNavButton {
-    bottom: 70px;
-    right: 37px;
+	bottom: 56px;
+	right: 22px;
 }
 
 #leftNavButton {
-    bottom: 70px;
-    right: 124px;
+	bottom: 56px;
+	right: 89px;
 }
 
 #zoomInButton {
-    bottom: 70px;
-    right: 200px;
+	bottom: 56px;
+	right: 152px;
 }
 
 #zoomOutButton {
-    bottom: 70px;
-    right: 240px;
-}
-
-#navigationButtonsContainer {
-    display: none;
+	bottom: 56px;
+	right: 193px;
 }
 
 /**
-    FURTHER "ON-SCREEN" BUTTONS
-    **/
+	FURTHER "ON-SCREEN" BUTTONS
+	**/
 
-#kiosk {
-    z-index: 0;
-    position: absolute;
-    top: 10px;
-    right: 10px;
+#fullscreen {
+	z-index: 0;
+	position: absolute;
+	top: 10px;
+	right: 10px;
 }
 
 #about {
-    z-index: 0;
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
+	z-index: 0;
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
 }
 
 /*
-    MAP
-    */
+	MAP
+	*/
 
 #map {
-    display: none;
-    text-align: left;
-    margin: auto;
-    width: 300px;
-    height: 166px;
-    z-index: 0;
-    position: absolute;
-    float: right;
+	display: none;
+	text-align: left;
+	margin: auto;
+	z-index: 0;
+	position: absolute;
+	float: right;
 }
 
 #mapSpot {
-    width: 18px;
-    height: 18px;
-    background-color: #A30000;
-    z-index: 0;
-    position: absolute;
+	width: 18px;
+	height: 18px;
+	background-color: #A30000;
+	z-index: 0;
+	position: absolute;
 	width: 18px;
 	height: 18px;
 	border-radius: 50%;
 }
 
 /*
-    INFORMATION POP UP
-    */
+	INFORMATION POP UP
+	*/
 
 #toolTip {
-    display: none;
-    text-align: center;
-    margin: auto;
-    padding: 10px;
-    background-color: rgba(230, 230, 230, .4);
-    color: #000;
-    z-index: 0;
-    position: absolute;
+	display: none;
+	position: absolute;
+	padding: 1% 1.5%;
+	background-color: rgba(255, 255, 255, 0.8);
 }
+
+/* tooltip braucht noch p-Tag */
 
 #infoView {
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    border-radius: 6px;
-    display: none;
-    text-align: center;
-    margin: auto;
-    padding: 10px;
-    width: 400px;
-    height: 220px;
-    background-color: rgba(200, 200, 200, .9);
-    z-index: 0;
-    position: absolute;
-    border: 3px solid #cccccc;
-    color: #999999;
-}
-
-#infoTitle {
-    font-size: 28px;
-    color: #222222;
-    text-align: left;
-    margin-top: 4px;
-    padding: 4px;
-    height: 20px;
-    postion: absolute;
-}
-
-#infoContent {
-    color: #444444;
-    text-align: left;
-    margin-top: 4px;
-    padding: 4px;
-    height: 110px;
-    postion: absolute;
+	display: none;
+	position: absolute;
+	width: 27%;
+	margin: 10em 35%;
+	padding: 1% 1.5%;
+	border: 1px solid #917d4d;
+	border-radius: 3px;
+	background-color: rgba(255, 255, 255, 0.8);
 }
 
 #infoCloseButton {
-    float: right;
-    position:absolute;
-    left:350px;
-    top:10px;
+	right: 4.2%;
 }
 
-#audioPlayer {
-    z-index: 0;
+#infoTitle {
+	margin-bottom: 0.5em;
+	padding-right: 9%;
+	font-size: 2.6em;
+	line-height: 1em;
+	text-transform: uppercase;
+	color: #917d4d;
 }
 
 #popUpImage {
-    left: 40px;
-    width: 120px;
-    height: 80px;
+	position: relative;
+	margin-bottom: 1.5em;
+}
+
+#popUpImage img {
+	width: 98%;
+	padding: 1%;
+	border: 1px solid #c9cbd0;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+	background: #fff
+}
+
+#popUpImage figcaption {
+	font-size: 1.4em;
+	margin-top: 0.5em;
+}
+
+audio {
+	width: 100%;
+	margin-bottom: 1.5em;
+}
+
+#panorama a {
+	color: #917d4d;
 }
