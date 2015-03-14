@@ -34,7 +34,7 @@ Hotspot = function (parameters) {
      });
      */
 
-    //TODO: was amcht das hier?
+    // setting size and material of hotspot icon in panorama
     var geometry = new THREE.PlaneGeometry(16, 16);
     var material = new THREE.MeshBasicMaterial({
         map: THREE.ImageUtils.loadTexture("resources/icons/information.png"),
