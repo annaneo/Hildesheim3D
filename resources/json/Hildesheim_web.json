@@ -1325,8 +1325,8 @@
           "posZ": -25
         },
         {
-          "target_location": 93,
-          "tooltip": "Übergang Kirche",
+          "target_location": 22,
+          "tooltip": "Übergang zur Kirche",
           "posX": -105,
           "posY": -75,
           "posZ": 146
