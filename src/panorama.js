@@ -219,6 +219,11 @@ function initEventListener() {
 		div.style.display = "none";
 		isPopupOpen = false;
 	}, false);
+    _('infoCloseButton').addEventListener('touched', function (event) {
+        var div = _("infoView");
+        div.style.display = "none";
+        isPopupOpen = false;
+    }, false);
     _('map').addEventListener('dragstart', function(event) { event.preventDefault(); });
 
     _('upNavButton').addEventListener('mousedown', function(event) {
@@ -255,6 +260,18 @@ function initEventListener() {
         lonFactor = 0.5;
     }, false);
     _('navigationButtonsContainer').addEventListener('touchend', onMouseUp, false);
+    _('about').addEventListener('touched', showAbout, false);
+    _('about').addEventListener('click', showAbout, false);
+    _('aboutCloseButton').addEventListener('click', function (event) {
+        var aboutView = _("aboutView");
+        aboutView.style.display = "none";
+        isPopupOpen = false;
+    }, false);
+    _('aboutCloseButton').addEventListener('touched', function (event) {
+        var aboutView = _("aboutView");
+        aboutView.style.display = "none";
+        isPopupOpen = false;
+    }, false);
 }
 
 /**
@@ -515,7 +532,7 @@ function onKeyDown(event) {
 }
 
 /**
- * Venetlistener if key is up => no navigation via keys
+ * Eventlistener if key is up => no navigation via keys
  * @param event
  */
 function onKeyUp(event) {
@@ -523,6 +540,18 @@ function onKeyUp(event) {
 	latFactor = 0;
 	isUserInteracting = false;
 }
+
+
+/**
+ * Shows about box.
+ * @param event mouse/touch event
+ */
+function showAbout(event) {
+    var aboutBox = document.getElementById('aboutView');
+    aboutBox.style.display = "block";
+    isPopupOpen = true;
+}
+
 
 /**
  *

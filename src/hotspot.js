@@ -18,9 +18,11 @@ Hotspot = function (parameters) {
 
     //sets audio
     if (parameters.hasOwnProperty('audio')) {
-        var audioSource = document.getElementById('audioSource');
         var s = parameters['audio'];
-        audioSource.src = s;
+        var audioSourceOgg = document.getElementById('audioSourceOgg');
+        audioSourceOgg.src = s + ".ogg";
+        var audioSourceMp3 = document.getElementById('audioSourceMp3');
+        audioSourceMp3.src = s + ".mp3";
     }
 
     this.tooltip = parameters.hasOwnProperty('tooltip') ? parameters['tooltip'] : null;
@@ -36,7 +38,7 @@ Hotspot = function (parameters) {
     var geometry = new THREE.PlaneGeometry(16, 16);
     var material = new THREE.MeshBasicMaterial({
         map: THREE.ImageUtils.loadTexture("resources/icons/information.png"),
-        transparent: true,
+        transparent: true
 
     });
     THREE.Mesh.call(this, geometry, material);

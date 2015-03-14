@@ -112,8 +112,9 @@
 			</figure>
 
 			<div id="audioPlayer">
-				<audio controls preload="auto" id="audioSource" src="" type="">
-					<!-- TODO: add .ogg for opera; oder welches Format, damit alle Browser unterstützen? -->
+				<audio controls preload="auto">
+                    <source id="audioSourceOgg" src="" type="audio/ogg">
+                    <source id="audioSourceMp3" src="" type="audio/mpeg">
 				</audio>
 			</div>
 
