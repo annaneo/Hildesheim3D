@@ -100,6 +100,13 @@ p {
 	position: absolute;
 	bottom: 10px;
 	left: 10px;
+    position: absolute;
+    padding: 1% 1.5%;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#aboutView{
+    display:none;
 }
 
 /*

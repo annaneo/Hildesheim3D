@@ -574,7 +574,10 @@
           "tooltip": "Grundstein",
           "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0006.html#content\"  target=\"_blank\">Grundstein, DIO 58, Nr. 6</a>",
           "images": [
-            "resources/images/di58_6.png"
+              {
+                  "figure": "resources/images/di58_6.png",
+                  "caption": "© Christine Wulf"
+              }
           ],
           "audio": "resources/audio/Text3.mp3",
           "posX": 43,
@@ -694,7 +697,10 @@
           "tooltip": "Bernwardstür",
           "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0009.html#content\"  target=\"_blank\">Bernwardstür, DIO 58, Nr. 9</a> ",
           "images": [
-            "resources/images/di-58-009_1.jpg"
+              {
+                  "figure": "resources/images/di-58-009_1.jpg",
+                  "caption": "© Julia Zech"
+              }
           ],
           "audio": "resources/audio/Text14.mp3",
           "posX": 98,
@@ -920,7 +926,10 @@
           "tooltip": "Gedenkstein",
           "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0016.html#content\"  target=\"_blank\">Gedenkstein, DIO 58, Nr. 16</a> ",
           "images": [
-            "resources/images/di-58-016_1.jpg"
+              {
+                  "figure": "resources/images/di-58-016_1.jpg",
+                  "caption": "© Jutta Brüdern"
+              }
           ],
           "audio": "resources/audio/Text13.mp3",
           "posX": -172,
@@ -1206,8 +1215,14 @@
           "tooltip": "Marienaltar",
           "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0004.html#content\"  target=\"_blank\">Evangeliar, DIO 58, Nr. 4</a>; <a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0005.html#content\"  target=\"_blank\">Leuchter, DIO 58, Nr. 5</a>; <a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0014.html#content\"  target=\"_blank\">Kreuz, DIO 58, Nr. 14</a> ",
           "images": [
-            "resources/images/di-58-005_1.jpg",
-            "resources/images/di-58-014_1.jpg"
+              {
+                 "figure": "resources/images/di-58-005_1.jpg",
+                  "caption": "© Frank Tomio"
+              },
+              {
+                  "figure": "resources/images/di-58-014_1.jpg",
+                  "caption": "© Frank Tomio"
+              }
           ],
           "audio": "resources/audio/Text7.mp3",
           "posX": 184,
@@ -1450,7 +1465,10 @@
           "tooltip": "Weiheinschrift",
           "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0010.html#content\"  target=\"_blank\">Bernwardkrypta, DIO 58, Nr. 10</a>",
           "images": [
-            "resources/images/di-58-010_1.jpg"
+              {
+                  "figure": "resources/images/di-58-010_1.jpg",
+                  "caption": "© Christine Wulf"
+              }
           ],
           "audio": "resources/audio/Text6.mp3",
           "posX": -38,
