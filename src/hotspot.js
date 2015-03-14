@@ -62,6 +62,9 @@ Hotspot.prototype.onClick = function () {
     //set text content
     var infoContent = document.getElementById('infoContent');
     infoContent.innerHTML = this.infoContent;
+    //set image
+
+    //set caption
 
 };
 

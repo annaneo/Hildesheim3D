@@ -27,8 +27,6 @@ var toolTip;
 
 var timerId;
 
-
-
 /**
  * start panorama, creates a loading scene and triggers the loading of the start location. Starts animating.
  * @param dataURL URL to the config JSON
