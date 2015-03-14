@@ -14,15 +14,17 @@ Hotspot = function (parameters) {
 
     this.infoContent = parameters.hasOwnProperty('content') ? parameters['content'] : "No content";
     this.infoTitle = parameters.hasOwnProperty('title') ? parameters['title'] : "";
-
+    this.infoImages = parameters.hasOwnProperty('images') ? parameters['images'] : [];
 
     //sets audio
     if (parameters.hasOwnProperty('audio')) {
+        var audioControls = document.getElementById('audioPlayer');
         var s = parameters['audio'];
         var audioSourceOgg = document.getElementById('audioSourceOgg');
         audioSourceOgg.src = s + ".ogg";
         var audioSourceMp3 = document.getElementById('audioSourceMp3');
         audioSourceMp3.src = s + ".mp3";
+
     }
 
     this.tooltip = parameters.hasOwnProperty('tooltip') ? parameters['tooltip'] : null;
@@ -64,10 +66,21 @@ Hotspot.prototype.onClick = function () {
     //set text content
     var infoContent = document.getElementById('infoContent');
     infoContent.innerHTML = this.infoContent;
-    //set image
 
-    //set caption
-
+    //TODO: able to load more than 1 picture
+    if (this.infoImages.length > 0) {
+        var infoImageBox = document.getElementById('infoImageBox');
+        infoImageBox.style.visibility = 'visible';
+        //set image
+        var infoImage = document.getElementById('infoImage');
+        infoImage.src = this.infoImages[0].figure;
+        //set caption
+        var infoCaption = document.getElementById('infoCaption');
+        infoCaption.innerText = this.infoImages[0].caption;
+    } else {
+        var infoImageBox = document.getElementById('infoImageBox');
+        infoImageBox.style.visibility = 'hidden';
+    }
 };
 
 

@@ -86,7 +86,6 @@ function init() {
 	}
 	renderer.setSize(window.innerWidth, window.innerHeight);
 	var container = _('panorama');
-    container.style.cursor = 'move';
 	container.appendChild(renderer.domElement);
     initTooltip()
 }
@@ -393,7 +392,6 @@ function moveEventHandler(eventX, eventY, event) {
         // if there is one (or more) intersections
         if (intersects.length > 0) {
             if (intersects[0].object != hoverIntersected) {
-                _('panorama').style.cursor = 'pointer';
                 if (hoverIntersected) {
                     hoverIntersected.material.color.setHex(hoverIntersected.currentHex);
                 }
@@ -419,7 +417,6 @@ function moveEventHandler(eventX, eventY, event) {
             }
             hoverIntersected = null;
             toolTip.style.display = "none";
-            _('panorama').style.cursor = 'move';
         }
     }
 }

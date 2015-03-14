@@ -163,12 +163,12 @@ h1 {
 	color: #917d4d;
 }
 
-#popUpImage {
+#infoImageBox {
 	position: relative;
 	margin-bottom: 1.5em;
 }
 
-#popUpImage img {
+#infoImageBox img {
 	width: 98%;
 	padding: 1%;
 	border: 1px solid #c9cbd0;
@@ -176,7 +176,7 @@ h1 {
 	background: #fff
 }
 
-#popUpImage figcaption {
+#infoImageBox figcaption {
 	font-size: 1.4em;
 	margin-top: 0.5em;
 }
