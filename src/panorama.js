@@ -45,7 +45,6 @@ function startPanorama(dataURL) {
 /**
  * initalize Tooltip for hotspots and transitions
  * //TODO: ToolTip also for mapSpots
- * //TODO: changing MOUSE at MOUSEOVER (click indication)
  */
 function initTooltip() {
     toolTip = _('toolTip');
@@ -167,7 +166,6 @@ function transitToLocation(locationIndex, reset) {
             navButtons.style.display = 'block';
         });
     }, 1000);
-
 }
 
 /**
@@ -532,13 +530,23 @@ function onKeyDown(event) {
 }
 
 /**
- * Eventlistener if key is up => no navigation via keys
+ * Eventlistener if key is up => no navigation via keys.
  * @param event
  */
 function onKeyUp(event) {
 	lonFactor = 0;
 	latFactor = 0;
 	isUserInteracting = false;
+}
+
+
+/**
+ *
+ * @param elem
+ * @param cursorStyle
+ */
+function updateCursor(elem, cursorStyle) {
+    elem.style.cursor = cursorStyle;
 }
 
 
@@ -554,7 +562,7 @@ function showAbout(event) {
 
 
 /**
- *
+ * Update for new frame from Browser.
  */
 function animate() {
 	requestAnimationFrame(animate);
@@ -562,7 +570,7 @@ function animate() {
 }
 
 /**
- *
+ * Redraw the scene with new calculated camera target, blur, ...
  */
 function update() {
     if (!scene) {
@@ -603,7 +611,7 @@ function update() {
 }
 
 /**
- *
+ * Resets Panorama to start location.
  */
 function resetPanorama() {
     lastPanoramaUID = -1;
