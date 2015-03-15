@@ -164,8 +164,10 @@ function transitToLocation(locationIndex, reset) {
             setupBrightBlurShader();
             isLoading = false;
             navButtons.style.display = 'block';
+            camera.fov = 60;
+            camera.updateProjectionMatrix();
         });
-    }, 1000);
+    }, 50);
 }
 
 /**
@@ -213,11 +215,15 @@ function initEventListener() {
 	window.addEventListener('resize', onWindowResize, false);
 
 	_('infoCloseButton').addEventListener('click', function (event) {
+        var audioControls = _('audioControls');
+        audioControls.pause();
 		var div = _("infoView");
 		div.style.display = "none";
 		isPopupOpen = false;
 	}, false);
     _('infoCloseButton').addEventListener('touched', function (event) {
+        var audioControls = _('audioControls');
+        audioControls.pause();
         var div = _("infoView");
         div.style.display = "none";
         isPopupOpen = false;
@@ -240,7 +246,14 @@ function initEventListener() {
         isUserInteracting = true;
         lonFactor = 0.5;
     }, false);
+    _('zoomInButton').addEventListener('mousedown', function(event) {
+        zoom(-2)
+    }, false);
+    _('zoomOutButton').addEventListener('mousedown', function(event) {
+        zoom(2)
+    }, false);
     _('navigationButtonsContainer').addEventListener('mouseup', onMouseUp, false);
+
     _('upNavButton').addEventListener('touchstart', function(event) {
         isUserInteracting = true;
         latFactor = 0.5;
@@ -257,7 +270,14 @@ function initEventListener() {
         isUserInteracting = true;
         lonFactor = 0.5;
     }, false);
+    _('zoomInButton').addEventListener('touchstart', function(event) {
+        zoom(-2)
+    }, false);
+    _('zoomOutButton').addEventListener('touchstart', function(event) {
+        zoom(2)
+    }, false);
     _('navigationButtonsContainer').addEventListener('touchend', onMouseUp, false);
+
     _('about').addEventListener('touchstart', showAbout, false);
     _('about').addEventListener('mousedown', showAbout, false);
     _('aboutCloseButton').addEventListener('click', function (event) {
@@ -484,8 +504,6 @@ function wheelEventHandler(eventX, eventY, event) {
     if (isPopupOpen) {
         return;
     }
-    //TODO: should we allow zoom?
-    return;
 
     // WebKit
     if (event.wheelDeltaY) {
@@ -500,8 +518,18 @@ function wheelEventHandler(eventX, eventY, event) {
         camera.fov += event.detail * 1.0;
     }
 
-    if (camera.fov > 80) {
-        camera.fov = 80;
+    if (camera.fov > 60) {
+        camera.fov = 60;
+    } else if (camera.fov < 40) {
+        camera.fov = 40;
+    }
+    camera.updateProjectionMatrix();
+}
+
+function zoom(amount) {
+    camera.fov += amount;
+    if (camera.fov > 60) {
+        camera.fov = 60;
     } else if (camera.fov < 40) {
         camera.fov = 40;
     }

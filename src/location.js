@@ -75,7 +75,11 @@ Location.prototype.configureMap = function (parameters) {
             spotButton.id = "mapSpot";
             spotButton.style.left = spot.mapPosX + "px";
             spotButton.style.top = spot.mapPosY + "px";
-            spotButton.addEventListener('click', function (event) {
+            spotButton.addEventListener('mousedown', function (event) {
+                event.preventDefault();
+                transitToLocation(spot.uid);
+            });
+            spotButton.addEventListener('touchstart', function (event) {
                 event.preventDefault();
                 transitToLocation(spot.uid);
             });

@@ -80,8 +80,7 @@ Hotspot.prototype.onClick = function () {
         audioSourceOgg.src = this.audio + ".ogg";
         var audioSourceMp3 = document.getElementById('audioSourceMp3');
         audioSourceMp3.src = this.audio + ".mp3";
-        audioControls.appendChild(audioSourceMp3);
-        audioControls.appendChild(audioSourceOgg);
+        audioControls.load();
     }
 };
 
