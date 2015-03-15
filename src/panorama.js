@@ -219,6 +219,11 @@ function initEventListener() {
 		div.style.display = "none";
 		isPopupOpen = false;
 	}, false);
+    _('infoCloseButton').addEventListener('touched', function (event) {
+        var div = _("infoView");
+        div.style.display = "none";
+        isPopupOpen = false;
+    }, false);
     _('map').addEventListener('dragstart', function(event) { event.preventDefault(); });
 
     _('upNavButton').addEventListener('mousedown', function(event) {
@@ -255,6 +260,18 @@ function initEventListener() {
         lonFactor = 0.5;
     }, false);
     _('navigationButtonsContainer').addEventListener('touchend', onMouseUp, false);
+    _('about').addEventListener('touchstart', showAbout, false);
+    _('about').addEventListener('mousedown', showAbout, false);
+    _('aboutCloseButton').addEventListener('click', function (event) {
+        var aboutView = _("aboutView");
+        aboutView.style.display = "none";
+        isPopupOpen = false;
+    }, false);
+    _('aboutCloseButton').addEventListener('touched', function (event) {
+        var aboutView = _("aboutView");
+        aboutView.style.display = "none";
+        isPopupOpen = false;
+    }, false);
 }
 
 /**
@@ -284,7 +301,7 @@ function onMouseDown(event) {
 function onMouseMove(event) {
     var eventX = event.pageX;
     var eventY = event.pageY;
-    console.log('eventX: ' + eventX + '    eventY: ' + eventY);
+    //console.log('eventX: ' + eventX + '    eventY: ' + eventY);
     moveEventHandler(eventX, eventY, event);
 }
 
@@ -382,7 +399,7 @@ function moveEventHandler(eventX, eventY, event) {
                 // store color of closest object (for later restoration)
                 hoverIntersected.currentHex = hoverIntersected.material.color.getHex();
                 // set a new color for closest object
-                hoverIntersected.material.color.setHex(0xffff00);
+                hoverIntersected.material.color.setHex(0x917d4d);
 
                 // Tooltip
                 if (intersects[0].object.tooltip) {
@@ -515,7 +532,7 @@ function onKeyDown(event) {
 }
 
 /**
- * Venetlistener if key is up => no navigation via keys
+ * Eventlistener if key is up => no navigation via keys
  * @param event
  */
 function onKeyUp(event) {
@@ -523,6 +540,18 @@ function onKeyUp(event) {
 	latFactor = 0;
 	isUserInteracting = false;
 }
+
+
+/**
+ * Shows about box.
+ * @param event mouse/touch event
+ */
+function showAbout(event) {
+    var aboutBox = document.getElementById('aboutView');
+    aboutBox.style.display = "block";
+    isPopupOpen = true;
+}
+
 
 /**
  *
@@ -556,7 +585,7 @@ function update() {
 	if (!isPopupOpen) {
 		lon = (lon + lonFactor) % 360;
 		lat = lat + latFactor;
-        console.log("lon: " + lon + "     lat: " + lat);
+        //console.log("lon: " + lon + "     lat: " + lat);
 
 		lat = Math.max(-35, Math.min(45, lat));
 		phi = THREE.Math.degToRad(90 - lat);
@@ -565,8 +594,8 @@ function update() {
 		camera.target.y = 195 * Math.cos(phi);
 		camera.target.z = 195 * Math.sin(phi) * Math.sin(theta);
         camera.lookAt(camera.target);
-        console.log("Camera Target: " + vectorToString(camera.target));
-        console.log("-----------------------------");
+        //console.log("Camera Target: " + vectorToString(camera.target));
+        //console.log("-----------------------------");
 		renderer.render(scene, camera);
 	} else {
 		composer.render();

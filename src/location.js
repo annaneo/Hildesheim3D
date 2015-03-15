@@ -84,6 +84,6 @@ Location.prototype.configureMap = function (parameters) {
     }
 	// Position of Map
     map.style.display = "block";
-    map.style.left = 10 + "px"; // TODO: proportionally: windowX * 0,02
-    map.style.top = 10 + "px"; // TODO: proportionally: windowY * 0,036
+    map.style.left = 10 + "px";
+    map.style.top = 10 + "px";
 };

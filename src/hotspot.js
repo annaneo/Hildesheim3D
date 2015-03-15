@@ -14,16 +14,12 @@ Hotspot = function (parameters) {
 
     this.infoContent = parameters.hasOwnProperty('content') ? parameters['content'] : "No content";
     this.infoTitle = parameters.hasOwnProperty('title') ? parameters['title'] : "";
+    this.infoImages = parameters.hasOwnProperty('images') ? parameters['images'] : [];
 
 
-    //sets audio
-    if (parameters.hasOwnProperty('audio')) {
-        var audioSource = document.getElementById('audioSource');
-        var s = parameters['audio'];
-        audioSource.src = s;
-    }
 
     this.tooltip = parameters.hasOwnProperty('tooltip') ? parameters['tooltip'] : null;
+    this.audio = parameters.hasOwnProperty('audio') ? parameters['audio'] : null;
 
     /*
     load content via
@@ -32,11 +28,11 @@ Hotspot = function (parameters) {
      });
      */
 
-    //TODO: was amcht das hier?
+    // setting size and material of hotspot icon in panorama
     var geometry = new THREE.PlaneGeometry(16, 16);
     var material = new THREE.MeshBasicMaterial({
         map: THREE.ImageUtils.loadTexture("resources/icons/information.png"),
-        transparent: true,
+        transparent: true
 
     });
     THREE.Mesh.call(this, geometry, material);
@@ -52,7 +48,6 @@ Hotspot.prototype = Object.create(THREE.Mesh.prototype);
 Hotspot.prototype.onClick = function () {
     //init info view
     var infoView = document.getElementById('infoView');
-    // position of pop up
 
     infoView.style.display = "block";
 
@@ -62,10 +57,32 @@ Hotspot.prototype.onClick = function () {
     //set text content
     var infoContent = document.getElementById('infoContent');
     infoContent.innerHTML = this.infoContent;
-    //set image
 
-    //set caption
+    //TODO: able to load more than 1 picture
+    if (this.infoImages.length > 0) {
+        var infoImageBox = document.getElementById('infoImageBox');
+        infoImageBox.style.display = 'block';
+        //set image
+        var infoImage = document.getElementById('infoImage');
+        infoImage.src = this.infoImages[0].figure;
+        //set caption
+        var infoCaption = document.getElementById('infoCaption');
+        infoCaption.innerText = this.infoImages[0].caption;
+    } else {
+        var infoImageBox = document.getElementById('infoImageBox');
+        infoImageBox.style.display = 'none';
+    }
 
+    //sets audio
+    if (this.audio) {
+        var audioControls = document.getElementById('audioControls');
+        var audioSourceOgg = document.getElementById('audioSourceOgg');
+        audioSourceOgg.src = this.audio + ".ogg";
+        var audioSourceMp3 = document.getElementById('audioSourceMp3');
+        audioSourceMp3.src = this.audio + ".mp3";
+        audioControls.appendChild(audioSourceMp3);
+        audioControls.appendChild(audioSourceOgg);
+    }
 };
 
 

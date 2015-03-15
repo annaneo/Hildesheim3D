@@ -12,8 +12,6 @@ div#panorama {
 	position: static;
 }
 
-/* soll wie das DIO Design sein, s. mockUps/rundgang_popup.pdf */
-
 body {
 	background-color: #000000;
 	margin: 0px;
@@ -28,7 +26,7 @@ figure {
 	position: absolute;
 }
 
-p {
+p, dl {
 	font-size: 1.6em;
 	line-height: 1.5em;
 }
@@ -106,10 +104,6 @@ p {
     border-radius: 3px;
 }
 
-#aboutView{
-    display:none;
-}
-
 /*
 	MAP
 	*/
@@ -145,13 +139,12 @@ p {
 	background-color: rgba(255, 255, 255, 0.8);
 }
 
-/* tooltip braucht noch p-Tag */
 
 #infoView {
 	display: none;
 	position: absolute;
 	width: 27%;
-	margin: 10em 35%;
+	margin: 5em 35%;
 	padding: 1% 1.5%;
 	border: 1px solid #917d4d;
 	border-radius: 3px;
@@ -162,7 +155,7 @@ p {
 	right: 4.2%;
 }
 
-#infoTitle {
+h1 {
 	margin-bottom: 0.5em;
 	padding-right: 9%;
 	font-size: 2.6em;
@@ -171,12 +164,12 @@ p {
 	color: #917d4d;
 }
 
-#popUpImage {
+#infoImageBox {
 	position: relative;
 	margin-bottom: 1.5em;
 }
 
-#popUpImage img {
+#infoImageBox img {
 	width: 98%;
 	padding: 1%;
 	border: 1px solid #c9cbd0;
@@ -184,7 +177,7 @@ p {
 	background: #fff
 }
 
-#popUpImage figcaption {
+#infoImageBox figcaption {
 	font-size: 1.4em;
 	margin-top: 0.5em;
 }
@@ -196,4 +189,23 @@ audio {
 
 #panorama a {
 	color: #917d4d;
+}
+
+/*
+    ABOUT POP UP
+    */
+
+#aboutView{
+    display:none;
+    position: absolute;
+    width: 42%;
+    margin: 10em 35%;
+    padding: 1% 1.5%;
+    border: 1px solid #917d4d;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#aboutCloseButton{
+    right: 4.2%;
 }

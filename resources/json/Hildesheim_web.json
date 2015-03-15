@@ -244,7 +244,7 @@
           "tooltip": "Chorschranke",
           "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0048.html#content\"  target=\"_blank\">Nördliche Chorschranke, DIO 58, Nr. 48</a> ",
           "images": [],
-          "audio": "resources/audio/Text15.mp3",
+          "audio": "resources/audio/Text15",
           "posX": 144,
           "posY": 80,
           "posZ": -104
@@ -293,7 +293,7 @@
           "tooltip": "Westchor-Schranke",
           "text": "",
           "images": [],
-          "audio": "resources/audio/Text15.mp3",
+          "audio": "resources/audio/Text15",
           "posX": 126,
           "posY": -111,
           "posZ": -98
@@ -368,7 +368,7 @@
           "tooltip": "Deckengemälde",
           "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0065.html#content\" target=\"_blank\">Deckengemälde, DIO 58, Nr. 65</a> ",
           "images": [],
-          "audio": "resources/audio/Text18.mp3",
+          "audio": "resources/audio/Text18",
           "posX": -86,
           "posY": 126,
           "posZ": 122
@@ -418,7 +418,7 @@
           "tooltip": "Architektur von St. Michaelis",
           "text": "",
           "images": [],
-          "audio": "resources/audio/Text1.mp3",
+          "audio": "resources/audio/Text1",
           "posX": 43,
           "posY": -18,
           "posZ": 189
@@ -457,7 +457,7 @@
           "tooltip": "Heiligsprechung Bernwards",
           "text": "",
           "images": [],
-          "audio": "resources/audio/Text11.mp3",
+          "audio": "resources/audio/Text11",
           "posX": 17,
           "posY": -48,
           "posZ": 188
@@ -579,7 +579,7 @@
                   "caption": "© Christine Wulf"
               }
           ],
-          "audio": "resources/audio/Text3.mp3",
+          "audio": "resources/audio/Text3",
           "posX": 43,
           "posY": -18,
           "posZ": 189
@@ -629,7 +629,7 @@
           "tooltip": "Kirche des Bischofs",
           "text": "",
           "images": [],
-          "audio": "resources/audio/Text2.mp3",
+          "audio": "resources/audio/Text2",
           "posX": -188,
           "posY": -34,
           "posZ": 41
@@ -686,7 +686,7 @@
           "tooltip": "Stuckfiguren",
           "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0044.html#content\"  target=\"_blank\">Seligpreisungen, DIO 58, Nr. 44</a> ",
           "images": [],
-          "audio": "resources/audio/Text12.mp3",
+          "audio": "resources/audio/Text12",
           "posX": -34,
           "posY": 122,
           "posZ": -148
@@ -702,7 +702,7 @@
                   "caption": "© Julia Zech"
               }
           ],
-          "audio": "resources/audio/Text14.mp3",
+          "audio": "resources/audio/Text14",
           "posX": 98,
           "posY": 23,
           "posZ": 167
@@ -753,7 +753,7 @@
           "tooltip": "Stuckfiguren",
           "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0044.html#content\" >Seligpreisungen, DIO 58, Nr. 44</a> ",
           "images": [],
-          "audio": "resources/audio/Text12.mp3",
+          "audio": "resources/audio/Text12",
           "posX": 128,
           "posY": 138,
           "posZ": 52
@@ -815,7 +815,7 @@
           "tooltip": "Stuckfiguren",
           "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0044.html#content\"  target=\"_blank\">Seligpreisungen, DIO 58, Nr. 44</a> ",
           "images": [],
-          "audio": "resources/audio/Text12.mp3",
+          "audio": "resources/audio/Text12",
           "posX": 134,
           "posY": 138,
           "posZ": 33
@@ -887,7 +887,7 @@
           "tooltip": "Christussäule",
           "text": "",
           "images": [],
-          "audio": "resources/audio/Text16.mp3",
+          "audio": "resources/audio/Text16",
           "posX": -75,
           "posY": -44,
           "posZ": -174
@@ -931,7 +931,7 @@
                   "caption": "© Jutta Brüdern"
               }
           ],
-          "audio": "resources/audio/Text13.mp3",
+          "audio": "resources/audio/Text13",
           "posX": -172,
           "posY": -40,
           "posZ": 82
@@ -1008,9 +1008,9 @@
           "uid": 1,
           "title": "Reliquien stabilisieren Bernwards Kirchenbau",
           "tooltip": "Säulen",
-          "text": "Information zu den romanischen Säulen und der Inschrift. <a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0013.html#content\"  target=\"_blank\">Säulen, DIO 58, Nr. 13</a> ",
+          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0013.html#content\"  target=\"_blank\">Säulen, DIO 58, Nr. 13</a> ",
           "images": [],
-          "audio": "resources/audio/Text17.mp3",
+          "audio": "resources/audio/Text17",
           "posX": -27,
           "posY": 109,
           "posZ": 160
@@ -1071,7 +1071,7 @@
           "tooltip": "Querhäuser",
           "text": "",
           "images": [],
-          "audio": "resources/audio/Text4.mp3",
+          "audio": "resources/audio/Text4",
           "posX": 46,
           "posY": -6,
           "posZ": -189
@@ -1082,7 +1082,7 @@
           "tooltip": "Deckengemälde",
           "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0065.html#content\"  target=\"_blank\">Deckengemälde, DIO 58, Nr. 65</a> ",
           "images": [],
-          "audio": "resources/audio/Text18.mp3",
+          "audio": "resources/audio/Text18",
           "posX": 0,
           "posY": 138,
           "posZ": -137
@@ -1143,7 +1143,7 @@
           "tooltip": "Seitenschiffe",
           "text": "",
           "images": [],
-          "audio": "resources/audio/Text5.mp3",
+          "audio": "resources/audio/Text5",
           "posX": -191,
           "posY": -16,
           "posZ": 34
@@ -1224,7 +1224,7 @@
                   "caption": "© Frank Tomio"
               }
           ],
-          "audio": "resources/audio/Text7.mp3",
+          "audio": "resources/audio/Text7",
           "posX": 184,
           "posY": -50,
           "posZ": 41
@@ -1289,7 +1289,7 @@
           "tooltip": "Sarkophag",
           "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0011.html#content\" >Sarkophag, DIO 58, Nr. 11</a> ",
           "images": [],
-          "audio": "resources/audio/Text10.mp3",
+          "audio": "resources/audio/Text10",
           "posX": -144,
           "posY": -70,
           "posZ": -111
@@ -1361,7 +1361,7 @@
           "tooltip": "Grabplatte Bernwards",
           "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0012.html#content\"  target=\"_blank\">Grabdeckplatte, DIO 58, Nr. 12</a> ",
           "images": [],
-          "audio": "resources/audio/Text9.mp3",
+          "audio": "resources/audio/Text9",
           "posX": 113,
           "posY": -61,
           "posZ": -146
@@ -1426,7 +1426,7 @@
           "tooltip": "Bernwards Grablege",
           "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0011.html#content\"  target=\"_blank\">Sarkophag, DIO 58, Nr. 11</a> ",
           "images": [],
-          "audio": "resources/audio/Text8.mp3",
+          "audio": "resources/audio/Text8",
           "posX": 93,
           "posY": -9,
           "posZ": 171
@@ -1470,7 +1470,7 @@
                   "caption": "© Christine Wulf"
               }
           ],
-          "audio": "resources/audio/Text6.mp3",
+          "audio": "resources/audio/Text6",
           "posX": -38,
           "posY": 14,
           "posZ": -191

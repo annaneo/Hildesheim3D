@@ -84,15 +84,13 @@
         </figure>
 
     <!-- About-->
-        <figure id="about">
-            <p>
+            <p id="about">
                 Impressum
             </p>
-        </figure>
 
 
 	    <!-- Tool Tip -->
-	    <div id="toolTip"></div>
+	    <p id="toolTip"></p>
 
 	    <!-- Info Pop Up-->
 		<article id="infoView">
@@ -104,16 +102,16 @@
 	            TODO: render title from JSON
 			</h1>
 
-			<figure id="popUpImage">
-				<img src="resources/images/di-58_005_1.jpg" alt="sample image" />
-				<figcaption>
-					TODO: load caption from JSON
+			<figure id="infoImageBox">
+				<img src="resources/images/di-58_005_1.jpg" alt="sample image" id="infoImage" />
+				<figcaption id="infoCaption">
 				</figcaption>
 			</figure>
 
 			<div id="audioPlayer">
-				<audio controls preload="auto" id="audioSource" src="" type="">
-					<!-- TODO: add .ogg for opera; oder welches Format, damit alle Browser unterstützen? -->
+				<audio id="audioControls" controls>
+                    <source src="" type="audio/ogg" preload="auto" id="audioSourceOgg">
+                    <source src="" type="audio/mpeg" preload="auto" id="audioSourceMp3">
 				</audio>
 			</div>
 
@@ -128,7 +126,10 @@
 		</article>
 
 		<article id="aboutView">
-			<h1>Impressum</h1>
+            <figure id="aboutCloseButton">
+                <img src="resources/icons/close2.png" alt="Impressum verlassen" title="Impressum verlassen">
+            </figure>
+			<h1 #aboutTitle>Impressum</h1>
 
 			<h2>Umsetzung</h2>
 			<dl>
@@ -150,9 +151,6 @@
 				<dt>Digitale Akademie</dt><dd>Steffen Schneider</dd>
 			</dl>
 
-			<p>
-				<a href="#">Zurück zum Panoramarundgang</a>
-			</p>
 		</article>
 
 		</div>
