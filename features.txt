@@ -27,7 +27,7 @@ Aktive Elemente im Panorama: Standort-Übergänge und Info-Popups
 ============
 
 done	Positionieren
-?	Anmination (größer bei mouseOver)
+nope	Anmination (größer bei mouseOver)
 done	Textanzeige: Info über Aktion, die aufgerufen wird
 nope	vielleicht wäre es schön, dass die opacitiy der aktiven Elemente sowie der Nvigation voller wird bei mouseOver
 
@@ -35,16 +35,15 @@ nope	vielleicht wäre es schön, dass die opacitiy der aktiven Elemente sowie de
 ============
 Informationsview
 ============
-	Design: Fenster & Hintergund (blurr, ausgegraut)
-	Aufbau des
-	Bilder - Slideshow
-	Text scrollbar
-	generisches Laden von Inhalten (über json; zuerst können wir den Text aus im Code abgelegten files nehmen,d aach aus dem TYPO3 BE)
-	HTML & CSS für das Fenster
-	Materialien sammeln (Bilder) und Testtexte erstellen
-	Verlinkung mit DIO
-	Abspielen von Sound
-	auswahl /Deisgn unterschiedlciher Typen (Text, Text mit Bild, breiter, höher?)
+done	Design: Fenster & Hintergund (blurr, ausgegraut)
+@anni	Bilder - Slideshow
+Software: mit längeren Texten umgehen	Text scrollbar
+done	generisches Laden von Inhalten (über json; zuerst können wir den Text aus im Code abgelegten files nehmen,d aach aus dem TYPO3 BE)
+done	HTML & CSS für das Fenster
+done	Materialien sammeln (Bilder) und Testtexte erstellen
+done	Verlinkung mit DIO
+noch fehlerhaft	Abspielen von Sound
+@anni	auswahl /Deisgn unterschiedlciher Typen (Text, Text mit Bild, breiter, höher?)
 
 ============
 Vollbild-Modus
@@ -65,7 +64,7 @@ Finish it!
 
 	Crossbrowser/-device Tests
 	Abfangen inkompatibler Browser
-
+	Spinner bei Übergängen
 
 
 ============

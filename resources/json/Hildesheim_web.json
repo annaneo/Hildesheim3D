@@ -1158,13 +1158,6 @@
       "mapUid": 2,
       "transitions": [
         {
-          "target_location": 1,
-          "tooltip": "Zum Kirchenraum",
-          "posX": 184,
-          "posY": -50,
-          "posZ": 41
-        },
-        {
           "target_location": 918,
           "tooltip": "Zentrum Krypta",
           "posX": -172,
