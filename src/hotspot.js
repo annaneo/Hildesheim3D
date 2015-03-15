@@ -16,18 +16,10 @@ Hotspot = function (parameters) {
     this.infoTitle = parameters.hasOwnProperty('title') ? parameters['title'] : "";
     this.infoImages = parameters.hasOwnProperty('images') ? parameters['images'] : [];
 
-    //sets audio
-    if (parameters.hasOwnProperty('audio')) {
-        var audioControls = document.getElementById('audioPlayer');
-        var s = parameters['audio'];
-        var audioSourceOgg = document.getElementById('audioSourceOgg');
-        audioSourceOgg.src = s + ".ogg";
-        var audioSourceMp3 = document.getElementById('audioSourceMp3');
-        audioSourceMp3.src = s + ".mp3";
 
-    }
 
     this.tooltip = parameters.hasOwnProperty('tooltip') ? parameters['tooltip'] : null;
+    this.audio = parameters.hasOwnProperty('audio') ? parameters['audio'] : null;
 
     /*
     load content via
@@ -56,7 +48,6 @@ Hotspot.prototype = Object.create(THREE.Mesh.prototype);
 Hotspot.prototype.onClick = function () {
     //init info view
     var infoView = document.getElementById('infoView');
-    // position of pop up
 
     infoView.style.display = "block";
 
@@ -70,7 +61,7 @@ Hotspot.prototype.onClick = function () {
     //TODO: able to load more than 1 picture
     if (this.infoImages.length > 0) {
         var infoImageBox = document.getElementById('infoImageBox');
-        infoImageBox.style.visibility = 'visible';
+        infoImageBox.style.display = 'block';
         //set image
         var infoImage = document.getElementById('infoImage');
         infoImage.src = this.infoImages[0].figure;
@@ -79,7 +70,18 @@ Hotspot.prototype.onClick = function () {
         infoCaption.innerText = this.infoImages[0].caption;
     } else {
         var infoImageBox = document.getElementById('infoImageBox');
-        infoImageBox.style.visibility = 'hidden';
+        infoImageBox.style.display = 'none';
+    }
+
+    //sets audio
+    if (this.audio) {
+        var audioControls = document.getElementById('audioControls');
+        var audioSourceOgg = document.getElementById('audioSourceOgg');
+        audioSourceOgg.src = this.audio + ".ogg";
+        var audioSourceMp3 = document.getElementById('audioSourceMp3');
+        audioSourceMp3.src = this.audio + ".mp3";
+        audioControls.appendChild(audioSourceMp3);
+        audioControls.appendChild(audioSourceOgg);
     }
 };
 
