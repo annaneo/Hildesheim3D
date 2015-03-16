@@ -9,103 +9,103 @@
           "uid": 12,
           "tooltip": "Bernward",
           "mapPosX": 37,
-          "mapPosY": 80
+          "mapPosY": 115
         },
         {
           "uid": 20,
           "tooltip": "Westchor",
-          "mapPosX": 60,
-          "mapPosY": 85
+          "mapPosX": 90,
+          "mapPosY": 135
         },
         {
           "uid": 29,
           "tooltip": "Mittelschiff",
-          "mapPosX": 85,
-          "mapPosY": 75
+          "mapPosX": 145,
+          "mapPosY": 115
         },
         {
           "uid": 22,
           "tooltip": "Nördliches Seitenschiff",
-          "mapPosX": 90,
-          "mapPosY": 40
+          "mapPosX": 153,
+          "mapPosY": 75
         },
         {
           "uid": 1,
           "tooltip": "Übergang zur Krypta",
-          "mapPosX": 78,
-          "mapPosY": 25
+          "mapPosX": 125,
+          "mapPosY": 40
         },
         {
           "uid": 3,
           "tooltip": "Balustrade",
-          "mapPosX": 95,
+          "mapPosX": 140,
           "mapPosY": 20
         },
         {
           "uid": 26,
           "tooltip": "Romanische Säulen",
-          "mapPosX": 200,
-          "mapPosY": 75
+          "mapPosX": 330,
+          "mapPosY": 115
         },
         {
           "uid": 25,
           "tooltip": "Östliches Querhaus",
-          "mapPosX": 240,
-          "mapPosY": 75
+          "mapPosX": 375,
+          "mapPosY": 115
         },
         {
           "uid": 17,
           "tooltip": "Nördliches Seitenschiff",
-          "mapPosX": 160,
-          "mapPosY": 40
+          "mapPosX": 250,
+          "mapPosY": 65
         },
         {
           "uid": 21,
           "tooltip": "Südliches Seitenschiff",
-          "mapPosX": 85,
-          "mapPosY": 100
+          "mapPosX": 142,
+          "mapPosY": 153
         },
         {
           "uid": 4,
           "tooltip": "Seitenschiff",
-          "mapPosX": 78,
-          "mapPosY": 115
+          "mapPosX": 130,
+          "mapPosY": 175
         },
         {
           "uid": 5,
           "tooltip": "Grundstein",
-          "mapPosX": 95,
-          "mapPosY": 120
+          "mapPosX": 155,
+          "mapPosY": 185
         },
         {
           "uid": 13,
           "tooltip": "Bernwardstür",
-          "mapPosX": 130,
-          "mapPosY": 105
+          "mapPosX": 200,
+          "mapPosY": 160
         },
         {
           "uid": 14,
           "tooltip": "Stuckfiguren",
-          "mapPosX": 165,
-          "mapPosY": 105
+          "mapPosX": 260,
+          "mapPosY": 160
         },
         {
           "uid": 15,
           "tooltip": "Stuckfiguren",
-          "mapPosX": 200,
-          "mapPosY": 105
+          "mapPosX": 310,
+          "mapPosY": 160
         },
         {
           "uid": 24,
           "tooltip": "Bernwardsäule",
-          "mapPosX": 242,
-          "mapPosY": 100
+          "mapPosX": 380,
+          "mapPosY": 155
         },
         {
           "uid": 6,
           "tooltip": "Gedenkstein",
-          "mapPosX": 245,
-          "mapPosY": 120
+          "mapPosX": 380,
+          "mapPosY": 182
         }
       ]
     },

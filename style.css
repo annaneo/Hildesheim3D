@@ -118,13 +118,11 @@ p, dl {
 }
 
 #mapSpot {
-	width: 18px;
-	height: 18px;
+	width: 23px;
+	height: 23px;
 	background-color: #A30000;
 	z-index: 0;
 	position: absolute;
-	width: 18px;
-	height: 18px;
 	border-radius: 50%;
 }
 

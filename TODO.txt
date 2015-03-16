@@ -5,7 +5,7 @@ BUGS
 - Bilder laden nicht
 - wenn man im popup Fenster ist: Karte und Navigation müssen ausgeblendet werden
 
-
+urgent feature: Übergnag in Kirche aus Krypte und vice versa
 ===========
 ENTWICKLUNG
 ===========
