@@ -32,6 +32,7 @@ var timerId;
  * @param dataURL URL to the config JSON
  */
 function startPanorama(dataURL) {
+    setMapandNavigationHidden(true);
 	init();
     isLoading = true;
 	parseConfigJSON(dataURL, function (data) {
@@ -106,8 +107,7 @@ function startComplete(location) {
 	setupDarkBlurShader();
     setupBrightBlurShader();
 	isLoading = false;
-    var navButtons = _('navigationButtonsContainer');
-    navButtons.style.display = 'block';
+    setMapandNavigationHidden(false);
 }
 
 
@@ -136,10 +136,7 @@ function transitToLocation(locationIndex, reset) {
     }
     isLoading = true;
 
-    var map = _('map');
-    map.style.display = 'none';
-    var navButtons = _('navigationButtonsContainer');
-    navButtons.style.display = 'none';
+    setMapandNavigationHidden(true);
 
     setTimeout(function () {    // Hack
         var loader = new LocationLoader();
@@ -163,7 +160,7 @@ function transitToLocation(locationIndex, reset) {
             setupDarkBlurShader();
             setupBrightBlurShader();
             isLoading = false;
-            navButtons.style.display = 'block';
+            setMapandNavigationHidden(false);
             camera.fov = 60;
             camera.updateProjectionMatrix();
         });
@@ -220,6 +217,7 @@ function initEventListener() {
 		var div = _("infoView");
 		div.style.display = "none";
 		isPopupOpen = false;
+        setMapandNavigationHidden(false);
 	}, false);
     _('infoCloseButton').addEventListener('touched', function (event) {
         var audioControls = _('audioControls');
@@ -227,6 +225,7 @@ function initEventListener() {
         var div = _("infoView");
         div.style.display = "none";
         isPopupOpen = false;
+        setMapandNavigationHidden(false);
     }, false);
     _('map').addEventListener('dragstart', function(event) { event.preventDefault(); });
 
@@ -284,12 +283,28 @@ function initEventListener() {
         var aboutView = _("aboutView");
         aboutView.style.display = "none";
         isPopupOpen = false;
+        setMapandNavigationHidden(false);
     }, false);
     _('aboutCloseButton').addEventListener('touched', function (event) {
         var aboutView = _("aboutView");
         aboutView.style.display = "none";
         isPopupOpen = false;
+        setMapandNavigationHidden(false);
     }, false);
+}
+
+
+function setMapandNavigationHidden(hidden) {
+    var map = _('map');
+    var navButtons = _('navigationButtonsContainer');
+    if (hidden) {
+        map.style.display = 'none';
+        navButtons.style.display = 'none';
+    } else {
+        map.style.display = 'block';
+        navButtons.style.display = 'block';
+    }
+
 }
 
 /**
@@ -634,6 +649,7 @@ function update() {
         //console.log("-----------------------------");
 		renderer.render(scene, camera);
 	} else {
+        setMapandNavigationHidden(true);
 		composer.render();
 	}
 }
