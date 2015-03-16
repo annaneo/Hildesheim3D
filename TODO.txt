@@ -1,4 +1,12 @@
 ===========
+BUGS
+===========
+
+- Bilder laden nicht
+- wenn man im popup Fenster ist: Karte und Navigation müssen ausgeblendet werden
+
+
+===========
 ENTWICKLUNG
 ===========
 
@@ -7,6 +15,7 @@ ENTWICKLUNG
 - Fullscreen: Button auf view; Funktionalität schon existent?
 - Mouseover bei aktiven Elementen: Mausanzeige ändern
 - zoom in & out rein (nicht ganz so hohe Priorität)
+- wenn das about aus der index.html auskommentiert wird, stürzt das Pnaorama ab (sollten wir vor dem Online-Gang fixen)
 
 
 @anna:

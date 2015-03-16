@@ -164,6 +164,20 @@ h1 {
 	color: #917d4d;
 }
 
+h2{
+    font: 1.8em  Geneva,Lucida Grande,Lucida Sans,sans-serif;
+    text-transform: uppercase;
+    padding-top: 1.8em;
+}
+
+/* style dl http://lea.verou.me/2012/02/flexible-multiline-definition-lists-with-2-lines-of-css/*/
+
+dt{
+    font-weight: bold;
+}
+
+
+
 #infoImageBox {
 	position: relative;
 	margin-bottom: 1.5em;
