@@ -31,6 +31,14 @@ p, dl {
 	line-height: 1.5em;
 }
 
+
+dt:after {
+	content:':';
+	padding-right:2em;
+
+}
+
+
 /*
 	NAVIGATION
 	*/
@@ -44,40 +52,40 @@ p, dl {
 }
 
 .panoNavButton {
-	width: 30px;
-	height: 30px;
+	width: 36px;
+	height: 36px;
 	z-index: 0;
 	position: absolute;
 }
 
 #upNavButton {
-	bottom: 90px;
-	right: 56px;
+	bottom: 110px;
+	right: 75px;
 }
 
 #downNavButton {
-	bottom: 22px;
-	right: 56px;
+	bottom: 28px;
+	right: 75px;
 }
 
 #rightNavButton {
-	bottom: 56px;
-	right: 22px;
+	bottom: 67px;
+	right: 36px;
 }
 
 #leftNavButton {
-	bottom: 56px;
-	right: 89px;
+	bottom: 67px;
+	right: 115px;
 }
 
 #zoomInButton {
-	bottom: 56px;
-	right: 152px;
+	bottom: 67px;
+	right: 190px;
 }
 
 #zoomOutButton {
-	bottom: 56px;
-	right: 193px;
+	bottom: 67px;
+	right: 240px;
 }
 
 /**
@@ -150,7 +158,7 @@ p, dl {
 	display: none;
 	position: absolute;
 	width: 27%;
-	margin: 5em 35%;
+	margin: 25em 35%;
 	padding: 1% 1.5%;
 	border: 1px solid #917d4d;
 	border-radius: 3px;

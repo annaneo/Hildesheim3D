@@ -1,5 +1,5 @@
 {
-  "startLocation": 26,
+  "startLocation": 98,
   "maps": [
     {
       "uid": 1,
@@ -116,32 +116,32 @@
         {
           "uid": 913,
           "tooltip": "Weiheinschrift",
-          "mapPosX": 20,
-          "mapPosY": 73
+          "mapPosX": 30,
+          "mapPosY": 103
         },
         {
           "uid": 918,
           "tooltip": "Zentrum Krypta",
-          "mapPosX": 78,
-          "mapPosY": 72
+          "mapPosX": 110,
+          "mapPosY": 103
         },
         {
           "uid": 97,
           "tooltip": "Marienaltar",
-          "mapPosX": 131,
-          "mapPosY": 71
+          "mapPosX": 190,
+          "mapPosY": 103
         },
         {
           "uid": 98,
           "tooltip": "Grablege",
-          "mapPosX": 110,
-          "mapPosY": 56
+          "mapPosX": 160,
+          "mapPosY": 70
         },
         {
           "uid": 96,
           "tooltip": "Grablege",
-          "mapPosX": 110,
-          "mapPosY": 92
+          "mapPosX": 160,
+          "mapPosY": 140
         }
       ]
     }
@@ -242,7 +242,7 @@
           "uid": 48,
           "title": "Die nördliche Chorschranke - Der neue Heilige im Bild (Ende 12. Jh.)",
           "tooltip": "Chorschranke",
-          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0048.html#content\"  target=\"_blank\">Nördliche Chorschranke, DIO 58, Nr. 48</a> ",
+          "text": "",
           "images": [],
           "audio": "resources/audio/Text15",
           "posX": 144,
@@ -366,7 +366,7 @@
           "uid": 65,
           "title": "Die Wurzel Jesse - ein Bild für den kommenden Christus",
           "tooltip": "Deckengemälde",
-          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0065.html#content\" target=\"_blank\">Deckengemälde, DIO 58, Nr. 65</a> ",
+          "text": "",
           "images": [],
           "audio": "resources/audio/Text18",
           "posX": -86,
@@ -572,7 +572,7 @@
           "uid": 1,
           "title": "1010 legt Bischof Bernward den Grundstein für die Michaeliskirche",
           "tooltip": "Grundstein",
-          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0006.html#content\"  target=\"_blank\">Grundstein, DIO 58, Nr. 6</a>",
+          "text": "",
           "images": [
               {
                   "figure": "resources/images/di-58-006_1.jpg",
@@ -684,7 +684,7 @@
           "uid": 2,
           "title": "Allegorische Figuren der Seligpreisungen als Schmuck der Kirche des Heiligen",
           "tooltip": "Stuckfiguren",
-          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0044.html#content\"  target=\"_blank\">Seligpreisungen, DIO 58, Nr. 44</a> ",
+          "text": "",
           "images": [],
           "audio": "resources/audio/Text12",
           "posX": -34,
@@ -695,7 +695,7 @@
           "uid": 3,
           "title": "Im Jahr 1015 lässt Bischof Bernward zwei monumentale Türflügel gießen",
           "tooltip": "Bernwardstür",
-          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0009.html#content\"  target=\"_blank\">Bernwardstür, DIO 58, Nr. 9</a> ",
+          "text": "",
           "images": [
               {
                   "figure": "resources/images/di-58-009_1.jpg",
@@ -751,7 +751,7 @@
           "uid": 2,
           "title": "Allegorische Figuren der Seligpreisungen als Schmuck der Kirche des Heiligen",
           "tooltip": "Stuckfiguren",
-          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0044.html#content\" >Seligpreisungen, DIO 58, Nr. 44</a> ",
+          "text": "",
           "images": [],
           "audio": "resources/audio/Text12",
           "posX": 128,
@@ -813,7 +813,7 @@
           "uid": 2,
           "title": "Allegorische Figuren der Seligpreisungen als Schmuck der Kirche des Heiligen",
           "tooltip": "Stuckfiguren",
-          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0044.html#content\"  target=\"_blank\">Seligpreisungen, DIO 58, Nr. 44</a> ",
+          "text": "",
           "images": [],
           "audio": "resources/audio/Text12",
           "posX": 134,
@@ -924,7 +924,7 @@
           "uid": 16,
           "title": "Bischof Bernward bittet um Gebetsgedenken (vor 1022)",
           "tooltip": "Gedenkstein",
-          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0016.html#content\"  target=\"_blank\">Gedenkstein, DIO 58, Nr. 16</a> ",
+          "text": "",
           "images": [
               {
                   "figure": "resources/images/di-58-016_1.jpg",
@@ -1008,7 +1008,7 @@
           "uid": 1,
           "title": "Reliquien stabilisieren Bernwards Kirchenbau",
           "tooltip": "Säulen",
-          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0013.html#content\"  target=\"_blank\">Säulen, DIO 58, Nr. 13</a> ",
+          "text": "",
           "images": [],
           "audio": "resources/audio/Text17",
           "posX": -27,
@@ -1080,7 +1080,7 @@
           "uid": 1,
           "title": "Die Wurzel Jesse - ein Bild für den kommenden Christus",
           "tooltip": "Deckengemälde",
-          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0065.html#content\"  target=\"_blank\">Deckengemälde, DIO 58, Nr. 65</a> ",
+          "text": "",
           "images": [],
           "audio": "resources/audio/Text18",
           "posX": 0,
@@ -1206,7 +1206,7 @@
           "uid": 1,
           "title": "Die Ausstattung des Marienaltars in der Krypta",
           "tooltip": "Marienaltar",
-          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0004.html#content\"  target=\"_blank\">Evangeliar, DIO 58, Nr. 4</a>; <a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0005.html#content\"  target=\"_blank\">Leuchter, DIO 58, Nr. 5</a>; <a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0014.html#content\"  target=\"_blank\">Kreuz, DIO 58, Nr. 14</a> ",
+          "text": "",
           "images": [
               {
                  "figure": "resources/images/di-58-005_1.jpg",
@@ -1280,7 +1280,7 @@
           "uid": 1,
           "title": "Bernward zwischen Engeln im Himmel",
           "tooltip": "Sarkophag",
-          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0011.html#content\" >Sarkophag, DIO 58, Nr. 11</a> ",
+          "text": "",
           "images": [],
           "audio": "resources/audio/Text10",
           "posX": -144,
@@ -1352,7 +1352,7 @@
           "uid": 1,
           "title": "Die Grabplatte Bischof Bernwards von 1022",
           "tooltip": "Grabplatte Bernwards",
-          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0012.html#content\"  target=\"_blank\">Grabdeckplatte, DIO 58, Nr. 12</a> ",
+          "text": "",
           "images": [],
           "audio": "resources/audio/Text9",
           "posX": 113,
@@ -1417,7 +1417,7 @@
           "uid": 1,
           "title": "Bernward stirbt 1022 und wird in der Krypta in einem Sarkophag beigesetzt",
           "tooltip": "Bernwards Grablege",
-          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0011.html#content\"  target=\"_blank\">Sarkophag, DIO 58, Nr. 11</a> ",
+          "text": "",
           "images": [],
           "audio": "resources/audio/Text8",
           "posX": 93,
@@ -1456,7 +1456,7 @@
           "uid": 10,
           "title": "Bernward weiht die Krypta der Michaeliskirche",
           "tooltip": "Weiheinschrift",
-          "text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0010.html#content\"  target=\"_blank\">Bernwardkrypta, DIO 58, Nr. 10</a>",
+          "text": "",
           "images": [
               {
                   "figure": "resources/images/di-58-010_1.jpg",
