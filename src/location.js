@@ -50,11 +50,11 @@ Location.prototype.addTransition = function (parameters) {
  * Configures the map for the location
  * @param parameters dictionary that should have field image with the url to the map image.
  */
-Location.prototype.configureMap = function (parameters) {
+Location.prototype.configureMap = function (parameters, locationUid) {
     var map = document.getElementById('map');
 
     for (var i = map.childNodes.length-1; i > 0; i--) {
-        if (map.childNodes[i].id === "mapSpot") {
+        if (map.childNodes[i].id === "mapSpot" || map.childNodes[i].id === "mapSpotCurrent") {
             map.removeChild(map.childNodes[i]);
         }
     }
@@ -72,7 +72,11 @@ Location.prototype.configureMap = function (parameters) {
         // position of map spots is declared in json
         spots.forEach(function (spot) {
             var spotButton = document.createElement("button");
-            spotButton.id = "mapSpot";
+            if (spot.uid === locationUid) {
+                spotButton.id = "mapSpotCurrent";
+            } else {
+                spotButton.id = "mapSpot";
+            }
             spotButton.style.left = spot.mapPosX + "px";
             spotButton.style.top = spot.mapPosY + "px";
             spotButton.addEventListener('mousedown', function (event) {

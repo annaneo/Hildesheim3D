@@ -291,6 +291,10 @@ function initEventListener() {
         isPopupOpen = false;
         setMapandNavigationHidden(false);
     }, false);
+    _('map1').addEventListener('mousedown', function (event) { transitToLocation(12, true) });
+    _('map1').addEventListener('touchstart', function (event) { transitToLocation(12, true) });
+    _('map2').addEventListener('mousedown', function (event) { transitToLocation(98, true) });
+    _('map2').addEventListener('touchstart', function (event) { transitToLocation(98, true) });
 }
 
 
