@@ -22,6 +22,7 @@ var transitionComposer;
 var panoramaData;
 var isLoading = false;
 var lastPanoramaUID = -1;
+var mapUid = 0;
 
 var toolTip;
 
@@ -92,7 +93,7 @@ function init() {
 
 /**
  *
- * @param location uid of location that will be rendered
+ * @param location that will be rendered
  */
 function startComplete(location) {
 	var panoScene = new THREE.Scene();
@@ -102,6 +103,8 @@ function startComplete(location) {
     lat = cts[-1].lat;
     lon = cts[-1].lon;
     lastPanoramaUID = location.uid;
+    mapUid = location.mapUid;
+    updateSceneSwitchButton();
 	updateTargetList();
 	initEventListener();
 	setupDarkBlurShader();
@@ -156,6 +159,8 @@ function transitToLocation(locationIndex, reset) {
                 lon = -103;
             }
             lastPanoramaUID = location.uid;
+            mapUid = location.mapUid;
+            updateSceneSwitchButton();
             updateTargetList();
             setupDarkBlurShader();
             setupBrightBlurShader();
@@ -291,22 +296,44 @@ function initEventListener() {
         isPopupOpen = false;
         setMapandNavigationHidden(false);
     }, false);
-    _('map1').addEventListener('mousedown', function (event) { transitToLocation(12, true) });
-    _('map1').addEventListener('touchstart', function (event) { transitToLocation(12, true) });
-    _('map2').addEventListener('mousedown', function (event) { transitToLocation(98, true) });
-    _('map2').addEventListener('touchstart', function (event) { transitToLocation(98, true) });
+    _('sceneSwitch').addEventListener('mousedown', switchScene);
+    _('sceneSwitch').addEventListener('touchstart', switchScene);
+
 }
 
+function switchScene(event) {
+    if (mapUid === 1) {
+        transitToLocation(98, true);
+    } else {
+        transitToLocation(12, true);
+    }
+}
+
+
+function updateSceneSwitchButton() {
+    var button = _('sceneSwitch');
+    if (mapUid === 1) {
+        button.innerText = 'Zur Krypta';
+    } else {
+        button.innerText = 'Zum Kirchenraum';
+    }
+}
 
 function setMapandNavigationHidden(hidden) {
     var map = _('map');
     var navButtons = _('navigationButtonsContainer');
+    var about = _('about');
+    var sceneSwitch = _('sceneSwitch');
     if (hidden) {
         map.style.display = 'none';
         navButtons.style.display = 'none';
+        about.style.display = 'none';
+        sceneSwitch.style.display = 'none';
     } else {
         map.style.display = 'block';
         navButtons.style.display = 'block';
+        about.style.display = 'block';
+        sceneSwitch.style.display = 'block';
     }
 
 }
