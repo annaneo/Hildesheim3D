@@ -145,7 +145,7 @@ dt:after {
 #mapSpotCurrent {
     width: 23px;
     height: 23px;
-    background-color: #A3A300;
+    background-color: #917d4d;
     z-index: 0;
     position: absolute;
     border-radius: 50%;
@@ -167,7 +167,7 @@ dt:after {
 	display: none;
 	position: absolute;
 	width: 27%;
-	margin: 25em 35%;
+	margin: 10em 35%;
 	padding: 1% 1.5%;
 	border: 1px solid #917d4d;
 	border-radius: 3px;
@@ -236,7 +236,7 @@ audio {
     display:none;
     position: absolute;
     width: 42%;
-    margin: 10em 35%;
+    margin: 1em 35%;
     padding: 1% 1.5%;
     border: 1px solid #917d4d;
     border-radius: 3px;

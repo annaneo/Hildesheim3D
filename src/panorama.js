@@ -327,7 +327,7 @@ function onWindowResize() {
 function onMouseDown(event) {
     var eventX = event.pageX;
     var eventY = event.pageY;
-    console.log('eventX: ' + eventX + '    eventY: ' + eventY);
+    //console.log('eventX: ' + eventX + '    eventY: ' + eventY);
     downEventHandler(eventX, eventY, event);
 }
 
@@ -640,7 +640,7 @@ function update() {
 	if (!isPopupOpen) {
 		lon = (lon + lonFactor) % 360;
 		lat = lat + latFactor;
-        //console.log("lon: " + lon + "     lat: " + lat);
+        console.log("lon: " + lon + "     lat: " + lat);
 
 		lat = Math.max(-35, Math.min(45, lat));
 		phi = THREE.Math.degToRad(90 - lat);

@@ -1,5 +1,5 @@
 {
-  "startLocation": 98,
+  "startLocation": 12,
   "maps": [
     {
       "uid": 1,
@@ -281,7 +281,7 @@
         }
       ],
       "cameraTargets": {
-        "3": {
+        "-1": {
           "lat": -40,
           "lon": -13
         }
@@ -289,8 +289,8 @@
       "hotspots": [
         {
           "uid": 48,
-          "title": "",
-          "tooltip": "Westchor-Schranke",
+          "title": "Die nördliche Chorschranke - Der neue Heilige im Bild (Ende 12. Jh.)",
+          "tooltip": "Chorschranke",
           "text": "",
           "images": [],
           "audio": "resources/audio/Text15",
@@ -1185,8 +1185,8 @@
           "lon": 219
         },
         "1": {
-          "lat": -15,
-          "lon": 219
+          "lat": -3,
+          "lon": 22
         },
         "96": {
           "lat": -6,
@@ -1327,8 +1327,8 @@
       ],
       "cameraTargets": {
         "-1": {
-          "lat": -15,
-          "lon": 219
+          "lat": -26,
+          "lon": 252
         },
         "1": {
           "lat": -15,
@@ -1447,8 +1447,8 @@
           "lon": 110
         },
         "918": {
-          "lat": -15,
-          "lon": 219
+          "lat": -5,
+          "lon": -97
         }
       },
       "hotspots": [
