@@ -67,7 +67,7 @@ Hotspot.prototype.onClick = function () {
         infoImage.src = this.infoImages[0].figure;
         //set caption
         var infoCaption = document.getElementById('infoCaption');
-        infoCaption.innerText = this.infoImages[0].caption;
+        infoCaption.textContent = this.infoImages[0].caption;
     } else {
         var infoImageBox = document.getElementById('infoImageBox');
         infoImageBox.style.display = 'none';

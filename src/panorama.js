@@ -313,9 +313,11 @@ function switchScene(event) {
 function updateSceneSwitchButton() {
     var button = _('sceneSwitch');
     if (mapUid === 1) {
-        button.innerText = 'Zur Krypta';
+        console.log('krypta');
+        button.textContent = 'Zur Krypta';
     } else {
-        button.innerText = 'Zum Kirchenraum';
+        console.log('kirche');
+        button.textContent = 'Zum Kirchenraum';
     }
 }
 
