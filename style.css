@@ -144,9 +144,9 @@ dt:after {
 }
 
 #mapSpotCurrent {
+    background-color: #917d4d;
     width: 23px;
     height: 23px;
-    background-color: #917d4d;
     z-index: 0;
     position: absolute;
     border-radius: 50%;
