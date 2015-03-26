@@ -11,7 +11,6 @@
 		<title>Panoramatour zu den Inschriften von St. Michaelis in Hildesheim</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<link rel="stylesheet" href="style.css">
 		<script src="lib/three.js"></script>
 		<!-- application code-->
 		<script src="src/panorama.js"></script>
@@ -19,7 +18,7 @@
 		<script src="src/hotspot.js"></script>
 		<script src="src/transition.js"></script>
 		<!-- libraries -->
-		<script src="lib/threex_fullscreen.js"></script>
+        <script src="lib/threex_fullscreen.js"></script>
 		<script src="lib/detector.js"></script>
 		<script src="lib/location_loader.js"></script>
 		<script src="lib/copy_shader.js"></script>
@@ -40,95 +39,81 @@
 
 	</head>
 
-	<body>
+	<body style="background-color: #000000; margin: 0px; overflow: hidden; font-family: 'Palatino Linotype','Baskerville','Times New Roman', 'Times', serif; font-size: 62.5%; color: #333 ">
 
 	<!-- Container for panorama-->
-		<div id="panorama">
+		<div id="panorama" style="position:static">
 
             <!-- map image -->
-            <figure id="map">
+            <figure id="map" style="position: absolute; display: none; text-align: left; margin: auto; z-index: 0; position: absolute; float: right;">
                 <img id="mapImage" src="" alt="Karte der Kirche St. Michaelis in Hildesheim" />
             </figure>
 
-
-	        <!-- full screen
-            <figure id="fullscreen">
-                <img src="resources/icons/gui_fullscreen_icon.png" alt="Icon zum betreten und verlassen des Vollbild Modus"/>
-            </figure> -->
-
-
             <!-- About-->
-            <p id="about">
+            <p id="about" style="font-size: 1.6em; line-height: 1.5em z-index: 0; position: absolute; bottom: 10px; left: 10px; padding: 1% 1.5%; background-color: rgba(255, 255, 255, 0.8); border-radius: 3px;">
                 Impressum
             </p>
 
             <!-- scene switch-->
-            <p id="sceneSwitch">
+            <p id="sceneSwitch" style="font-size: 1.6em; line-height: 1.5em z-index: 0; position: absolute; top: 10px; right: 10px; padding: 1% 1.5%; background-color: rgba(255, 255, 255, 0.8); border-radius: 3px;">
                 Zum Kirchenraum
             </p>
 
 
 
 	        <!-- Tool Tip -->
-	        <p id="toolTip"></p>
+	        <p id="toolTip" style="font-size: 1.6em; line-height: 1.5em display: none; position: absolute; padding: 1% 1.5%; background-color: rgba(255, 255, 255, 0.8);"></p>
+
+            <h1 id="infoTitle" style="margin-bottom: 0.5em; padding-right: 9%; font-size: 2.6em; line-height: 1em; text-transform: uppercase; color: #917d4d;">
+            </h1>
 
 	    <!-- Info Pop Up-->
-		<article id="infoView">
-			<figure id="infoCloseButton">
+		<article id="infoView" style="display: none;position: absolute; width: 27%; margin: 10em 35%; padding: 1% 1.5%; border: 1px solid #917d4d; border-radius: 3px; background-color: rgba(255, 255, 255, 0.8);">
+			<figure id="infoCloseButton" style="right: 4.2%; position: absolute">
 				<img src="resources/icons/close2.png" alt="Informations Pop Up verlassen" title="Informations Pop Up verlassen">
 			</figure>
 
-			<h1 id="infoTitle">
-	            TODO: render title from JSON
-			</h1>
-
-			<figure id="infoImageBox">
-				<img src="resources/images/di-58-005_1.jpg" alt="sample image" id="infoImage" />
-				<figcaption id="infoCaption">
+			<figure id="infoImageBox" style="position: relative; margin-bottom: 1.5em">
+				<img src="resources/images/di-58-005_1.jpg" alt="sample image" id="infoImage" style="width: 98%; padding: 1%; border: 1px solid #c9cbd0; box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2); background: #fff"/>
+				<figcaption id="infoCaption" style="font-size: 1.4em; margin-top: 0.5em">
 				</figcaption>
 			</figure>
 
 			<div id="audioPlayer">
-				<audio id="audioControls" controls>
+				<audio id="audioControls" controls style="width: 100%; margin-bottom: 1.5em">
                     <source src="" type="audio/ogg" preload="auto" id="audioSourceOgg">
                     <source src="" type="audio/mpeg" preload="auto" id="audioSourceMp3">
 				</audio>
 			</div>
 
-			<p id="infoContent">
-				TODO: render text from JSON
-			</p>
-			<!-- check browser support; flash backup if not supported (IE 8); see http://html5doctor.com/html5-audio-the-state-of-play/#support -->
-			<!-- images TODO: deal with more than one image (slideshow? or just load next imag eon click) maybe not needed in first version;
-			also: book application for altar http://www.shakespearealbum.de/faksimile-ansicht.html#book/
-			Slider maybe: http://www.deluxeblogtips.com/2010/05/image-slider-pure-css3.html-->
-			<!-- TODO: make this generic. Currently hardcoded-->
+			<p id="infoContent" style="font-size: 1.6em; line-height: 1.5em">
+
 		</article>
 
-		<article id="aboutView">
-            <figure id="aboutCloseButton">
+		<article id="aboutView" style=" display:none; position: absolute; width: 42%; margin: 1em 35%; padding: 1% 1.5%; border: 1px solid #917d4d; border-radius: 3px; background-color: rgba(255, 255, 255, 0.8);">
+            <figure id="aboutCloseButton" style="right: 4.2%; position: absolute">
                 <img src="resources/icons/close2.png" alt="Impressum verlassen" title="Impressum verlassen">
             </figure>
-			<h1 id="aboutTitle">Impressum</h1>
+			<h1 id="aboutTitle" style="margin-bottom: 0.5em; padding-right: 9%; font-size: 2.6em; line-height: 1em; text-transform: uppercase; color: #917d4d;">Impressum</h1>
 
-			<h2>Umsetzung</h2>
-			<dl>
-				<dt>Konzeption</dt><dd>Dr. Christine Wulf, Anna Neovesky</dd>
-				<dt>Entwicklung</dt><dd>Julius Peinelt, Anna Neovesky</dd>
-				<dt>Design</dt><dd>Anna Neovesky, Aline Deicke, Torsten Schrade</dd>
-				<dt>Texte</dt><dd>Dr. Christine Wulf (Inschriften), Dr.-Ing. Ulrich Knufinke (Architektur)</dd>
-				<dt>Ton</dt><dd>Steffen Schneider</dd>
-				<dt>Sprecherin</dt><dd>Christiane Dressler</dd>
+			<h2 style="font-size:1.8em;  font-family:'Geneva','Lucida Grande','Lucida Sans',sans-serif; text-transform: uppercase; padding-top: 1.8em;">Umsetzung</h2>
+			<dl style="font-size: 1.6em; line-height: 1.5em">
+				<dt style="font-weight: bold">Konzeption</dt><dd>Dr. Christine Wulf, Anna Neovesky</dd>
+				<dt style="font-weight: bold">Entwicklung</dt><dd>Julius Peinelt, Anna Neovesky</dd>
+				<dt style="font-weight: bold">Design</dt><dd>Anna Neovesky, Aline Deicke, Torsten Schrade</dd>
+				<dt style="font-weight: bold">Texte</dt><dd>Dr. Christine Wulf (Inschriften), Dr.-Ing. Ulrich Knufinke (Architektur)</dd>
+				<dt style="font-weight: bold">Ton</dt><dd>Steffen Schneider</dd>
+				<dt style="font-weight: bold">Sprecherin</dt><dd>Christiane Dressler</dd>
 			</dl>
 
-			<h2>Ein Projekt der</h2>
-			<p>Akademie der Wissenschaften und der Literatur | Mainz</p>
-			<p>Akademie der Wissenschaften zu Göttingen</p>
+			<h2 style="font-size:1.8em;  font-family:'Geneva','Lucida Grande','Lucida Sans',sans-serif; text-transform: uppercase; padding-top: 1.8em;">Ein Projekt der</h2>
+			<p style="font-size: 1.6em; line-height: 1.5em">Akademie der Wissenschaften und der Literatur | Mainz</p>
+			<p style="font-size: 1.6em; line-height: 1.5em">Akademie der Wissenschaften zu Göttingen</p>
 
-			<h2>Weitere Informationen</h2>
-			<dl>
-				<dt>Deutsche Inschiften Online</dt><dd>www.inschriften.net</dd>
-				<dt>Digitale Akademie</dt><dd>www.digitale-akademie.de</dd>
+			<h2 style="font-size:1.8em;  font-family:'Geneva','Lucida Grande','Lucida Sans',sans-serif; text-transform: uppercase; padding-top: 1.8em;">Weitere Informationen</h2>
+			<dl style="font-size: 1.6em; line-height: 1.5em">
+				<dt style="font-weight: bold">Deutsche Inschiften Online</dt><dd>www.inschriften.net</dd>
+				<dt style="font-weight: bold">Digitale Akademie</dt><dd>www.digitale-akademie.de</dd>
 			</dl>
 
 		</article>
@@ -136,28 +121,26 @@
 		</div>
     <!-- Navigation bar and buttons -->
     <div id="navigationButtonsContainer">
-        <figure  id="nav">
+        <figure  id="nav" style="position: absolute; z-index: 0; display: block; position: absolute; bottom: 10px; right: 10px">
             <img src="resources/icons/navigation.png"/>
         </figure>
-        <!-- TODO: wenn eines der Navigationselemente fehlt, z.B. diese figures kommt ein schwarzer screen-->
-        <!-- gernerisch laden-->
-        <!-- TODO: das hier viell. als div,w eil ich die Navelemente mit der Navigationsbar in einem Bild integriere-->
-        <figure class="panoNavButton" id="upNavButton" src="resources/icons/navigation.png" alt="Navigationselement">
+        <figure class="panoNavButton" id="upNavButton" src="resources/icons/navigation.png" alt="Navigationselement" 	style="bottom: 110px; right: 75px; position: absolute; width: 36px; height: 36px; z-index: 0; position: absolute"
+                >
             <img src="resources/icons/gui_panup_icon.png" alt="Navigation nach oben" />
         </figure>
-        <figure class="panoNavButton" id="downNavButton">
+        <figure class="panoNavButton" id="downNavButton" 	style="bottom: 28px; right: 75px; position: absolute; width: 36px; height: 36px; z-index: 0; position: absolute">
             <img src="resources/icons/gui_pandown_icon.png" alt="Navigation nach unten" />
         </figure>
-        <figure class="panoNavButton" id="leftNavButton">
+        <figure class="panoNavButton" id="leftNavButton" 	style="bottom: 67px; right: 115px; position: absolute; width: 36px; height: 36px; z-index: 0; position: absolute">
             <img src="resources/icons/gui_panleft_icon.png" alt="Navigation nach linke" />
         </figure>
-        <figure class="panoNavButton" id="rightNavButton">
+        <figure class="panoNavButton" id="rightNavButton" 	style="bottom: 67px; right: 36px; position: absolute; width: 36px; height: 36px; z-index: 0; position: absolute">
             <img src="resources/icons/gui_panright_icon.png" alt="Navigation nach rechts" />
         </figure>
-        <figure class="panoNavButton" id="zoomInButton">
+        <figure class="panoNavButton" id="zoomInButton" 	style="bottom: 67px; right: 190px; position: absolute; width: 36px; height: 36px; z-index: 0; position: absolute">
             <img src="resources/icons/gui_zoomin_icon.png" alt="Näher zoomen" />
         </figure>
-        <figure class="panoNavButton" id="zoomOutButton">
+        <figure class="panoNavButton" id="zoomOutButton" 	style="bottom: 67px; right: 240px; position: absolute; width: 36px; height: 36px; z-index: 0; position: absolute">
             <img src="resources/icons/gui_zoomout_icon.png" alt="Weitere weg zoomen" />
         </figure>
     </div>
