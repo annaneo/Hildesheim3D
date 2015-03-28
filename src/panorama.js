@@ -333,7 +333,7 @@ function setMapandNavigationHidden(hidden) {
         sceneSwitch.style.display = 'none';
     } else {
         map.style.display = 'block';
-        navButtons.style.display = 'block';
+        navButtons.style.display = 'none';
         about.style.display = 'block';
         sceneSwitch.style.display = 'block';
     }
@@ -669,7 +669,7 @@ function update() {
 	if (!isPopupOpen) {
 		lon = (lon + lonFactor) % 360;
 		lat = lat + latFactor;
-        console.log("lon: " + lon + "     lat: " + lat);
+        //console.log("lon: " + lon + "     lat: " + lat);
 
 		lat = Math.max(-35, Math.min(45, lat));
 		phi = THREE.Math.degToRad(90 - lat);

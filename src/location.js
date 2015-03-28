@@ -74,9 +74,12 @@ Location.prototype.configureMap = function (parameters, locationUid) {
             var spotButton = document.createElement("button");
             if (spot.uid === locationUid) {
                 spotButton.id = "mapSpotCurrent";
+                spotButton.setAttribute("style", "width: 23px; height: 23px; background-color: #917d4d; position: absolute; border-radius: 50%; z-index: 0;");
             } else {
                 spotButton.id = "mapSpot";
+                spotButton.setAttribute("style", "width: 23px; height: 23px; background-color: #A30000; position: absolute; border-radius: 50%; z-index: 0;");
             }
+
             spotButton.style.left = spot.mapPosX + "px";
             spotButton.style.top = spot.mapPosY + "px";
             spotButton.addEventListener('mousedown', function (event) {
