@@ -39,7 +39,7 @@
 
 	</head>
 
-	<body style="background-color: #000000; margin: 0px; overflow: hidden; font-family: 'Palatino Linotype','Baskerville','Times New Roman', 'Times', serif; font-size: 62.5%; color: #333 ">
+	<body style="padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; background-color: #000000; margin: 0px; overflow: hidden; font-family: 'Palatino Linotype','Baskerville','Times New Roman', 'Times', serif; font-size: 62.5%; color: #333 ">
 
 	<!-- Container for panorama-->
 		<div id="panorama" style="position:static">
@@ -64,14 +64,14 @@
 	        <!-- Tool Tip -->
 	        <p id="toolTip" style="font-size: 1.6em; line-height: 1.5em display: none; position: absolute; padding: 1% 1.5%; background-color: rgba(255, 255, 255, 0.8);"></p>
 
-            <h1 id="infoTitle" style="margin-bottom: 0.5em; padding-right: 9%; font-size: 2.6em; line-height: 1em; text-transform: uppercase; color: #917d4d;">
-            </h1>
-
 	    <!-- Info Pop Up-->
 		<article id="infoView" style="display: none;position: absolute; width: 27%; margin: 10em 35%; padding: 1% 1.5%; border: 1px solid #917d4d; border-radius: 3px; background-color: rgba(255, 255, 255, 0.8);">
-			<figure id="infoCloseButton" style="right: 4.2%; position: absolute">
+			<figure id="infoCloseButton" style="right: 1%; position: absolute">
 				<img src="resources/icons/close2.png" alt="Informations Pop Up verlassen" title="Informations Pop Up verlassen">
 			</figure>
+
+            <h1 id="infoTitle" style="margin-left: 0.5em; padding-right: 9%; font-size: 2.6em; line-height: 1em; text-transform: uppercase; color: #917d4d;">
+            </h1>
 
 			<figure id="infoImageBox" style="position: relative; margin-bottom: 1.5em">
 				<img src="resources/images/di-58-005_1.jpg" alt="sample image" id="infoImage" style="width: 98%; padding: 1%; border: 1px solid #c9cbd0; box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2); background: #fff"/>
@@ -79,8 +79,8 @@
 				</figcaption>
 			</figure>
 
-			<div id="audioPlayer">
-				<audio id="audioControls" controls style="width: 100%; margin-bottom: 1.5em">
+			<div id="audioPlayer" style="margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;">
+				<audio id="audioControls" controls style="width: 100%; margin-bottom: 1.5em; position: relative;">
                     <source src="" type="audio/ogg" preload="auto" id="audioSourceOgg">
                     <source src="" type="audio/mpeg" preload="auto" id="audioSourceMp3">
 				</audio>
@@ -90,11 +90,11 @@
 
 		</article>
 
-		<article id="aboutView" style=" display:none; position: absolute; width: 42%; margin: 1em 35%; padding: 1% 1.5%; border: 1px solid #917d4d; border-radius: 3px; background-color: rgba(255, 255, 255, 0.8);">
-            <figure id="aboutCloseButton" style="right: 4.2%; position: absolute">
+		<article id="aboutView" style="margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; display:none; position: absolute; width: 42%; margin: 1em 35%; padding: 1% 1.5%; border: 1px solid #917d4d; border-radius: 3px; background-color: rgba(255, 255, 255, 0.8);">
+            <figure id="aboutCloseButton" style="right: 2.2%; position: absolute">
                 <img src="resources/icons/close2.png" alt="Impressum verlassen" title="Impressum verlassen">
             </figure>
-			<h1 id="aboutTitle" style="margin-bottom: 0.5em; padding-right: 9%; font-size: 2.6em; line-height: 1em; text-transform: uppercase; color: #917d4d;">Impressum</h1>
+			<h1 id="aboutTitle" style="margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; margin-bottom: 0.5em; padding-right: 9%; font-size: 2.6em; line-height: 1em; text-transform: uppercase; color: #917d4d;">Impressum</h1>
 
 			<h2 style="font-size:1.8em;  font-family:'Geneva','Lucida Grande','Lucida Sans',sans-serif; text-transform: uppercase; padding-top: 1.8em;">Umsetzung</h2>
 			<dl style="font-size: 1.6em; line-height: 1.5em">
