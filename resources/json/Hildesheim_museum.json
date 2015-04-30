@@ -188,6 +188,17 @@
         }
       },
       "hotspots": [
+          {
+              "uid": 1,
+              "title": "Die nördliche Chorschranke - Der neue Heilige im Bild (Ende 12. Jh.)",
+              "tooltip": "Chorschranke",
+              "text": "",
+              "images": [],
+              "audio": "resources/audio/Text15",
+              "posX": 157,
+              "posY": 14,
+              "posZ": -114
+          }
       ]
     },
     {
@@ -422,7 +433,18 @@
           "posX": 43,
           "posY": -18,
           "posZ": 189
-        }
+        },
+          {
+              "uid": 2,
+              "title": "1193 - Bernward wird heiliggesprochen",
+              "tooltip": "Heiligsprechung Bernwards",
+              "text": "",
+              "images": [],
+              "audio": "resources/audio/Text11",
+              "posX": 152,
+              "posY": -82,
+              "posZ": -90
+          }
       ]
     },
     {
@@ -451,6 +473,16 @@
         }
       },
       "hotspots": [
+          {
+              "uid": 1,
+              "title": "Die Wurzel Jesse - ein Bild für den kommenden Christus",
+              "tooltip": "Deckengemälde",
+              "text": "",
+              "audio": "resources/audio/Text18",
+              "posX": -50,
+              "posY": 78,
+              "posZ": 171
+          },
         {
           "uid": 2,
           "title": "1193 - Bernward wird heiliggesprochen",
@@ -630,9 +662,9 @@
           "text": "",
           "images": [],
           "audio": "resources/audio/Text2",
-          "posX": -188,
-          "posY": -34,
-          "posZ": 41
+          "posX": -180,
+          "posY": -21,
+          "posZ": 70
         }
       ]
     },
@@ -935,7 +967,18 @@
           "posX": -172,
           "posY": -40,
           "posZ": 82
-        }
+        },
+          {
+              "uid": 1,
+              "title": "Die Christussäule",
+              "tooltip": "Christussäule",
+              "text": "",
+              "images": [],
+              "audio": "resources/audio/Text16",
+              "posX": 86,
+              "posY": -5,
+              "posZ": -175
+          }
       ]
     },
     {
@@ -1014,7 +1057,18 @@
           "posX": -27,
           "posY": 109,
           "posZ": 160
-        }
+        },
+          {
+              "uid": 2,
+              "title": "Die Wurzel Jesse - ein Bild für den kommenden Christus",
+              "tooltip": "Deckengemälde",
+              "text": "",
+              "images": [],
+              "audio": "resources/audio/Text18",
+              "posX": 139,
+              "posY": 137,
+              "posZ": 14
+          }
       ]
     },
     {
@@ -1221,7 +1275,29 @@
           "posX": 184,
           "posY": -50,
           "posZ": 41
-        }
+        },
+          {
+              "uid": 2,
+              "title": "Bernward zwischen Engeln im Himmel",
+              "tooltip": "Sarkophag",
+              "text": "",
+              "images": [],
+              "audio": "resources/audio/Text10",
+              "posX": -140,
+              "posY": -89,
+              "posZ": -102
+          },
+          {
+              "uid": 3,
+              "title": "Die Grabplatte Bischof Bernwards von 1022",
+              "tooltip": "Grabplatte Bernwards",
+              "text": "",
+              "images": [],
+              "audio": "resources/audio/Text9",
+              "posX": -151,
+              "posY": -38,
+              "posZ": -117
+          }
       ]
     },
     {

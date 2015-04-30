@@ -678,8 +678,8 @@ function update() {
 		camera.target.y = 195 * Math.cos(phi);
 		camera.target.z = 195 * Math.sin(phi) * Math.sin(theta);
         camera.lookAt(camera.target);
-        //console.log("Camera Target: " + vectorToString(camera.target));
-        //console.log("-----------------------------");
+        console.log("Camera Target: " + vectorToString(camera.target));
+        console.log("-----------------------------");
 		renderer.render(scene, camera);
 	} else {
         setMapandNavigationHidden(true);
