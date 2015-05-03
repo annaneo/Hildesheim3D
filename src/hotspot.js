@@ -5,7 +5,7 @@
 
 /**
  * Describes a clickable object in a location that shows a popup with information.
- * @param parameters Object which should have fields: ...
+ * @param parameters Object which should have fields: content, title and images
  * @constructor
  */
 Hotspot = function (parameters) {
@@ -43,42 +43,42 @@ Hotspot = function (parameters) {
 Hotspot.prototype = Object.create(THREE.Mesh.prototype);
 
 /**
- * Renders Pop Up Window
+ * Handle the click on the Hotspot and fills the Pop Up Window with content.
  */
-Hotspot.prototype.onClick = function () {
+Hotspot.prototype.onClick = function (event) {
     //init info view
-    var infoView = document.getElementById('infoView');
+    var infoView = _('infoView');
 
     infoView.style.display = "block";
 
     //set title
-    var infoTitle = document.getElementById('infoTitle');
+    var infoTitle = _('infoTitle');
     infoTitle.innerHTML = this.infoTitle;
     //set text content
-    var infoContent = document.getElementById('infoContent');
+    var infoContent = _('infoContent');
     infoContent.innerHTML = this.infoContent;
 
     //TODO: able to load more than 1 picture
     if (this.infoImages.length > 0) {
-        var infoImageBox = document.getElementById('infoImageBox');
+        var infoImageBox = _('infoImageBox');
         infoImageBox.style.display = 'block';
         //set image
-        var infoImage = document.getElementById('infoImage');
+        var infoImage = _('infoImage');
         infoImage.src = this.infoImages[0].figure;
         //set caption
-        var infoCaption = document.getElementById('infoCaption');
+        var infoCaption = _('infoCaption');
         infoCaption.textContent = this.infoImages[0].caption;
     } else {
-        var infoImageBox = document.getElementById('infoImageBox');
+        var infoImageBox = _('infoImageBox');
         infoImageBox.style.display = 'none';
     }
 
     //sets audio
     if (this.audio) {
-        var audioControls = document.getElementById('audioControls');
-        var audioSourceOgg = document.getElementById('audioSourceOgg');
+        var audioControls = _('audioControls');
+        var audioSourceOgg = _('audioSourceOgg');
         audioSourceOgg.src = this.audio + ".ogg";
-        var audioSourceMp3 = document.getElementById('audioSourceMp3');
+        var audioSourceMp3 = _('audioSourceMp3');
         audioSourceMp3.src = this.audio + ".mp3";
         audioControls.load();
     }

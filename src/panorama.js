@@ -17,8 +17,7 @@ var projector;
 var mouse = { x: 0, y: 0 };
 var targetList = [];
 var hoverIntersected;
-var composer;
-var transitionComposer;
+var composer, transitionComposer;
 var panoramaData;
 var isLoading = false;
 var lastPanoramaUID = -1;
@@ -28,8 +27,9 @@ var toolTip;
 
 var timerId;
 
+
 /**
- * start panorama, creates a loading scene and triggers the loading of the start location. Starts animating.
+ * Starts panorama, creates a loading scene and triggers the loading of the start location. Starts animating.
  * @param dataURL URL to the config JSON
  */
 function startPanorama(dataURL) {
@@ -45,7 +45,7 @@ function startPanorama(dataURL) {
 
 
 /**
- * initalize Tooltip for hotspots and transitions
+ * Initialize Tooltip for Hotspots and Transitions.
  * //TODO: ToolTip also for mapSpots
  */
 function initTooltip() {
@@ -72,8 +72,7 @@ function parseConfigJSON(dataURL, callback) {
 
 
 /**
- * Initializes renderer, camera, projector
- * (also event listeners, shader ?, shader needs a scene)
+ * Initializes renderer, camera, projector, tooltip
  */
 function init() {
 	camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 200);
@@ -92,7 +91,7 @@ function init() {
 }
 
 /**
- *
+ * Callback when Loading of scene is complete, initializes event listeners and shader.
  * @param location that will be rendered
  */
 function startComplete(location) {
@@ -130,8 +129,9 @@ function updateTargetList() {
 
 
 /**
- * Transit to given location
- * @param locationIndex index of location
+ * Transit to given location and rotate camera accordingly.
+ * @param locationIndex Index of target location.
+ * @param reset if true camera rotates as if it is a start location.
  */
 function transitToLocation(locationIndex, reset) {
     if (reset) {
@@ -173,7 +173,7 @@ function transitToLocation(locationIndex, reset) {
 }
 
 /**
- * adds EventListeners to scene
+ * Adds EventListeners to scene.
  */
 function initEventListener() {
 	var container = _('panorama');
@@ -301,6 +301,12 @@ function initEventListener() {
 
 }
 
+
+/**
+ * Switch scene between start location for map 1 and map 2
+ * @param event not used
+ * TODO: method should be more general.
+ */
 function switchScene(event) {
     if (mapUid === 1) {
         transitToLocation(98, true);
@@ -309,18 +315,23 @@ function switchScene(event) {
     }
 }
 
-
+/**
+ * Updates Scene Switch button.
+ * //TODO: should be more general.
+ */
 function updateSceneSwitchButton() {
     var button = _('sceneSwitch');
     if (mapUid === 1) {
-        console.log('krypta');
         button.textContent = 'Zur Krypta';
     } else {
-        console.log('kirche');
         button.textContent = 'Zum Kirchenraum';
     }
 }
 
+/**
+ * hides or unhides map and navigation group when switching scenes
+ * @param hidden if true, hide map and navigation group.
+ */
 function setMapandNavigationHidden(hidden) {
     var map = _('map');
     var navButtons = _('navigationButtonsContainer');
@@ -341,28 +352,28 @@ function setMapandNavigationHidden(hidden) {
 }
 
 /**
- * //TODO: muss das hier nicht auch ein event sein?
+ * Updates camera and renderer if window gets resized.
+ * @param event not used.
  */
-function onWindowResize() {
+function onWindowResize(event) {
 	camera.aspect = window.innerWidth / window.innerHeight;
 	camera.updateProjectionMatrix();
 	renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
 /**
- * EvenListener if mouse is pressed
- * @param event
+ * EvenListener if mouse is pressed, calls downEventHandler.
+ * @param event mouse event
  */
 function onMouseDown(event) {
     var eventX = event.pageX;
     var eventY = event.pageY;
-    //console.log('eventX: ' + eventX + '    eventY: ' + eventY);
     downEventHandler(eventX, eventY, event);
 }
 
 /**
- * EventListener if mouse is moving
- * @param event
+ * EventListener if mouse is moving, calls moveEventHandler.
+ * @param event mouse event
  */
 function onMouseMove(event) {
     var eventX = event.pageX;
@@ -372,8 +383,8 @@ function onMouseMove(event) {
 }
 
 /**
- * EventListener if mouse is up
- * @param event
+ * EventListener if mouse is up, calls upEventHandler.
+ * @param event mouse event
  */
 function onMouseUp(event) {
     upEventHandler(event);
@@ -381,15 +392,15 @@ function onMouseUp(event) {
 
 /**
  * EventListener if mouse wheel is used
- * @param event
+ * @param event mouse event
  */
 function onMouseWheel(event) {
     wheelEventHandler(event.pageX, event.pageY, event);
 }
 
 /**
- *
- * @param event
+ * EventListener for starting touch events
+ * @param event touch event
  */
 function onDocumentTouchStart(event) {
     if (event.touches.length === 1) {
@@ -403,8 +414,8 @@ function onDocumentTouchStart(event) {
 }
 
 /**
- *
- * @param event
+ * EventListener for moving touch events
+ * @param event touch event
  */
 function onDocumentTouchMove(event) {
     if (event.touches.length === 1) {
@@ -416,17 +427,17 @@ function onDocumentTouchMove(event) {
 }
 
 /**
- *
- * @param event
+ * EventListener for ending touch events
+ * @param event touch event
  */
 function onDocumentTouchEnd(event) {
     upEventHandler(event);
 }
 /**
- *
- * @param eventX
- * @param eventY
- * @param event
+ * Handler for move Event inputs.
+ * @param eventX x-Value of event
+ * @param eventY y-Value of event
+ * @param event input event
  */
 
 function moveEventHandler(eventX, eventY, event) {
@@ -488,10 +499,10 @@ function moveEventHandler(eventX, eventY, event) {
 }
 
 /**
- *
- * @param eventX
- * @param eventY
- * @param event
+ * Handler for starting input events.
+ * @param eventX x-Value of event
+ * @param eventY y-Value of event
+ * @param event input event
  */
 function downEventHandler(eventX, eventY, event) {
     if (isPopupOpen) {
@@ -531,8 +542,8 @@ function downEventHandler(eventX, eventY, event) {
 }
 
 /**
- *
- * @param event
+ * Handler for ending input events.
+ * @param event not used
  */
 function upEventHandler(event) {
     lonFactor = 0;
@@ -541,10 +552,10 @@ function upEventHandler(event) {
 }
 
 /**
- *
- * @param eventX
- * @param eventY
- * @param event
+ * EventListener for mouse wheel events.
+ * @param eventX x-Value of event
+ * @param eventY y-Value of event
+ * @param event input event
  */
 //TODO: make ready for touch events
 function wheelEventHandler(eventX, eventY, event) {
@@ -574,6 +585,10 @@ function wheelEventHandler(eventX, eventY, event) {
     camera.updateProjectionMatrix();
 }
 
+/**
+ * Zooms scene.
+ * @param amount zoom amount.
+ */
 function zoom(amount) {
     camera.fov += amount;
     if (camera.fov > 60) {
@@ -585,8 +600,8 @@ function zoom(amount) {
 }
 
 /**
- * EventListener if & which key is dpown => for Key Navigation
- * @param event
+ * EventListener if & which key is down => for Key Navigation
+ * @param event key event
  */
 function onKeyDown(event) {
     isUserInteracting = true;
@@ -607,7 +622,7 @@ function onKeyDown(event) {
 
 /**
  * Eventlistener if key is up => no navigation via keys.
- * @param event
+ * @param event key event
  */
 function onKeyUp(event) {
 	lonFactor = 0;
@@ -617,9 +632,9 @@ function onKeyUp(event) {
 
 
 /**
- *
- * @param elem
- * @param cursorStyle
+ * Updates mouse cursor depending of function arguments
+ * @param elem element mouse hovers
+ * @param cursorStyle style of cursor
  */
 function updateCursor(elem, cursorStyle) {
     elem.style.cursor = cursorStyle;
@@ -628,7 +643,7 @@ function updateCursor(elem, cursorStyle) {
 
 /**
  * Shows about box.
- * @param event mouse/touch event
+ * @param event mouse/touch event, not used
  */
 function showAbout(event) {
     var aboutBox = document.getElementById('aboutView');
@@ -665,7 +680,7 @@ function update() {
         }
 		return;
 	}
-// if popUp is open
+    // if popUp is open
 	if (!isPopupOpen) {
 		lon = (lon + lonFactor) % 360;
 		lat = lat + latFactor;

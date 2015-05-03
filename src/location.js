@@ -5,7 +5,7 @@
 
 /**
  * Describes on point of view where one can look around.
- * @param panoimg Panoramic image.
+ * @param texture Panoramic image.
  * @constructor constructs a Sphere with a specific image as texture.
  */
 Location = function (texture) {
@@ -26,7 +26,7 @@ Location.prototype = Object.create(THREE.Mesh.prototype);
 
 /**
  * Adds Hotspots to current location
- * @param parameters
+ * @param parameters Parameters for Hotspots like images, content and audio.
  * @returns {Hotspot} Hotspots specified in json
  */
 Location.prototype.addHotspot = function (parameters) {
@@ -37,7 +37,7 @@ Location.prototype.addHotspot = function (parameters) {
 
 /**
  * Adds transitions to current location
- * @param parameters
+ * @param parameters like target location
  * @returns {Transition} Transitions specified in json
  */
 Location.prototype.addTransition = function (parameters) {
@@ -48,10 +48,10 @@ Location.prototype.addTransition = function (parameters) {
 
 /**
  * Configures the map for the location
- * @param parameters dictionary that should have field image with the url to the map image.
+ * @param parameters dictionary that should have fields: image, mapSpots.
  */
 Location.prototype.configureMap = function (parameters, locationUid) {
-    var map = document.getElementById('map');
+    var map = _('map');
 
     for (var i = map.childNodes.length-1; i > 0; i--) {
         if (map.childNodes[i].id === "mapSpot" || map.childNodes[i].id === "mapSpotCurrent") {
@@ -60,7 +60,7 @@ Location.prototype.configureMap = function (parameters, locationUid) {
     }
 
     if (parameters.hasOwnProperty('image')) {
-        var image = document.getElementById('mapImage');
+        var image = _('mapImage');
         image.src = parameters['image'];
 
     } else {

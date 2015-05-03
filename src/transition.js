@@ -31,8 +31,9 @@ Transition.prototype = Object.create(THREE.Mesh.prototype);
 
 /**
  * Transit to other Location
+ * @param event not used
  */
-Transition.prototype.onClick = function () {
+Transition.prototype.onClick = function (event) {
     if (this.targetLocation > -1) {
         transitToLocation(this.targetLocation);
     } else {
