@@ -6,7 +6,7 @@
 /**
  * Describes on point of view where one can look around.
  * @param texture Panoramic image.
- * @constructor constructs a Sphere with a specific image as texture.
+ * @constructor
  */
 Location = function (texture) {
 
