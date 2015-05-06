@@ -3,7 +3,9 @@
  *      Anna Neovesky
  */
 
-    
+/*
+ * global vars
+ */
 var camera, scene, renderer;
 var isUserInteracting = false;
 var isPopupOpen = false;

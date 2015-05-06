@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: Location</title>
+    <title>JSDoc: Class: RenderPass</title>
     
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Class: Location</h1>
+    <h1 class="page-title">Class: RenderPass</h1>
     
     
 
@@ -27,7 +27,7 @@
     
 <header>
     <h2>
-    Location
+    RenderPass
     </h2>
     
 </header>  
@@ -39,7 +39,7 @@
     
         
 <dt>
-    <h4 class="name" id="Location"><span class="type-signature"></span>new Location<span class="signature">(texture)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="RenderPass"><span class="type-signature"></span>new RenderPass<span class="signature">(scene, camera, overrideMaterial, clearColor, clearAlpha)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -47,7 +47,7 @@
     
     
     <div class="description">
-        Describes on point of view where one can look around.
+        RenderPass
     </div>
     
 
@@ -81,7 +81,7 @@
 	
         <tr>
             
-                <td class="name"><code>texture</code></td>
+                <td class="name"><code>scene</code></td>
             
             
             <td class="type">
@@ -92,7 +92,79 @@
             
             
             
-            <td class="description last">Panoramic image.</td>
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>camera</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>overrideMaterial</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>clearColor</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>clearAlpha</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
         </tr>
 	
 	
@@ -123,7 +195,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="location.js.html">location.js</a>, <a href="location.js.html#line11">line 11</a>
+        <a href="render_pass.js.html">lib/render_pass.js</a>, <a href="render_pass.js.html#line14">line 14</a>
     </li></ul></dd>
     
     
@@ -169,7 +241,7 @@
         <dl>
             
 <dt>
-    <h4 class="name" id="addHotspot"><span class="type-signature"></span>addHotspot<span class="signature">(parameters)</span><span class="type-signature"> &rarr; {<a href="Hotspot.html">Hotspot</a>}</span></h4>
+    <h4 class="name" id="render"><span class="type-signature"></span>render<span class="signature">(renderer, writeBuffer, readBuffer, delta)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -177,7 +249,7 @@
     
     
     <div class="description">
-        Adds Hotspots to current location
+        render
     </div>
     
 
@@ -211,7 +283,7 @@
 	
         <tr>
             
-                <td class="name"><code>parameters</code></td>
+                <td class="name"><code>renderer</code></td>
             
             
             <td class="type">
@@ -222,130 +294,14 @@
             
             
             
-            <td class="description last">Parameters for Hotspots like images, content and audio.</td>
+            <td class="description last"></td>
         </tr>
 	
-	
-	</tbody>
-</table>
-    
-    
-    
-<dl class="details">
-    
-        
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="location.js.html">location.js</a>, <a href="location.js.html#line32">line 32</a>
-    </li></ul></dd>
-    
-    
-    
-    
-    
-    
-    
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    Hotspots specified in json
-</div>
-
-
-
-<dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
-<span class="param-type"><a href="Hotspot.html">Hotspot</a></span>
-
-
-	</dd>
-</dl>
-
-        
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="addTransition"><span class="type-signature"></span>addTransition<span class="signature">(parameters)</span><span class="type-signature"> &rarr; {<a href="Transition.html">Transition</a>}</span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Adds transitions to current location
-    </div>
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-		
-		<th>Type</th>
-		
-		
-		
-		
-		
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-	
-	<tbody>
 	
 	
         <tr>
             
-                <td class="name"><code>parameters</code></td>
+                <td class="name"><code>writeBuffer</code></td>
             
             
             <td class="type">
@@ -356,130 +312,14 @@
             
             
             
-            <td class="description last">like target location</td>
+            <td class="description last"></td>
         </tr>
 	
-	
-	</tbody>
-</table>
-    
-    
-    
-<dl class="details">
-    
-        
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="location.js.html">location.js</a>, <a href="location.js.html#line43">line 43</a>
-    </li></ul></dd>
-    
-    
-    
-    
-    
-    
-    
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    Transitions specified in json
-</div>
-
-
-
-<dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
-<span class="param-type"><a href="Transition.html">Transition</a></span>
-
-
-	</dd>
-</dl>
-
-        
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="configureMap"><span class="type-signature"></span>configureMap<span class="signature">(parameters)</span><span class="type-signature"></span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Configures the map for the location
-    </div>
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-		
-		<th>Type</th>
-		
-		
-		
-		
-		
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-	
-	<tbody>
 	
 	
         <tr>
             
-                <td class="name"><code>parameters</code></td>
+                <td class="name"><code>readBuffer</code></td>
             
             
             <td class="type">
@@ -490,7 +330,25 @@
             
             
             
-            <td class="description last">dictionary that should have fields: image, mapSpots.</td>
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>delta</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
         </tr>
 	
 	
@@ -521,7 +379,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="location.js.html">location.js</a>, <a href="location.js.html#line53">line 53</a>
+        <a href="render_pass.js.html">lib/render_pass.js</a>, <a href="render_pass.js.html#line40">line 40</a>
     </li></ul></dd>
     
     
