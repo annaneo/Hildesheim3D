@@ -10,7 +10,6 @@
  * @constructor
  */
 Transition = function (parameters) {
-
     if (parameters === undefined) parameters = {};
     this.panoImg = parameters.hasOwnProperty('panoImg') ? parameters['panoImg'] : "";
     this.targetLocation = parameters.hasOwnProperty('targetLocation') ? parameters['targetLocation'] : -1;
@@ -19,7 +18,7 @@ Transition = function (parameters) {
     var geometry = new THREE.PlaneGeometry(15, 15);
     var material = new THREE.MeshBasicMaterial({
         map: THREE.ImageUtils.loadTexture("resources/icons/transfer.png"),
-        transparent: true,
+        transparent: true
     });
     //var material = new THREE.MeshBasicMaterial( { color: 0x008800 } );
     THREE.Mesh.call(this, geometry, material );

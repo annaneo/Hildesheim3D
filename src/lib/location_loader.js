@@ -16,14 +16,14 @@ LocationLoader = function () {};
  * @param uid UID of Location
  * @param onLoadComplete callback, gets called when loading complete
  */
-LocationLoader.prototype.loadLocation = function (uid, onLoadComplete) {
+LocationLoader.prototype.loadLocation = function (panoramaData, onLoadComplete) {
     var location;
     panoramaData.locations.forEach(function(item, index) {
-        if (item.uid === undefined || uid === undefined) {
+        if (item.uid === undefined || panoramaData.startLocation === undefined) {
             console.log("error: uid undefined");
             return;
         }
-        if (item.uid !== uid) {
+        if (item.uid !== panoramaData.startLocation) {
             return
         }
 
