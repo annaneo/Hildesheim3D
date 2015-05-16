@@ -35,9 +35,7 @@ p, dl {
 dt:after {
 	content:':';
 	padding-right:2em;
-
 }
-
 
 /*
 	NAVIGATION
@@ -95,12 +93,12 @@ dt:after {
 #fullscreen {
 	z-index: 0;
 	position: absolute;
-	top: 10px;
-	right: 10px;
+	bottom: 10px;
+	left: 10px;
 }
 
 #about {
-	z-index: 0;
+	z-index: -1;
 	position: absolute;
 	bottom: 10px;
 	left: 10px;
@@ -108,7 +106,6 @@ dt:after {
 	background-color: rgba(255, 255, 255, 0.8);
 	border-radius: 3px;
 }
-
 
 #sceneSwitch {
     z-index: 0;
@@ -119,7 +116,6 @@ dt:after {
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 3px;
 }
-
 
 /*
 	MAP
