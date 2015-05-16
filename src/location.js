@@ -51,6 +51,9 @@ Location.prototype.addTransition = function (parameters) {
  */
 Location.prototype.configureMap = function (parameters, locationUid) {
     var map = _('map');
+    if (!map) {
+        return;
+    }
 
     for (var i = map.childNodes.length-1; i > 0; i--) {
         if (map.childNodes[i].id === "mapSpot" || map.childNodes[i].id === "mapSpotCurrent") {
@@ -60,8 +63,9 @@ Location.prototype.configureMap = function (parameters, locationUid) {
 
     if (parameters.hasOwnProperty('image')) {
         var image = _('mapImage');
-        image.src = parameters['image'];
-
+        if (image) {
+            image.src = parameters['image'];
+        }
     } else {
         console.log("error: no map image provided!");
     }

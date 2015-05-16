@@ -49,8 +49,6 @@ Hotspot.prototype.onClick = function (event) {
     //init info view
     var infoView = _('infoView');
 
-    infoView.style.display = "block";
-
     //set title
     var infoTitle = _('infoTitle');
     infoTitle.innerHTML = this.infoTitle;
@@ -82,6 +80,8 @@ Hotspot.prototype.onClick = function (event) {
         audioSourceMp3.src = this.audio + ".mp3";
         audioControls.load();
     }
+
+    infoView.style.display = "block";
 };
 
 

@@ -180,7 +180,7 @@ function transitToLocation(locationIndex, reset) {
  */
 function initEventListener() {
     var container = _('panorama');
-    THREEx.FullScreen.bindKey({charCode: 'f'.charCodeAt(0) /*, element : _('panorama')*/});
+    THREEx.FullScreen.bindKey({charCode: 'f'.charCodeAt(0) , element : _('panorama')});
 
     container.addEventListener('mousedown', onMouseDown, false);
     container.addEventListener('mousemove', onMouseMove, false);
@@ -235,75 +235,102 @@ function initEventListener() {
         isPopupOpen = false;
         setMapandNavigationHidden(false);
     }, false);
-    _('map').addEventListener('dragstart', function (event) {
-        event.preventDefault();
-    });
+    var map = _(map);
+    if (map) {
+        _('map').addEventListener('dragstart', function (event) {
+            event.preventDefault();
+        });
+    }
 
-    _('upNavButton').addEventListener('mousedown', function (event) {
-        isUserInteracting = true;
-        latFactor = 0.5;
-    }, false);
-    _('downNavButton').addEventListener('mousedown', function (event) {
-        isUserInteracting = true;
-        latFactor = -0.5;
-    }, false);
-    _('leftNavButton').addEventListener('mousedown', function (event) {
-        isUserInteracting = true;
-        lonFactor = -0.5;
-    }, false);
-    _('rightNavButton').addEventListener('mousedown', function (event) {
-        isUserInteracting = true;
-        lonFactor = 0.5;
-    }, false);
-    _('zoomInButton').addEventListener('mousedown', function (event) {
-        zoom(-2)
-    }, false);
-    _('zoomOutButton').addEventListener('mousedown', function (event) {
-        zoom(2)
-    }, false);
-    _('navigationButtonsContainer').addEventListener('mouseup', onMouseUp, false);
+    var navGroup = _('navigationButtonsContainer');
+    if (navGroup) {
+        _('upNavButton').addEventListener('mousedown', function (event) {
+            isUserInteracting = true;
+            latFactor = 0.5;
+        }, false);
+        _('downNavButton').addEventListener('mousedown', function (event) {
+            isUserInteracting = true;
+            latFactor = -0.5;
+        }, false);
+        _('leftNavButton').addEventListener('mousedown', function (event) {
+            isUserInteracting = true;
+            lonFactor = -0.5;
+        }, false);
+        _('rightNavButton').addEventListener('mousedown', function (event) {
+            isUserInteracting = true;
+            lonFactor = 0.5;
+        }, false);
+        _('zoomInButton').addEventListener('mousedown', function (event) {
+            zoom(-2)
+        }, false);
+        _('zoomOutButton').addEventListener('mousedown', function (event) {
+            zoom(2)
+        }, false);
+        _('navigationButtonsContainer').addEventListener('mouseup', onMouseUp, false);
 
-    _('upNavButton').addEventListener('touchstart', function (event) {
-        isUserInteracting = true;
-        latFactor = 0.5;
-    }, false);
-    _('downNavButton').addEventListener('touchstart', function (event) {
-        isUserInteracting = true;
-        latFactor = -0.5;
-    }, false);
-    _('leftNavButton').addEventListener('touchstart', function (event) {
-        isUserInteracting = true;
-        lonFactor = -0.5;
-    }, false);
-    _('rightNavButton').addEventListener('touchstart', function (event) {
-        isUserInteracting = true;
-        lonFactor = 0.5;
-    }, false);
-    _('zoomInButton').addEventListener('touchstart', function (event) {
-        zoom(-2)
-    }, false);
-    _('zoomOutButton').addEventListener('touchstart', function (event) {
-        zoom(2)
-    }, false);
-    _('navigationButtonsContainer').addEventListener('touchend', onMouseUp, false);
+        _('upNavButton').addEventListener('touchstart', function (event) {
+            isUserInteracting = true;
+            latFactor = 0.5;
+        }, false);
+        _('downNavButton').addEventListener('touchstart', function (event) {
+            isUserInteracting = true;
+            latFactor = -0.5;
+        }, false);
+        _('leftNavButton').addEventListener('touchstart', function (event) {
+            isUserInteracting = true;
+            lonFactor = -0.5;
+        }, false);
+        _('rightNavButton').addEventListener('touchstart', function (event) {
+            isUserInteracting = true;
+            lonFactor = 0.5;
+        }, false);
+        _('zoomInButton').addEventListener('touchstart', function (event) {
+            zoom(-2)
+        }, false);
+        _('zoomOutButton').addEventListener('touchstart', function (event) {
+            zoom(2)
+        }, false);
+        _('navigationButtonsContainer').addEventListener('touchend', onMouseUp, false);
+    }
 
-    _('about').addEventListener('touchstart', showAbout, false);
-    _('about').addEventListener('mousedown', showAbout, false);
-    _('aboutCloseButton').addEventListener('click', function (event) {
-        var aboutView = _("aboutView");
-        aboutView.style.display = "none";
-        isPopupOpen = false;
-        setMapandNavigationHidden(false);
-    }, false);
-    _('aboutCloseButton').addEventListener('touched', function (event) {
-        var aboutView = _("aboutView");
-        aboutView.style.display = "none";
-        isPopupOpen = false;
-        setMapandNavigationHidden(false);
-    }, false);
-    _('sceneSwitch').addEventListener('mousedown', switchScene);
-    _('sceneSwitch').addEventListener('touchstart', switchScene);
+    var about = _('about');
+    if (about) {
+        _('about').addEventListener('touchstart', showAbout, false);
+        _('about').addEventListener('mousedown', showAbout, false);
+        _('aboutCloseButton').addEventListener('click', function (event) {
+            var aboutView = _("aboutView");
+            aboutView.style.display = "none";
+            isPopupOpen = false;
+            setMapandNavigationHidden(false);
+        }, false);
+        _('aboutCloseButton').addEventListener('touched', function (event) {
+            var aboutView = _("aboutView");
+            aboutView.style.display = "none";
+            isPopupOpen = false;
+            setMapandNavigationHidden(false);
+        }, false);
+    }
 
+    var sceneSwitch = _('sceneSwitch')
+    if (sceneSwitch) {
+        _('sceneSwitch').addEventListener('mousedown', switchScene);
+        _('sceneSwitch').addEventListener('touchstart', switchScene);
+    }
+
+    var fullscreen = _('fullscreen');
+    if (fullscreen) {
+        _('fullscreen').addEventListener('mousedown', toggleFullScreen);
+        _('fullscreen').addEventListener('touchstart', toggleFullScreen);
+    }
+}
+
+
+function toggleFullScreen(event){
+    if( THREEx.FullScreen.activated() ){
+        THREEx.FullScreen.cancel();
+    }else{
+        THREEx.FullScreen.request(_('panorama'));
+    }
 }
 
 
@@ -326,10 +353,12 @@ function switchScene(event) {
  */
 function updateSceneSwitchButton() {
     var button = _('sceneSwitch');
-    if (mapUid === 1) {
-        button.textContent = 'Zur Krypta';
-    } else {
-        button.textContent = 'Zum Kirchenraum';
+    if (button) {
+        if (mapUid === 1) {
+            button.textContent = 'Zur Krypta';
+        } else {
+            button.textContent = 'Zum Kirchenraum';
+        }
     }
 }
 
@@ -343,15 +372,15 @@ function setMapandNavigationHidden(hidden) {
     var about = _('about');
     var sceneSwitch = _('sceneSwitch');
     if (hidden) {
-        map.style.display = 'none';
-        navButtons.style.display = 'none';
-        about.style.display = 'none';
-        sceneSwitch.style.display = 'none';
+        if (map) map.style.display = 'none';
+        if (navButtons) navButtons.style.display = 'none';
+        if (about) about.style.display = 'none';
+        if (sceneSwitch) sceneSwitch.style.display = 'none';
     } else {
-        map.style.display = 'block';
-        navButtons.style.display = 'block';
-        about.style.display = 'block';
-        sceneSwitch.style.display = 'block';
+        if (map) map.style.display = 'block';
+        if (navButtons) navButtons.style.display = 'block';
+        if (about) about.style.display = 'block';
+        if (sceneSwitch) sceneSwitch.style.display = 'block';
     }
 
 }

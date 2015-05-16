@@ -27,7 +27,7 @@ LocationLoader.prototype.loadLocation = function (uid, onLoadComplete) {
             return
         }
 
-        THREE.ImageUtils.loadTexture(item.image,
+        THREE.ImageUtils.loadTexture(item.image.default,
             {},
             function (texture) {
                 location = new Location(texture);
