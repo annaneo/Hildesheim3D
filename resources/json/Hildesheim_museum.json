@@ -1,1550 +1,1551 @@
 {
-  "startLocation": 12,
-  "maps": [
-    {
-      "uid": 1,
-      "image": "resources/maps/Kirchenraum_museum.png",
-      "mapSpots": [
-        {
-          "uid": 12,
-          "tooltip": "Bernward",
-          "mapPosX": 37,
-          "mapPosY": 115
-        },
-        {
-          "uid": 20,
-          "tooltip": "Westchor",
-          "mapPosX": 90,
-          "mapPosY": 135
-        },
-        {
-          "uid": 29,
-          "tooltip": "Mittelschiff",
-          "mapPosX": 145,
-          "mapPosY": 115
-        },
-        {
-          "uid": 22,
-          "tooltip": "Nördliches Seitenschiff",
-          "mapPosX": 153,
-          "mapPosY": 75
-        },
-        {
-          "uid": 1,
-          "tooltip": "Übergang zur Krypta",
-          "mapPosX": 125,
-          "mapPosY": 40
-        },
-        {
-          "uid": 3,
-          "tooltip": "Balustrade",
-          "mapPosX": 140,
-          "mapPosY": 20
-        },
-        {
-          "uid": 26,
-          "tooltip": "Romanische Säulen",
-          "mapPosX": 330,
-          "mapPosY": 115
-        },
-        {
-          "uid": 25,
-          "tooltip": "Östliches Querhaus",
-          "mapPosX": 375,
-          "mapPosY": 115
-        },
-        {
-          "uid": 17,
-          "tooltip": "Nördliches Seitenschiff",
-          "mapPosX": 250,
-          "mapPosY": 65
-        },
-        {
-          "uid": 21,
-          "tooltip": "Südliches Seitenschiff",
-          "mapPosX": 142,
-          "mapPosY": 153
-        },
-        {
-          "uid": 4,
-          "tooltip": "Seitenschiff",
-          "mapPosX": 130,
-          "mapPosY": 175
-        },
-        {
-          "uid": 5,
-          "tooltip": "Grundstein",
-          "mapPosX": 155,
-          "mapPosY": 185
-        },
-        {
-          "uid": 13,
-          "tooltip": "Bernwardstür",
-          "mapPosX": 200,
-          "mapPosY": 160
-        },
-        {
-          "uid": 14,
-          "tooltip": "Stuckfiguren",
-          "mapPosX": 260,
-          "mapPosY": 160
-        },
-        {
-          "uid": 15,
-          "tooltip": "Stuckfiguren",
-          "mapPosX": 310,
-          "mapPosY": 160
-        },
-        {
-          "uid": 24,
-          "tooltip": "Bernwardsäule",
-          "mapPosX": 380,
-          "mapPosY": 155
-        },
-        {
-          "uid": 6,
-          "tooltip": "Gedenkstein",
-          "mapPosX": 380,
-          "mapPosY": 182
-        }
-      ]
-    },
-    {
-      "uid": 2,
-      "image": "resources/maps/Krypta_museum.png",
-      "mapSpots": [
-        {
-          "uid": 913,
-          "tooltip": "Weiheinschrift",
-          "mapPosX": 30,
-          "mapPosY": 103
-        },
-        {
-          "uid": 918,
-          "tooltip": "Zentrum Krypta",
-          "mapPosX": 110,
-          "mapPosY": 103
-        },
-        {
-          "uid": 97,
-          "tooltip": "Marienaltar",
-          "mapPosX": 190,
-          "mapPosY": 103
-        },
-        {
-          "uid": 98,
-          "tooltip": "Grablege",
-          "mapPosX": 160,
-          "mapPosY": 70
-        },
-        {
-          "uid": 96,
-          "tooltip": "Grablege",
-          "mapPosX": 160,
-          "mapPosY": 140
-        }
-      ]
-    }
-  ],
-  "locations": [
-    {
-      "uid": 1,
-      "image": [
-        "resources/panos/kirche001.jpg"
-      ],
-      "mapUid": 1,
-      "transitions": [
-        {
-          "target_location": 97,
-          "tooltip": "Übergang zur Krypta",
-          "posX": 190,
-          "posY": -31,
-          "posZ": -34
-        },
-        {
-          "target_location": 22,
-          "tooltip": "Richtung Mittelschiff",
-          "posX": 37,
-          "posY": -74,
-          "posZ": -177
-        }
-      ],
-      "cameraTargets": {
-        "3": {
-          "lat": 5,
-          "lon": 310
-        },
-        "-1": {
-          "lat": 2,
-          "lon": -103
-        },
-        "98": {
-          "lat": -6,
-          "lon": -110
-        },
-        "22": {
-          "lat": -8,
-          "lon": 10
-        }
-      },
-      "hotspots": [
-          {
-              "uid": 1,
-              "title": "Die nördliche Chorschranke - Der neue Heilige im Bild (Ende 12. Jh.)",
-              "tooltip": "Chorschranke",
-              "text": "",
-              "images": [],
-              "audio": "resources/audio/Text15",
-              "posX": 157,
-              "posY": 14,
-              "posZ": -114
-          }
-      ]
-    },
-    {
-      "uid": 22,
-      "image": [
-        "resources/panos/kirche022.jpg"
-      ],
-      "mapUid": 1,
-      "transitions": [
-        {
-          "target_location": 1,
-          "tooltip": "Richtung Krypta",
-          "posX": -34,
-          "posY": -28,
-          "posZ": 190
-        },
-        {
-          "target_location": 3,
-          "tooltip": "Ballustrade",
-          "posX": -79,
-          "posY": 138,
-          "posZ": 113
-        },
-        {
-          "target_location": 29,
-          "tooltip": "Mittelschiff Westchor",
-          "posX": -78,
-          "posY": -39,
-          "posZ": -175
-        }
-      ],
-      "cameraTargets": {
-        "3": {
-          "lat": 5,
-          "lon": 310
-        },
-        "-1": {
-          "lat": 2,
-          "lon": -103
-        },
-        "1": {
-          "lat": 3,
-          "lon": -114
-        },
-        "29": {
-          "lat": -2,
-          "lon": -269
-        }
-      },
-      "hotspots": [
-        {
-          "uid": 48,
-          "title": "Die nördliche Chorschranke - Der neue Heilige im Bild (Ende 12. Jh.)",
-          "tooltip": "Chorschranke",
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/Text15",
-          "posX": 144,
-          "posY": 80,
-          "posZ": -104
-        }
-      ]
-    },
-    {
-      "uid": 3,
-      "image": [
-        "resources/panos/kirche003.jpg"
-      ],
-      "mapUid": 1,
-      "transitions": [
-        {
-          "target_location": 29,
-          "tooltip": "Mittelschiff Westchor",
-          "posX": 114,
-          "posY": -78,
-          "posZ": -136
-        },
-        {
-          "target_location": 1,
-          "tooltip": "Nördliches Mittelschiff",
-          "posX": 60,
-          "posY": -98,
-          "posZ": -128
-        },
-        {
-          "target_location": 20,
-          "tooltip": "Westchor",
-          "posX": 184,
-          "posY": -62,
-          "posZ": -7
-        }
-      ],
-      "cameraTargets": {
-        "-1": {
-          "lat": -40,
-          "lon": -13
-        }
-      },
-      "hotspots": [
-        {
-          "uid": 48,
-          "title": "Die nördliche Chorschranke - Der neue Heilige im Bild (Ende 12. Jh.)",
-          "tooltip": "Chorschranke",
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/Text15",
-          "posX": 126,
-          "posY": -111,
-          "posZ": -98
-        }
-      ]
-    },
-    {
-      "uid": 29,
-      "image": [
-        "resources/panos/kirche029.jpg"
-      ],
-      "mapUid": 1,
-      "transitions": [
-        {
-          "target_location": 3,
-          "tooltip": "Balustrade",
-          "posX": 140,
-          "posY": 135,
-          "posZ": 20
-        },
-        {
-          "target_location": 26,
-          "tooltip": "Mittelschiff Ostchor",
-          "posX": -44,
-          "posY": -10,
-          "posZ": 190
-        },
-        {
-          "target_location": 22,
-          "tooltip": "Nördliches Seitenschiff",
-          "posX": 57,
-          "posY": -28,
-          "posZ": 184
-        },
-        {
-          "target_location": 21,
-          "tooltip": "Südliches Seitenschiff",
-          "posX": -180,
-          "posY": -31,
-          "posZ": 67
-        },
-        {
-          "target_location": 12,
-          "tooltip": "Westchor",
-          "posX": 44,
-          "posY": -9,
-          "posZ": -189
-        }
-      ],
-      "cameraTargets": {
-        "1": {
-          "lat": -245,
-          "lon": -5
-        },
-        "3": {
-          "lat": -10,
-          "lon": 145
-        },
-        "20": {
-          "lat": -5,
-          "lon": 104
-        },
-        "-1": {
-          "lat": -3,
-          "lon": 106
-        }
-      },
-      "hotspots": [
-        {
-          "uid": 65,
-          "title": "Die Wurzel Jesse - ein Bild für den kommenden Christus",
-          "tooltip": "Deckengemälde",
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/Text18",
-          "posX": -86,
-          "posY": 126,
-          "posZ": 122
-        }
-      ]
-    },
-    {
-      "uid": 20,
-      "image": [
-        "resources/panos/kirche020.jpg"
-      ],
-      "mapUid": 1,
-      "transitions": [
-        {
-          "target_location": 29,
-          "tooltip": "Mittelschiff",
-          "posX": -10,
-          "posY": -43,
-          "posZ": 190
-        },
-        {
-          "target_location": 12,
-          "tooltip": "Westchor",
-          "posX": 81,
-          "posY": -57,
-          "posZ": -168
-        }
-      ],
-      "cameraTargets": {
-        "12": {
-          "lat": -5,
-          "lon": 97
-        },
-        "29": {
-          "lat": -9,
-          "lon": 296
-        },
-        "-1": {
-          "lat": -1,
-          "lon": 106
-        }
-      },
-      "hotspots": [
-        {
-          "uid": 1,
-          "title": "Die Architektur der St. Michaelis-Kirche",
-          "tooltip": "Architektur von St. Michaelis",
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/Text1",
-          "posX": 43,
-          "posY": -18,
-          "posZ": 189
-        },
-          {
-              "uid": 2,
-              "title": "1193 - Bernward wird heiliggesprochen",
-              "tooltip": "Heiligsprechung Bernwards",
-              "text": "",
-              "images": [],
-              "audio": "resources/audio/Text11",
-              "posX": 152,
-              "posY": -82,
-              "posZ": -90
-          }
-      ]
-    },
-    {
-      "uid": 12,
-      "image": [
-        "resources/panos/kirche012.jpg"
-      ],
-      "mapUid": 1,
-      "transitions": [
-        {
-          "target_location": 20,
-          "tooltip": "Westchor Mittelschiff",
-          "posX": -113,
-          "posY": -31,
-          "posZ": 155
-        }
-      ],
-      "cameraTargets": {
-        "-1": {
-          "lat": -1,
-          "lon": 105
-        },
-        "20": {
-          "lat": 0,
-          "lon": -73
-        }
-      },
-      "hotspots": [
-          {
-              "uid": 1,
-              "title": "Die Wurzel Jesse - ein Bild für den kommenden Christus",
-              "tooltip": "Deckengemälde",
-              "text": "",
-              "audio": "resources/audio/Text18",
-              "posX": -50,
-              "posY": 78,
-              "posZ": 171
-          },
-        {
-          "uid": 2,
-          "title": "1193 - Bernward wird heiliggesprochen",
-          "tooltip": "Heiligsprechung Bernwards",
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/Text11",
-          "posX": 17,
-          "posY": -48,
-          "posZ": 188
-        }
-      ]
-    },
-    {
-      "uid": 21,
-      "image": [
-        "resources/panos/kirche021.jpg"
-      ],
-      "mapUid": 1,
-      "transitions": [
-        {
-          "target_location": 29,
-          "tooltip": "Mittelschiff",
-          "posX": 136,
-          "posY": -6,
-          "posZ": -139
-        },
-        {
-          "target_location": 20,
-          "tooltip": "Westchor",
-          "posX": -72,
-          "posY": 50,
-          "posZ": -174
-        },
-        {
-          "target_location": 13,
-          "tooltip": "Seitenschiff Langhaus",
-          "posX": 190,
-          "posY": -32,
-          "posZ": 33
-        },
-        {
-          "target_location": 4,
-          "tooltip": "Seitenschiff",
-          "posX": -121,
-          "posY": -91,
-          "posZ": 121
-        },
-        {
-          "target_location": 5,
-          "tooltip": "Grundstein",
-          "posX": 63,
-          "posY": -84,
-          "posZ": 164
-        }
-      ],
-      "cameraTargets": {
-        "4": {
-          "lat": -13,
-          "lon": -127
-        },
-        "5": {
-          "lat": -12,
-          "lon": -104
-        },
-        "13": {
-          "lat": -8,
-          "lon": -189
-        },
-        "29": {
-          "lat": -14,
-          "lon": 101
-        },
-        "-1": {
-          "lat": -1,
-          "lon": -73
-        }
-      },
-      "hotspots": []
-    },
-    {
-      "uid": 5,
-      "image": [
-        "resources/panos/kirche005.jpg"
-      ],
-      "mapUid": 1,
-      "transitions": [
-        {
-          "target_location": 21,
-          "tooltip": "Zum Mittelschiff",
-          "posX": -21,
-          "posY": -63,
-          "posZ": -183
-        },
-        {
-          "target_location": 4,
-          "tooltip": "Westen Seitenschiff",
-          "posX": -190,
-          "posY": -40,
-          "posZ": -11
-        }
-      ],
-      "cameraTargets": {
-        "4": {
-          "lat": 3,
-          "lon": 82
-        },
-        "21": {
-          "lat": 3,
-          "lon": 100
-        },
-        "-1": {
-          "lat": -1,
-          "lon": -73
-        }
-      },
-      "hotspots": [
-        {
-          "uid": 1,
-          "title": "1010 legt Bischof Bernward den Grundstein für die Michaeliskirche",
-          "tooltip": "Grundstein",
-          "text": "",
-          "images": [
-              {
-                  "figure": "resources/images/di-58-006_1.jpg",
-                  "caption": "© Christine Wulf"
-              }
-          ],
-          "audio": "resources/audio/Text3",
-          "posX": 43,
-          "posY": -18,
-          "posZ": 189
-        }
-      ]
-    },
-    {
-      "uid": 4,
-      "image": [
-        "resources/panos/kirche004.jpg"
-      ],
-      "mapUid": 1,
-      "transitions": [
-        {
-          "target_location": 21,
-          "tooltip": "Zum Mittelschiff",
-          "posX": 171,
-          "posY": -59,
-          "posZ": 72
-        },
-        {
-          "target_location": 5,
-          "tooltip": "Grundstein",
-          "posX": -17,
-          "posY": -39,
-          "posZ": 190
-        }
-      ],
-      "cameraTargets": {
-        "5": {
-          "lat": -7,
-          "lon": -180
-        },
-        "21": {
-          "lat": -9,
-          "lon": -200
-        },
-        "-1": {
-          "lat": -300,
-          "lon": -14
-        }
-      },
-      "hotspots": [
-        {
-          "uid": 1,
-          "title": "Bischof Bernward von Hildesheim gründet das Benediktinerkloster St. Michaelis",
-          "tooltip": "Kirche des Bischofs",
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/Text2",
-          "posX": -180,
-          "posY": -21,
-          "posZ": 70
-        }
-      ]
-    },
-    {
-      "uid": 13,
-      "image": [
-        "resources/panos/kirche013.jpg"
-      ],
-      "mapUid": 1,
-      "transitions": [
-        {
-          "target_location": 14,
-          "tooltip": "Seitenschiff",
-          "posX": 145,
-          "posY": -41,
-          "posZ": -124
-        },
-        {
-          "target_location": 21,
-          "tooltip": "Westliches Querhaus",
-          "posX": -152,
-          "posY": -84,
-          "posZ": 88
-        },
-        {
-          "target_location": 29,
-          "tooltip": "Mittelschiff",
-          "posX": -187,
-          "posY": -17,
-          "posZ": -52
-        }
-      ],
-      "cameraTargets": {
-        "-1": {
-          "lat": -3,
-          "lon": -32
-        },
-        "21": {
-          "lat": -4,
-          "lon": -42
-        },
-        "13": {
-          "lat": -3,
-          "lon": -227
-        }
-      },
-      "hotspots": [
-        {
-          "uid": 2,
-          "title": "Allegorische Figuren der Seligpreisungen als Schmuck der Kirche des Heiligen",
-          "tooltip": "Stuckfiguren",
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/Text12",
-          "posX": -34,
-          "posY": 122,
-          "posZ": -148
-        },
-        {
-          "uid": 3,
-          "title": "Im Jahr 1015 lässt Bischof Bernward zwei monumentale Türflügel gießen",
-          "tooltip": "Bernwardstür",
-          "text": "",
-          "images": [
-              {
-                  "figure": "resources/images/di-58-009_1.jpg",
-                  "caption": "© Julia Zech"
-              }
-          ],
-          "audio": "resources/audio/Text14",
-          "posX": 98,
-          "posY": 23,
-          "posZ": 167
-        }
-      ]
-    },
-    {
-      "uid": 14,
-      "image": [
-        "resources/panos/kirche014.jpg"
-      ],
-      "mapUid": 1,
-      "transitions": [
-        {
-          "target_location": 15,
-          "tooltip": "Richtung Osten",
-          "posX": -66,
-          "posY": -70,
-          "posZ": 169
-        },
-        {
-          "target_location": 13,
-          "tooltip": "Richtung Westen",
-          "posX": 74,
-          "posY": -63,
-          "posZ": -169
-        }
-      ],
-      "cameraTargets": {
-        "-1": {
-          "lat": 1,
-          "lon": -14
-        },
-        "13": {
-          "lat": -10,
-          "lon": 109
-        },
-        "15": {
-          "lat": -1,
-          "lon": -75
-        }
-      },
-      "hotspots": [
-        {
-          "uid": 1,
-          "uid": 2,
-          "title": "Allegorische Figuren der Seligpreisungen als Schmuck der Kirche des Heiligen",
-          "tooltip": "Stuckfiguren",
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/Text12",
-          "posX": 128,
-          "posY": 138,
-          "posZ": 52
-        }
-      ]
-    },
-    {
-      "uid": 15,
-      "image": [
-        "resources/panos/kirche015.jpg"
-      ],
-      "mapUid": 1,
-      "transitions": [
-        {
-          "target_location": 14,
-          "tooltip": "Nach Westen",
-          "posX": 147,
-          "posY": -51,
-          "posZ": -116
-        },
-        {
-          "target_location": 24,
-          "tooltip": "Christussäule",
-          "posX": -113,
-          "posY": -46,
-          "posZ": 152
-        },
-        {
-          "target_location": 26,
-          "tooltip": "Mittelschiff",
-          "posX": 125,
-          "posY": -52,
-          "posZ": 141
-        }
-      ],
-      "cameraTargets": {
-        "-1": {
-          "lat": 0,
-          "lon": 0
-        },
-        "14": {
-          "lat": -2,
-          "lon": 136
-        },
-        "24": {
-          "lat": -1,
-          "lon": -49
-        },
-        "26": {
-          "lat": -11,
-          "lon": 253
-        }
-      },
-      "hotspots": [
-        {
-          "uid": 1,
-          "uid": 2,
-          "title": "Allegorische Figuren der Seligpreisungen als Schmuck der Kirche des Heiligen",
-          "tooltip": "Stuckfiguren",
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/Text12",
-          "posX": 134,
-          "posY": 138,
-          "posZ": 33
-        }
-      ]
-    },
-    {
-      "uid": 24,
-      "image": [
-        "resources/panos/kirche024.jpg"
-      ],
-      "mapUid": 1,
-      "transitions": [
-        {
-          "target_location": 26,
-          "tooltip": "Mittelschiff",
-          "posX": 117,
-          "posY": -28,
-          "posZ": -153
-        },
-        {
-          "target_location": 25,
-          "tooltip": "Querhaus",
-          "posX": 190,
-          "posY": -40,
-          "posZ": -12
-        },
-        {
-          "target_location": 15,
-          "tooltip": "Südliches Seitenschiff",
-          "posX": -5,
-          "posY": -34,
-          "posZ": -192
-        },
-        {
-          "target_location": 6,
-          "tooltip": "Gedenkstein",
-          "posX": -186,
-          "posY": -57,
-          "posZ": -6
-        }
-      ],
-      "cameraTargets": {
-        "-1": {
-          "lat": 0,
-          "lon": 0
-        },
-        "26": {
-          "lat": -4,
-          "lon": 144
-        },
-        "15": {
-          "lat": 1,
-          "lon": 79
-        },
-        "25": {
-          "lat": -4,
-          "lon": 144
-        },
-        "6": {
-          "lat": -3,
-          "lon": -8
-        }
-      },
-      "hotspots": [
-        {
-          "uid": 1,
-          "title": "Die Christussäule",
-          "tooltip": "Christussäule",
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/Text16",
-          "posX": -75,
-          "posY": -44,
-          "posZ": -174
-        }
-      ]
-    },
-    {
-      "uid": 6,
-      "image": [
-        "resources/panos/kirche006.jpg"
-      ],
-      "mapUid": 1,
-      "transitions": [
-        {
-          "target_location": 24,
-          "tooltip": "Bernwardsäule",
-          "posX": 151,
-          "posY": -55,
-          "posZ": -111
-        }
-      ],
-      "cameraTargets": {
-        "-1": {
-          "lat": 0,
-          "lon": 0
-        },
-        "24": {
-          "lat": -8,
-          "lon": 135
-        }
-      },
-      "hotspots": [
-        {
-          "uid": 16,
-          "title": "Bischof Bernward bittet um Gebetsgedenken (vor 1022)",
-          "tooltip": "Gedenkstein",
-          "text": "",
-          "images": [
-              {
-                  "figure": "resources/images/di-58-016_1.jpg",
-                  "caption": "© Jutta Brüdern"
-              }
-          ],
-          "audio": "resources/audio/Text13",
-          "posX": -172,
-          "posY": -40,
-          "posZ": 82
-        },
-          {
-              "uid": 1,
-              "title": "Die Christussäule",
-              "tooltip": "Christussäule",
-              "text": "",
-              "images": [],
-              "audio": "resources/audio/Text16",
-              "posX": 86,
-              "posY": -5,
-              "posZ": -175
-          }
-      ]
-    },
-    {
-      "uid": 26,
-      "image": [
-        "resources/panos/kirche026.jpg"
-      ],
-      "mapUid": 1,
-      "transitions": [
-        {
-          "target_location": 29,
-          "tooltip": "Westchor",
-          "posX": 184,
-          "posY": -50,
-          "posZ": 41
-        },
-        {
-          "target_location": 25,
-          "tooltip": "Ostchor",
-          "posX": -190,
-          "posY": -22,
-          "posZ": -33
-        },
-        {
-          "target_location": 24,
-          "tooltip": "Querhaus",
-          "posX": -144,
-          "posY": -70,
-          "posZ": -111
-        },
-        {
-          "target_location": 14,
-          "tooltip": "Seitenschiff",
-          "posX": 40,
-          "posY": -76,
-          "posZ": -175
-        },
-        {
-          "target_location": 17,
-          "tooltip": "Seitenschiff",
-          "posX": 63,
-          "posY": -46,
-          "posZ": 179
-        }
-      ],
-      "cameraTargets": {
-        "-1": {
-          "lat": 0,
-          "lon": 0
-        },
-        "25": {
-          "lat": 0,
-          "lon": 0
-        },
-        "29": {
-          "lat": -3,
-          "lon": 192
-        },
-        "17": {
-          "lat": -7,
-          "lon": 243
-        },
-        "13": {
-          "lat": -2,
-          "lon": 75
-        }
-      },
-      "hotspots": [
-        {
-          "uid": 1,
-          "title": "Reliquien stabilisieren Bernwards Kirchenbau",
-          "tooltip": "Säulen",
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/Text17",
-          "posX": -27,
-          "posY": 109,
-          "posZ": 160
-        },
-          {
-              "uid": 2,
-              "title": "Die Wurzel Jesse - ein Bild für den kommenden Christus",
-              "tooltip": "Deckengemälde",
-              "text": "",
-              "images": [],
-              "audio": "resources/audio/Text18",
-              "posX": 139,
-              "posY": 137,
-              "posZ": 14
-          }
-      ]
-    },
-    {
-      "uid": 25,
-      "image": [
-        "resources/panos/kirche025.jpg"
-      ],
-      "mapUid": 1,
-      "transitions": [
-        {
-          "target_location": 26,
-          "tooltip": "Mittelschiff",
-          "posX": -63,
-          "posY": -13,
-          "posZ": -183
-        },
-        {
-          "target_location": 24,
-          "tooltip": "Südliches Seitenschiff",
-          "posX": -182,
-          "posY": -68,
-          "posZ": 9
-        },
-        {
-          "target_location": 17,
-          "tooltip": "Nördliches Seitenschiff",
-          "posX": 112,
-          "posY": -36,
-          "posZ": -156
-        }
-      ],
-      "cameraTargets": {
-        "-1": {
-          "lat": 1,
-          "lon": 247
-        },
-        "24": {
-          "lat": 9,
-          "lon": -34
-        },
-        "26": {
-          "lat": 0,
-          "lon": 70
-        },
-        "17": {
-          "lat": -7,
-          "lon": 146
-        }
-      },
-      "hotspots": [
-        {
-          "uid": 1,
-          "title": "Die Querhäuser der Michaeliskirche",
-          "tooltip": "Querhäuser",
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/Text4",
-          "posX": 46,
-          "posY": -6,
-          "posZ": -189
-        },
-        {
-          "uid": 1,
-          "title": "Die Wurzel Jesse - ein Bild für den kommenden Christus",
-          "tooltip": "Deckengemälde",
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/Text18",
-          "posX": 0,
-          "posY": 138,
-          "posZ": -137
-        }
-      ]
-    },
-    {
-      "uid": 17,
-      "image": [
-        "resources/panos/kirche017.jpg"
-      ],
-      "mapUid": 1,
-      "transitions": [
-        {
-          "target_location": 26,
-          "tooltip": "Mittelschiff",
-          "posX": -6,
-          "posY": -44,
-          "posZ": 189
-        },
-        {
-          "target_location": 25,
-          "tooltip": "Östliches Querhaus",
-          "posX": 106,
-          "posY": -48,
-          "posZ": 156
-        },
-        {
-          "target_location": 22,
-          "tooltip": "Westliches Querhaus",
-          "posX": -171,
-          "posY": -21,
-          "posZ": -90
-        }
-      ],
-      "cameraTargets": {
-        "-1": {
-          "lat": 1,
-          "lon": 143
-        },
-        "22": {
-          "lat": -1,
-          "lon": 26
-        },
-        "26": {
-          "lat": -1,
-          "lon": 238
-        },
-        "25": {
-          "lat": -1,
-          "lon": 238
-        }
-      },
-      "hotspots": [
-        {
-          "uid": 1,
-          "title": "Die Seitenschiffe der Michaeliskirche",
-          "tooltip": "Seitenschiffe",
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/Text5",
-          "posX": -191,
-          "posY": -16,
-          "posZ": 34
-        }
-      ]
-    },
-    {
-      "uid": 97,
-      "image": [
-        "resources/panos/krypta007.jpg"
-      ],
-      "mapUid": 2,
-      "transitions": [
-        {
-          "target_location": 918,
-          "tooltip": "Zentrum Krypta",
-          "posX": -172,
-          "posY": 9,
-          "posZ": -91
-        },
-        {
-          "target_location": 98,
-          "tooltip": "Nördliche Krypta",
-          "posX": 40,
-          "posY": -76,
-          "posZ": -175
-        },
-        {
-          "target_location": 96,
-          "tooltip": "Südliche Krypta",
-          "posX": -179,
-          "posY": -76,
-          "posZ": 17
-        }
-      ],
-      "cameraTargets": {
-        "-1": {
-          "lat": -15,
-          "lon": 219
-        },
-        "1": {
-          "lat": -3,
-          "lon": 22
-        },
-        "96": {
-          "lat": -6,
-          "lon": 354
-        },
-        "98": {
-          "lat": -2,
-          "lon": 70
-        },
-        "918": {
-          "lat": -2,
-          "lon": 28
-        }
-      },
-      "hotspots": [
-        {
-          "uid": 1,
-          "title": "Die Ausstattung des Marienaltars in der Krypta",
-          "tooltip": "Marienaltar",
-          "text": "",
-          "images": [
-              {
-                 "figure": "resources/images/di-58-005_1.jpg",
-                  "caption": "© Frank Tomio"
-              },
-              {
-                  "figure": "resources/images/di-58-014_1.jpg",
-                  "caption": "© Frank Tomio"
-              }
-          ],
-          "audio": "resources/audio/Text7",
-          "posX": 184,
-          "posY": -50,
-          "posZ": 41
-        },
-          {
-              "uid": 2,
-              "title": "Bernward zwischen Engeln im Himmel",
-              "tooltip": "Sarkophag",
-              "text": "",
-              "images": [],
-              "audio": "resources/audio/Text10",
-              "posX": -140,
-              "posY": -89,
-              "posZ": -102
-          },
-          {
-              "uid": 3,
-              "title": "Die Grabplatte Bischof Bernwards von 1022",
-              "tooltip": "Grabplatte Bernwards",
-              "text": "",
-              "images": [],
-              "audio": "resources/audio/Text9",
-              "posX": -151,
-              "posY": -38,
-              "posZ": -117
-          }
-      ]
-    },
-    {
-      "uid": 96,
-      "image": [
-        "resources/panos/krypta006.jpg"
-      ],
-      "mapUid": 2,
-      "transitions": [
-        {
-          "target_location": 918,
-          "tooltip": "Zentrum Krypta",
-          "posX": -184,
-          "posY": -37,
-          "posZ": 50
-        },
-        {
-          "target_location": 97,
-          "tooltip": "Altar",
-          "posX": 0,
-          "posY": -40,
-          "posZ": -191
-        },
-        {
-          "target_location": 98,
-          "tooltip": "Nördliche Krypta",
-          "posX": -123,
-          "posY": 10,
-          "posZ": -151
-        }
-      ],
-      "cameraTargets": {
-        "-1": {
-          "lat": -15,
-          "lon": 219
-        },
-        "918": {
-          "lat": -10,
-          "lon": 308
-        },
-        "918": {
-          "lat": -10,
-          "lon": 308
-        },
-        "908": {
-          "lat": -3,
-          "lon": 48
-        },
-        "907": {
-          "lat": -11,
-          "lon": -220
-        }
-      },
-      "hotspots": [
-        {
-          "uid": 1,
-          "title": "Bernward zwischen Engeln im Himmel",
-          "tooltip": "Sarkophag",
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/Text10",
-          "posX": -144,
-          "posY": -70,
-          "posZ": -111
-        }
-      ]
-    },
-    {
-      "uid": 98,
-      "image": [
-        "resources/panos/krypta008.jpg"
-      ],
-      "mapUid": 2,
-      "transitions": [
-        {
-          "target_location": 97,
-          "tooltip": "Altar",
-          "posX": -144,
-          "posY": -70,
-          "posZ": -111
-        },
-        {
-          "target_location": 96,
-          "tooltip": "Südliche Krypta",
-          "posX": 57,
-          "posY": -47,
-          "posZ": -180
-        },
-        {
-          "target_location": 918,
-          "tooltip": "Zentrum Krypta",
-          "posX": 187,
-          "posY": -47,
-          "posZ": -25
-        },
-        {
-          "target_location": 22,
-          "tooltip": "Übergang zur Kirche",
-          "posX": -105,
-          "posY": -75,
-          "posZ": 146
-        }
-      ],
-      "cameraTargets": {
-        "-1": {
-          "lat": -26,
-          "lon": 252
-        },
-        "1": {
-          "lat": -15,
-          "lon": 219
-        },
-        "97": {
-          "lat": -9,
-          "lon": 27
-        },
-        "96": {
-          "lat": -1,
-          "lon": 105
-        },
-        "918": {
-          "lat": -18,
-          "lon": -159
-        }
-      },
-      "hotspots": [
-        {
-          "uid": 1,
-          "title": "Die Grabplatte Bischof Bernwards von 1022",
-          "tooltip": "Grabplatte Bernwards",
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/Text9",
-          "posX": 113,
-          "posY": -61,
-          "posZ": -146
-        }
-      ]
-    },
-    {
-      "uid": 918,
-      "image": [
-        "resources/panos/krypta018.jpg"
-      ],
-      "mapUid": 2,
-      "transitions": [
-        {
-          "target_location": 913,
-          "tooltip": "Westlicher Ausgang",
-          "posX": -99,
-          "posY": -50,
-          "posZ": -161
-        },
-        {
-          "target_location": 96,
-          "tooltip": "Südliche Krypta",
-          "posX": 32,
-          "posY": -44,
-          "posZ": 187
-        },
-        {
-          "target_location": 98,
-          "tooltip": "Nördliche Krypta",
-          "posX": 158,
-          "posY": -39,
-          "posZ": 107
-        }
-      ],
-      "cameraTargets": {
-        "-1": {
-          "lat": 4,
-          "lon": 60
-        },
-        "97": {
-          "lat": -8,
-          "lon": 244
-        },
-        "913": {
-          "lat": 4,
-          "lon": 60
-        },
-        "96": {
-          "lat": -8,
-          "lon": 244
-        },
-        "98": {
-          "lat": -8,
-          "lon": 244
-        }
-      },
-      "hotspots": [
-        {
-          "uid": 1,
-          "title": "Bernward stirbt 1022 und wird in der Krypta in einem Sarkophag beigesetzt",
-          "tooltip": "Bernwards Grablege",
-          "text": "",
-          "images": [],
-          "audio": "resources/audio/Text8",
-          "posX": 93,
-          "posY": -9,
-          "posZ": 171
-        }
-      ]
-    },
-    {
-      "uid": 913,
-      "image": [
-        "resources/panos/krypta013.jpg"
-      ],
-      "mapUid": 2,
-      "transitions": [
-        {
-          "target_location": 918,
-          "tooltip": "Zentrum Krypta",
-          "posX": -75,
-          "posY": -15,
-          "posZ": 180
-        }
-      ],
-      "cameraTargets": {
-        "-1": {
-          "lat": -6,
-          "lon": 110
-        },
-        "918": {
-          "lat": -5,
-          "lon": -97
-        }
-      },
-      "hotspots": [
-        {
-          "uid": 10,
-          "title": "Bernward weiht die Krypta der Michaeliskirche",
-          "tooltip": "Weiheinschrift",
-          "text": "",
-          "images": [
-              {
-                  "figure": "resources/images/di-58-010_1.jpg",
-                  "caption": "© Christine Wulf"
-              }
-          ],
-          "audio": "resources/audio/Text6",
-          "posX": -38,
-          "posY": 14,
-          "posZ": -191
-        }
-      ]
-    }
-  ]
+	"startLocation": 12,
+	"maps": [
+		{
+			"uid": 1,
+			"image": "resources/maps/Kirchenraum_museum.png",
+			"mapSpots": [
+				{
+					"uid": 12,
+					"tooltip": "Bernward",
+					"mapPosX": 37,
+					"mapPosY": 115
+				},
+				{
+					"uid": 20,
+					"tooltip": "Westchor",
+					"mapPosX": 90,
+					"mapPosY": 135
+				},
+				{
+					"uid": 29,
+					"tooltip": "Mittelschiff",
+					"mapPosX": 145,
+					"mapPosY": 115
+				},
+				{
+					"uid": 22,
+					"tooltip": "Nördliches Seitenschiff",
+					"mapPosX": 153,
+					"mapPosY": 75
+				},
+				{
+					"uid": 1,
+					"tooltip": "Übergang zur Krypta",
+					"mapPosX": 125,
+					"mapPosY": 40
+				},
+				{
+					"uid": 3,
+					"tooltip": "Balustrade",
+					"mapPosX": 140,
+					"mapPosY": 20
+				},
+				{
+					"uid": 26,
+					"tooltip": "Romanische Säulen",
+					"mapPosX": 330,
+					"mapPosY": 115
+				},
+				{
+					"uid": 25,
+					"tooltip": "Östliches Querhaus",
+					"mapPosX": 375,
+					"mapPosY": 115
+				},
+				{
+					"uid": 17,
+					"tooltip": "Nördliches Seitenschiff",
+					"mapPosX": 250,
+					"mapPosY": 65
+				},
+				{
+					"uid": 21,
+					"tooltip": "Südliches Seitenschiff",
+					"mapPosX": 142,
+					"mapPosY": 153
+				},
+				{
+					"uid": 4,
+					"tooltip": "Seitenschiff",
+					"mapPosX": 130,
+					"mapPosY": 175
+				},
+				{
+					"uid": 5,
+					"tooltip": "Grundstein",
+					"mapPosX": 155,
+					"mapPosY": 185
+				},
+				{
+					"uid": 13,
+					"tooltip": "Bernwardstür",
+					"mapPosX": 200,
+					"mapPosY": 160
+				},
+				{
+					"uid": 14,
+					"tooltip": "Stuckfiguren",
+					"mapPosX": 260,
+					"mapPosY": 160
+				},
+				{
+					"uid": 15,
+					"tooltip": "Stuckfiguren",
+					"mapPosX": 310,
+					"mapPosY": 160
+				},
+				{
+					"uid": 24,
+					"tooltip": "Bernwardsäule",
+					"mapPosX": 380,
+					"mapPosY": 155
+				},
+				{
+					"uid": 6,
+					"tooltip": "Gedenkstein",
+					"mapPosX": 380,
+					"mapPosY": 182
+				}
+			]
+		},
+		{
+			"uid": 2,
+			"image": "resources/maps/Krypta_museum.png",
+			"mapSpots": [
+				{
+					"uid": 913,
+					"tooltip": "Weiheinschrift",
+					"mapPosX": 30,
+					"mapPosY": 103
+				},
+				{
+					"uid": 918,
+					"tooltip": "Zentrum Krypta",
+					"mapPosX": 110,
+					"mapPosY": 103
+				},
+				{
+					"uid": 97,
+					"tooltip": "Marienaltar",
+					"mapPosX": 190,
+					"mapPosY": 103
+				},
+				{
+					"uid": 98,
+					"tooltip": "Grablege",
+					"mapPosX": 160,
+					"mapPosY": 70
+				},
+				{
+					"uid": 96,
+					"tooltip": "Grablege",
+					"mapPosX": 160,
+					"mapPosY": 140
+				}
+			]
+		}
+	],
+	"locations": [
+		{
+			"uid": 1,
+			"image": [
+				"resources/panos/kirche001.jpg"
+			],
+			"mapUid": 1,
+			"transitions": [
+				{
+					"target_location": 97,
+					"tooltip": "Übergang zur Krypta",
+					"posX": 190,
+					"posY": -31,
+					"posZ": -34
+				},
+				{
+					"target_location": 22,
+					"tooltip": "Richtung Mittelschiff",
+					"posX": 37,
+					"posY": -74,
+					"posZ": -177
+				}
+			],
+			"cameraTargets": {
+				"3": {
+					"lat": 5,
+					"lon": 310
+				},
+				"-1": {
+					"lat": 2,
+					"lon": -103
+				},
+				"98": {
+					"lat": -6,
+					"lon": -110
+				},
+				"22": {
+					"lat": -8,
+					"lon": 10
+				}
+			},
+			"hotspots": [
+				{
+					"uid": 1,
+					"title": "Die nördliche Chorschranke - Der neue Heilige im Bild (Ende 12. Jh.)",
+					"tooltip": "Chorschranke",
+					"text": "",
+					"images": [],
+					"audio": "resources/audio/Text15",
+					"posX": 157,
+					"posY": 14,
+					"posZ": -114
+				}
+			]
+		},
+		{
+			"uid": 22,
+			"image": [
+				"resources/panos/kirche022.jpg"
+			],
+			"mapUid": 1,
+			"transitions": [
+				{
+					"target_location": 1,
+					"tooltip": "Richtung Krypta",
+					"posX": -34,
+					"posY": -28,
+					"posZ": 190
+				},
+				{
+					"target_location": 3,
+					"tooltip": "Ballustrade",
+					"posX": -79,
+					"posY": 138,
+					"posZ": 113
+				},
+				{
+					"target_location": 29,
+					"tooltip": "Mittelschiff Westchor",
+					"posX": -78,
+					"posY": -39,
+					"posZ": -175
+				}
+			],
+			"cameraTargets": {
+				"3": {
+					"lat": 5,
+					"lon": 310
+				},
+				"-1": {
+					"lat": 2,
+					"lon": -103
+				},
+				"1": {
+					"lat": 3,
+					"lon": -114
+				},
+				"29": {
+					"lat": -2,
+					"lon": -269
+				}
+			},
+			"hotspots": [
+				{
+					"uid": 48,
+					"title": "Die nördliche Chorschranke - Der neue Heilige im Bild (Ende 12. Jh.)",
+					"tooltip": "Chorschranke",
+					"text": "",
+					"images": [],
+					"audio": "resources/audio/Text15",
+					"posX": 144,
+					"posY": 80,
+					"posZ": -104
+				}
+			]
+		},
+		{
+			"uid": 3,
+			"image": [
+				"resources/panos/kirche003.jpg"
+			],
+			"mapUid": 1,
+			"transitions": [
+				{
+					"target_location": 29,
+					"tooltip": "Mittelschiff Westchor",
+					"posX": 114,
+					"posY": -78,
+					"posZ": -136
+				},
+				{
+					"target_location": 1,
+					"tooltip": "Nördliches Mittelschiff",
+					"posX": 60,
+					"posY": -98,
+					"posZ": -128
+				},
+				{
+					"target_location": 20,
+					"tooltip": "Westchor",
+					"posX": 184,
+					"posY": -62,
+					"posZ": -7
+				}
+			],
+			"cameraTargets": {
+				"-1": {
+					"lat": -40,
+					"lon": -13
+				}
+			},
+			"hotspots": [
+				{
+					"uid": 48,
+					"title": "Die nördliche Chorschranke - Der neue Heilige im Bild (Ende 12. Jh.)",
+					"tooltip": "Chorschranke",
+					"text": "",
+					"images": [],
+					"audio": "resources/audio/Text15",
+					"posX": 126,
+					"posY": -111,
+					"posZ": -98
+				}
+			]
+		},
+		{
+			"uid": 29,
+			"image": [
+				"resources/panos/kirche029.jpg"
+			],
+			"mapUid": 1,
+			"transitions": [
+				{
+					"target_location": 3,
+					"tooltip": "Balustrade",
+					"posX": 140,
+					"posY": 135,
+					"posZ": 20
+				},
+				{
+					"target_location": 26,
+					"tooltip": "Mittelschiff Ostchor",
+					"posX": -44,
+					"posY": -10,
+					"posZ": 190
+				},
+				{
+					"target_location": 22,
+					"tooltip": "Nördliches Seitenschiff",
+					"posX": 57,
+					"posY": -28,
+					"posZ": 184
+				},
+				{
+					"target_location": 21,
+					"tooltip": "Südliches Seitenschiff",
+					"posX": -180,
+					"posY": -31,
+					"posZ": 67
+				},
+				{
+					"target_location": 12,
+					"tooltip": "Westchor",
+					"posX": 44,
+					"posY": -9,
+					"posZ": -189
+				}
+			],
+			"cameraTargets": {
+				"1": {
+					"lat": -245,
+					"lon": -5
+				},
+				"3": {
+					"lat": -10,
+					"lon": 145
+				},
+				"20": {
+					"lat": -5,
+					"lon": 104
+				},
+				"-1": {
+					"lat": -3,
+					"lon": 106
+				}
+			},
+			"hotspots": [
+				{
+					"uid": 65,
+					"title": "Die Wurzel Jesse - ein Bild für den kommenden Christus",
+					"tooltip": "Deckengemälde",
+					"text": "",
+					"images": [],
+					"audio": "resources/audio/Text18",
+					"posX": -86,
+					"posY": 126,
+					"posZ": 122
+				}
+			]
+		},
+		{
+			"uid": 20,
+			"image": [
+				"resources/panos/kirche020.jpg"
+			],
+			"mapUid": 1,
+			"transitions": [
+				{
+					"target_location": 29,
+					"tooltip": "Mittelschiff",
+					"posX": -10,
+					"posY": -43,
+					"posZ": 190
+				},
+				{
+					"target_location": 12,
+					"tooltip": "Westchor",
+					"posX": 81,
+					"posY": -57,
+					"posZ": -168
+				}
+			],
+			"cameraTargets": {
+				"12": {
+					"lat": -5,
+					"lon": 97
+				},
+				"29": {
+					"lat": -9,
+					"lon": 296
+				},
+				"-1": {
+					"lat": -1,
+					"lon": 106
+				}
+			},
+			"hotspots": [
+				{
+					"uid": 1,
+					"title": "Die Architektur der St. Michaelis-Kirche",
+					"tooltip": "Architektur von St. Michaelis",
+					"text": "",
+					"images": [],
+					"audio": "resources/audio/Text1",
+					"posX": 43,
+					"posY": -18,
+					"posZ": 189
+				},
+				{
+					"uid": 2,
+					"title": "1193 - Bernward wird heiliggesprochen",
+					"tooltip": "Heiligsprechung Bernwards",
+					"text": "",
+					"images": [],
+					"audio": "resources/audio/Text11",
+					"posX": 152,
+					"posY": -82,
+					"posZ": -90
+				}
+			]
+		},
+		{
+			"uid": 12,
+			"image": [
+				"resources/panos/kirche012.jpg"
+			],
+			"mapUid": 1,
+			"transitions": [
+				{
+					"target_location": 20,
+					"tooltip": "Westchor Mittelschiff",
+					"posX": -113,
+					"posY": -31,
+					"posZ": 155
+				}
+			],
+			"cameraTargets": {
+				"-1": {
+					"lat": -1,
+					"lon": 105
+				},
+				"20": {
+					"lat": 0,
+					"lon": -73
+				}
+			},
+			"hotspots": [
+				{
+					"uid": 1,
+					"title": "Die Wurzel Jesse - ein Bild für den kommenden Christus",
+					"tooltip": "Deckengemälde",
+					"text": "",
+					"images": [],
+					"audio": "resources/audio/Text18",
+					"posX": -50,
+					"posY": 78,
+					"posZ": 171
+				},
+				{
+					"uid": 2,
+					"title": "1193 - Bernward wird heiliggesprochen",
+					"tooltip": "Heiligsprechung Bernwards",
+					"text": "",
+					"images": [],
+					"audio": "resources/audio/Text11",
+					"posX": 17,
+					"posY": -48,
+					"posZ": 188
+				}
+			]
+		},
+		{
+			"uid": 21,
+			"image": [
+				"resources/panos/kirche021.jpg"
+			],
+			"mapUid": 1,
+			"transitions": [
+				{
+					"target_location": 29,
+					"tooltip": "Mittelschiff",
+					"posX": 136,
+					"posY": -6,
+					"posZ": -139
+				},
+				{
+					"target_location": 20,
+					"tooltip": "Westchor",
+					"posX": -72,
+					"posY": 50,
+					"posZ": -174
+				},
+				{
+					"target_location": 13,
+					"tooltip": "Seitenschiff Langhaus",
+					"posX": 190,
+					"posY": -32,
+					"posZ": 33
+				},
+				{
+					"target_location": 4,
+					"tooltip": "Seitenschiff",
+					"posX": -121,
+					"posY": -91,
+					"posZ": 121
+				},
+				{
+					"target_location": 5,
+					"tooltip": "Grundstein",
+					"posX": 63,
+					"posY": -84,
+					"posZ": 164
+				}
+			],
+			"cameraTargets": {
+				"4": {
+					"lat": -13,
+					"lon": -127
+				},
+				"5": {
+					"lat": -12,
+					"lon": -104
+				},
+				"13": {
+					"lat": -8,
+					"lon": -189
+				},
+				"29": {
+					"lat": -14,
+					"lon": 101
+				},
+				"-1": {
+					"lat": -1,
+					"lon": -73
+				}
+			},
+			"hotspots": []
+		},
+		{
+			"uid": 5,
+			"image": [
+				"resources/panos/kirche005.jpg"
+			],
+			"mapUid": 1,
+			"transitions": [
+				{
+					"target_location": 21,
+					"tooltip": "Zum Mittelschiff",
+					"posX": -21,
+					"posY": -63,
+					"posZ": -183
+				},
+				{
+					"target_location": 4,
+					"tooltip": "Westen Seitenschiff",
+					"posX": -190,
+					"posY": -40,
+					"posZ": -11
+				}
+			],
+			"cameraTargets": {
+				"4": {
+					"lat": 3,
+					"lon": 82
+				},
+				"21": {
+					"lat": 3,
+					"lon": 100
+				},
+				"-1": {
+					"lat": -1,
+					"lon": -73
+				}
+			},
+			"hotspots": [
+				{
+					"uid": 1,
+					"title": "1010 legt Bischof Bernward den Grundstein für die Michaeliskirche",
+					"tooltip": "Grundstein",
+					"text": "",
+					"images": [
+						{
+							"figure": "resources/images/di-58-006_1.jpg",
+							"caption": "© Christine Wulf"
+						}
+					],
+					"audio": "resources/audio/Text3",
+					"posX": 43,
+					"posY": -18,
+					"posZ": 189
+				}
+			]
+		},
+		{
+			"uid": 4,
+			"image": [
+				"resources/panos/kirche004.jpg"
+			],
+			"mapUid": 1,
+			"transitions": [
+				{
+					"target_location": 21,
+					"tooltip": "Zum Mittelschiff",
+					"posX": 171,
+					"posY": -59,
+					"posZ": 72
+				},
+				{
+					"target_location": 5,
+					"tooltip": "Grundstein",
+					"posX": -17,
+					"posY": -39,
+					"posZ": 190
+				}
+			],
+			"cameraTargets": {
+				"5": {
+					"lat": -7,
+					"lon": -180
+				},
+				"21": {
+					"lat": -9,
+					"lon": -200
+				},
+				"-1": {
+					"lat": -300,
+					"lon": -14
+				}
+			},
+			"hotspots": [
+				{
+					"uid": 1,
+					"title": "Bischof Bernward von Hildesheim gründet das Benediktinerkloster St. Michaelis",
+					"tooltip": "Kirche des Bischofs",
+					"text": "",
+					"images": [],
+					"audio": "resources/audio/Text2",
+					"posX": -180,
+					"posY": -21,
+					"posZ": 70
+				}
+			]
+		},
+		{
+			"uid": 13,
+			"image": [
+				"resources/panos/kirche013.jpg"
+			],
+			"mapUid": 1,
+			"transitions": [
+				{
+					"target_location": 14,
+					"tooltip": "Seitenschiff",
+					"posX": 145,
+					"posY": -41,
+					"posZ": -124
+				},
+				{
+					"target_location": 21,
+					"tooltip": "Westliches Querhaus",
+					"posX": -152,
+					"posY": -84,
+					"posZ": 88
+				},
+				{
+					"target_location": 29,
+					"tooltip": "Mittelschiff",
+					"posX": -187,
+					"posY": -17,
+					"posZ": -52
+				}
+			],
+			"cameraTargets": {
+				"-1": {
+					"lat": -3,
+					"lon": -32
+				},
+				"21": {
+					"lat": -4,
+					"lon": -42
+				},
+				"13": {
+					"lat": -3,
+					"lon": -227
+				}
+			},
+			"hotspots": [
+				{
+					"uid": 2,
+					"title": "Allegorische Figuren der Seligpreisungen als Schmuck der Kirche des Heiligen",
+					"tooltip": "Stuckfiguren",
+					"text": "",
+					"images": [],
+					"audio": "resources/audio/Text12",
+					"posX": -34,
+					"posY": 122,
+					"posZ": -148
+				},
+				{
+					"uid": 3,
+					"title": "Im Jahr 1015 lässt Bischof Bernward zwei monumentale Türflügel gießen",
+					"tooltip": "Bernwardstür",
+					"text": "",
+					"images": [
+						{
+							"figure": "resources/images/di-58-009_1.jpg",
+							"caption": "© Julia Zech"
+						}
+					],
+					"audio": "resources/audio/Text14",
+					"posX": 98,
+					"posY": 23,
+					"posZ": 167
+				}
+			]
+		},
+		{
+			"uid": 14,
+			"image": [
+				"resources/panos/kirche014.jpg"
+			],
+			"mapUid": 1,
+			"transitions": [
+				{
+					"target_location": 15,
+					"tooltip": "Richtung Osten",
+					"posX": -66,
+					"posY": -70,
+					"posZ": 169
+				},
+				{
+					"target_location": 13,
+					"tooltip": "Richtung Westen",
+					"posX": 74,
+					"posY": -63,
+					"posZ": -169
+				}
+			],
+			"cameraTargets": {
+				"-1": {
+					"lat": 1,
+					"lon": -14
+				},
+				"13": {
+					"lat": -10,
+					"lon": 109
+				},
+				"15": {
+					"lat": -1,
+					"lon": -75
+				}
+			},
+			"hotspots": [
+				{
+					"uid": 1,
+					"uid": 2,
+					"title": "Allegorische Figuren der Seligpreisungen als Schmuck der Kirche des Heiligen",
+					"tooltip": "Stuckfiguren",
+					"text": "",
+					"images": [],
+					"audio": "resources/audio/Text12",
+					"posX": 128,
+					"posY": 138,
+					"posZ": 52
+				}
+			]
+		},
+		{
+			"uid": 15,
+			"image": [
+				"resources/panos/kirche015.jpg"
+			],
+			"mapUid": 1,
+			"transitions": [
+				{
+					"target_location": 14,
+					"tooltip": "Nach Westen",
+					"posX": 147,
+					"posY": -51,
+					"posZ": -116
+				},
+				{
+					"target_location": 24,
+					"tooltip": "Christussäule",
+					"posX": -113,
+					"posY": -46,
+					"posZ": 152
+				},
+				{
+					"target_location": 26,
+					"tooltip": "Mittelschiff",
+					"posX": 125,
+					"posY": -52,
+					"posZ": 141
+				}
+			],
+			"cameraTargets": {
+				"-1": {
+					"lat": 0,
+					"lon": 0
+				},
+				"14": {
+					"lat": -2,
+					"lon": 136
+				},
+				"24": {
+					"lat": -1,
+					"lon": -49
+				},
+				"26": {
+					"lat": -11,
+					"lon": 253
+				}
+			},
+			"hotspots": [
+				{
+					"uid": 1,
+					"uid": 2,
+					"title": "Allegorische Figuren der Seligpreisungen als Schmuck der Kirche des Heiligen",
+					"tooltip": "Stuckfiguren",
+					"text": "",
+					"images": [],
+					"audio": "resources/audio/Text12",
+					"posX": 134,
+					"posY": 138,
+					"posZ": 33
+				}
+			]
+		},
+		{
+			"uid": 24,
+			"image": [
+				"resources/panos/kirche024.jpg"
+			],
+			"mapUid": 1,
+			"transitions": [
+				{
+					"target_location": 26,
+					"tooltip": "Mittelschiff",
+					"posX": 117,
+					"posY": -28,
+					"posZ": -153
+				},
+				{
+					"target_location": 25,
+					"tooltip": "Querhaus",
+					"posX": 190,
+					"posY": -40,
+					"posZ": -12
+				},
+				{
+					"target_location": 15,
+					"tooltip": "Südliches Seitenschiff",
+					"posX": -5,
+					"posY": -34,
+					"posZ": -192
+				},
+				{
+					"target_location": 6,
+					"tooltip": "Gedenkstein",
+					"posX": -186,
+					"posY": -57,
+					"posZ": -6
+				}
+			],
+			"cameraTargets": {
+				"-1": {
+					"lat": 0,
+					"lon": 0
+				},
+				"26": {
+					"lat": -4,
+					"lon": 144
+				},
+				"15": {
+					"lat": 1,
+					"lon": 79
+				},
+				"25": {
+					"lat": -4,
+					"lon": 144
+				},
+				"6": {
+					"lat": -3,
+					"lon": -8
+				}
+			},
+			"hotspots": [
+				{
+					"uid": 1,
+					"title": "Die Christussäule",
+					"tooltip": "Christussäule",
+					"text": "",
+					"images": [],
+					"audio": "resources/audio/Text16",
+					"posX": -75,
+					"posY": -44,
+					"posZ": -174
+				}
+			]
+		},
+		{
+			"uid": 6,
+			"image": [
+				"resources/panos/kirche006.jpg"
+			],
+			"mapUid": 1,
+			"transitions": [
+				{
+					"target_location": 24,
+					"tooltip": "Bernwardsäule",
+					"posX": 151,
+					"posY": -55,
+					"posZ": -111
+				}
+			],
+			"cameraTargets": {
+				"-1": {
+					"lat": 0,
+					"lon": 0
+				},
+				"24": {
+					"lat": -8,
+					"lon": 135
+				}
+			},
+			"hotspots": [
+				{
+					"uid": 16,
+					"title": "Bischof Bernward bittet um Gebetsgedenken (vor 1022)",
+					"tooltip": "Gedenkstein",
+					"text": "",
+					"images": [
+						{
+							"figure": "resources/images/di-58-016_1.jpg",
+							"caption": "© Jutta Brüdern"
+						}
+					],
+					"audio": "resources/audio/Text13",
+					"posX": -172,
+					"posY": -40,
+					"posZ": 82
+				},
+				{
+					"uid": 1,
+					"title": "Die Christussäule",
+					"tooltip": "Christussäule",
+					"text": "",
+					"images": [],
+					"audio": "resources/audio/Text16",
+					"posX": 86,
+					"posY": -5,
+					"posZ": -175
+				}
+			]
+		},
+		{
+			"uid": 26,
+			"image": [
+				"resources/panos/kirche026.jpg"
+			],
+			"mapUid": 1,
+			"transitions": [
+				{
+					"target_location": 29,
+					"tooltip": "Westchor",
+					"posX": 184,
+					"posY": -50,
+					"posZ": 41
+				},
+				{
+					"target_location": 25,
+					"tooltip": "Ostchor",
+					"posX": -190,
+					"posY": -22,
+					"posZ": -33
+				},
+				{
+					"target_location": 24,
+					"tooltip": "Querhaus",
+					"posX": -144,
+					"posY": -70,
+					"posZ": -111
+				},
+				{
+					"target_location": 14,
+					"tooltip": "Seitenschiff",
+					"posX": 40,
+					"posY": -76,
+					"posZ": -175
+				},
+				{
+					"target_location": 17,
+					"tooltip": "Seitenschiff",
+					"posX": 63,
+					"posY": -46,
+					"posZ": 179
+				}
+			],
+			"cameraTargets": {
+				"-1": {
+					"lat": 0,
+					"lon": 0
+				},
+				"25": {
+					"lat": 0,
+					"lon": 0
+				},
+				"29": {
+					"lat": -3,
+					"lon": 192
+				},
+				"17": {
+					"lat": -7,
+					"lon": 243
+				},
+				"13": {
+					"lat": -2,
+					"lon": 75
+				}
+			},
+			"hotspots": [
+				{
+					"uid": 1,
+					"title": "Reliquien stabilisieren Bernwards Kirchenbau",
+					"tooltip": "Säulen",
+					"text": "",
+					"images": [],
+					"audio": "resources/audio/Text17",
+					"posX": -27,
+					"posY": 109,
+					"posZ": 160
+				},
+				{
+					"uid": 2,
+					"title": "Die Wurzel Jesse - ein Bild für den kommenden Christus",
+					"tooltip": "Deckengemälde",
+					"text": "",
+					"images": [],
+					"audio": "resources/audio/Text18",
+					"posX": 139,
+					"posY": 137,
+					"posZ": 14
+				}
+			]
+		},
+		{
+			"uid": 25,
+			"image": [
+				"resources/panos/kirche025.jpg"
+			],
+			"mapUid": 1,
+			"transitions": [
+				{
+					"target_location": 26,
+					"tooltip": "Mittelschiff",
+					"posX": -63,
+					"posY": -13,
+					"posZ": -183
+				},
+				{
+					"target_location": 24,
+					"tooltip": "Südliches Seitenschiff",
+					"posX": -182,
+					"posY": -68,
+					"posZ": 9
+				},
+				{
+					"target_location": 17,
+					"tooltip": "Nördliches Seitenschiff",
+					"posX": 112,
+					"posY": -36,
+					"posZ": -156
+				}
+			],
+			"cameraTargets": {
+				"-1": {
+					"lat": 1,
+					"lon": 247
+				},
+				"24": {
+					"lat": 9,
+					"lon": -34
+				},
+				"26": {
+					"lat": 0,
+					"lon": 70
+				},
+				"17": {
+					"lat": -7,
+					"lon": 146
+				}
+			},
+			"hotspots": [
+				{
+					"uid": 1,
+					"title": "Die Querhäuser der Michaeliskirche",
+					"tooltip": "Querhäuser",
+					"text": "",
+					"images": [],
+					"audio": "resources/audio/Text4",
+					"posX": 46,
+					"posY": -6,
+					"posZ": -189
+				},
+				{
+					"uid": 1,
+					"title": "Die Wurzel Jesse - ein Bild für den kommenden Christus",
+					"tooltip": "Deckengemälde",
+					"text": "",
+					"images": [],
+					"audio": "resources/audio/Text18",
+					"posX": 0,
+					"posY": 138,
+					"posZ": -137
+				}
+			]
+		},
+		{
+			"uid": 17,
+			"image": [
+				"resources/panos/kirche017.jpg"
+			],
+			"mapUid": 1,
+			"transitions": [
+				{
+					"target_location": 26,
+					"tooltip": "Mittelschiff",
+					"posX": -6,
+					"posY": -44,
+					"posZ": 189
+				},
+				{
+					"target_location": 25,
+					"tooltip": "Östliches Querhaus",
+					"posX": 106,
+					"posY": -48,
+					"posZ": 156
+				},
+				{
+					"target_location": 22,
+					"tooltip": "Westliches Querhaus",
+					"posX": -171,
+					"posY": -21,
+					"posZ": -90
+				}
+			],
+			"cameraTargets": {
+				"-1": {
+					"lat": 1,
+					"lon": 143
+				},
+				"22": {
+					"lat": -1,
+					"lon": 26
+				},
+				"26": {
+					"lat": -1,
+					"lon": 238
+				},
+				"25": {
+					"lat": -1,
+					"lon": 238
+				}
+			},
+			"hotspots": [
+				{
+					"uid": 1,
+					"title": "Die Seitenschiffe der Michaeliskirche",
+					"tooltip": "Seitenschiffe",
+					"text": "",
+					"images": [],
+					"audio": "resources/audio/Text5",
+					"posX": -191,
+					"posY": -16,
+					"posZ": 34
+				}
+			]
+		},
+		{
+			"uid": 97,
+			"image": [
+				"resources/panos/krypta007.jpg"
+			],
+			"mapUid": 2,
+			"transitions": [
+				{
+					"target_location": 918,
+					"tooltip": "Zentrum Krypta",
+					"posX": -172,
+					"posY": 9,
+					"posZ": -91
+				},
+				{
+					"target_location": 98,
+					"tooltip": "Nördliche Krypta",
+					"posX": 40,
+					"posY": -76,
+					"posZ": -175
+				},
+				{
+					"target_location": 96,
+					"tooltip": "Südliche Krypta",
+					"posX": -179,
+					"posY": -76,
+					"posZ": 17
+				}
+			],
+			"cameraTargets": {
+				"-1": {
+					"lat": -15,
+					"lon": 219
+				},
+				"1": {
+					"lat": -3,
+					"lon": 22
+				},
+				"96": {
+					"lat": -6,
+					"lon": 354
+				},
+				"98": {
+					"lat": -2,
+					"lon": 70
+				},
+				"918": {
+					"lat": -2,
+					"lon": 28
+				}
+			},
+			"hotspots": [
+				{
+					"uid": 1,
+					"title": "Die Ausstattung des Marienaltars in der Krypta",
+					"tooltip": "Marienaltar",
+					"text": "",
+					"images": [
+						{
+							"figure": "resources/images/di-58-005_1.jpg",
+							"caption": "© Frank Tomio"
+						},
+						{
+							"figure": "resources/images/di-58-014_1.jpg",
+							"caption": "© Frank Tomio"
+						}
+					],
+					"audio": "resources/audio/Text7",
+					"posX": 184,
+					"posY": -50,
+					"posZ": 41
+				},
+				{
+					"uid": 2,
+					"title": "Bernward zwischen Engeln im Himmel",
+					"tooltip": "Sarkophag",
+					"text": "",
+					"images": [],
+					"audio": "resources/audio/Text10",
+					"posX": -140,
+					"posY": -89,
+					"posZ": -102
+				},
+				{
+					"uid": 3,
+					"title": "Die Grabplatte Bischof Bernwards von 1022",
+					"tooltip": "Grabplatte Bernwards",
+					"text": "",
+					"images": [],
+					"audio": "resources/audio/Text9",
+					"posX": -151,
+					"posY": -38,
+					"posZ": -117
+				}
+			]
+		},
+		{
+			"uid": 96,
+			"image": [
+				"resources/panos/krypta006.jpg"
+			],
+			"mapUid": 2,
+			"transitions": [
+				{
+					"target_location": 918,
+					"tooltip": "Zentrum Krypta",
+					"posX": -184,
+					"posY": -37,
+					"posZ": 50
+				},
+				{
+					"target_location": 97,
+					"tooltip": "Altar",
+					"posX": 0,
+					"posY": -40,
+					"posZ": -191
+				},
+				{
+					"target_location": 98,
+					"tooltip": "Nördliche Krypta",
+					"posX": -123,
+					"posY": 10,
+					"posZ": -151
+				}
+			],
+			"cameraTargets": {
+				"-1": {
+					"lat": -15,
+					"lon": 219
+				},
+				"918": {
+					"lat": -10,
+					"lon": 308
+				},
+				"918": {
+					"lat": -10,
+					"lon": 308
+				},
+				"908": {
+					"lat": -3,
+					"lon": 48
+				},
+				"907": {
+					"lat": -11,
+					"lon": -220
+				}
+			},
+			"hotspots": [
+				{
+					"uid": 1,
+					"title": "Bernward zwischen Engeln im Himmel",
+					"tooltip": "Sarkophag",
+					"text": "",
+					"images": [],
+					"audio": "resources/audio/Text10",
+					"posX": -144,
+					"posY": -70,
+					"posZ": -111
+				}
+			]
+		},
+		{
+			"uid": 98,
+			"image": [
+				"resources/panos/krypta008.jpg"
+			],
+			"mapUid": 2,
+			"transitions": [
+				{
+					"target_location": 97,
+					"tooltip": "Altar",
+					"posX": -144,
+					"posY": -70,
+					"posZ": -111
+				},
+				{
+					"target_location": 96,
+					"tooltip": "Südliche Krypta",
+					"posX": 57,
+					"posY": -47,
+					"posZ": -180
+				},
+				{
+					"target_location": 918,
+					"tooltip": "Zentrum Krypta",
+					"posX": 187,
+					"posY": -47,
+					"posZ": -25
+				},
+				{
+					"target_location": 22,
+					"tooltip": "Übergang zur Kirche",
+					"posX": -105,
+					"posY": -75,
+					"posZ": 146
+				}
+			],
+			"cameraTargets": {
+				"-1": {
+					"lat": -26,
+					"lon": 252
+				},
+				"1": {
+					"lat": -15,
+					"lon": 219
+				},
+				"97": {
+					"lat": -9,
+					"lon": 27
+				},
+				"96": {
+					"lat": -1,
+					"lon": 105
+				},
+				"918": {
+					"lat": -18,
+					"lon": -159
+				}
+			},
+			"hotspots": [
+				{
+					"uid": 1,
+					"title": "Die Grabplatte Bischof Bernwards von 1022",
+					"tooltip": "Grabplatte Bernwards",
+					"text": "",
+					"images": [],
+					"audio": "resources/audio/Text9",
+					"posX": 113,
+					"posY": -61,
+					"posZ": -146
+				}
+			]
+		},
+		{
+			"uid": 918,
+			"image": [
+				"resources/panos/krypta018.jpg"
+			],
+			"mapUid": 2,
+			"transitions": [
+				{
+					"target_location": 913,
+					"tooltip": "Westlicher Ausgang",
+					"posX": -99,
+					"posY": -50,
+					"posZ": -161
+				},
+				{
+					"target_location": 96,
+					"tooltip": "Südliche Krypta",
+					"posX": 32,
+					"posY": -44,
+					"posZ": 187
+				},
+				{
+					"target_location": 98,
+					"tooltip": "Nördliche Krypta",
+					"posX": 158,
+					"posY": -39,
+					"posZ": 107
+				}
+			],
+			"cameraTargets": {
+				"-1": {
+					"lat": 4,
+					"lon": 60
+				},
+				"97": {
+					"lat": -8,
+					"lon": 244
+				},
+				"913": {
+					"lat": 4,
+					"lon": 60
+				},
+				"96": {
+					"lat": -8,
+					"lon": 244
+				},
+				"98": {
+					"lat": -8,
+					"lon": 244
+				}
+			},
+			"hotspots": [
+				{
+					"uid": 1,
+					"title": "Bernward stirbt 1022 und wird in der Krypta in einem Sarkophag beigesetzt",
+					"tooltip": "Bernwards Grablege",
+					"text": "",
+					"images": [],
+					"audio": "resources/audio/Text8",
+					"posX": 93,
+					"posY": -9,
+					"posZ": 171
+				}
+			]
+		},
+		{
+			"uid": 913,
+			"image": [
+				"resources/panos/krypta013.jpg"
+			],
+			"mapUid": 2,
+			"transitions": [
+				{
+					"target_location": 918,
+					"tooltip": "Zentrum Krypta",
+					"posX": -75,
+					"posY": -15,
+					"posZ": 180
+				}
+			],
+			"cameraTargets": {
+				"-1": {
+					"lat": -6,
+					"lon": 110
+				},
+				"918": {
+					"lat": -5,
+					"lon": -97
+				}
+			},
+			"hotspots": [
+				{
+					"uid": 10,
+					"title": "Bernward weiht die Krypta der Michaeliskirche",
+					"tooltip": "Weiheinschrift",
+					"text": "",
+					"images": [
+						{
+							"figure": "resources/images/di-58-010_1.jpg",
+							"caption": "© Christine Wulf"
+						}
+					],
+					"audio": "resources/audio/Text6",
+					"posX": -38,
+					"posY": 14,
+					"posZ": -191
+				}
+			]
+		}
+	]
 }
