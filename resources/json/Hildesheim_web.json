@@ -149,9 +149,11 @@
     "locations": [
         {
             "uid": 1,
-            "image": [
-                "resources/panos/kirche001.jpg"
-            ],
+            "image": {
+                "default": "resources/panos/default/kirche001.jpg",
+				"hq": "resources/panos/hq/kirche001.jpg",
+				"mobile": "resources/panos/mobile/kirche001.jpg"
+			},
             "mapUid": 1,
             "transitions": [
                 {
