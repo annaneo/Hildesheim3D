@@ -209,8 +209,6 @@ dt{
 	border: 1px solid #c9cbd0;
 	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 	background: #fff;
-	max-height: 400px;
-	width: auto;
 }
 
 #infoImageBox figcaption {
