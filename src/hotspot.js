@@ -59,13 +59,13 @@ Hotspot.prototype.onClick = function (event) {
     //TODO: able to load more than 1 picture
     if (this.infoImages.length > 0) {
         var infoImageBox = _('infoImageBox');
-        infoImageBox.style.display = 'block';
         //set image
         var infoImage = _('infoImage');
         infoImage.src = this.infoImages[0].figure;
         //set caption
         var infoCaption = _('infoCaption');
         infoCaption.textContent = this.infoImages[0].caption;
+        infoImageBox.style.display = 'block';
     } else {
         var infoImageBox = _('infoImageBox');
         infoImageBox.style.display = 'none';
