@@ -1,5 +1,5 @@
 {
-	"startLocation": 12,
+	"startLocation": 97,
 	"maps": [
 		{
 			"uid": 1,
@@ -1305,6 +1305,16 @@
 							"figure": "resources/images/di-58-014_1.jpg",
 							"caption": "© Frank Tomio"
 						}
+						,
+						{
+							"figure": "resources/images/Evangeliar1.jpg",
+							"caption": "© Dommuseum Hildesheim"
+						}
+						,
+						{
+							"figure": "resources/images/Evangeliar2.jpg",
+							"caption": "© Dommuseum Hildesheim"
+						}
 					],
 					"audio": "resources/audio/Text7",
 					"posX": 184,
@@ -1316,7 +1326,12 @@
 					"title": "Bernward zwischen Engeln im Himmel",
 					"tooltip": "Sarkophag",
 					"text": "",
-					"images": [],
+					"images": [
+						{
+							"figure": "resources/images/Sarkophag.jpg",
+							"caption": "© Dommuseum Hildesheim"
+						}
+					],
 					"audio": "resources/audio/Text10",
 					"posX": -140,
 					"posY": -89,
@@ -1327,7 +1342,12 @@
 					"title": "Die Grabplatte Bischof Bernwards von 1022",
 					"tooltip": "Grabplatte Bernwards",
 					"text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0012.html#content\"  target=\"_blank\">Grabplatte, DIO 58, Nr. 12</a> ",
-					"images": [],
+					"images": [
+						{
+							"figure": "resources/images/Deckplatte.jpg",
+							"caption": "© Dommuseum Hildesheim"
+						}
+					],
 					"audio": "resources/audio/Text9",
 					"posX": -151,
 					"posY": -38,
@@ -1390,7 +1410,12 @@
 					"title": "Bernward zwischen Engeln im Himmel",
 					"tooltip": "Sarkophag",
 					"text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0011.html#content\" >Sarkophag, DIO 58, Nr. 11</a> ",
-					"images": [],
+					"images": [
+						{
+							"figure": "resources/images/Sarkophag.jpg",
+							"caption": "© Dommuseum Hildesheim"
+						}
+					],
 					"audio": "resources/audio/Text10",
 					"posX": -144,
 					"posY": -70,
@@ -1464,7 +1489,12 @@
 					"title": "Die Grabplatte Bischof Bernwards von 1022",
 					"tooltip": "Grabplatte Bernwards",
 					"text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0012.html#content\"  target=\"_blank\">Grabdeckplatte, DIO 58, Nr. 12</a> ",
-					"images": [],
+					"images": [
+						{
+							"figure": "resources/images/Deckplatte.jpg",
+							"caption": "© Dommuseum Hildesheim"
+						}
+					],
 					"audio": "resources/audio/Text9",
 					"posX": 113,
 					"posY": -61,
@@ -1531,7 +1561,12 @@
 					"title": "Bernward stirbt 1022 und wird in der Krypta in einem Sarkophag beigesetzt",
 					"tooltip": "Bernwards Grablege",
 					"text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0011.html#content\"  target=\"_blank\">Sarkophag, DIO 58, Nr. 11</a> ",
-					"images": [],
+					"images": [
+						{
+							"figure": "resources/images/Sarkophag.jpg",
+							"caption": "© Dommuseum Hildesheim"
+						}
+					],
 					"audio": "resources/audio/Text8",
 					"posX": 93,
 					"posY": -9,
