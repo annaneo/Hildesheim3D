@@ -56,8 +56,10 @@ Hotspot.prototype.onClick = function (event) {
     var infoContent = _('infoContent');
     infoContent.innerHTML = this.infoContent;
 
-    //TODO: able to load more than 1 picture
-    if (this.infoImages.length > 0) {
+    //TODO: able to load more than 1 picture!!!!!!!!
+    if (this.infoImages.length == 1) {
+        var infoImageGallery = _('infoImageGallery');
+        infoImageGallery.style.display = 'none';
         var infoImageBox = _('infoImageBox');
         //set image
         var infoImage = _('infoImage');
@@ -66,9 +68,16 @@ Hotspot.prototype.onClick = function (event) {
         var infoCaption = _('infoCaption');
         infoCaption.textContent = this.infoImages[0].caption;
         infoImageBox.style.display = 'block';
+    } else if (this.infoImages.length > 1) {
+        var infoImageGallery = _('infoImageGallery');
+        infoImageGallery.style.display = 'block';
+        var infoImageBox = _('infoImageBox');
+        infoImageBox.style.display = 'none';
     } else {
         var infoImageBox = _('infoImageBox');
         infoImageBox.style.display = 'none';
+        var infoImageGallery = _('infoImageGallery');
+        infoImageGallery.style.display = 'none';
     }
 
     //sets audio
