@@ -27,7 +27,15 @@ LocationLoader.prototype.loadLocation = function (uid, onLoadComplete) {
             return
         }
 
-        THREE.ImageUtils.loadTexture(item.image.default,
+        var imgUrl = item.image.default;
+        if (resolution === "mobile") {
+            imgUrl = item.image.mobile;
+        } else if (resolution === "hq") {
+            imgUrl = item.image.hq;
+        }
+
+
+        THREE.ImageUtils.loadTexture(imgUrl,
             {},
             function (texture) {
                 location = new Location(texture);

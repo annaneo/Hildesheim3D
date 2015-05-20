@@ -10,7 +10,7 @@
 
 		<title>Panoramatour zu den Inschriften von St. Michaelis in Hildesheim</title>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
 		<link rel="stylesheet" href="style.css">
 		<script src="extLib/three.js"></script>
 		<!-- application code-->
@@ -32,7 +32,34 @@
 		<!-- initializes panoramic viewer-->
 		<script type="text/javascript">
 			window.onload = function () {
-				startPanorama('resources/json/Hildesheim_web.json');
+
+				var isMobile = {
+					Android: function() {
+						return navigator.userAgent.match(/Android/i);
+					},
+					BlackBerry: function() {
+						return navigator.userAgent.match(/BlackBerry/i);
+					},
+					iOS: function() {
+						return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+					},
+					Opera: function() {
+						return navigator.userAgent.match(/Opera Mini/i);
+					},
+					Windows: function() {
+						return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+					},
+					any: function() {
+						return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+					}
+				};
+
+				if (isMobile.any()) {
+					startPanorama('resources/json/Hildesheim_web.json', "mobile");
+				} else {
+					startPanorama('resources/json/Hildesheim_web.json', "hg");
+				}
+
 	           // startPanorama('resources/json/Hildesheim_museum.json');
 	        }
 		</script>

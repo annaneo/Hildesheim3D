@@ -29,13 +29,15 @@ var mapUid = 0;
 var toolTip;
 
 var timerId;
+var resolution = "default";
 
 
 /**
  * Starts panorama, creates a loading scene and triggers the loading of the start location. Starts animating.
  * @param dataURL URL to the config JSON
  */
-function startPanorama(dataURL) {
+function startPanorama(dataURL, res) {
+    resolution = res;
     setMapandNavigationHidden(true);
     init();
     isLoading = true;
