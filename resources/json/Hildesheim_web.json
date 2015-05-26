@@ -1,5 +1,5 @@
 {
-	"startLocation": 97,
+	"startLocation": 12,
 	"maps": [
 		{
 			"uid": 1,
@@ -750,10 +750,6 @@
 					"tooltip": "Bernwardstür",
 					"text": "<a href=\"http://www.inschriften.net/hildesheim/inschrift/nr/di058-0009.html#content\"  target=\"_blank\">Bernwardstür, DIO 58, Nr. 9</a> ",
 					"images": [
-						{
-							"figure": "resources/images/di-58-009_1.jpg",
-							"caption": "© Julia Zech"
-						},
 						{
 							"figure": "resources/images/Tür.jpg",
 							"caption": "© Dommuseum Hildesheim"

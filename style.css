@@ -16,7 +16,7 @@ body {
 	background-color: #000000;
 	margin: 0px;
 	overflow: hidden;
-	font-family: "Palatino Linotype",Baskerville,"Times New Roman",Times,serif;
+	font-family: "Palatino Linotype", Baskerville, "Times New Roman", Times, serif;
 	font-size: 62.5%;
 	color: #333;
 }
@@ -31,10 +31,9 @@ p, dl {
 	line-height: 1.5em;
 }
 
-
 dt:after {
-	content:':';
-	padding-right:2em;
+	content: ':';
+	padding-right: 2em;
 }
 
 /*
@@ -108,13 +107,13 @@ dt:after {
 }
 
 #sceneSwitch {
-    z-index: 0;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 1% 1.5%;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 3px;
+	z-index: 0;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	padding: 1% 1.5%;
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 3px;
 }
 
 /*
@@ -140,12 +139,12 @@ dt:after {
 }
 
 #mapSpotCurrent {
-    background-color: #917d4d;
-    width: 23px;
-    height: 23px;
-    z-index: 0;
-    position: absolute;
-    border-radius: 50%;
+	background-color: #917d4d;
+	width: 23px;
+	height: 23px;
+	z-index: 0;
+	position: absolute;
+	border-radius: 50%;
 }
 
 /*
@@ -158,7 +157,6 @@ dt:after {
 	padding: 1% 1.5%;
 	background-color: rgba(255, 255, 255, 0.8);
 }
-
 
 #infoView {
 	display: none;
@@ -184,19 +182,17 @@ h1 {
 	color: #917d4d;
 }
 
-h2{
-    font: 1.8em  Geneva,Lucida Grande,Lucida Sans,sans-serif;
-    text-transform: uppercase;
-    padding-top: 1.8em;
+h2 {
+	font: 1.8em Geneva, Lucida Grande, Lucida Sans, sans-serif;
+	text-transform: uppercase;
+	padding-top: 1.8em;
 }
 
 /* style dl http://lea.verou.me/2012/02/flexible-multiline-definition-lists-with-2-lines-of-css/*/
 
-dt{
-    font-weight: bold;
+dt {
+	font-weight: bold;
 }
-
-
 
 #infoImageBox {
 	position: relative;
@@ -226,39 +222,39 @@ audio {
 }
 
 /*
-    ABOUT POP UP
-    */
-
-#aboutView{
-    display:none;
-    position: absolute;
-    width: 42%;
-    margin: 1em 35%;
-    padding: 1% 1.5%;
-    border: 1px solid #917d4d;
-    border-radius: 3px;
-    background-color: rgba(255, 255, 255, 0.8);
-}
-
-#aboutCloseButton{
-    right: 4.2%;
-}
-
-/*
 	SLIDER
 */
 
+#infoImageGallery {
+	position: relative;
+	margin-bottom: 1.5em;
+}
+
+#infoImageGallery img {
+	width: 98%;
+	padding: 1%;
+	border: 1px solid #c9cbd0;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+	background: #fff;
+}
+
+#infoImageGallery figcaption {
+	font-size: 1.4em;
+	margin-top: 0.5em;
+}
+
+
 #images {
-	width: 400px;
-	height: 250px;
+	width: 380px;
+	height: 400px;
 	overflow: hidden;
 	position: relative;
 	margin: 20px auto;
 }
 #images img {
-	width: 400px;
-	height: 250px;
-	position: absolute;
+	width: 380px;
+	height: 400px;
+	position: relative;
 	top: 0;
 	left: -400px;
 	z-index: 1;
@@ -273,16 +269,34 @@ audio {
 	z-index: 9;
 	opacity: 1;
 }
-#images img:first-child {
-	left: 0;
-}
+
 #slider a {
 	text-decoration: none;
 	background: #E3F1FA;
 	border: 1px solid #C6E4F2;
-	padding: 4px 6px;
+	padding: 10px 10px;
 	color: #222;
 }
 #slider a:hover {
 	background: #C6E4F2;
+}
+
+
+/*
+    ABOUT POP UP
+    */
+
+#aboutView {
+	display: none;
+	position: absolute;
+	width: 42%;
+	margin: 1em 35%;
+	padding: 1% 1.5%;
+	border: 1px solid #917d4d;
+	border-radius: 3px;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+#aboutCloseButton {
+	right: 4.2%;
 }
