@@ -10,17 +10,16 @@
 // # Code
 
 /** @namespace */
-var THREEx		= THREEx 		|| {};
-THREEx.FullScreen	= THREEx.FullScreen	|| {};
+var THREEx = THREEx || {};
+THREEx.FullScreen = THREEx.FullScreen || {};
 
 /**
  * test if it is possible to have fullscreen
  *
  * @returns {Boolean} true if fullscreen API is available, false otherwise
  */
-THREEx.FullScreen.available	= function()
-{
-    return this._hasWebkitFullScreen || this._hasMozFullScreen;
+THREEx.FullScreen.available = function () {
+	return this._hasWebkitFullScreen || this._hasMozFullScreen;
 }
 
 /**
@@ -28,82 +27,79 @@ THREEx.FullScreen.available	= function()
  *
  * @returns {Boolean} true if fullscreen is currently activated, false otherwise
  */
-THREEx.FullScreen.activated	= function()
-{
-    if( this._hasWebkitFullScreen ){
-        return document.webkitIsFullScreen;
-    }else if( this._hasMozFullScreen ){
-        return document.mozFullScreen;
-    }else{
-        console.assert(false);
-    }
+THREEx.FullScreen.activated = function () {
+	if (this._hasWebkitFullScreen) {
+		return document.webkitIsFullScreen;
+	} else if (this._hasMozFullScreen) {
+		return document.mozFullScreen;
+	} else {
+		console.assert(false);
+	}
 }
 
 /**
  * Request fullscreen on a given element
  * @param {DomElement} element to make fullscreen. optional. default to document.body
  */
-THREEx.FullScreen.request = function(element)
-{
-    element	= element	|| document.body;
-    if( this._hasWebkitFullScreen ){
-        element.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-    }else if( this._hasMozFullScreen ){
-        element.mozRequestFullScreen();
-    }else{
-        console.assert(false);
-    }
+THREEx.FullScreen.request = function (element) {
+	element = element || document.body;
+	if (this._hasWebkitFullScreen) {
+		element.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+	} else if (this._hasMozFullScreen) {
+		element.mozRequestFullScreen();
+	} else {
+		console.assert(false);
+	}
 }
 
 /**
  * Cancel fullscreen
  */
-THREEx.FullScreen.cancel = function()
-{
-    if( this._hasWebkitFullScreen ){
-        document.webkitCancelFullScreen();
-    }else if( this._hasMozFullScreen ){
-        document.mozCancelFullScreen();
-    }else{
-        console.assert(false);
-    }
+THREEx.FullScreen.cancel = function () {
+	if (this._hasWebkitFullScreen) {
+		document.webkitCancelFullScreen();
+	} else if (this._hasMozFullScreen) {
+		document.mozCancelFullScreen();
+	} else {
+		console.assert(false);
+	}
 }
 
 // internal functions to know which fullscreen API implementation is available
-THREEx.FullScreen._hasWebkitFullScreen	= 'webkitCancelFullScreen' in document	? true : false;
-THREEx.FullScreen._hasMozFullScreen	= 'mozCancelFullScreen' in document	? true : false;
+THREEx.FullScreen._hasWebkitFullScreen = 'webkitCancelFullScreen' in document ? true : false;
+THREEx.FullScreen._hasMozFullScreen = 'mozCancelFullScreen' in document ? true : false;
 
 /**
  * Bind a key to renderer screenshot
  * usage: THREEx.FullScreen.bindKey({ charCode : 'a'.charCodeAt(0) });
  */
-THREEx.FullScreen.bindKey = function(opts){
-    opts		= opts		|| {};
-    var charCode	= opts.charCode	|| 'f'.charCodeAt(0);
-    var dblclick	= opts.dblclick !== undefined ? opts.dblclick : false;
-    var element	= opts.element
+THREEx.FullScreen.bindKey = function (opts) {
+	opts = opts || {};
+	var charCode = opts.charCode || 'f'.charCodeAt(0);
+	var dblclick = opts.dblclick !== undefined ? opts.dblclick : false;
+	var element = opts.element
 
-    var toggle	= function(){
-        if( THREEx.FullScreen.activated() ){
-            THREEx.FullScreen.cancel();
-        }else{
-            THREEx.FullScreen.request(element);
-        }
-    }
+	var toggle = function () {
+		if (THREEx.FullScreen.activated()) {
+			THREEx.FullScreen.cancel();
+		} else {
+			THREEx.FullScreen.request(element);
+		}
+	}
 
-    var onKeyPress	= function(event){
-        if( event.which !== charCode )	return;
-        toggle();
-    }.bind(this);
+	var onKeyPress = function (event) {
+		if (event.which !== charCode)    return;
+		toggle();
+	}.bind(this);
 
-    document.addEventListener('keypress', onKeyPress, false);
+	document.addEventListener('keypress', onKeyPress, false);
 
-    dblclick && document.addEventListener('dblclick', toggle, false);
+	dblclick && document.addEventListener('dblclick', toggle, false);
 
-    return {
-        unbind	: function(){
-            document.removeEventListener('keypress', onKeyPress, false);
-            dblclick && document.removeEventListener('dblclick', toggle, false);
-        }
-    };
+	return {
+		unbind: function () {
+			document.removeEventListener('keypress', onKeyPress, false);
+			dblclick && document.removeEventListener('dblclick', toggle, false);
+		}
+	};
 }

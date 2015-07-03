@@ -243,7 +243,6 @@ audio {
 	margin-top: 0.5em;
 }
 
-
 #images {
 	width: 380px;
 	height: 400px;
@@ -251,6 +250,7 @@ audio {
 	position: relative;
 	margin: 20px auto;
 }
+
 #images img {
 	width: 380px;
 	height: 400px;
@@ -264,6 +264,7 @@ audio {
 	-moz-transition: all linear 500ms;
 	-webkit-transition: all linear 500ms;
 }
+
 #images img:target {
 	left: 0;
 	z-index: 9;
@@ -277,10 +278,10 @@ audio {
 	padding: 10px 10px;
 	color: #222;
 }
+
 #slider a:hover {
 	background: #C6E4F2;
 }
-
 
 /*
     ABOUT POP UP

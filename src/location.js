@@ -1,7 +1,7 @@
 /**
  * (C)  Julius Peinelt
  *      Anna Neovesky
-*/
+ */
 
 /**
  * Describes on point of view where one can look around.
@@ -15,7 +15,7 @@ Location = function (texture) {
 	var material = new THREE.MeshBasicMaterial({
 		map: texture
 	});
-    THREE.Mesh.call(this, geometry, material);
+	THREE.Mesh.call(this, geometry, material);
 };
 
 Location.prototype = Object.create(THREE.Mesh.prototype);
@@ -50,51 +50,51 @@ Location.prototype.addTransition = function (parameters) {
  * @param parameters dictionary that should have fields: image, mapSpots.
  */
 Location.prototype.configureMap = function (parameters, locationUid) {
-    var map = _('map');
-    if (!map) {
-        return;
-    }
+	var map = _('map');
+	if (!map) {
+		return;
+	}
 
-    for (var i = map.childNodes.length-1; i > 0; i--) {
-        if (map.childNodes[i].id === "mapSpot" || map.childNodes[i].id === "mapSpotCurrent") {
-            map.removeChild(map.childNodes[i]);
-        }
-    }
+	for (var i = map.childNodes.length - 1; i > 0; i--) {
+		if (map.childNodes[i].id === "mapSpot" || map.childNodes[i].id === "mapSpotCurrent") {
+			map.removeChild(map.childNodes[i]);
+		}
+	}
 
-    if (parameters.hasOwnProperty('image')) {
-        var image = _('mapImage');
-        if (image) {
-            image.src = parameters['image'];
-        }
-    } else {
-        console.log("error: no map image provided!");
-    }
+	if (parameters.hasOwnProperty('image')) {
+		var image = _('mapImage');
+		if (image) {
+			image.src = parameters['image'];
+		}
+	} else {
+		console.log("error: no map image provided!");
+	}
 
-    if (parameters.hasOwnProperty('mapSpots')) {
-        var spots = parameters['mapSpots'];
-        // position of map spots is declared in json
-        spots.forEach(function (spot) {
-            var spotButton = document.createElement("button");
-            if (spot.uid === locationUid) {
-                spotButton.id = "mapSpotCurrent";
-            } else {
-                spotButton.id = "mapSpot";
-            }
-            spotButton.style.left = spot.mapPosX + "px";
-            spotButton.style.top = spot.mapPosY + "px";
-            spotButton.addEventListener('mousedown', function (event) {
-                event.preventDefault();
-                transitToLocation(spot.uid);
-            });
-            spotButton.addEventListener('touchstart', function (event) {
-                event.preventDefault();
-                transitToLocation(spot.uid);
-            });
-            map.appendChild(spotButton);
-        });
-    }
+	if (parameters.hasOwnProperty('mapSpots')) {
+		var spots = parameters['mapSpots'];
+		// position of map spots is declared in json
+		spots.forEach(function (spot) {
+			var spotButton = document.createElement("button");
+			if (spot.uid === locationUid) {
+				spotButton.id = "mapSpotCurrent";
+			} else {
+				spotButton.id = "mapSpot";
+			}
+			spotButton.style.left = spot.mapPosX + "px";
+			spotButton.style.top = spot.mapPosY + "px";
+			spotButton.addEventListener('mousedown', function (event) {
+				event.preventDefault();
+				transitToLocation(spot.uid);
+			});
+			spotButton.addEventListener('touchstart', function (event) {
+				event.preventDefault();
+				transitToLocation(spot.uid);
+			});
+			map.appendChild(spotButton);
+		});
+	}
 	// Position of Map
-    map.style.display = "block";
-    map.style.left = 10 + "px";
-    map.style.top = 10 + "px";
+	map.style.display = "block";
+	map.style.left = 10 + "px";
+	map.style.top = 10 + "px";
 };

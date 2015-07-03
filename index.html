@@ -1,205 +1,154 @@
 <!-- (c)
-	Anna Neovesky - Digitale Akademie, Akademie der Wissenschaften und der Literatur | Mainz - Anna.Neovesky@adwmainz.de
-	Julius Peinelt -->
+	Julius Peinelt
+	Anna Neovesky - Digitale Akademie, Akademie der Wissenschaften und der Literatur | Mainz - Anna.Neovesky@adwmainz.de -->
 
-<!-- container for panorama viewer; loads Libraries & code -->
+<!-- Container for panorama viewer; loads Libraries & code -->
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
+<head>
 
-		<title>Panoramatour zu den Inschriften von St. Michaelis in Hildesheim</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
-		<link rel="stylesheet" href="style.css">
-		<script src="extLib/three.js"></script>
-		<!-- application code-->
-		<script src="src/panorama.js"></script>
-		<script src="src/location.js"></script>
-		<script src="src/hotspot.js"></script>
-		<script src="src/transition.js"></script>
-		<!-- libraries -->
-		<script src="src/lib/threex_fullscreen.js"></script>
-		<script src="src/lib/detector.js"></script>
-		<script src="src/lib/location_loader.js"></script>
-		<script src="src/lib/copy_shader.js"></script>
-		<script src="src/lib/effect_composer.js"></script>
-		<script src="src/lib/render_pass.js"></script>
-		<script src="src/lib/shader_pass.js"></script>
-		<script src="src/lib/mask_pass.js"></script>
-	    <script src="src/lib/blur_shader.js"></script>
+	<title>Virtual Tour</title>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<script src="extLib/three.js"></script>
+	<!-- Application code-->
+	<script src="src/panorama.js"></script>
+	<script src="src/location.js"></script>
+	<script src="src/hotspot.js"></script>
+	<script src="src/transition.js"></script>
+	<!-- Libraries -->
+	<script src="src/lib/threex_fullscreen.js"></script>
+	<script src="src/lib/detector.js"></script>
+	<script src="src/lib/location_loader.js"></script>
+	<script src="src/lib/copy_shader.js"></script>
+	<script src="src/lib/effect_composer.js"></script>
+	<script src="src/lib/render_pass.js"></script>
+	<script src="src/lib/shader_pass.js"></script>
+	<script src="src/lib/mask_pass.js"></script>
+	<script src="src/lib/blur_shader.js"></script>
 
-		<!-- initializes panoramic viewer-->
-		<script type="text/javascript">
-			window.onload = function () {
+	<!-- Initializes panoramic viewer-->
+	<script type="text/javascript">
+		window.onload = function () {
 
-				var isMobile = {
-					Android: function() {
-						return navigator.userAgent.match(/Android/i);
-					},
-					BlackBerry: function() {
-						return navigator.userAgent.match(/BlackBerry/i);
-					},
-					iOS: function() {
-						return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-					},
-					Opera: function() {
-						return navigator.userAgent.match(/Opera Mini/i);
-					},
-					Windows: function() {
-						return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
-					},
-					any: function() {
-						return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-					}
-				};
-
-				if (isMobile.any()) {
-					startPanorama('resources/json/Hildesheim_web.json', "mobile");
-				} else {
-					startPanorama('resources/json/Hildesheim_web.json', "hq");
+			var isMobile = {
+				Android: function () {
+					return navigator.userAgent.match(/Android/i);
+				},
+				BlackBerry: function () {
+					return navigator.userAgent.match(/BlackBerry/i);
+				},
+				iOS: function () {
+					return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+				},
+				Opera: function () {
+					return navigator.userAgent.match(/Opera Mini/i);
+				},
+				Windows: function () {
+					return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+				},
+				any: function () {
+					return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
 				}
+			};
+
+			<!-- Uses HQ images in desktop versions and lower quality if mobile; uses default images if no others available-->
+			if (isMobile.any()) {
+				startPanorama('resources/json/Hildesheim_web.json', "mobile");
+			} else {
+				startPanorama('resources/json/Hildesheim_web.json', "hq");
 			}
-		</script>
+		}
+	</script>
 
-	</head>
+</head>
 
-	<body>
+<body>
 
-	<!-- Container for panorama-->
-		<div id="panorama">
+<!-- Container for panorama-->
+<div id="panorama">
 
-            <!-- map image -->
-            <figure id="map">
-                <img id="mapImage" src="" alt="Karte der Kirche St. Michaelis in Hildesheim" />
-            </figure>
+	<!-- Map image -->
+	<figure id="map">
+		<img id="mapImage" src="" alt="Map"/>
+	</figure>
 
+	<!-- Full screen -->
+	<figure id="fullscreen">
+		<img src="resources/icons/gui_fullscreen_icon.png" alt="Enter / Leave Fullscreen Mode"/>
+	</figure>
 
-	        <!-- full screen -->
-            <figure id="fullscreen">
-                <img src="resources/icons/gui_fullscreen_icon.png" alt="Icon zum betreten und verlassen des Vollbild Modus"/>
-            </figure>
-
-
-            <!-- About -->
-            <p id="about">
-                Impressum
-            </p>
-
-            <!-- scene switch-->
-            <p id="sceneSwitch">
-                Zum Kirchenraum
-            </p>
+	<!-- Scene switch-->
+	<p id="sceneSwitch">
+		Switch Scene
+	</p>
 
 
+	<!-- Tool Tip; loaded from JSON -->
+	<p id="toolTip"></p>
 
-	        <!-- Tool Tip -->
-	        <p id="toolTip"></p>
+	<!-- Information pop-up -->
+	<article id="infoView">
+		<figure id="infoCloseButton">
+			<img src="resources/icons/close.png" alt="Close information pop-up"
+				 title="Close information pop-up">
+		</figure>
 
-	    <!-- Info Pop Up-->
-		<article id="infoView">
-			<figure id="infoCloseButton">
-				<img src="resources/icons/close2.png" alt="Informations Pop Up verlassen" title="Informations Pop Up verlassen">
-			</figure>
+		<!-- Title; loaded from JSON-->
+		<h1 id="infoTitle">
+		</h1>
 
-			<h1 id="infoTitle">
-			</h1>
+		<!-- Image and image caption; loaded from JSON -->
+		<figure id="infoImageBox">
+			<img src="" alt="Image" id="infoImage"/>
+			<figcaption id="infoCaption">
+			</figcaption>
+		</figure>
 
-			<figure id="infoImageBox">
-				<img src="resources/images/di-58-005_1.jpg" alt="sample image" id="infoImage" />
-				<figcaption id="infoCaption">
-				</figcaption>
-			</figure>
-			<figure id="infoImageGallery">
-				<!-- IMAGE GALLERY cuurently only needed in point "97" (Krypta) -->
-
-				<div id="images">
-					<img id="image1" src="resources/images/di-58-005_1.jpg" />
-					<img id="image2" src="resources/images/di-58-014_1.jpg" />
-					<img id="image3" src="resources/images/Evangeliar1.jpg" />
-					<img id="image4" src="resources/images/Evangeliar2.jpg" />
-				</div>
-				<div id="slider">
-					<a href="#image1">1</a>
-					<a href="#image2">2</a>
-					<a href="#image3">3</a>
-					<a href="#image4">4</a>
-				</div>
-
-
-			</figure>
-
-			<div id="audioPlayer">
-				<audio id="audioControls" controls>
-                    <source src="" type="audio/ogg" preload="auto" id="audioSourceOgg">
-                    <source src="" type="audio/mpeg" preload="auto" id="audioSourceMp3">
-				</audio>
-			</div>
-
-			<p id="infoContent">
-			</p>
-		</article>
-
-
-			<!-- IMPRESSUM -->
-
-		<article id="aboutView">
-            <figure id="aboutCloseButton">
-                <img src="resources/icons/close2.png" alt="Impressum verlassen" title="Impressum verlassen">
-            </figure>
-			<h1 id="aboutTitle">Impressum</h1>
-
-			<h2>Umsetzung</h2>
-			<dl>
-				<dt>Konzeption</dt><dd>Dr. Christine Wulf, Anna Neovesky</dd>
-				<dt>Entwicklung</dt><dd>Julius Peinelt, Anna Neovesky</dd>
-				<dt>Design</dt><dd>Anna Neovesky, Aline Deicke, Torsten Schrade</dd>
-				<dt>Texte</dt><dd>Dr. Christine Wulf (Inschriften), Dr.-Ing. Ulrich Knufinke (Architektur)</dd>
-				<dt>Ton</dt><dd>Steffen Schneider</dd>
-				<dt>Sprecherin</dt><dd>Christiane Dressler</dd>
-			</dl>
-
-			<h2>Ein Projekt der</h2>
-			<p>Akademie der Wissenschaften und der Literatur | Mainz</p>
-			<p>Akademie der Wissenschaften zu Göttingen</p>
-
-			<h2>Weitere Informationen</h2>
-			<dl>
-				<dt>Deutsche Inschiften Online</dt><dd>www.inschriften.net</dd>
-				<dt>Digitale Akademie</dt><dd>www.digitale-akademie.de</dd>
-			</dl>
-
-		</article>
-
+		<!-- Audio file; loaded from JSON -->
+		<div id="audioPlayer">
+			<audio id="audioControls" controls>
+				<source src="" type="audio/ogg" preload="auto" id="audioSourceOgg">
+				<source src="" type="audio/mpeg" preload="auto" id="audioSourceMp3">
+			</audio>
 		</div>
-    <!-- Navigation bar and buttons -->
-    <div id="navigationButtonsContainer">
-        <figure  id="nav">
-            <img src="resources/icons/navigation.png"/>
-        </figure>
-        <!-- TODO: wenn eines der Navigationselemente fehlt, z.B. diese figures kommt ein schwarzer screen-->
-        <!-- gernerisch laden-->
-        <!-- TODO: das hier viell. als div,w eil ich die Navelemente mit der Navigationsbar in einem Bild integriere-->
-        <figure class="panoNavButton" id="upNavButton" src="resources/icons/navigation.png" alt="Navigationselement">
-            <img src="resources/icons/gui_panup_icon.png" alt="Navigation nach oben" />
-        </figure>
-        <figure class="panoNavButton" id="downNavButton">
-            <img src="resources/icons/gui_pandown_icon.png" alt="Navigation nach unten" />
-        </figure>
-        <figure class="panoNavButton" id="leftNavButton">
-            <img src="resources/icons/gui_panleft_icon.png" alt="Navigation nach linke" />
-        </figure>
-        <figure class="panoNavButton" id="rightNavButton">
-            <img src="resources/icons/gui_panright_icon.png" alt="Navigation nach rechts" />
-        </figure>
-        <figure class="panoNavButton" id="zoomInButton">
-            <img src="resources/icons/gui_zoomin_icon.png" alt="Näher zoomen" />
-        </figure>
-        <figure class="panoNavButton" id="zoomOutButton">
-            <img src="resources/icons/gui_zoomout_icon.png" alt="Weitere weg zoomen" />
-        </figure>
-    </div>
+
+		<!-- Textual information; loaded from JSON -->
+		<p id="infoContent">
+		</p>
+	</article>
+
+</div>
 
 
-    </body>
+<!-- Navigation bar and buttons -->
+<div id="navigationButtonsContainer">
+	<figure id="nav">
+		<img src="resources/icons/navigation.png"/>
+	</figure>
+	<figure class="panoNavButton" id="upNavButton" src="resources/icons/navigation.png" alt="Navigation element">
+		<img src="resources/icons/gui_panup_icon.png" alt="Up"/>
+	</figure>
+	<figure class="panoNavButton" id="downNavButton">
+		<img src="resources/icons/gui_pandown_icon.png" alt="Down"/>
+	</figure>
+	<figure class="panoNavButton" id="leftNavButton">
+		<img src="resources/icons/gui_panleft_icon.png" alt="Left"/>
+	</figure>
+	<figure class="panoNavButton" id="rightNavButton">
+		<img src="resources/icons/gui_panright_icon.png" alt="Right"/>
+	</figure>
+	<figure class="panoNavButton" id="zoomInButton">
+		<img src="resources/icons/gui_zoomin_icon.png" alt="Zoom in"/>
+	</figure>
+	<figure class="panoNavButton" id="zoomOutButton">
+		<img src="resources/icons/gui_zoomout_icon.png" alt="Zoom out"/>
+	</figure>
+</div>
+
+
+</body>
 </html>
