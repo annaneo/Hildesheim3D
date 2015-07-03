@@ -1,6 +1,6 @@
 /**
- * (C)  Julius Peinelt
- *      Anna Neovesky
+ *  (c) Julius Peinelt
+ *  	Anna Neovesky - Digitale Akademie, Akademie der Wissenschaften und der Literatur | Mainz - Anna.Neovesky@adwmainz.de
  */
 
 
@@ -20,7 +20,6 @@ Transition = function (parameters) {
 		map: THREE.ImageUtils.loadTexture("resources/icons/transfer.png"),
 		transparent: true
 	});
-	//var material = new THREE.MeshBasicMaterial( { color: 0x008800 } );
 	THREE.Mesh.call(this, geometry, material);
 	this.position.set(parameters.position.x, parameters.position.y, parameters.position.z);
 };

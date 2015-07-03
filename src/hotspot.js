@@ -1,6 +1,6 @@
 /**
- * (C)  Julius Peinelt
- *      Anna Neovesky
+ *  (c) Julius Peinelt
+ *  	Anna Neovesky - Digitale Akademie, Akademie der Wissenschaften und der Literatur | Mainz - Anna.Neovesky@adwmainz.de
  */
 
 /**
@@ -19,13 +19,6 @@ Hotspot = function (parameters) {
 
 	this.tooltip = parameters.hasOwnProperty('tooltip') ? parameters['tooltip'] : null;
 	this.audio = parameters.hasOwnProperty('audio') ? parameters['audio'] : null;
-
-	/*
-	 load content via
-	 this.infoContent.load(parameters['content'], function (response, status, xhr) {
-	 content.html(response);
-	 });
-	 */
 
 	// setting size and material of hotspot icon in panorama
 	var geometry = new THREE.PlaneGeometry(16, 16);

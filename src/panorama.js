@@ -1,6 +1,6 @@
-/*
- * (C)  Julius Peinelt
- *      Anna Neovesky
+/**
+ *  (c) Julius Peinelt
+ *  	Anna Neovesky - Digitale Akademie, Akademie der Wissenschaften und der Literatur | Mainz - Anna.Neovesky@adwmainz.de
  */
 
 
@@ -31,7 +31,6 @@ var toolTip;
 var timerId;
 var resolution = "default";
 
-
 /**
  * Starts panorama, creates a loading scene and triggers the loading of the start location. Starts animating.
  * @param dataURL URL to the config JSON
@@ -48,15 +47,12 @@ function startPanorama(dataURL, res) {
 	animate();
 }
 
-
 /**
  * Initialize Tooltip for Hotspots and Transitions.
- * //TODO: ToolTip also for mapSpots
  */
 function initTooltip() {
 	toolTip = _('toolTip');
 }
-
 
 /**
  * Loads and parses the config JSON file at given URL, when finished parsing it calls given callback.
@@ -126,7 +122,6 @@ function updateTargetList() {
 	scene.traverse(function (object) {
 		if (object instanceof Hotspot || object instanceof Transition) {
 			targetList.push(object);
-			//TODO: setting object rotation should NOT be here!
 			object.lookAt(camera.position);
 		}
 	});
@@ -295,24 +290,6 @@ function initEventListener() {
 		_('navigationButtonsContainer').addEventListener('touchend', onMouseUp, false);
 	}
 
-	var about = _('about');
-	if (about) {
-		_('about').addEventListener('touchstart', showAbout, false);
-		_('about').addEventListener('mousedown', showAbout, false);
-		_('aboutCloseButton').addEventListener('click', function (event) {
-			var aboutView = _("aboutView");
-			aboutView.style.display = "none";
-			isPopupOpen = false;
-			setMapandNavigationHidden(false);
-		}, false);
-		_('aboutCloseButton').addEventListener('touched', function (event) {
-			var aboutView = _("aboutView");
-			aboutView.style.display = "none";
-			isPopupOpen = false;
-			setMapandNavigationHidden(false);
-		}, false);
-	}
-
 	var sceneSwitch = _('sceneSwitch')
 	if (sceneSwitch) {
 		_('sceneSwitch').addEventListener('mousedown', switchScene);
@@ -326,7 +303,6 @@ function initEventListener() {
 	}
 }
 
-
 function toggleFullScreen(event) {
 	if (THREEx.FullScreen.activated()) {
 		THREEx.FullScreen.cancel();
@@ -335,11 +311,9 @@ function toggleFullScreen(event) {
 	}
 }
 
-
 /**
  * Switch scene between start location for map 1 and map 2
  * @param event not used
- * TODO: method should be more general.
  */
 function switchScene(event) {
 	if (mapUid === 1) {
@@ -351,15 +325,14 @@ function switchScene(event) {
 
 /**
  * Updates Scene Switch button.
- * //TODO: should be more general.
  */
 function updateSceneSwitchButton() {
 	var button = _('sceneSwitch');
 	if (button) {
 		if (mapUid === 1) {
-			button.textContent = 'Zur Krypta';
+			button.textContent = 'Switch Scene';
 		} else {
-			button.textContent = 'Zum Kirchenraum';
+			button.textContent = 'Switch Scene';
 		}
 	}
 }
@@ -414,7 +387,6 @@ function onMouseDown(event) {
 function onMouseMove(event) {
 	var eventX = event.pageX;
 	var eventY = event.pageY;
-	//console.log('eventX: ' + eventX + '    eventY: ' + eventY);
 	moveEventHandler(eventX, eventY, event);
 }
 
@@ -442,10 +414,8 @@ function onDocumentTouchStart(event) {
 	if (event.touches.length === 1) {
 		var touchX = event.touches[0].pageX;
 		var touchY = event.touches[0].pageY;
-		//console.log("touch x: " + touchX + "   touch y: " + touchY);
 		downEventHandler(touchX, touchY, event);
 	} else if (event.touches.length === 2) {
-		//TODO: zoom in and out
 	}
 }
 
@@ -457,7 +427,6 @@ function onDocumentTouchMove(event) {
 	if (event.touches.length === 1) {
 		var touchX = event.touches[0].pageX;
 		var touchY = event.touches[0].pageY;
-		//console.log("touch x: " + touchX + "   touch y: " + touchY);
 		moveEventHandler(touchX, touchY, event);
 	}
 }
@@ -486,8 +455,6 @@ function moveEventHandler(eventX, eventY, event) {
 		return;
 	}
 
-	//mouse.x = ( ( eventX - renderer.domElement.offsetLeft ) / renderer.domElement.width ) * 2 - 1;
-	//mouse.y = - ( ( eventY - renderer.domElement.offsetTop ) / renderer.domElement.height ) * 2 + 1;
 	mouse.x = ( eventX / window.innerWidth ) * 2 - 1;
 	mouse.y = -( eventY / window.innerHeight ) * 2 + 1;
 
@@ -594,7 +561,6 @@ function upEventHandler(event) {
  * @param eventY y-Value of event
  * @param event input event
  */
-//TODO: make ready for touch events
 function wheelEventHandler(eventX, eventY, event) {
 	event.preventDefault();
 	if (isPopupOpen) {

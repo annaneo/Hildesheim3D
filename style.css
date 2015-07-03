@@ -1,3 +1,10 @@
+/* (c)
+Julius Peinelt
+Aline Deicke
+Anna Neovesky - Digitale Akademie, Akademie der Wissenschaften und der Literatur | Mainz - Anna.Neovesky@adwmainz.de
+*/
+
+
 /* reset */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	margin: 0;
@@ -188,8 +195,6 @@ h2 {
 	padding-top: 1.8em;
 }
 
-/* style dl http://lea.verou.me/2012/02/flexible-multiline-definition-lists-with-2-lines-of-css/*/
-
 dt {
 	font-weight: bold;
 }
@@ -219,85 +224,4 @@ audio {
 
 #panorama a {
 	color: #917d4d;
-}
-
-/*
-	SLIDER
-*/
-
-#infoImageGallery {
-	position: relative;
-	margin-bottom: 1.5em;
-}
-
-#infoImageGallery img {
-	width: 98%;
-	padding: 1%;
-	border: 1px solid #c9cbd0;
-	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
-	background: #fff;
-}
-
-#infoImageGallery figcaption {
-	font-size: 1.4em;
-	margin-top: 0.5em;
-}
-
-#images {
-	width: 380px;
-	height: 400px;
-	overflow: hidden;
-	position: relative;
-	margin: 20px auto;
-}
-
-#images img {
-	width: 380px;
-	height: 400px;
-	position: relative;
-	top: 0;
-	left: -400px;
-	z-index: 1;
-	opacity: 0;
-	transition: all linear 500ms;
-	-o-transition: all linear 500ms;
-	-moz-transition: all linear 500ms;
-	-webkit-transition: all linear 500ms;
-}
-
-#images img:target {
-	left: 0;
-	z-index: 9;
-	opacity: 1;
-}
-
-#slider a {
-	text-decoration: none;
-	background: #E3F1FA;
-	border: 1px solid #C6E4F2;
-	padding: 10px 10px;
-	color: #222;
-}
-
-#slider a:hover {
-	background: #C6E4F2;
-}
-
-/*
-    ABOUT POP UP
-    */
-
-#aboutView {
-	display: none;
-	position: absolute;
-	width: 42%;
-	margin: 1em 35%;
-	padding: 1% 1.5%;
-	border: 1px solid #917d4d;
-	border-radius: 3px;
-	background-color: rgba(255, 255, 255, 0.8);
-}
-
-#aboutCloseButton {
-	right: 4.2%;
 }

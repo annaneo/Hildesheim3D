@@ -1,6 +1,6 @@
 /**
- * (C)  Julius Peinelt
- *      Anna Neovesky
+ *  (c) Julius Peinelt
+ *  	Anna Neovesky - Digitale Akademie, Akademie der Wissenschaften und der Literatur | Mainz - Anna.Neovesky@adwmainz.de
  */
 
 /**
@@ -19,9 +19,6 @@ Location = function (texture) {
 };
 
 Location.prototype = Object.create(THREE.Mesh.prototype);
-
-
-// add functions to Location Object with Location.prototype.<functionName> = function (..) {...}
 
 /**
  * Adds Hotspots to current location
