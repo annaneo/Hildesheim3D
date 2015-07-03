@@ -8,7 +8,7 @@
  * @param texture Panoramic image.
  * @constructor
  */
-Location = function ( texture) {
+Location = function (texture) {
 	var geometry = new THREE.SphereGeometry(200, 50, 30);
 	geometry.applyMatrix(new THREE.Matrix4().makeScale(-1, 1, 1));
 
