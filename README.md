@@ -12,7 +12,7 @@ virtualTour is licensed under GNU GPL V3.
 
 ## Dependencies and Requirements
 
-virtualTour depens on Three.js in revision 68 and other smaller scripts by [Mr. Doob] [1]. Further it uses a helper 
+virtualTour depends on Three.js in revision 68 and other smaller scripts by [Mr. Doob] [1]. Further it uses a helper 
 script by [stemkoski] [2] to handle full screen support. The used shader are inspired by [zz85] [3]. The effect composer
 for applying shader is by [alteredq] [4].
 
