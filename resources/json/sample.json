@@ -54,7 +54,7 @@
 				"title": "Title",
 				"tooltip": "Information",
 			 	"text": "Example with audio.",
-				"audio": "resources/audio/audiosample.mp3",
+				"audio": "resources/audio/audiosample",
 				"posX": -61,
 				"posY": 114,
 				"posZ": 145
