@@ -1,7 +1,7 @@
 # virtualTour
 
 
-	
+virtualTour is a generic software that allows to create custom virtual tours.
 
 
 ## License
