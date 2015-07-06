@@ -32,7 +32,7 @@
 			"transitions": [
 				{
 					"target_location": 2,
-					"tooltip": "Goes to Location 2",
+					"tooltip": "Location 2",
 					"posX": 79,
 					"posY": -34,
 					"posZ": -175
@@ -72,7 +72,7 @@
 			"transitions": [
 				{
 					"target_location": 1,
-					"tooltip": "Goes to Location 1",
+					"tooltip": "Location 1",
 					"posX": -52,
 					"posY": -28,
 					"posZ": -186
