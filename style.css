@@ -137,16 +137,16 @@ dt:after {
 }
 
 #mapSpot {
+	background-color: #917d4d;
 	width: 23px;
 	height: 23px;
-	background-color: #A30000;
 	z-index: 0;
 	position: absolute;
 	border-radius: 50%;
 }
 
 #mapSpotCurrent {
-	background-color: #917d4d;
+	background-color: #A30000;
 	width: 23px;
 	height: 23px;
 	z-index: 0;
