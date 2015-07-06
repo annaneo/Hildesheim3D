@@ -57,9 +57,9 @@
 
 			<!-- Uses HQ images in desktop versions and lower quality if mobile; uses default images if no others available-->
 			if (isMobile.any()) {
-				startPanorama('resources/json/Hildesheim_web.json', "mobile");
+				startPanorama('resources/json/sample.json', "mobile");
 			} else {
-				startPanorama('resources/json/Hildesheim_web.json', "hq");
+				startPanorama('resources/json/sample.json', "hq");
 			}
 		}
 	</script>
@@ -81,10 +81,11 @@
 		<img src="resources/icons/gui_fullscreen_icon.png" alt="Enter / Leave Fullscreen Mode"/>
 	</figure>
 
-	<!-- Scene switch-->
+	<!-- Scene switch: enables to create a tour with two connected spaces; remove comments to enable scene switch -->
+	<!--
 	<p id="sceneSwitch">
 		Switch Scene
-	</p>
+	</p> -->
 
 
 	<!-- Tool Tip; loaded from JSON -->
