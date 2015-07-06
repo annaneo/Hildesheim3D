@@ -14,7 +14,7 @@ Hotspot = function (parameters) {
 
 	this.infoContent = parameters.hasOwnProperty('content') ? parameters['content'] : "No content";
 	this.infoTitle = parameters.hasOwnProperty('title') ? parameters['title'] : "";
-	this.infoImages = parameters.hasOwnProperty('images') ? parameters['images'] : [];
+	this.infoImages = parameters.hasOwnProperty('images') ? parameters['images'] : null;
 
 
 	this.tooltip = parameters.hasOwnProperty('tooltip') ? parameters['tooltip'] : null;
@@ -48,7 +48,7 @@ Hotspot.prototype.onClick = function (event) {
 	var infoContent = _('infoContent');
 	infoContent.innerHTML = this.infoContent;
 
-	if (this.infoImages.length == 1) {
+	if (this.infoImages && this.infoImages.length == 1) {
 		var infoImageBox = _('infoImageBox');
 		//set image
 		var infoImage = _('infoImage');
@@ -63,13 +63,17 @@ Hotspot.prototype.onClick = function (event) {
 	}
 
 	//sets audio
+
+	var audioControls = _('audioControls');
 	if (this.audio) {
-		var audioControls = _('audioControls');
+		audioControls.style.display = 'block';
 		var audioSourceOgg = _('audioSourceOgg');
 		audioSourceOgg.src = this.audio + ".ogg";
 		var audioSourceMp3 = _('audioSourceMp3');
 		audioSourceMp3.src = this.audio + ".mp3";
 		audioControls.load();
+	} else {
+		audioControls.style.display = 'none';
 	}
 
 	infoView.style.display = "block";

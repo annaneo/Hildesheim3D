@@ -12,10 +12,10 @@
 					"mapPosY": 65
 				},
 				{
-				"uid": 2,
-				"tooltip": "Map Spot 2",
-				"mapPosX": 30,
-				"mapPosY": 65
+					"uid": 2,
+					"tooltip": "Map Spot 2",
+					"mapPosX": 30,
+					"mapPosY": 65
 				}
 			]
 		}

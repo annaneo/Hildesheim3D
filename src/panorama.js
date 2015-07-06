@@ -137,6 +137,9 @@ function transitToLocation(locationIndex, reset) {
 	if (reset) {
 		lastPanoramaUID = -1; //update lastPanoramaUID to current location.uid for transition
 	}
+	if (locationIndex === lastPanoramaUID) {
+		return;
+	}
 	isLoading = true;
 
 	setMapandNavigationHidden(true);
@@ -688,7 +691,7 @@ function update() {
 		lon = (lon + lonFactor) % 360;
 		lat = lat + latFactor;
 		// console logs: coordinates for starting view of a location
-		console.log("Camera Target: " + "lat: " + lat + "  lon: " + lon);
+		//console.log("Camera Target: " + "lat: " + lat + "  lon: " + lon);
 
 		lat = Math.max(-35, Math.min(45, lat));
 		phi = THREE.Math.degToRad(90 - lat);
@@ -698,8 +701,8 @@ function update() {
 		camera.target.z = 195 * Math.sin(phi) * Math.sin(theta);
 		camera.lookAt(camera.target);
 		// console logs: x, y, z coordinates for positioning of hotspots and transitions
-		console.log("Positions [posX, posY, posZ]" + vectorToString(camera.target));
-		console.log("-----------------------------");
+		//console.log("Positions [posX, posY, posZ]" + vectorToString(camera.target));
+		//console.log("-----------------------------");
 		renderer.render(scene, camera);
 	} else {
 		setMapandNavigationHidden(true);
